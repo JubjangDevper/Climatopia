@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="q1">สวัสดี,โลเรน</h1>
+<h1 id="q1">สวัสดี,โลเรน</h1>
+<h1  id="q2">ภูมิอากาศในโลกนี้มีหลายเขตภูมิอากาศ</h1>
+<h1  id="q3">แต่ละที่ก็สิ่งมีชีวิต พืชพันธ์ุที่แตกต่างกันไป </h1>
+<h1  id="q4">รวมถึงการใช้ชีวิตของผู้คนในแต่ละที่ด้วย</h1>
+</body>
+</html>
+
+<style>
+    body{
+  background-color:black;
+  color:white;
+}
+h1{
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+#q1{
+  opacity:0%;
+  animation:opa 3s linear ;
+}
+#q2{
+    opacity:0%;
+  animation:opa 3s 3s linear ;
+}
+
+#q3{
+    opacity:0%;
+  animation:opa 6s 6s linear ;
+}
+#q4{
+  opacity:0%;
+  animation:opa 12s 9s linear ;
+}
+
+
+
+@keyframes opa {
+  form{opacity:0%;}
+  to{opacity:100%;}
+  to{color:white;}
+}
+</style>
