@@ -1,3 +1,4 @@
+<script src="putName.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
-
+<p id="name"></p>
+<form id="form_name" action="intro.html">
 <h1>CLIMATOPIA</h1>
-
 <div class="row">
 <div class="col d-flex justify-content-center">
 <input class="form-control " id="urname" type="text" placeholder="ENTER YOURNAME"/>
@@ -20,17 +21,23 @@
 </div>
 <div class="row">
 <div class="col d-flex justify-content-center">
-<button type="button" class="btn btn-green pr-5 pl-5">START</button>
+<button type="submit" value="Submit" class="btn btn-green pr-5 pl-5" onclick="putName()">START</button>
   </div>
 </div>
+</form>
 <div class="row">
   <img src="Assets/Asset 1.png" alt="">
 </div>
+
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 html{
   height: 100%;
+}
+p{
+  visibility: hidden;
 }
 body{
   overflow-x:hidden;
@@ -73,3 +80,4 @@ border-radius: 45px;
 
 
 </style>
+

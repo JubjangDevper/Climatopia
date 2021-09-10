@@ -1,30 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body class="aurora">
-    <h1 id="q1">สวัสดี,โลเรน</h1>
-<h1 id="q1">สวัสดี,โลเรน</h1>
-<h1  id="q2">ภูมิอากาศในโลกนี้มีหลายเขตภูมิอากาศ</h1>
-<h1  id="q3">แต่ละที่ก็สิ่งมีชีวิต พืชพันธ์ุที่แตกต่างกันไป </h1>
-<h1  id="q4">รวมถึงการใช้ชีวิตของผู้คนในแต่ละที่ด้วย</h1>
-</body>
+  <h1 id="q1">สวัสดี,<h1 id="name"></h1></h1>
+  <h1  id="q2">ยินดีต้อนรับเข้าเข้าสู่ Climatopia</h1>
+  <h1  id="q3">คุณรู้จักเขตภูมิอากาศต่างๆในโลกนี้มั้ย</h1>
+  <h1  id="q4">เราจะอธิบายคร่าว ๆ ให้ฟัง</h1>
+  <h1  id="q5">เขตภูมิอากาศคือสภาวะอากาศของท้องถิ่นแห่งใดแห่งหนึ่ง เป็นลักษณะอากาศที่เกิดขึ้นในช่วงระยะเวลายาวนาน </h1>
+  <h1  id="q6">ในแต่ละเขตภูมิอากาศก็จะมีสัตว์ พืชพรรณต่าง ๆ ที่สวยงามแตกต่างกันไป</h1>
+  <h1  id="q7">ภูมิอากาศเป็นปัจจัยที่สำคัญทางภูมิศาสตร์อย่างหนึ่งที่มีผลต่อชีวิตมนุษย์เราเป็นอย่างมาก</h1>
+  <h1  id="q8">เอาล่ะ<h1 id="name2"></h1></h1>
+  <h1  id="q9">เราจะพาคุณไปทำแบบทดสอบเพื่อหาว่าภูมิอากาศแบบไหนเหมาะกับคุณ</h1>
+  <h1  id="q10">ถ้าพร้อมแล้วคลิกที่ปุ่มด้านล่างนี้เลย</h1>
+  <div class="row text-center">
+    <div class="col">
+      <button type="button" class="btn btn-light pl-3 pr-3">ทำแบบทดสอบ</button>
+    </div>
+
+</div>
+  </body>
 </html>
 
+
+<script>
+  // Check browser support
+  if (typeof(Storage) !== "undefined") {
+    // Store
+    // Retrieve
+    document.getElementById("name").innerHTML = localStorage.getItem("username");
+    document.getElementById("name2").innerHTML = localStorage.getItem("username");
+  } else {
+    document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+  </script>
+
+  
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
 body{
+  overflow-x: hidden;
   background-color:black;
   color:white;
   font-family: 'Mitr', sans-serif;
+  font-size:1em;
+}
+.btn{
+  opacity:0%;
+  animation:opa 5s 50s linear ;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 60vh;
+  left: 45%;
 }
 h1{
   font-weight: bold;
@@ -37,48 +72,80 @@ h1{
   text-align: center;
 }
 
-#q1{
+#q1{left: 46%;
   opacity:0%;
-  animation:opa 3s linear ;
+  animation:opa 5s linear ;
+}
+#name{
+  left: 54%;
+  opacity:0%;
+  animation:opa 5s linear ;
 }
 #q2{
     opacity:0%;
-  animation:opa 3s 3s linear ;
+  animation:opa 5s 5s linear ;
 }
 
 #q3{
     opacity:0%;
-  animation:opa 6s 6s linear ;
+  animation:opa 5s 10s linear ;
 }
 #q4{
   opacity:0%;
-  animation:opa 12s 9s linear ;
+  animation:opa 5s 15s linear ;
+}
+#q5{
+  width:78%;
+  opacity:0%;
+  animation:opa 5s 20s linear ;
+}
+#q6{
+  width:66%;
+  opacity:0%;
+  animation:opa 5s 25s linear ;
+}
+#q7{
+  width:68%;
+  opacity:0%;
+  animation:opa 5s 30s linear ;
+}
+#q8{
+  left: 46%;
+  opacity:0%;
+  animation:opa 5s 35s linear ;
+}
+#name2{
+  left: 54%;
+  opacity:0%;
+  animation:opa 5s 35s linear ;
+}
+#q9{
+  width:50%;
+  opacity:0%;
+  animation:opa 5s 40s linear ;
+}
+#q10{
+  opacity:0%;
+  animation:opa 5s 45s linear ;
 }
 
-
-
 @keyframes opa {
-  form{opacity:0%;}
-  to{opacity:100%;}
-  to{color:white;}
+  0%{opacity:0%;}
+  50%{opacity:100%;}
+  100%{opacity:0%;}
+}
+@keyframes hid {
+  to{visibility:visible;}
 }
 
 h1 {
-  position: absolute;
-  width: 100%;
   text-align: center;
-  top: 40vh;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.2em;
-  font-size: 20pt;
-  font-weight: normal;
-  text-transform: uppercase;
+  top: 50vh;
   text-shadow: 1px 1px 5px 3px #ff0;
 }
 .small {
   text-transform: none;
   color: rgba(255,255,255,0.3);
-  font-size: 0.5em;
   letter-spacing: 0.3em;
   line-height: 0.5em;
 }
