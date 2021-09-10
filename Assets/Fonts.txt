@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Source Sans Pro
+Author: Adobe
+Url: http://www.fontsquirrel.com/fonts/source-sans-pro
+
+Font: Abhaya Libre
+Author: Mooniak
+Url: https://www.fontsquirrel.com/fonts/abhaya-libre
