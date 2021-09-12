@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body class="aurora">
+  <img id="im1" src="Assets/clound.png" alt="97a4a70bf4fc17cf39ecede015b0d15f.jpg" border="0" />
+  <img id="im2" src="Assets/snow.png" border="0" />
   <h1 id="q1">สวัสดี,<h1 id="name"></h1></h1>
   <h1  id="q2">ยินดีต้อนรับเข้าเข้าสู่ Climatopia</h1>
   <h1  id="q3">คุณรู้จักเขตภูมิอากาศต่างๆในโลกนี้มั้ย</h1>
@@ -52,6 +54,20 @@ body{
   color:white;
   font-family: 'Mitr', sans-serif;
   font-size:1em;
+}
+#im1{
+  opacity: 0%;
+  position:absolute;
+  height:100vh;
+  width:100%;
+  animation:opa2 10s 10s linear ;
+}
+#im2{
+  opacity: 0%;
+  position:absolute;
+  height:100vh;
+  width:100%;
+  animation:opa2 10s 20s linear ;
 }
 .btn{
   opacity:0%;
@@ -133,6 +149,17 @@ h1{
   0%{opacity:0%;}
   50%{opacity:100%;}
   100%{opacity:0%;}
+}
+@keyframes opa2 {
+  0%{opacity:0%;}
+  20%{opacity:50%;}
+  80%{opacity:50%;}
+  100%{opacity:0%;
+    scale:1.5;}
+  
+}
+@keyframes tran {
+  to{transform:translateX(0%)}
 }
 @keyframes hid {
   to{visibility:visible;}
