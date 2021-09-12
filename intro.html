@@ -12,7 +12,8 @@
 </head>
 <body class="aurora">
   <img id="im1" src="Assets/clound.png" alt="97a4a70bf4fc17cf39ecede015b0d15f.jpg" border="0" />
-  <img id="im2" src="Assets/snow.png" border="0" />
+  <img id="im2" src="Assets/SNOWFL.jpg" border="0" />
+  <img id="im3" src="Assets/forest1.jpg" border="0" />
   <h1 id="q1">สวัสดี,<h1 id="name"></h1></h1>
   <h1  id="q2">ยินดีต้อนรับเข้าเข้าสู่ Climatopia</h1>
   <h1  id="q3">คุณรู้จักเขตภูมิอากาศต่างๆในโลกนี้มั้ย</h1>
@@ -25,7 +26,7 @@
   <h1  id="q10">ถ้าพร้อมแล้วคลิกที่ปุ่มด้านล่างนี้เลย</h1>
   <div class="row text-center">
     <div class="col">
-      <button type="button" class="btn btn-light pl-3 pr-3">ทำแบบทดสอบ</button>
+      <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2">ทำแบบทดสอบ</button>
     </div>
 
 </div>
@@ -67,16 +68,26 @@ body{
   position:absolute;
   height:100vh;
   width:100%;
-  animation:opa2 10s 20s linear ;
+  animation:opa2 5s 20s linear ;
 }
+#im3{
+  opacity: 0%;
+  scale:1.5;
+  position:absolute;
+  height:100vh;
+  width:100%;
+  animation:opa3 10s 25s linear ;
+}
+
 .btn{
   opacity:0%;
-  animation:opa 5s 50s linear ;
+  animation:btn 120s 45s linear ;
   box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 60vh;
   left: 45%;
 }
+
 h1{
   font-weight: bold;
   position: absolute;
@@ -111,13 +122,13 @@ h1{
   animation:opa 5s 15s linear ;
 }
 #q5{
-  width:78%;
+  width:75%;
   opacity:0%;
   animation:opa 5s 20s linear ;
 }
 #q6{
   width:66%;
-  opacity:0%;
+  opacity:100%;
   animation:opa 5s 25s linear ;
 }
 #q7{
@@ -142,7 +153,7 @@ h1{
 }
 #q10{
   opacity:0%;
-  animation:opa 5s 45s linear ;
+  animation:btn 120s 45s linear ;
 }
 
 @keyframes opa {
@@ -156,7 +167,20 @@ h1{
   80%{opacity:50%;}
   100%{opacity:0%;
     scale:1.5;}
-  
+}
+@keyframes opa3 {
+  0%{opacity:0%;}
+  20%{opacity:40%;}
+  80%{opacity:40%;}
+  100%{opacity:0%;
+  scale: 1;}
+}
+
+@keyframes btn {
+  0%{opacity:0%;}
+  1%{opacity:100%;}
+  100%{opacity:100%;
+  scale: 1;}
 }
 @keyframes tran {
   to{transform:translateX(0%)}
