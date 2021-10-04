@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width='device-width', initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<h1>Choose the choices that are right for you : Question 1</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<div class="card" id="question">
+				<div class="card-body">What Hogwarts House do you belong to?</div>
+			</div>    
+		</div>
+	</div>
+	<div class="row">
+		<div class="col d-flex justify-content-center"> 
+			<button id="button1" class="btn btn-light pr-5 pl-5">Hufflepuff</button>
+			<div class="card" id="QA">
+				<div class="card-body">A.</div>
+			</div> 
+		</div>
+		<div class="col d-flex justify-content-center">
+		    <button id="button2" class="btn btn-light pr-5 pl-5">Ravenclaw</button>
+			<div class="card" id="QB">
+				<div class="card-body">B.</div>
+			</div> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<button id="button3" class="btn btn-light pr-5 pl-5">Gryffindor</button>
+			<div class="card" id="QC">
+				<div class="card-body">C.</div>
+			</div> 
+		</div>
+		<div class="col d-flex justify-content-center">
+			<button id="button4" class="btn btn-light pr-5 pl-5">Slytherin</button>
+			<div class="card" id="QD">
+				<div class="card-body">D.</div>
+			</div> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<button id="button5" class="btn btn-light pr-5 pl-5">I don't know</button>
+			<div class="card" id="QE">
+				<div class="card-body">E.</div>
+			</div> 
+		</div>
+	</div>
+	<div class="row">
+	  <img src="Assets/Asset 4.png" style="width: 100%;height:725px;" alt="">
+	</div>
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+  html {
+    height: 100%;
+  }
+
+  p {
+    visibility: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+	background: linear-gradient(90deg, rgba(234,255,173,1) 0%, rgba(251,241,188,1) 100%);
+    font-size: 1em;
+    font-family: ZCOOL KuaiLe;
+  }
+
+  h1 {
+    position: absolute;
+    top: 10vh;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    font-size: 2.5em;
+  }
+
+  #question {
+    position: absolute;
+    width: 1080px;
+    height: 150px;
+    top: 20vh;
+	font-size: 3em;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.25);
+  }
+
+  #button1 {
+    position: absolute;
+    top: 50vh;
+	left: 30vh;
+  }
+  #button1:hover {
+	background-color: pink;
+  }
+  #QA {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 51vh;
+	left: 32vh;
+	font-size: 2em;
+	border-radius: 100%;
+	background-color: pink;
+	color: white;
+  }
+  
+  #button2 {
+    position: absolute;
+    top: 50vh;
+	right: 30vh;
+  }
+  #button2:hover {
+	background-color: skyblue;
+  }
+  #QB {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 51vh;
+	left: 10vh;
+	font-size: 2em;
+	border-radius: 100%;
+	background-color: skyblue;
+	color: white;
+  }
+
+  #button3 {
+    position: absolute;
+    top: 65vh;
+	left: 30vh;
+  }
+  #button3:hover {
+	background-color: lightgreen;
+  }
+  #QC {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 66vh;
+	left: 32vh;
+	font-size: 2em;
+	border-radius: 100%;
+	background-color: lightgreen;
+	color: white;
+  }
+  
+  #button4 {
+    position: absolute;
+    top: 65vh;
+	right: 30vh;
+  }
+  #button4:hover {
+	background-color: gold;
+  }
+  #QD {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 66vh;
+	left: 10vh;
+	font-size: 2em;
+	border-radius: 100%;
+	background-color: gold;
+	color: white;
+  }
+  
+   #button5 {
+    position: absolute;
+    top: 80vh;
+	left: 70vh;
+  }
+  #button5:hover {
+	background-color: orchid;
+  }
+  #QE {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 81vh;
+	left: 72vh;
+	font-size: 2em;
+	border-radius: 100%;
+	background-color: orchid;
+	color: white;
+  }
+  
+  .btn-light {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+	width: 500px;
+    height: 90px;
+    border-radius: 20px;
+    font-size: 3em;
+  }
+</style>
