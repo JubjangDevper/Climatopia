@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>Map</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/svn.jpg?raw=true");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+    }
+
+    #rock {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+    }
+
+    #zebra {
+        z-index: 0;
+        height: 200px;
+        width: 200px;
+        margin-top: 24px;
+        margin-left: 28px;
+        position: absolute;
+    }
+
+    #butZebra {
+        height: 130px;
+        width: 70px;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 140px;
+    }
+
+    #butZebra:hover {
+        cursor: pointer;
+    }
+
+    #alertBox {
+        width: 400px;
+        height: 300px;
+        border: solid 5px#F39C12;
+        margin-top: 10px;
+        margin-left: 60%;
+        display: none;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
+    }
+
+    .move {
+        margin-left: 40%;
+        margin-top: 30%;
+    }
+</style>
+<script>
+    function showAnimal(id) {
+        let traget
+        if (id == 1) {
+            traget = document.getElementById("zebra");
+        }
+        if (id == 2) {
+            traget = document.getElementById("lion");
+        }
+        traget.style.zIndex = 1;
+        traget.style.height = "300px";
+        traget.style.width = "270px";
+        showDoc(id)
+    }
+    function showDoc(id) {
+        var x = document.getElementById("alertBox");
+        if (id == 1) {
+            document.getElementById("textAlert").innerHTML = "ม้าลาย มีถิ่นกำเนิดในดินแดนต่างๆ รวมทั้งประเทศโซมาเลียเอธิโอเปียเอริเทรีจิบูตีและเคนย่าในแอฟริกาตะวันออก สปีชีส์นี้มีประชาการลดลงอย่างรวดเร็วและตั้งแต่นั้นมาก็ถูกคุมขังในเอธิโอเปียตอนใต้และเคนย่าตอนเหนือ การสูญเสียที่อยู่อาศัยเป็นหนึ่งในสาเหตุหลักที่ทำให้ม้าลาย มีประชากรลดลงอย่างมากเมื่อเปรียบเทียบกับสัตว์เลี้ยงลูกด้วยนมในแอฟริกาอื่นๆ การกินหญ้ามากเกินและความแห้งแล้งที่เกิดจากการเปลี่ยนแปลงสภาพภูมิอากาศเป็นสาเหตุของอัตราการรอดตายของม้าลายที่ต่ำ เนื่องจากพวกมันต้องแข่งขันกับสัตว์พื้นเมืองอื่นๆ เพื่อหาอาหารและน้ำ"
+        }
+        if (id == 2) {
+            document.getElementById("textAlert").innerHTML = "น้อนสิงโต"
+        }
+        x.style.display = "block";
+    }
+    function hideDoc() {
+        var x = document.getElementById("alertBox");
+        x.style.display = "none";
+    }
+</script>
+
+<body>
+    <div class="move">
+        <img id="zebra" src="https://github.com/fordntp/Climatopia/blob/main/Assets/image/zebra.png?raw=true">
+        <img id="rock" src="https://github.com/fordntp/Climatopia/blob/main/Assets/image/r1.png?raw=true">
+        <div id="butZebra" onclick="showAnimal(1)"></div>
+    </div>
+    <div class="card" id="alertBox">
+        <button id="xAlert" onclick="hideDoc()">Close</button>
+        <div class="container">
+            <p id="textAlert"></p>
+        </div>
+    </div>
+</body>
+
+</html>
