@@ -10,7 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<audio controls autoplay hidden>
+<audio id="myVideo" controls autoplay hidden>
   <source src="Assets/Drifting-at-432-Hz-Unicorn-Heads.ogg" type="audio/ogg">
   <source src="Assets/Untitled Session 1_mixdown.wav" type="audio/wav">
   <source src="Assets/Drifting at 432 Hz - Unicorn Heads.mp3" type="audio/mpeg">
@@ -29,12 +29,10 @@
   <h1  id="q8">เอาล่ะ&nbsp;&nbsp;&nbsp;&nbsp;<h1 id="name2"></h1></h1>
   <h1  id="q9">เราจะพาคุณไปทำแบบทดสอบเพื่อหาว่าภูมิอากาศแบบไหนเหมาะกับคุณ</h1>
   <h1  id="q10">คลิกที่ปุ่มด้านล่างนี้เลย</h1>
-
   <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="document.location='question1.html'">ทำแบบทดสอบ</button>
+  <button id="skip" type="button" onclick="skip()">Skip >></button>
   </body>
 </html>
-
-
 <script>
   // Check browser support
   if (typeof(Storage) !== "undefined") {
@@ -45,7 +43,12 @@
   } else {
     document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
   }
+  $("body").click(function skip(){
+  $(this).addClass("skip-animation");
+  });
   </script>
+
+
 
   
 <style>
@@ -157,6 +160,16 @@ h1{
 #q10{
   opacity:0%;
   animation:btn 360s 45s linear ;
+}
+#skip{
+  opacity: 80%;
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: 2rem;
+  border: none;
+  text-decoration: none;
+  color:white;
+  float: right;
 }
 
 @keyframes opa {
@@ -506,5 +519,50 @@ h1 {
     left: 100vw;
   }
 }
+.skip-animation #q1{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q2{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q3{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q4{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q5{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+
+}.skip-animation #q6{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+
+}.skip-animation #q7{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+
+}.skip-animation #q8{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q9{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #q10{ 
+  opacity:0%;
+  animation:btn 360s linear ;
+}
+.skip-animation .btn{ 
+  opacity:0%;
+  animation:btn 360s linear ;
+}
+
 
 </style>
