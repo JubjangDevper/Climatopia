@@ -32,8 +32,7 @@
   <h1  id="q10">คลิกที่ปุ่มด้านล่างนี้เลย</h1>
   <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="document.location='question1.html'">ทำแบบทดสอบ</button>
   <button id="skip" type="button" class="skip">Skip >></button>
-  <button id="mute1" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
-  <button id="mute2" onclick="clickcount()" type="button"><i class="fa fa-volume-off"></i></button>
+  <button id="mute" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
   </body>
 </html>
 <script>
@@ -59,9 +58,11 @@
   var vid = document.getElementById("myVideo");
   if (clicks%2!=0){
     vid.muted = true;
+    $("i").toggleClass("fa fa-volume-up fa fa-volume-off");
   }
   else{
     vid.muted = false;
+    $("i").toggleClass("fa fa-volume-off fa fa-volume-up");
   }
 }
 
@@ -601,13 +602,5 @@ h1 {
   animation-fill-mode: forwards;
 }
 
-
-#mute[data-active="1"]{
-  
-}
-#mute[data-active="0"]{
-  
-  
-}
 
 </style>
