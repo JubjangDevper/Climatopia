@@ -30,7 +30,7 @@
   <h1  id="q9">เราจะพาคุณไปทำแบบทดสอบเพื่อหาว่าภูมิอากาศแบบไหนเหมาะกับคุณ</h1>
   <h1  id="q10">คลิกที่ปุ่มด้านล่างนี้เลย</h1>
   <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="document.location='question1.html'">ทำแบบทดสอบ</button>
-  <button id="skip" type="button" onclick="skip()">Skip >></button>
+  <button id="skip" type="button" class="skip">Skip >></button>
   </body>
 </html>
 <script>
@@ -43,8 +43,8 @@
   } else {
     document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
   }
-  $("body").click(function skip(){
-  $(this).addClass("skip-animation");
+  $(".skip").click(function skip(){
+  $(".aurora").addClass("skip-animation");
   });
   </script>
 
