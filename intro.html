@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <audio id="myVideo" controls autoplay hidden>
   <source src="Assets/Drifting-at-432-Hz-Unicorn-Heads.ogg" type="audio/ogg">
@@ -31,6 +32,8 @@
   <h1  id="q10">คลิกที่ปุ่มด้านล่างนี้เลย</h1>
   <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="document.location='question1.html'">ทำแบบทดสอบ</button>
   <button id="skip" type="button" class="skip">Skip >></button>
+  <button id="mute1" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
+  <button id="mute2" onclick="clickcount()" type="button"><i class="fa fa-volume-off"></i></button>
   </body>
 </html>
 <script>
@@ -43,9 +46,26 @@
   } else {
     document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
   }
+  //skip
   $(".skip").click(function skip(){
   $(".aurora").addClass("skip-animation");
   });
+
+  //mute
+  var clicks = 0;
+  function clickcount(){
+    clicks += 1;
+
+  var vid = document.getElementById("myVideo");
+  if (clicks%2!=0){
+    vid.muted = true;
+  }
+  else{
+    vid.muted = false;
+  }
+}
+
+
   </script>
 
 
@@ -171,7 +191,16 @@ h1{
   color:white;
   float: right;
 }
-
+#mute{
+  opacity: 80%;
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: 2rem;
+  border: none;
+  text-decoration: none;
+  color:white;
+  float: right;
+}
 @keyframes opa {
   0%{opacity:0%;}
   50%{opacity:100%;}
@@ -563,6 +592,22 @@ h1 {
   opacity:0%;
   animation:btn 360s linear ;
 }
+.skip-animation #name{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
+.skip-animation #name2{ 
+  animation-duration: 1ms;
+  animation-fill-mode: forwards;
+}
 
+
+#mute[data-active="1"]{
+  
+}
+#mute[data-active="0"]{
+  
+  
+}
 
 </style>
