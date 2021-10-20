@@ -20,7 +20,7 @@
             <h1  id="q1">ภูมิอากาศที่คุณไปเยือนมาเป็นไงบ้าง </h1>
             <h1  id="q2">ลองเล่าความรู้สึกให้เราฟังหน่อย</h1>
             <textarea class="form-control feeling" id="q3" rows="5" type="text" maxlength="255" placeholder="บอกความรู้สึกของคุณ..."></textarea>
-            <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="">ส่งข้อความ</button>
+            <button type="button" id="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="submit()">ส่งข้อความ</button>
 
         </div>
         <button id="skip" type="button" class="skip">Skip >></button>
@@ -58,6 +58,15 @@
       $("i").toggleClass("fa fa-volume-off fa fa-volume-up");
     }
   }
+
+    //play animation
+    function submit(){
+        document.querySelector('#q3').classList.remove('feeling');
+        document.querySelector('#q3').classList.add('feeling1');
+        document.querySelector('#button').classList.remove('btn');
+        document.querySelector('#button').classList.add('btn1');
+    }
+
     </script>
 
 <style>
@@ -101,8 +110,9 @@
     }
 
     #q3{
-        opacity:0%;
-        animation:opa 5s 10s linear,inputani 10s 14s infinite ;
+        position: absolute;
+        width: 500px;
+        top: 40vh;
     }
     #skip{
         opacity: 80%;
@@ -179,9 +189,13 @@
     }
 
     .feeling{
-        position: absolute;
-        width: 500px;
-        top: 40vh;
+        opacity:0%;
+        animation:opa 5s 10s linear,inputani 10s 14s infinite ;
+    }
+    .feeling1{
+        opacity:0%;
+        animation:opa 5s 10s linear;
+        cursor: default;
     }
 
     .btn{
@@ -191,6 +205,15 @@
         box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
         position: absolute;
         top:65vh;
+    }
+    .btn1{
+        font-size: 1.3rem;
+        opacity:0%;
+        animation:opa 5s 10s linear;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        position: absolute;
+        top:65vh;
+        pointer-events: none;
     }
 
     @-moz-keyframes hue {
