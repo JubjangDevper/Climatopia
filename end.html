@@ -10,4 +10,395 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
+    <audio id="myVideo" controls autoplay hidden>
+        <source src="Assets/Drifting-at-432-Hz-Unicorn-Heads.ogg" type="audio/ogg">
+        <source src="Assets/Untitled Session 1_mixdown.wav" type="audio/wav">
+        <source src="Assets/Drifting at 432 Hz - Unicorn Heads.mp3" type="audio/mpeg">
+      </audio>
+    <body class="aurora">
+        <div class="center">
+            <h1  id="q1">ภูมิอากาศที่คุณไปเยือนมาเป็นไงบ้าง </h1>
+            <h1  id="q2">ลองเล่าความรู้สึกให้เราฟังหน่อย</h1>
+            <textarea class="form-control feeling" id="q3" rows="5" type="text" maxlength="255" placeholder="บอกความรู้สึกของคุณ..."></textarea>
+            <button type="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="">ส่งข้อความ</button>
+
+        </div>
+        <button id="skip" type="button" class="skip">Skip >></button>
+        <button id="mute" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
+    </body>
 </html>
+
+<script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+      // Store
+      // Retrieve
+      document.getElementById("name").innerHTML = localStorage.getItem("username");
+      document.getElementById("name2").innerHTML = localStorage.getItem("username");
+    } else {
+      document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    //skip
+    $(".skip").click(function skip(){
+    $(".aurora").addClass("skip-animation");
+    });
+  
+    //mute
+    var clicks = 0;
+    function clickcount(){
+      clicks += 1;
+  
+    var vid = document.getElementById("myVideo");
+    if (clicks%2!=0){
+      vid.muted = true;
+      $("i").toggleClass("fa fa-volume-up fa fa-volume-off");
+    }
+    else{
+      vid.muted = false;
+      $("i").toggleClass("fa fa-volume-off fa fa-volume-up");
+    }
+  }
+    </script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+   body{
+     overflow: hidden;
+     background-color:black;
+     color:white;
+     font-family: 'Mitr', sans-serif;
+     font-size:1em;
+   }
+   .center{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   h1{
+    text-shadow: 2px 2px 4px #252525;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    }
+
+    #q1{
+    opacity:0%;
+    animation:opa 5s linear ;
+    }
+    #name{
+    left: 54%;
+    opacity:0%;
+    animation:opa 5s linear ;
+    }
+    #q2{
+        opacity:0%;
+    animation:opa 5s 5s linear ;
+    }
+
+    #q3{
+        opacity:0%;
+        animation:opa 5s 10s linear,inputani 10s 14s infinite ;
+    }
+    #skip{
+        opacity: 80%;
+        font-size: 1.2rem;
+        background-color: transparent;
+        padding: 2rem;
+        border: none;
+        text-decoration: none;
+        color:white;
+        float: right;
+    }
+    #mute{
+    opacity: 80%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    padding: 2rem;
+    border: none;
+    text-decoration: none;
+    color:white;
+    float: right;
+    }
+    @keyframes opa {
+    0%{opacity:0%;}
+    50%{opacity:100%;}
+    100%{opacity:0%;}
+    }
+    @-moz-keyframes opa {
+    0%{opacity:0%;}
+    50%{opacity:100%;}
+    100%{opacity:0%;}
+    }
+    @-webkit-keyframes opa {
+    0%{opacity:0%;}
+    50%{opacity:100%;}
+    100%{opacity:0%;}
+    }
+    @-o-keyframes opa {
+    0%{opacity:0%;}
+    50%{opacity:100%;}
+    100%{opacity:0%;}
+    }
+    h1 {
+    text-align: center;
+    top: 50vh;
+    text-shadow: 1px 1px 5px 3px #ff0;
+    }
+    .small {
+    text-transform: none;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.3em;
+    line-height: 0.5em;
+    }
+    .aurora {
+    background: #3ba865;
+    position: relative;
+    }
+    .aurora:before,
+    .aurora:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 100%;
+    opacity: 0.5;
+    }
+    .aurora:before {
+    box-shadow: 0 0 35vmax 35vmax #f00;
+    animation: hue 5s 0s linear infinite, move1 10s 0s linear infinite;
+    }
+    .aurora:after {
+    box-shadow: 0 0 35vmax 35vmax #0ff;
+    animation: hue 10s 0s linear infinite, move2 20s 0s linear infinite;
+    }
+
+    .feeling{
+        position: absolute;
+        width: 500px;
+        top: 40vh;
+    }
+
+    .btn{
+        font-size: 1.3rem;
+        opacity:0%;
+        animation:opa 5s 10s linear,inputani 10s 14s infinite ;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        position: absolute;
+        top:65vh;
+    }
+
+    @-moz-keyframes hue {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    @-webkit-keyframes hue {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    @-o-keyframes hue {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    @keyframes hue {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    @-moz-keyframes move1 {
+        0% {
+            top: 0vh;
+            left: 50vw;
+        }
+        25% {
+            left: 0vw;
+        }
+        50% {
+            top: 100vh;
+        }
+        75% {
+            left: 100vw;
+        }
+        100% {
+            top: 0vh;
+            left: 50vw;
+        }
+    }
+        @-webkit-keyframes move1 {
+        0% {
+            top: 0vh;
+            left: 50vw;
+        }
+        25% {
+            left: 0vw;
+        }
+        50% {
+            top: 100vh;
+        }
+        75% {
+            left: 100vw;
+        }
+        100% {
+            top: 0vh;
+            left: 50vw;
+        }
+    }
+    @-o-keyframes move1 {
+        0% {
+            top: 0vh;
+            left: 50vw;
+        }
+        25% {
+            left: 0vw;
+        }
+        50% {
+            top: 100vh;
+        }
+        75% {
+            left: 100vw;
+        }
+        100% {
+            top: 0vh;
+            left: 50vw;
+        }
+    }
+    @keyframes move1 {
+        0% {
+            top: 0vh;
+            left: 50vw;
+        }
+        25% {
+            left: 0vw;
+        }
+        50% {
+            top: 100vh;
+        }
+        75% {
+            left: 100vw;
+        }
+        100% {
+            top: 0vh;
+            left: 50vw;
+        }
+    }
+    @-moz-keyframes move2 {
+        0% {
+            top: 50vh;
+            left: 100vw;
+        }
+        25% {
+            top: 100vh;
+        }
+        50% {
+            left: 0vw;
+        }
+        75% {
+            top: 0vh;
+        }
+        100% {
+            top: 50vh;
+            left: 100vw;
+        }
+    }
+    @-webkit-keyframes move2 {
+        0% {
+            top: 50vh;
+            left: 100vw;
+        }
+        25% {
+            top: 100vh;
+        }
+        50% {
+            left: 0vw;
+        }
+        75% {
+            top: 0vh;
+        }
+        100% {
+            top: 50vh;
+            left: 100vw;
+        }
+    }
+    @-o-keyframes move2 {
+        0% {
+            top: 50vh;
+            left: 100vw;
+        }
+        25% {
+            top: 100vh;
+        }
+        50% {
+            left: 0vw;
+        }
+        75% {
+            top: 0vh;
+        }
+        100% {
+            top: 50vh;
+            left: 100vw;
+        }
+    }
+    @keyframes move2 {
+        0% {
+            top: 50vh;
+            left: 100vw;
+        }
+        25% {
+            top: 100vh;
+        }
+        50% {
+            left: 0vw;
+        }
+        75% {
+            top: 0vh;
+        }
+        100% {
+            top: 50vh;
+            left: 100vw;
+        }
+    }
+
+    @keyframes inputani{
+        0%{
+            opacity: 100%;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    .skip-animation #q1{ 
+        animation-duration: 1ms;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    .skip-animation #q2{ 
+        animation-duration: 1ms;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    .skip-animation #q3{ 
+        animation-play-state: paused;
+    }
+
+</style>
