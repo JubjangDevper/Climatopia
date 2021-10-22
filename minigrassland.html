@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>grassland</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    body{
+        width: 100%;
+        height: 100%;
+        background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/tgl2.jpg?raw=true");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        overflow: hidden;
+        font-family: 'Mitr', sans-serif;
+        font-size: 1vw;
+    }
+    img{
+        transition: all .4s;
+    }
+    #bmap{
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position:fixed;
+        padding: 1vw;
+    }
+    #bmap:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+    #rockferret{
+        width:13vw;
+        height:13vw;
+        position:absolute;
+        margin-top: -8vw;
+        }
+    #rockgazelle{
+        width:13vw;
+        height:13vw;
+        position:absolute;
+        margin-top: -22vw;
+    }
+    #rockcoyote{
+        width:13vw;
+        height:13vw;
+        position:absolute;
+        margin-top: -20vw;
+        }
+    #fakerock{
+        width:12vw;
+        height:8vw;
+        position:absolute;
+        margin-top: -8vw;
+        margin-left: 28vw;
+    }
+    #wood{
+        width:8vw;
+        height:4vw;
+        position:absolute;
+        margin-top: -6vw;
+        margin-left: 30vw;
+    }
+    #ferret{
+        z-index: 0;
+        height: 7vw;
+        width: 8vw;
+        margin-top: -6vw;
+        margin-left: 5vw;
+        position:absolute;
+    }
+    #butferret{ 
+        height: 8vw;
+        width: 3vw;
+        position: absolute;
+        margin-top: -8vw;
+        margin-left: 10vw;
+    }
+    #butferret:hover{
+        cursor: pointer;
+    }
+    #gazelle{
+        z-index: 0;
+        height: 9vw;
+        width: 9vw;
+        margin-top: -22vw;
+        margin-left: 2vw;
+        position:absolute;
+    }
+    #butgazelle{ 
+        height: 3vw;
+        width: 3vw;
+        position: absolute;
+        margin-top: -22vw;
+        margin-left: 2vw;
+    }
+    #butgazelle:hover{
+        cursor: pointer;
+    }
+    #cotote{
+        z-index: 0;
+        height: 9vw;
+        width: 8vw;
+        margin-top: -20vw;
+        margin-left: -2vw;
+        position:absolute;
+    }
+    #butcotote{ 
+        height: 4vw;
+        width: 4vw;
+        position: absolute;
+        margin-top: -20vw;
+        margin-left: -2vw;
+    }
+    #butcotote:hover{
+        cursor: pointer;
+    }
+    #bison{
+        z-index: 0;
+        height: 9vw;
+        width: 10vw;
+        margin-top: -7vw;
+        margin-left: 2vw;
+        position:absolute;
+    }
+    #butbison{ 
+        height: 9vw;
+        width: 10vw;
+        position: absolute;
+        margin-top: -7vw;
+        margin-left: 2vw;
+    }
+    #butbison:hover{
+        cursor: pointer;
+    }
+    #alertBoxferret{
+        width: 25vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -30vw;
+        margin-left: 2vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+    #alertBoxgazelle {
+        z-Index : 1;
+        width: 25vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -30vw;
+        margin-left: 2vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+    #alertBoxcotote {
+        z-Index : 1;
+        width: 25vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -30vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+    #alertBoxbison {
+        z-Index : 1;
+        width: 25vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -30vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+    #xAlert{
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+    #xAlert:hover{
+        background-color: #f0ac3e;
+    }
+    .move{
+        margin-left: 5%;
+        margin-top: 45%;
+    }
+    .move2{
+        margin-left: 35%;
+    }
+    .move3{
+        margin-left: 80%;
+    }
+    .move4{
+        margin-left: 60%;
+    }
+    #sc1{
+        width: 350px;
+        height: 300px;
+        border: solid 5px #000000;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    #green2{
+        width: 15vw;
+        height: 18vw;
+        bottom: 0vw;
+        margin-left: -5vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green3{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 5vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green4{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 15vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green5{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 25vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green6{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 35vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green7{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 45vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green8{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 55vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green9{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw ;
+        margin-left: 65vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green10{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 75vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green11{
+        width: 15vw;
+        height: 20vw;
+        bottom: 0vw;
+        margin-left: 86vw;
+        position: absolute;
+        overflow: hidden;
+    }
+    #green2:hover{
+        cursor: pointer;
+    }
+    #green3:hover{
+        cursor: pointer;
+    }
+    #green4:hover{
+        cursor: pointer;
+    }
+    #green5:hover{
+        cursor: pointer;
+    }
+    #green6:hover{
+        cursor: pointer;
+    }
+    #green7:hover{
+        cursor: pointer;
+    }
+    #green8:hover{
+        cursor: pointer;
+    }
+    #green9:hover{
+        cursor: pointer;
+    }
+    #green10:hover{
+        cursor: pointer;
+    }
+    #green11:hover{
+        cursor: pointer;
+    }
+</style>
+<script>
+     function Ferret() {
+        let traget = document.getElementById("ferret");
+        traget.style.zIndex = 1;
+        traget.style.height = "9vw";
+        traget.style.width = "10vw";
+        showferret()
+    }
+
+    function showferret() {
+        var x = document.getElementById("alertBoxferret");
+        document.getElementById("textAlertferret").innerHTML = "พังพอนเท้าดำคล้ายพังพอนประเทศเช่นเดียวกับโพลแคทป่าและวีเซิลสัตว์ที่มีรูปร่างเรียวยาว\
+        มีขนสีน้ำตาลหรือสีน้ำตาลมีเท้าสีดำปลายหางจมูกและหน้ากาก มีหูรูปสามเหลี่ยมหนวดน้อยปากกระบอกปืนสั้นและกรงเล็บที่แหลมคม ปัจจุบันเป็นสัตว์ที่ใกล้สูญพันธุ์ \
+        ทำให้นักวิทยาศาสตร์พยายามที่จะเพาะขยายไม่ให้สัตว์พื้นเมืองถิ่นอเมริกาเหนือตัวน้อยหน้าตาน่ารักชนิดนี้สูญพันธุ์ไป ล่าสุด ศูนย์บริการอนุรักษ์ปลาและสัตว์ป่าแห่งสหรัฐ\
+        อเมริกา เผยผลความสำเร็จในการโคลนเฟอร์เรทเท้าดำ ซึ่งเป็นการใช้วิธีโคลนนิ่งสิ่งมีชีวิตพื้นเมืองที่ใกล้สูญพันธุ์เป็นครั้งแรกในอเมริกาเหนือ และนี่จะเป็นเครื่องมือที่เป็น\
+        ไปได้สำหรับอนุรักษ์เฟอร์เรทเท้าดำต่อไป"
+        x.style.display = "block";
+    }
+
+    function hideferret() {
+        var x = document.getElementById("alertBoxferret");
+        x.style.display = "none";
+    }
+
+
+    function Gazelle() {
+        let traget = document.getElementById("gazelle");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "11vw";   
+        showgazelle()
+    }
+
+    function showgazelle() {
+        var x = document.getElementById("alertBoxgazelle");
+        document.getElementById("textAlertgazelle").innerHTML = "กาเซลล์ดามา อาศัยในแอฟริกา และทะเลทรายซาฮาร่า เพื่อมาหาอาหารในฤดูแล้ง\
+         และถูกจัดเป็นชนิดสัตว์ป่าประเภทแอนทีโลป ที่ห้ามนำเข้าหรือส่งออกสัตว์ป่าที่ใกล้สูญพันธุ์ ตามหลักไซเตส (CITES) เนื่องจากการลอบทำลายและ ทำลายแหล่ง\
+         ที่อยู่อาศัยพวกมัน ถูกล่าจากมนุษย์ จึงทำให้จำนวนลดลงอย่างมากถึง 80 เปอร์เซนต์ในช่วง 10 ปีที่ผ่านมา การสำรวจล่าสุดพบว่ากาเซลล์ดามามีอยู่ไม่เกิน 100 \
+         ตัวทั่วแอฟริกาเหนือ"
+        x.style.display = "block";
+    }
+
+    function hidegazelle() {
+        var x = document.getElementById("alertBoxgazelle");
+        x.style.display = "none";
+    }
+
+    function Cotote() {
+        let traget = document.getElementById("cotote");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "10vw";   
+        showcotote()
+    }
+
+    function showcotote() {
+        var x = document.getElementById("alertBoxcotote");
+        document.getElementById("textAlertcotote").innerHTML = " สุนัขป่าโคโยตี้เป็นสมาชิกในวงศ์คานิเด มีนิสัยหลายอย่างเหมือนญาติๆ ทั้งสุนัขบ้าน สุนัขป่า\
+         สุนัขจิ้งจอก และหมาไน พวกมันมีจมูกแคบยาว ลำตัวเพรียว ตาสีเหลือง หางพุ่ม ขนหนา มีกิตติศัพท์เรื่องการเห่าหอนเมื่อเห็นดวงจันทร์เพราะพวกมันล่าเหยื่อยามค่ำคืน \
+         และหอนเพื่อบอกที่ตั้ง มีคนหาว่าพวกมันเจ้าเล่ห์ แท้จริงแล้วโคโยตี้เป็นสัตว์ที่ฉลาดมาก และมีประสาทรับเสียง กลิ่น และการมองเห็นดีเยี่ยม สุนัขป่าโคโยตี้อาศัยอยู่ในอเมริกา\
+         เหนือตระเวนไปตามที่ราบ ป่า เขา และทะเลทรายในแคนาดา สหรัฐ เม็กซิโก ไปจนถึงอเมริกากลาง แม้แต่แถบบรรยากาศเขตร้อน เมื่อมนุษย์เข้าไปยึดพื้นที่ชนบทมากขึ้น \
+         โคโยตี้ก็ต้องปรับตัวมาอยู่ในเมืองเพื่อหาอาหาร ทำให้มีคนพบเห็นพวกมันในเมืองใหญ่อย่างนิวยอร์กและลอสแองเจลิสมากขึ้นทุกทีด้วย โคโยตี้เป็นสัตว์สันโดษ ใช้ปัสสาวะบ่ง\
+         บอกเขตแดน แต่เมื่อล่ากวางพวกมันกลับทำงานเป็นทีม ช่วยกันไล่ต้อนจนกวางอ่อนแรง หรือไล่เหยื่อไปหาสมาชิกฝูงที่ซ่อนตัวอยู่"
+        x.style.display = "block";
+    }
+
+    function hidecotote() {
+        var x = document.getElementById("alertBoxcotote");
+        x.style.display = "none";
+    }
+
+    function Bison() {
+        let traget = document.getElementById("bison");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "12vw";   
+        showbison()
+    }
+
+    function showbison() {
+        var x = document.getElementById("alertBoxbison");
+        document.getElementById("textAlertbison").innerHTML = "ควายไบซัน เป็นสัตว์เลี้ยงลูกด้วยนมที่มีขนาดใหญ่ที่สุดในภูมิภาคอเมริกาเหนือ\
+         มีถิ่นอาศัยตั้งแต่พื้นที่ป่าในรัฐอะแลสกาทางตอนเหนือของสหรัฐ ไล่ลงมาจนถึงเขตทุ่งหญ้าในเม็กซิโก ตัวเต็มวัยอาจมีน้ำหนักมากถึง 1 ตัน แม้จะตัวใหญ่และมีน้ำหนัก\
+          แต่ก็สามารถวิ่งด้วยความเร็วถึงราว 56 กิโลเมตรต่อชั่วโมง ในอดีตจำนวนของไบซันที่ร่อนเร่ไปทั่วอเมริกาเหนืออยู่ที่หลักล้านตัว แต่ปัจจุบันมีรายงานตัวเลขในสหรัฐอยู่ที่ราว\
+           500,000 ตัว ส่วนใหญ่ถูกเลี้ยงดูในฟาร์มและมีการผสมข้ามสายพันธุ์กับปศุสัตว์ ขณะที่ไบซันในธรรมชาติหลงเหลือเพียง 20,000-30,000 ตัว ส่วนมากอยู่ในพื้นที่อนุรักษ์\
+           ซึ่งทำให้ปลอดภัยจากการล่า โดยประชากรไบซันกลุ่มใหญ่ที่สุดพบในอุทยานแห่งชาติเยลโลว์สโตน"
+        x.style.display = "block";
+    }
+
+    function hidebison() {
+        var x = document.getElementById("alertBoxbison");
+        x.style.display = "none";
+    }
+
+    function hidegreen() {
+        var x = document.getElementById("green");
+        x.style.display = "none";
+    }
+    function hidegreen2() {
+        var x = document.getElementById("green2");
+        x.style.display = "none";
+    }
+    function hidegreen3() {
+        var x = document.getElementById("green3");
+        x.style.display = "none";
+    }
+    function hidegreen4() {
+        var x = document.getElementById("green4");
+        x.style.display = "none";
+    }
+    function hidegreen5() {
+        var x = document.getElementById("green5");
+        x.style.display = "none";
+    }
+    function hidegreen6() {
+        var x = document.getElementById("green6");
+        x.style.display = "none";
+    }
+    function hidegreen7() {
+        var x = document.getElementById("green7");
+        x.style.display = "none";
+    }
+    function hidegreen8() {
+        var x = document.getElementById("green8");
+        x.style.display = "none";
+    }
+    function hidegreen9() {
+        var x = document.getElementById("green9");
+        x.style.display = "none";
+    }
+    function hidegreen10() {
+        var x = document.getElementById("green10");
+        x.style.display = "none";
+    }
+    function hidegreen11() {
+        var x = document.getElementById("green11");
+        x.style.display = "none";
+    }
+</script>
+<body>
+    <div>
+        <a href="map2.html">
+            <img id="bmap" src="Assets/image/bmap.png">
+        </a>
+    </div>
+    <div class="move">
+        <img id="ferret" src="Assets/image/ferret.png">
+        <img id="rockferret" src="Assets/image/r8.png">
+        <div id="butferret" onclick="Ferret()"></div>
+    </div>
+    <div class="card" id="alertBoxferret">
+        <button id="xAlert" onclick="hideferret()">ปิด</button>
+        <div class="container">
+            <center><img id="sc1" src="Assets/image/realferret.jpg"></center>
+            <p id="textAlertferret"></p>
+        </div>
+    </div>
+    <div class="move2">
+        <img id="gazelle" src="Assets/image/Gazelle.png">
+        <img id="rockgazelle" src="Assets/image/r9.png">
+        <div id="butgazelle" onclick="Gazelle()"></div>
+    </div>
+    <div class="card" id="alertBoxgazelle">
+        <button id="xAlert" onclick="hidegazelle()">ปิด</button>
+        <div class="container">
+            <center><img id="sc1" src="Assets/image/realgazelle.jpg"></center>
+            <p id="textAlertgazelle"></p>
+        </div>
+    </div>
+    <div class="move3">
+        <img id="cotote" src="Assets//image/cotote.png">
+        <img id="rockcoyote" src="Assets/image/r1.png">
+        <div id="butcotote" onclick="Cotote()"></div>
+    </div>
+    <div class="card" id="alertBoxcotote">
+        <button id="xAlert" onclick="hidecotote()">ปิด</button>
+        <div class="container">
+            <center><img id="sc1" src="Assets/image/realcoyote.jpg"></center>
+            <p id="textAlertcotote"></p>
+        </div>
+    </div>
+    <div class="move4">
+        <img id="bison" src="Assets//image/bison.png">
+        <img id="wood" src="Assets/image/wood.png">
+        <div id="butbison" onclick="Bison()"></div>
+    </div>
+    <div class="card" id="alertBoxbison">
+        <button id="xAlert" onclick="hidebison()">ปิด</button>
+        <div class="container">
+            <center><img id="sc1" src="Assets/image/realbison.jpg"></center>
+            <p id="textAlertbison"></p>
+        </div>
+    </div>
+    <div>
+        <img id="fakerock" src="Assets/image/r10.png">
+    </div>
+    <div>
+        <img id="green2" onclick="hidegreen2()" src="Assets/g3.png">
+        <img id="green3" onclick="hidegreen3()" src="Assets/g3.png">
+        <img id="green4" onclick="hidegreen4()" src="Assets/g3.png">
+        <img id="green5" onclick="hidegreen5()" src="Assets/g3.png">
+        <img id="green6" onclick="hidegreen6()" src="Assets/g3.png">
+        <img id="green7" onclick="hidegreen7()" src="Assets/g3.png">
+        <img id="green8" onclick="hidegreen8()" src="Assets/g3.png">
+        <img id="green9" onclick="hidegreen9()" src="Assets/g3.png">
+        <img id="green10" onclick="hidegreen10()" src="Assets/g3.png">
+        <img id="green11" onclick="hidegreen11()" src="Assets/g3.png">
+    </div>
+</body>
+</html>
