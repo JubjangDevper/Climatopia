@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>Desert Minigame</title>
+</head>
+
+<body>
+    <div class="skunkBox">
+        <img id="skunk" src="Assets\image\skunk.png">
+        <img id="skunkRock" src="Assets\image\r6.png">
+        <div id="skunkClick" onclick="skunk()"></div>
+    </div>
+    <div class="card" id="skunkPopup">
+        <button id="xAlert" onclick="hideSkunk()">Close</button>
+        <div class="container">
+            <p id="skunkText"></p>
+        </div>
+    </div>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url("/Assets/image/dst.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+    }
+
+    /* Skunk */
+    #skunkRock {
+        width: 25vw;
+        height: 10vw;
+        margin-top: -1vw;
+        margin-left: -20vw;
+        position: absolute;
+    }
+
+    #skunk {
+        z-index: 0;
+        height: 7vw;
+        width: 7vw;
+        margin-top: -2.5vw;
+        margin-left: -17.5vw;
+        position: absolute;
+    }
+
+    #skunkClick {
+        z-index: 1;
+        height: 5vw;
+        width: 2vw;
+        position: absolute;
+        margin-top: -2vw;
+        margin-left: -14.5vw;
+    }
+
+    #skunkClick:hover {
+        cursor: pointer;
+    }
+
+    #skunkPopup {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#F39C12;
+        margin-top: 25vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+
+        font-size: 1vw;
+        overflow: scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
+    }
+
+    .skunkBox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+</style>
+<script>
+    // Skunk
+    function skunk() {
+        let traget = document.getElementById("skunk");
+        traget.style.zIndex = 1;
+        traget.style.height = "9vw";
+        traget.style.width = "9vw";
+        traget.style.marginTop = "-2.5vw";
+        traget.style.marginLeft = "-19.5vw";
+
+        showSkunk()
+    }
+
+    function showSkunk() {
+        var x = document.getElementById("skunkPopup");
+        document.getElementById("skunkText").innerHTML = "สกังก์"
+        x.style.display = "block";
+    }
+
+    function hideSkunk() {
+        var x = document.getElementById("skunkPopup");
+        x.style.display = "none";
+    }
+</script>
+
+</html>
