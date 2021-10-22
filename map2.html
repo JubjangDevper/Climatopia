@@ -15,28 +15,30 @@
         background-image: url(https://github.com/fordntp/Climatopia/blob/main/Assets/map/mapbg2.jpg?raw=true);
         background-repeat: no-repeat;
         background-size: cover;
-        overflow-x: hidden;
+        overflow: hidden;
+        margin: 0;
+        font-size: 1.5vw;
     }
     .main{
         height: 100%;
         margin: 0;
         max-width: 100%;    
-        border: solid 2px;
     }
     .middle{
-        margin: 5%;
-        margin-left: 5%;
+        margin: 5vw;
+        margin-left: 5vw;
         display: block;
     }
     .row{
         justify-content: center;
     }
     #reward{
-        height: 100px;
-        width: 100px;
-        margin-top: 50px;
-        margin-left: 50px;
-        position:absolute;
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position: absolute;
+        padding: 1vw;
     }
     img:hover {
         transform: scale(1.2);
@@ -48,25 +50,67 @@
         visibility: visible;
         opacity: 1;
         color: #fff;
-        font-size: 1.2em;
         margin: auto;
         font-family: ZCOOL KuaiLe;
+        background: #b4b2b2;
+        border-radius: 15px;
+        opacity: 0.8;
+        padding: 0.4vw;
+        text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
     }
     .land{
-        max-height: 250px;
-        max-width: 320px;
-        width: 100%;
-        height: 100%;
+        height: 15vw;
+        width: 20vw;
+        margin-bottom: -2vw;
     }
-
+    p{
+        position: fixed;
+    }
+    #t1{
+        margin-top: 7vw;
+        margin-left: 7.5vw;
+    }
+    #t2{
+        margin-top: 7vw;
+        margin-left: 7.5vw;
+    }
+    #t3{
+        margin-top: 7vw;
+        margin-left: 7vw;
+    }
+    #t4{
+        margin-top: 7vw;
+        margin-left: 2.5vw;
+    }
+    #t5{
+        margin-top: 7vw;
+        margin-left: 3.5vw;
+    }
+    #t6{
+        margin-top: 7vw;
+        margin-left: 5.5vw;
+    }
+    #t7{
+        margin-top: 8vw;
+        margin-left: 2vw;
+    }
+    #t8{
+        margin-top: 10vw;
+        margin-left: 3vw;
+    }
     @media only screen and (max-width: 600px) {
         #reward{
-            height: 80px;
-            width: 80px;
-            margin-top: 25px;
-            margin-left: 25px;
+            height: 5vw;
+            width: 5vw;
         }
-
 }
 </style>
 </head>
@@ -76,36 +120,39 @@
         <div class="middle">
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Tunda</p>
+                    <p class="imgtext" id="t1">Tunda</p>
                     <img class="land" src="Assets/map/tundra.png">
                 </div>
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Desert</p>
+                    <p class="imgtext" id="t2">Desert</p>
                     <img class="land" src="Assets/map/Desert.png">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Savanna</p>
-                    <img class="land" src="Assets/map/Savanna.png" onclick="document.location='minigamesavanna.html'">
+                    <p class="imgtext" id="t3">Savanna</p>
+                    <img class="land" src="Assets/map/Savanna.png">
                 </div>
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Topical rain forest</p>
+                    <p class="imgtext" id="t4">Topical rain forest</p>
                     <img class="land" src="Assets/map/Tropical rain forest.png">
                 </div>
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Coniferous forest</p>
+                    <p class="imgtext" id="t5">Coniferous forest</p>
                     <img class="land" src="Assets/map/coniferous forest.png">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Temperate deciduous forest</p>
+                    <p class="imgtext" id="t6">Temperate</p>
+                    <p class="imgtext" id="t8">deciduous forest</p>
                     <img class="land" src="Assets/map/temperate deciduous forest.png">   
                 </div>
                 <div class="col-lg-3 col-sm-6 col-11">
-                    <p class="imgtext">Temperate grassland</p>
+                    <a href="minigrassland.html">
+                    <p class="imgtext" id="t7">Temperate grassland</p>
                     <img class="land" src="Assets/map/Temperate grassland.png">
+                    </a>
                 </div>
             </div>
         </div>
