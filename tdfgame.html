@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>Savanna</title>
+</head>
+
+<body>
+    <div class="bearbox">
+        <img id="bear" src="Assets\image\blackbear.png">
+        <img id="rockbear" src="Assets\image\r10.png">
+        <div id="butbear" onclick="bear()"></div>
+    </div>
+    <div class="card" id="alertBoxbear">
+        <button id="xAlert" onclick="hidebear()">Close</button>
+        <div class="container">
+            <p id="textAlertbear"></p>
+        </div>
+    </div>
+
+    <div class="ferretbox">
+        <img id="ferret" src="Assets\image\ferret.png">
+        <img id="rockferret" src="Assets\image\r11.png">
+        <div id="butferret" onclick="ferret()"></div>
+    </div>
+    <div class="card" id="alertBoxferret">
+        <button id="xAlert" onclick="hideferret()">Close</button>
+        <div class="container">
+            <p id="textAlertferret"></p>
+        </div>
+    </div>
+
+    <div class="deerbox">
+        <img id="deer" src="Assets\image\deer.png">
+        <img id="rockdeer" src="Assets\image\r12.png">
+        <div id="butdeer" onclick="deer()"></div>
+    </div>
+    <div class="card" id="alertBoxdeer">
+        <button id="xAlert" onclick="hidedeer()">Close</button>
+        <div class="container">
+            <p id="textAlertdeer"></p>
+        </div>
+    </div>
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/tdf.jpg?raw=true");
+        background-size: 100vw 54vw;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+    }
+
+    #rockbear {
+        width: 25vw;
+        height: 20vw;
+        margin-top: 0vw;
+        margin-left: -8vw;
+        position: absolute;
+    }
+
+    #bear {
+        z-index: 0;
+        height: 10vw;
+        width: 10vw;
+        margin-top: 1vw;
+        margin-left: 2vw;
+        position: absolute;
+    }
+
+    #butbear {
+        z-Index : 1;
+        height: 3vw;
+        width: 4vw;
+        position: absolute;
+        margin-top: 1vw;
+        margin-left: 5vw;
+       
+    }
+
+    #butbear:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxbear {
+        z-Index : 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        margin-top: 30vw;
+        margin-left: 35vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow: scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
+    }
+
+    .bearbox {
+        margin-left: 15vw;
+        margin-top: 33vw;
+        position: absolute;
+    }
+
+    #rockferret {
+        width: 15vw;
+        height: 12vw;
+        margin-top: 8.5vw;
+        margin-left: 70vw;
+        position: absolute;
+    }
+
+    #ferret {
+        z-index: 0;
+        height: 6vw;
+        width: 11vw;
+        margin-top: 12vw;
+        margin-left: 70vw;
+        position: absolute;
+        transform: scaleX(-1);
+    }
+
+    #butferret {
+        z-Index : 1;
+        height: 3vw;
+        width: 2vw;
+        position: absolute;
+        margin-top: 12vw;
+        margin-left: 70vw;
+        
+    }
+
+    #butferret:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxferret {
+        z-Index : 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        margin-top: 30vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow: scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
+    }
+
+    .ferretbox {
+        margin-left: 15vw;
+        margin-top: 33vw;
+        position: absolute;
+    }
+
+    #rockdeer {
+        width: 10vw;
+        height: 12vw;
+        margin-top: 8.5vw;
+        margin-left: 69vw;
+        position: absolute;
+    }
+
+    #deer {
+        z-index: 0;
+        height: 6vw;
+        width: 6vw;
+        margin-top: 12vw;
+        margin-left: 69vw;
+        position: absolute;
+        
+    }
+
+    #butdeer {
+        z-Index : 1;
+        height: 2.5vw;
+        width: 2vw;
+        position: absolute;
+        margin-top: 13vw;
+        margin-left: 69.5vw;
+        
+        
+    }
+
+    #butdeer:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxdeer {
+        z-Index : 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        margin-top: 23vw;
+        margin-left: 42vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow: scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
+    }
+
+    .deerbox {
+        margin-left: 7vw;
+        margin-top: 18vw;
+        position: absolute;
+    }
+</style>
+<script>
+    function bear() {
+        let traget = document.getElementById("bear");
+        traget.style.zIndex = 1;
+        traget.style.height = "15vw";
+        traget.style.width = "15vw";
+
+        showbear()
+    }
+
+    function showbear() {
+        var x = document.getElementById("alertBoxbear");
+        document.getElementById("textAlertbear").innerHTML = "ม้าลาย มีถิ่นกำเนิดในดินแดนต่างๆ รวมทั้งประเทศโซมาเลียเอธิโอเปียเอริเทรีจิบูตีและเคนย่าในแอฟริกาตะวันออก สปีชีส์นี้มีประชาการลดลงอย่างรวดเร็วและตั้งแต่นั้นมาก็ถูกคุมขังในเอธิโอเปียตอนใต้และเคนย่าตอนเหนือ การสูญเสียที่อยู่อาศัยเป็นหนึ่งในสาเหตุหลักที่ทำให้ม้าลาย มีประชากรลดลงอย่างมากเมื่อเปรียบเทียบกับสัตว์เลี้ยงลูกด้วยนมในแอฟริกาอื่นๆ การกินหญ้ามากเกินและความแห้งแล้งที่เกิดจากการเปลี่ยนแปลงสภาพภูมิอากาศเป็นสาเหตุของอัตราการรอดตายของม้าลายที่ต่ำ เนื่องจากพวกมันต้องแข่งขันกับสัตว์พื้นเมืองอื่นๆ เพื่อหาอาหารและน้ำ"
+        x.style.display = "block";
+    }
+
+    function hidebear() {
+        var x = document.getElementById("alertBoxbear");
+        x.style.display = "none";
+    }
+
+    function ferret() {
+        let traget = document.getElementById("ferret");
+        traget.style.zIndex = 1;
+        traget.style.height = "8vw";
+        traget.style.width = "13vw";
+
+        showferret()
+    }
+
+    function showferret() {
+        var x = document.getElementById("alertBoxferret");
+        document.getElementById("textAlertferret").innerHTML = "ม้าลาย มีถิ่นกำเนิดในดินแดนต่างๆ รวมทั้งประเทศโซมาเลียเอธิโอเปียเอริเทรีจิบูตีและเคนย่าในแอฟริกาตะวันออก สปีชีส์นี้มีประชาการลดลงอย่างรวดเร็วและตั้งแต่นั้นมาก็ถูกคุมขังในเอธิโอเปียตอนใต้และเคนย่าตอนเหนือ การสูญเสียที่อยู่อาศัยเป็นหนึ่งในสาเหตุหลักที่ทำให้ม้าลาย มีประชากรลดลงอย่างมากเมื่อเปรียบเทียบกับสัตว์เลี้ยงลูกด้วยนมในแอฟริกาอื่นๆ การกินหญ้ามากเกินและความแห้งแล้งที่เกิดจากการเปลี่ยนแปลงสภาพภูมิอากาศเป็นสาเหตุของอัตราการรอดตายของม้าลายที่ต่ำ เนื่องจากพวกมันต้องแข่งขันกับสัตว์พื้นเมืองอื่นๆ เพื่อหาอาหารและน้ำ"
+        x.style.display = "block";
+    }
+
+    function hideferret() {
+        var x = document.getElementById("alertBoxferret");
+        x.style.display = "none";
+    }
+
+    function deer() {
+        let traget = document.getElementById("deer");
+        traget.style.zIndex = 1;
+        traget.style.height = "8vw";
+        traget.style.width = "8vw";
+
+        showdeer()
+    }
+
+    function showdeer() {
+        var x = document.getElementById("alertBoxdeer");
+        document.getElementById("textAlertdeer").innerHTML = "ม้าลาย มีถิ่นกำเนิดในดินแดนต่างๆ รวมทั้งประเทศโซมาเลียเอธิโอเปียเอริเทรีจิบูตีและเคนย่าในแอฟริกาตะวันออก สปีชีส์นี้มีประชาการลดลงอย่างรวดเร็วและตั้งแต่นั้นมาก็ถูกคุมขังในเอธิโอเปียตอนใต้และเคนย่าตอนเหนือ การสูญเสียที่อยู่อาศัยเป็นหนึ่งในสาเหตุหลักที่ทำให้ม้าลาย มีประชากรลดลงอย่างมากเมื่อเปรียบเทียบกับสัตว์เลี้ยงลูกด้วยนมในแอฟริกาอื่นๆ การกินหญ้ามากเกินและความแห้งแล้งที่เกิดจากการเปลี่ยนแปลงสภาพภูมิอากาศเป็นสาเหตุของอัตราการรอดตายของม้าลายที่ต่ำ เนื่องจากพวกมันต้องแข่งขันกับสัตว์พื้นเมืองอื่นๆ เพื่อหาอาหารและน้ำ"
+        x.style.display = "block";
+    }
+
+    function hidedeer() {
+        var x = document.getElementById("alertBoxdeer");
+        x.style.display = "none";
+    }
+</script>
