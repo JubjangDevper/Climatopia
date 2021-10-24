@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>Coniferous forest</title>
+</head>
+
+<body>
+    <div class="redfoxbox">
+        <img id="redfox" src="Assets\image\redfox.png">
+        <img id="rockredfox" src="Assets\image\r1.png">
+        <div id="butredfox" onclick="redfox()"></div>
+    </div>
+    <div class="card" id="alertBoxredfox">
+        <button id="xAlert" onclick="hideredfox()">Close</button>
+        <div class="container">
+            <p id="textAlertredfox"></p>
+        </div>
+    </div>
+
+    <div class="moosebox">
+        <img id="moose" src="Assets\image\moose.png">
+        <img id="rockmoose" src="Assets\reward\r10.png">
+        <div id="butmoose" onclick="moose()"></div>
+    </div>
+    <div class="card" id="alertBoxmoose">
+        <button id="xAlert" onclick="hidemoose()">Close</button>
+        <div class="container">
+            <p id="textAlertmoose"></p>
+        </div>
+    </div>
+
+    <div class="bobcatbox">
+        <img id="bobcat" src="Assets\image\bobcat.png">
+        <img id="rockbobcat" src="Assets\reward\r11.png">
+        <div id="butbobcat" onclick="bobcat()"></div>
+    </div>
+    <div class="card" id="alertBoxbobcat">
+        <button id="xAlert" onclick="hidebobcat()">Close</button>
+        <div class="container">
+            <p id="textAlertbobcat"></p>
+        </div>
+    </div>
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/cf.jpg?raw=true");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+        overflow: hidden;
+    }
+
+    #rockredfox {
+        width: 20vw;
+        height: 10vw;
+        margin-top: 2vw;
+        margin-left: 2vw;
+        position: absolute;
+    }
+
+    #redfox {
+        z-index: 0;
+        height: 8vw;
+        width: 8.5vw;
+        margin-top: 2vw;
+        margin-left: 11.5vw;
+        position: absolute;
+    }
+
+    #butredfox {
+        z-index: 1;
+        height: 4vw;
+        width: 8vw;
+        position: absolute;
+        margin-top: 2vw;
+        margin-left: 11vw;
+        
+
+    }
+
+    #butredfox:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxredfox {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#00A300;
+        margin-top: 30vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #18A558;
+    }
+
+    #xAlert:hover {
+        background-color: #18A558;
+    }
+
+    .redfoxbox {
+        margin-left: 5%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    #rockmoose {
+        width: 12vw;
+        height: 8vw;
+        margin-top: 3vw;
+        margin-left: -0.5vw;
+        position: absolute;
+    }
+
+    #moose {
+        z-index: 0;
+        height: 8vw;
+        width: 6vw;
+        margin-top: 1.5vw;
+        margin-left: 1.75vw;
+        position: absolute;
+    }
+
+    #butmoose {
+        height: 3vw;
+        width: 3vw;
+        position: absolute;
+        margin-top: 2vw;
+        margin-left: 2vw;
+
+    }
+
+    #butmoose:hover {
+        cursor: pointer;
+    }
+
+    .moosebox {
+        margin-left: 43vw;
+        margin-top: 35vw;
+        position: absolute;
+    }
+
+    #alertBoxmoose {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#00A300;
+        margin-top: 26vw;
+        margin-left: 55vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+        
+    }
+
+    #rockbobcat {
+        width: 12vw;
+        height: 14vw;
+        margin-top: -3.5vw;
+        margin-left: -53vw;
+        position: absolute;
+    }
+
+    #bobcat {
+        z-index: 0;
+        height: 6vw;
+        width: 9vw;
+        margin-top: -1vw;
+        margin-left: -53vw;
+        position: absolute;
+    }
+
+    #butbobcat {
+        height: 3.5vw;
+        width: 4.5vw;
+        position: absolute;
+        margin-top: -1vw;
+        margin-left: -53vw;
+
+    }
+
+    #butbobcat:hover {
+        cursor: pointer;
+    }
+
+    .bobcatbox {
+        margin-left: 80vw;
+        margin-top: 40vw;
+        position: absolute;
+    }
+
+    #alertBoxbobcat {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#00A300;
+        margin-top: 19vw;
+        margin-left: 55vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+        
+    }
+
+   
+</style>
+<script>
+    function redfox() {
+        let traget = document.getElementById("redfox");
+        traget.style.zIndex = 1;
+        traget.style.height = "10.5vw";
+        traget.style.width = "11vw";
+        
+
+        showredfox()
+    }
+
+    function showredfox() {
+        var x = document.getElementById("alertBoxredfox");
+        document.getElementById("textAlertredfox").innerHTML = "จิ้งจอกแดง ดูเหมือนสุนัขทั่วๆไปแต่มีขนาดเล็กกว่าขนตามลำตัวมีสีเทาแดงหรือน้ำตาลแดงบางตัวอาจเป็นสีน้ำตาลอมส้ม <br>สีขนที่ปลายหูและขาเป็นสีดำ สีขนอาจเปลี่ยนไปตามสภาพอากาศเช่นสีขนจะเปลี่ยนเป็นสีน้ำตาลแดงในช่วงที่มีความชื้นสูง และอาจมีขนหลายสีเช่นสีเงินสีขาวล้วนลำตัวและหัวยาว เป็นผลให้มีพันธุ์ย่อย 45 ชนิด จิ้งจอกแดงสามารถปรับตัวเข้ากับสภาพแวดล้อมต่างๆได้เป็นอย่างดี ทำให้สามารถอยู่ได้ในภูมิประเทศที่หลากหลายป่าสนหรือป่าเบญจพรรณพื้นที่แห้งแล้งในทะเลทรายและพื้นที่เกษตรกรรม"
+        x.style.display = "block";
+    }
+
+    function hideredfox() {
+        var x = document.getElementById("alertBoxredfox");
+        x.style.display = "none";
+    }
+
+
+    function moose() {
+        let traget = document.getElementById("moose");
+        traget.src = "https://github.com/fordntp/Climatopia/blob/main/Assets/image/moose-48460.png?raw=true";
+        traget.style.height = "11vw";
+        traget.style.width = "8vw";
+        traget.style.marginTop = "-0.75vw";
+        traget.style.marginLeft = "-2vw";
+        showmoose()
+    }
+
+    function showmoose() {
+        var x = document.getElementById("alertBoxmoose");
+        document.getElementById("textAlertmoose").innerHTML = "กวางมูส คือ กวางขนาดใหญ่ที่พบในป่าเขตหนาวและอบอุ่นซีกโลกเหนือ สายพันธุ์ที่ใหญ่ที่สุดคือสายพันธุ์อะแลสกา สามารถพบได้ในบริเวณป่าไทกา ในทวีปอเมริกาเหนือจะเรียกว่า มูส ในยูเรเชีย<br>จะเรียกว่า เอลก์ พบมากในบริเวณประเทศแคนาดา พวกมันเป็นสัตว์ที่ไม่รวมกันเป็นฝูงและมีขนาดใหญ่แถมยังมีเขาที่ค่อนข้างใหญ่ทำให้มันเคลื่อนที่ได้ค่อยข้างช้าทำให้พวกมันตกเป็นเหยื่อของนักล่าอย่างหมาป่าและมนุษย์ โดยปกติพวกมันจะเคลือนไหวช้าแต่ถ้าพวกมันโกรธหรือตกใจพวกมันก็สามารถวิ่งได้เร็วเช่นกันพวกมันจะผสมพันธุ์กันในช่วงฤดูใบไม้ร่วงซึ่งช่วงนั้นมันจะมีการต่อสู้อย่างดุเดือดของตัวผู้เพื่อแย่งตัวเมีย"
+        x.style.display = "block";
+    }
+
+    function hidemoose() {
+        var x = document.getElementById("alertBoxmoose");
+        x.style.display = "none";
+    }
+
+    function bobcat() {
+        let traget = document.getElementById("bobcat");
+        traget.src = "https://github.com/fordntp/Climatopia/blob/main/Assets/image/bobcat.png?raw=true";
+        traget.style.zIndex = 1;
+        traget.style.height = "8vw";
+        traget.style.width = "11vw";
+        traget.style.marginTop = "-1vw";
+        traget.style.marginLeft = "-54vw";
+        showbobcat()
+    }
+
+    function showbobcat() {
+        var x = document.getElementById("alertBoxbobcat");
+        document.getElementById("textAlertbobcat").innerHTML = "บอบแคต เป็นแมวที่มีรูปร่างโดดเด่นจดจำง่าย รูปร่างกำยำล่ำสัน ขนหนานุ่ม สีสันหลากหลาย ตั้งแต่เทาอ่อนจนถึงน้ำตาลแดง<br> มีลายบั้งและลายจุดสีเข้มกระจายอยู่ทั่วตัว ขนบริเวณสันหลังเข้มกว่าส่วนใต้ท้อง บางตัวอาจมีลายเฉพาะที่หน้าท้อง นอกจากนี้ก็ยังมีรายงานพบบอบแคตดำและบอบแคตเผือกด้วย บอบแคตดำพบได้เฉพาะในรัฐฟลอริดาเท่านั้น บอบแคตหากินโดยลำพัง รักสันโดษ ปรับตัวเข้ากับแหล่งที่อยู่อาศัยได้แทบทุกชนิดแม้แต่พื้นที่ ๆ มีการรบกวนจากมนุษย์ หากินได้ทั้งกลางวันและกลางคืน ส่วนใหญ่ออกหากินเวลารุ่งสางและพลบค่ำ เป็นสัตว์หากินบนพื้นดินเป็นส่วนใหญ่ แต่ก็ปีนต้นไม้ได้ดีและว่ายน้ำเก่งมาก"
+        x.style.display = "block";
+    }
+
+    function hidebobcat() {
+        var x = document.getElementById("alertBoxbobcat");
+        x.style.display = "none";
+    }
+
+
+   
+</script>
+
+
+
+</html>
