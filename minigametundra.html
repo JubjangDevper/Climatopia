@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <title>Tundra</title>
+</head>
+
+<body>
+    <div class="bearbox">
+        <img id="bear" src="Assets\ani1.png">
+        <img id="icebear" src="Assets/p1.png">
+        <img id="icebear2" src="Assets/p2.png">
+        <div id="butbear" onclick="bear()"></div>
+    </div>
+    <div class="card" id="alertBoxbear">
+        <button id="xAlert" onclick="hidebear()">Close</button>
+        <div class="container">
+            <p id="textAlertbear"></p>
+        </div>
+    </div>
+
+    <div class="foxbox">
+        <img id="fox" src="Assets\ani5.png">
+        <img id="tree" src="Assets/22251.png">
+        <img id="tree2" src="Assets/22251.png">
+        <div id="butfox" onclick="fox()"></div>
+    </div>
+    <div class="card" id="alertBoxfox">
+        <button id="xAlert" onclick="hidefox()">Close</button>
+        <div class="container">
+            <p id="textAlertfox"></p>
+        </div>
+    </div>
+
+    <div class="rabitbox">
+        <img id="rabit" src="Assets\ani4.png">
+        <img id="treerab" src="Assets/22251.png">
+        <img id="treerab2" src="Assets/22251.png">
+        <div id="butrabit" onclick="rabit()"></div>
+    </div>
+    <div class="card" id="alertBoxrabit">
+        <button id="xAlert" onclick="hiderabit()">Close</button>
+        <div class="container">
+            <p id="textAlertrabit"></p>
+        </div>
+    </div>
+
+    <div class="penguinbox">
+        <img id="penguin" src="Assets\ani6.png">
+        <img id="Rockpenguin" src="Assets/Asset 3.png">
+        <img id="Rockpenguin2" src="Assets/p.png">
+        <div id="butpenguin" onclick="penguin()"></div>
+    </div>
+    <div class="card" id="alertBoxpenguin">
+        <button id="xAlert" onclick="hidepenguin()">Close</button>
+        <div class="container">
+            <p id="textAlertpenguin"></p>
+        </div>
+    </div>
+
+    <div class="birdbox">
+        <img id="bird" src="Assets\ani3.png">
+        <div id="butbird" onclick="bird()"></div>
+    </div>
+    <div class="card" id="alertBoxbird">
+        <button id="xAlert" onclick="hidebird()">Close</button>
+        <div class="container">
+            <p id="textAlertbird"></p>
+        </div>
+    </div>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url("Assets/tundrabg.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+    }
+
+    /**/
+    #icebear {
+        width: 12vw;
+        height: 12vw;
+        margin-top: -4vw;
+        margin-left: 17vw;
+        position: absolute;
+    }
+    #icebear2 {
+        width: 9vw;
+        height: 11vw;
+        margin-top: -4vw;
+        margin-left: 13.5vw;
+        z-index: -1;
+        position: absolute;
+    }
+
+    #bear {
+        z-index: 0;
+        height: 9vw;
+        width: 9vw;
+        margin-top: -2vw;
+        margin-left: 20vw;
+        position: absolute;
+    }
+
+    #butbear {
+        z-index: 1;
+        height: 9vw;
+        width: 9vw;
+        margin-top: -2vw;
+        margin-left: 20vw;
+        position: absolute; 
+    }
+
+    #butbear:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxbear {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .bearbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    
+    /**/
+    #tree {
+        width: 20vw;
+        height: 30vw;
+        margin-top: -20vw;
+        margin-left: 33vw;
+        position: absolute;
+    }
+    #tree2 {
+        width: 15vw;
+        height: 23vw;
+        margin-top: -13vw;
+        margin-left: 45vw;
+        position: absolute;
+    }
+
+    #fox {
+        filter:saturate(0);
+        z-index: 0;
+        height: 9vw;
+        width: 9vw;
+        margin-top: -2vw;
+        margin-left: 52.5vw;
+        position: absolute;
+    }
+
+    #butfox {
+        z-index: 1;
+        height: 9vw;
+        width: 9vw;
+        margin-top: -2vw;
+        margin-left: 52.5vw;
+        position: absolute;
+    }
+
+    #butfox:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxfox {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 65vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .foxbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    /**/
+    #treerab {
+        width: 15vw;
+        height: 23vw;
+        margin-top: 8vw;
+        margin-left: 3vw;
+        position: absolute;
+    }
+    #treerab2 {
+        width: 10vw;
+        height: 18vw;
+        margin-top: 13vw;
+        margin-left: 0vw;
+        position: absolute;
+    }
+
+    #rabit {
+        filter:saturate(0);
+        z-index: 0;
+        height: 9vw;
+        width: 9vw;
+        margin-top: 23vw;
+        margin-left: -2vw;
+        position: absolute;
+    }
+
+    #butrabit {
+        z-index: 1;
+        height: 9vw;
+        width: 9vw;
+        margin-top: 23vw;
+        margin-left: -2vw;
+        position: absolute;
+    }
+
+    #butrabit:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxrabit {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 16vw;
+        margin-left: 3vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .rabitbox {
+        margin-left: 0%;
+        margin-top:12%;
+        position: absolute;
+    }
+
+    /**/
+    #Rockpenguin {
+    width: 17vw;
+    height: 9vw;
+    margin-top: 26vw;
+    margin-left: 3vw;
+    position: absolute;
+    }
+    #Rockpenguin2 {
+        width: 12vw;
+        height: 9vw;
+        margin-top: 23.5vw;
+        margin-left: 0vw;
+        position: absolute;
+    }
+
+    #penguin {
+        filter:saturate(0);
+        z-index: 0;
+        height: 9vw;
+        width: 9vw;
+        margin-top: 23vw;
+        margin-left: 4vw;
+        position: absolute;
+    }
+
+    #butpenguin {
+        z-index: 1;
+        height: 9vw;
+        width: 9vw;
+        margin-top: 23vw;
+        margin-left: 4vw;
+        position: absolute;
+    }
+
+    #butpenguin:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxpenguin {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 16vw;
+        margin-left: 20vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .penguinbox {
+        margin-left: 20%;
+        margin-top:12%;
+        position: absolute;
+    }
+
+    #bird {
+    filter:saturate(0);
+    z-index: -1;
+    height: 9vw;
+    width: 9vw;
+    margin-top: 23vw;
+    margin-left: -2vw;
+    position: absolute;
+}
+
+    #butbird {
+        z-index: 1;
+        height: 9vw;
+        width: 9vw;
+        margin-top: 23vw;
+        margin-left: -2vw;
+        position: absolute;
+    }
+
+    #butbird:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxbird {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 3vw;
+        margin-left: 67vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .birdbox {
+        margin-left: 79%;
+        margin-top:0%;
+        position: absolute;
+    }
+</style>
+<script>
+    function bear() {
+        let traget = document.getElementById("bear");
+        traget.style.zIndex = 1;
+        traget.style.height = "10vw";
+        traget.style.width = "10vw";
+
+        showbear()
+    }
+
+    function showbear() {
+        var x = document.getElementById("alertBoxbear");
+        document.getElementById("textAlertbear").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidebear() {
+        var x = document.getElementById("alertBoxbear");
+        x.style.display = "none";
+    }
+
+    //-----//
+    function fox() {
+        let traget = document.getElementById("fox");
+        traget.style.zIndex = 1;
+        traget.style.height = "10vw";
+        traget.style.width = "10vw";
+        traget.style.marginTop = "0vw";
+        showfox()
+    }
+
+    function showfox() {
+        var x = document.getElementById("alertBoxfox");
+        document.getElementById("textAlertfox").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidefox() {
+        var x = document.getElementById("alertBoxfox");
+        x.style.display = "none";
+    }
+
+    //-//
+    function rabit() {
+        let traget = document.getElementById("rabit");
+        traget.style.zIndex = 1;
+        traget.style.height = "10vw";
+        traget.style.width = "10vw";
+        traget.style.marginTop = "23.8vw";
+        traget.style.marginLeft = "1vw";
+        showrabit()
+    }
+
+    function showrabit() {
+        var x = document.getElementById("alertBoxrabit");
+        document.getElementById("textAlertrabit").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hiderabit() {
+        var x = document.getElementById("alertBoxrabit");
+        x.style.display = "none";
+    }
+
+    //--//
+    function penguin() {
+    let traget = document.getElementById("penguin");
+    traget.style.zIndex = 1;
+    traget.style.height = "9.5vw";
+    traget.style.width = "9.5vw";
+    traget.style.marginTop = "23vw";
+    traget.style.marginLeft = "8.5vw";
+    showpenguin()
+    }
+
+    function showpenguin() {
+        var x = document.getElementById("alertBoxpenguin");
+        document.getElementById("textAlertpenguin").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidepenguin() {
+        var x = document.getElementById("alertBoxpenguin");
+        x.style.display = "none";
+    }
+
+    //--//
+    function bird() {
+    let traget = document.getElementById("bird");
+    traget.style.zIndex = 1;
+    traget.style.height = "10vw";
+    traget.style.width = "10vw";
+    traget.style.marginTop = "22vw";
+    showbird()
+    }
+
+    function showbird() {
+        var x = document.getElementById("alertBoxbird");
+        document.getElementById("textAlertbird").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidebird() {
+        var x = document.getElementById("alertBoxbird");
+        x.style.display = "none";
+    }
+</script>
+
+
+
+</html>
