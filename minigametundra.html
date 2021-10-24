@@ -19,10 +19,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <title>Tundra</title>
 </head>
 
 <body>
+    <div class="bar">
+        <div class="row pl text-center">
+            <div class="col-8 p-1">
+                <h1 style="font-size:1.5vw;">
+                    Tundra Climate
+                </h1>
+                <div class="row">
+                    <div class="col-6 tem text-center">
+                        Temperate<br>
+                        <div class="row justify-content-center">
+                            <div class="col-4">5C<br>High</div>
+                            <div class="col-4">-50C<br>Low</div>
+                        </div>
+                    </div>
+                    <div class="col-6 rain text-center">
+                        Rainfall<br>
+                        >100<br>
+                        mm/year
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 p-1 vec">
+                <img class="p-1" src="assets/icon-snow.png" alt="">
+            </div>
+        </div>
+        <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+    </div>
     <div class="bearbox">
         <img id="bear" src="Assets\ani1.png">
         <img id="icebear" src="Assets/p1.png">
@@ -88,7 +117,7 @@
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
-
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
     body {
         width: 100%;
         height: 100%;
@@ -97,7 +126,37 @@
         background-repeat: no-repeat;
         font-family: 'Mitr', sans-serif;
     }
+    .bar>i{
+        font-size: 1.3vw;
+        position: absolute;
+        left: 100%;
+        top:45%;
+    }
 
+    .bar{
+        font-size: 1.2vw;
+        color: white;
+        font-family: ZCOOL KuaiLe;
+        border: white 0.5vw solid;
+        border-radius: 10vw;
+        width: 40vw;
+        height: 10vw;
+        background-color: #89DBF6;
+        position:absolute;
+        top: 2%;
+        left: -5%;
+    }
+    .col-8 > h1{
+        text-shadow: white 0.2vw 0.2vw ;
+        color: #e4a7f0;
+    }
+    .rain{
+        border-left: white 0.25vw solid;
+        border-right: white 0.25vw solid;
+    }
+    .vec >img{
+        width:8vw;
+    }
     /**/
     #icebear {
         width: 12vw;
@@ -303,6 +362,9 @@
         position: absolute;
     }
 
+    .pl{
+        padding-left: 6vw;
+    }
     /**/
     #Rockpenguin {
     width: 17vw;
