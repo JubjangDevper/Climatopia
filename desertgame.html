@@ -23,6 +23,11 @@
 </head>
 
 <body>
+    <a href="map2.html">
+        <img id="map" src="Assets/image/bmap.png">
+    </a>
+
+    <!--Skunk-->
     <div class="skunkBox">
         <img id="skunk" src="Assets\image\skunk.png">
         <img id="skunkRock" src="Assets\image\r6.png">
@@ -31,9 +36,51 @@
     <div class="card" id="skunkPopup">
         <button id="xAlert" onclick="hideSkunk()">Close</button>
         <div class="container">
+            <center><img id="popupImg" src="Assets/image/realSkunk.jpg"></center>
             <p id="skunkText"></p>
         </div>
     </div>
+
+    <!--Snake-->
+    <div class="snakeBox">
+        <img id="snake" src="Assets\image\snake.png">
+        <img id="snakeRock1" src="Assets\image\r9.png">
+        <img id="snakeRock2" src="Assets\image\r12.png">
+        <div id="snakeClick" onclick="snake()"></div>
+    </div>
+    <div class="card" id="snakePopup">
+        <button id="xAlert" onclick="hideSnake()">Close</button>
+        <div class="container">
+            <center><img id="popupImg" src="Assets/image/realSnake.jpg"></center>
+            <p id="snakeText"></p>
+        </div>
+    </div>
+
+    <!--Hyena and Camel-->
+    <div class="hcBox">
+        <img id="hyena" src="Assets\image\hyyena.png">
+        <img id="camel" src="Assets\image\camel.png">
+        <img id="tree1" src="Assets\image\tree.png">
+        <img id="tree2" src="Assets\image\tree.png">
+        <img id="tree3" src="Assets\image\tree.png">
+        <div id="hyenaClick" onclick="hyena()"></div>
+        <div id="camelClick" onclick="camel()"></div>
+    </div>
+    <div class="card" id="hyenaPopup">
+        <button id="xAlert" onclick="hideHyena()">Close</button>
+        <div class="container">
+            <center><img id="popupImg" src="Assets/image/realHyena.jpg"></center>
+            <p id="hyenaText"></p>
+        </div>
+    </div>
+    <div class="card" id="camelPopup">
+        <button id="xAlert" onclick="hideCamel()">Close</button>
+        <div class="container">
+            <center><img id="popupImg" src="Assets/image/realCamel.jpg"></center>
+            <p id="camelText"></p>
+        </div>
+    </div>
+
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
@@ -45,6 +92,46 @@
         background-size: cover;
         background-repeat: no-repeat;
         font-family: 'Mitr', sans-serif;
+    }
+
+    img {
+        transition: all .4s;
+    }
+
+    /* Popup Image */
+    #popupImg {
+        width: 20vw;
+        height: 15vw;
+        border: solid 5px #000000;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        border-radius: 1vw;
+    }
+
+    /* Map Button */
+    #map {
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position: fixed;
+        padding: 1vw;
+    }
+
+    #map:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    /* Alert Box */
+    #xAlert {
+        width: 100%;
+        border: 0;
+        background-color: #F39C12;
+    }
+
+    #xAlert:hover {
+        background-color: #f0ac3e;
     }
 
     /* Skunk */
@@ -82,24 +169,16 @@
         z-Index: 1;
         width: 30vw;
         height: 20vw;
-        border: solid 0.5vw#F39C12;
-        margin-top: 25vw;
-        margin-left: 25vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: 17.5vw;
+        margin-left: 5vw;
         display: none;
         position: absolute;
-
         font-size: 1vw;
-        overflow: scroll;
-    }
-
-    #xAlert {
-        width: 100%;
-        border: 0;
-        background-color: #F39C12;
-    }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
     }
 
     .skunkBox {
@@ -107,6 +186,175 @@
         margin-top: 40%;
         position: absolute;
     }
+
+    /* Snake */
+    #snakeRock1 {
+        width: 7vw;
+        height: 7vw;
+        margin-top: -0.5vw;
+        margin-left: -18.5vw;
+        position: absolute;
+    }
+
+    #snakeRock2 {
+        width: 6vw;
+        height: 7vw;
+        margin-top: -2vw;
+        margin-left: -22vw;
+        position: absolute;
+    }
+
+    #snake {
+        z-index: 0;
+        height: 6vw;
+        width: 6vw;
+        margin-top: -1.5vw;
+        margin-left: -18.5vw;
+        position: absolute;
+    }
+
+    #snakeClick {
+        z-index: 1;
+        height: 3vw;
+        width: 2vw;
+        position: absolute;
+        margin-top: -1.5vw;
+        margin-left: -17.5vw;
+    }
+
+    #snakeClick:hover {
+        cursor: pointer;
+    }
+
+    #snakePopup {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: 14.5vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+
+    .snakeBox {
+        margin-left: 60%;
+        margin-top: 37.5%;
+        position: absolute;
+    }
+
+    /* Hyena and Camel */
+    .hcBox {
+        margin-left: 100%;
+        margin-top: 35%;
+        position: absolute;
+    }
+
+    #tree1 {
+        width: 11vw;
+        height: 11vw;
+        margin-top: -4vw;
+        margin-left: -29vw;
+        position: absolute;
+    }
+
+    #tree2 {
+        width: 20vw;
+        height: 15vw;
+        margin-top: -8vw;
+        margin-left: -29vw;
+        position: absolute;
+    }
+
+    #tree3 {
+        width: 15vw;
+        height: 15vw;
+        margin-top: -5vw;
+        margin-left: -23vw;
+        position: absolute;
+    }
+
+    #hyena {
+        z-index: 0;
+        height: 5.5vw;
+        width: 5.5vw;
+        margin-top: 2vw;
+        margin-left: -27vw;
+        position: absolute;
+    }
+
+    #hyenaClick {
+        z-index: 1;
+        height: 3vw;
+        width: 2vw;
+        position: absolute;
+        margin-top: 3vw;
+        margin-left: -26vw;
+    }
+
+    #hyenaClick:hover {
+        cursor: pointer;
+    }
+
+    #hyenaPopup {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: 15vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+
+    #camel {
+        z-index: 0;
+        height: 9vw;
+        width: 6.5vw;
+        margin-top: 1.75vw;
+        margin-left: -18.25vw;
+        position: absolute;
+    }
+
+    #camelClick {
+        z-index: 1;
+        height: 5vw;
+        width: 2.5vw;
+        position: absolute;
+        margin-top: 2.5vw;
+        margin-left: -14.5vw;
+    }
+
+    #camelClick:hover {
+        cursor: pointer;
+    }
+
+    #camelPopup {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: 17vw;
+        margin-left: 67.5vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+    }
+
 </style>
 <script>
     // Skunk
@@ -123,12 +371,84 @@
 
     function showSkunk() {
         var x = document.getElementById("skunkPopup");
-        document.getElementById("skunkText").innerHTML = "สกังก์"
+        document.getElementById("skunkText").innerHTML = "สกังก์ (อังกฤษ: skunk) เป็นสัตว์เลี้ยงลูกด้วยนมกินเนื้อ ที่อยู่ในวงศ์ Mephitidae\
+        สกังก์เดิมเคยถูกจัดให้อยู่ในวงศ์เดียวกับวงศ์เพียงพอน (Mustelidae) ซึ่งเป็นวงศ์ของสัตว์กินเนื้อขนาดเล็กจำนวนมาก เช่น วีเซล, มาร์เทิน, หมาหริ่ง, หมูหริ่ง, แบดเจอร์ ซึ่งสกังก์เคยถูกเป็นวงศ์ย่อยใช้ชื่อว่า Mephitinae\
+        แต่ปัจจุบันได้มีการศึกษาทางพันธุศาสตร์พบว่าสกังก์ไม่ได้มีส่วนเกี่ยวข้องกับวงศ์เพียงพอน จึงแยกออกมาเป็นวงศ์ต่างหาก"
         x.style.display = "block";
     }
 
     function hideSkunk() {
         var x = document.getElementById("skunkPopup");
+        x.style.display = "none";
+    }
+
+    // Snake
+    function snake() {
+        let traget = document.getElementById("snake");
+        traget.style.zIndex = 1;
+        traget.style.height = "7vw";
+        traget.style.width = "7vw";
+        traget.style.marginTop = "-1.5vw";
+        traget.style.marginLeft = "-19vw";
+
+        showSnake()
+    }
+
+    function showSnake() {
+        var x = document.getElementById("snakePopup");
+        document.getElementById("snakeText").innerHTML = "งู เป็นสัตว์เลื้อยคลานอันดับหนึ่ง ไม่มีขา ไม่มีเปลือกตา มีเกล็ดปกคลุมผิวหนังทั่วทั้งลำตัว ลักษณะลำตัวยาวซึ่งโดยขนาดของความยาวนั้น จะขึ้นอยู่กับชนิดของงู ปราดเปรียวและว่องไวในการเคลื่อนที่ มีลิ้นสองแฉกเพื่อใช้สำหรับรับความรู้สึกทางกลิ่น จัดอยู่ในชั้น Reptilia, ตระกูล Squamata, ตระกูลย่อย Serpentes โดยทั่วไปแล้วงูจะกลัวและไม่กัด นอกเสียจากถูกรบกวนหรือบุกรุก จะเลื้อยหลบหนีเมื่อมีสิ่งใดเข้ามาใกล้บริเวณที่อยู่ ออกล่าเหยื่อเมื่อรู้สึกหิว โดยกินสัตว์เลี้ยงลูกด้วยนมขนาดเล็กเป็นอาหาร ยกเว้นงูบางชนิดที่กินงูด้วยกันเอง เช่น งูจงอาง สามารถมองเห็นได้ดีในที่มืดและในเวลากลางคืน"
+        x.style.display = "block";
+    }
+
+    function hideSnake() {
+        var x = document.getElementById("snakePopup");
+        x.style.display = "none";
+    }
+
+    // Hyena
+    function hyena() {
+        let traget = document.getElementById("hyena");
+        traget.style.zIndex = 1;
+        traget.style.height = "8vw";
+        traget.style.width = "8vw";
+        traget.style.marginTop = "1vw";
+        traget.style.marginLeft = "-29vw";
+
+        showHyena()
+    }
+
+    function showHyena() {
+        var x = document.getElementById("hyenaPopup");
+        document.getElementById("hyenaText").innerHTML = "ไฮยีนา (อังกฤษ: hyena; มาจากคำภาษากรีกโบราณว่า ὕαινα ออกเสียงว่า /ฮือไอนา/ หรือ /ฮือแอนา/) เป็นสัตว์เลี้ยงลูกด้วยนมในอันดับสัตว์กินเนื้อวงศ์หนึ่ง โดยใช้ชื่อวงศ์ว่า Hyaenidae\
+ไฮยีนา มีลักษณะและรูปร่างโดยรวมคล้ายกับสุนัขหรือหมาป่า ซึ่งเป็นสัตว์กินเนื้อที่อยู่ในวงศ์ Canidae แต่ไฮยีนาก็ไม่ใช่สุนัข หากแต่เป็นสัตว์ที่อยู่ในวงศ์ของตนเองต่างหาก โดยอยู่ในอันดับย่อย Feliformia ซึ่งใกล้ชิดกับวงศ์เสือและแมวและวงศ์ชะมดและอีเห็น มากกว่า"
+        x.style.display = "block";
+    }
+
+    function hideHyena() {
+        var x = document.getElementById("hyenaPopup");
+        x.style.display = "none";
+    }
+
+    // Camel
+    function camel() {
+        let traget = document.getElementById("camel");
+        traget.style.zIndex = 1;
+        traget.style.height = "10vw";
+        traget.style.width = "9vw";
+        traget.style.marginTop = "2vw";
+        traget.style.marginLeft = "-19.5vw";
+
+        showCamel()
+    }
+
+    function showCamel() {
+        var x = document.getElementById("camelPopup");
+        document.getElementById("camelText").innerHTML = "อูฐ เป็นสัตว์เลี้ยงลูกด้วยนมที่อยู่ในสกุล Camelus จัดอยู่ในวงศ์ Camelidae เป็นสัตว์ที่มีความอดทนสูง สามารถอาศัยอยู่ได้โดยไม่ต้องกินอาหารหรือน้ำเลย 2 สัปดาห์ เพราะมีไขมันสะสมไว้ในหนอกและร่างกายเก็บรักษาน้ำได้เป็นอย่างดี จึงสามารถอยู่ในที่ทุรกันดารเช่นทะเลทรายได้เป็นอย่างดี กินอาหารประเภทใบไม้ในทะเลทราย ตัวโตเต็มที่มีความสูงถึงบ่าประมาณ 1.85 เมตร และหนอกสูงอีก 75 เซนติเมตร ความสามารถ วิ่งได้เร็ว 65 กิโลเมตรต่อชั่วโมง และเดินด้วยความเร็วคงที่ประมาณ 40 กิโลเมตรต่อชั่วโมง แบกน้ำหนักได้ 150-200 กิโลกรัม อุณหภูมิร่างกายเปลี่ยนแปลงได้จาก 35 องศาเซลเซียสในตอนกลางคืนมาเป็น 41 องศาเซลเซียสในตอนกลางวัน ปัจจุบันสัตว์ในตระกูลอูฐได้ถูกนำมาเลี้ยงเป็นสัตว์เศรษฐกิจในบางประเทศ แต่ใช้ประโยชน์ในด้านต่าง ๆ ได้แก่ เป็นอาหาร ตัดขน รีดนม และใช้เนื้อเพื่อบริโภค"
+        x.style.display = "block";
+    }
+
+    function hideCamel() {
+        var x = document.getElementById("camelPopup");
         x.style.display = "none";
     }
 </script>
