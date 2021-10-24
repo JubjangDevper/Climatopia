@@ -79,7 +79,7 @@ function generateQuestions(index) {
     choice4.innerHTML = `${question.answer4}`
 }
 
-// Go to next question
+// Go to the next question
 function loadNextQuestion() {
     // Go to map if it's the last question
     if(currentQuestion == totalQuestions - 1) {
@@ -90,8 +90,10 @@ function loadNextQuestion() {
     generateQuestions(currentQuestion);
 }
 
-// Execute functions
+// Execute the main function
 generateQuestions(currentQuestion);
+
+// Load the next question when a button is clicked
 button1.addEventListener('click', loadNextQuestion);
 button2.addEventListener('click', loadNextQuestion);
 button3.addEventListener('click', loadNextQuestion);
