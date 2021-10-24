@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="bar">
+    <div id="bar" class="bar">
         <div class="row pl text-center">
             <div class="col-8 p-1">
                 <h1 style="font-size:1.5vw;">
@@ -50,7 +50,7 @@
                 <img class="p-1" src="assets/icon-snow.png" alt="">
             </div>
         </div>
-        <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+        <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
     <div class="bearbox">
         <img id="bear" src="Assets\ani1.png">
@@ -132,7 +132,9 @@
         left: 100%;
         top:45%;
     }
-
+    i{
+        cursor: pointer;
+    }
     .bar{
         font-size: 1.2vw;
         color: white;
@@ -590,6 +592,22 @@
     function hidebird() {
         var x = document.getElementById("alertBoxbird");
         x.style.display = "none";
+    }
+    //--//
+    function hideBar() {
+        var x = document.getElementById("bar");
+    if (x.style.left === "-5vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    if (x.style.left === "-31vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    else {
+        x.style.left = "-31vw";
+        x.style.transition = "left 1s";
+    }
     }
 </script>
 
