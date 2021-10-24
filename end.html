@@ -22,11 +22,25 @@
             <textarea class="form-control feeling" id="q3" rows="5" type="text" maxlength="255" placeholder="บอกความรู้สึกของคุณ..."></textarea>
             <button type="button" id="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="submit()">ส่งข้อความ</button>
             
-            <div class="q4"><iframe width="1280" height="545" src="https://youtu.be/BEEuEa0QQVQ?autoplay=1" allow='autoplay' frameborder="0" allowfullscreen></iframe></div>
-            <div id="q5">ภูมิอากาศแต่ละที่ก็มีความสวยงามที่ต่างๆกันไป</div>
-
+            <div class="q4"><iframe width="1280" height="545" src="https://www.youtube.com/embed/videoseries?controls=0&autoplay=1&loop=1&mute=1&amp;list=PLd0ZPrO-AKCwxYYYnq_75XMpXBub9wn6W" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="q4" style="width: 1280px; height: 545px;" id="invisible"></div>
+            <h1 class="q5">ภูมิอากาศแต่ละที่ก็มีความสวยงามที่แตกต่างกันไป</h1>
+            <h1 class="q6">ทั้งสัตว์ต่าง ๆ พืชพรรณนานาชนิด</h1>
+            <h1 class="q7">แต่.... </h1>
+            <h1 class="q8">ปัจจุบันภูมิอากาศเหล่านี้กำลังแปรปรวนอย่างหนัก<br>เป็นผลมาจากภาวะโลกรวน </h1>
+            <h1 class="q9">ซึ่งมีต้นเหตุที่สำคัญคือ</h1>
+            <h1 class="q10">“มนุษย์”</h1>
+            <h1 class="q11">การใช้ชีวิตของมนุษย์<br>ส่งผลกระทบต่างๆต่อโลกของเรามาก</h1>
+            <h1 class="q12">สิ่งเหล่านี้ส่งผลให้ภูมิอากาศเสียสมดุลและแปรปรวน<br>จนเกิดภาวะโลกรวน</h1>
+            <h1 class="q13">ในเมื่อปัญญาพาไปพบสิ่งมีชีวิต<br>ฉะนั้นปัญญาต้องพาไปสู่การรักษา</h1>
+            <h1 class="q14">เรามาช่วยหยุดภาวะโลกรวนกันเถอะ<h1 id="name"></h1></h1>
+            <div class="q15">
+            <h1>เพียงแค่คุณช่วยแชร์เว็บนี้ไปให้ผู้อื่น<br>เพื่อให้พวกเค้าตระหนักถึงปัญหาที่กำลังเกิดขึ้นอยู่ตอนนี้</h1>
+            <button type="button" id="button_share" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="">แชร์เว็บนี้เลย</button></div>
+            
         </div>
-        <button id="skip" type="button" class="skip">Skip >></button>
+        <button id="skip" onclick="skipclick()" type="button" class="skip">Exit >></button>
         <button id="mute" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
     </body>
 </html>
@@ -37,14 +51,9 @@
       // Store
       // Retrieve
       document.getElementById("name").innerHTML = localStorage.getItem("username");
-      document.getElementById("name2").innerHTML = localStorage.getItem("username");
     } else {
       document.getElementById("name").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
-    //skip
-    $(".skip").click(function skip(){
-    $(".aurora").addClass("skip-animation");
-    });
   
     //mute
     var clicks = 0;
@@ -62,15 +71,30 @@
     }
   }
 
+
     //play animation
     function submit(){
         document.querySelector('#q3').classList.remove('feeling');
-        document.querySelector('#q3').classList.add('feeling1');
+        document.querySelector('#q3').classList.add('feeling1', 1000);
+        
         document.querySelector('#button').classList.remove('btn');
-        document.querySelector('#button').classList.add('btn1');
+        document.querySelector('#button').classList.add('btn1', 1000);
+        
+
 
         document.querySelector('.q4').classList.add('vdo');
-
+        document.querySelector('.q5').classList.add('vdo1');
+        document.querySelector('.q6').classList.add('vdo2');
+        document.querySelector('.q7').classList.add('vdo3');
+        document.querySelector('.q8').classList.add('vdo4');
+        document.querySelector('.q9').classList.add('vdo5');
+        document.querySelector('.q10').classList.add('vdo6');
+        document.querySelector('.q11').classList.add('vdo7');
+        document.querySelector('.q12').classList.add('vdo8');
+        document.querySelector('.q13').classList.add('vdo9');
+        document.querySelector('.q14').classList.add('vdo10');
+        document.querySelector('#name').classList.add('vdo10');
+        document.querySelector('.q15').classList.add('vdo11');
     }
 
     </script>
@@ -106,9 +130,8 @@
     animation:opa 5s linear ;
     }
     #name{
-    left: 54%;
     opacity:0%;
-    animation:opa 5s linear ;
+    top: 58vh;
     }
     #q2{
         opacity:0%;
@@ -119,6 +142,7 @@
         position: absolute;
         width: 500px;
         top: 40vh;
+        z-index: 5;
     }
     .q4{
         opacity: 0%;
@@ -126,6 +150,85 @@
         justify-content: center;
         top:12vh;
     }
+    .q5{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q6{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q7{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q8{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q9{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q10{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q11{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q12{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q13{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+    .q14{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+        top:50vh;
+    }
+    .q15{
+        opacity:0%;
+        position: absolute;
+        z-index: 3;
+        width:75%;
+        text-shadow: rgb(58, 58, 58);
+    }
+
     #skip{
         opacity: 80%;
         font-size: 1.2rem;
@@ -137,9 +240,43 @@
         float: right;
     }
     .vdo{
-        
-        animation:opa 5s 2s linear,inputani 5s 4.5s infinite ;
+        animation:opa 5s 2s linear,inputani 10s 4.5s infinite ;
     }
+    .vdo1{
+        animation:opa 10s 10s linear ;
+    }
+    .vdo2{
+        animation:opa 10s 20s linear ;
+    }
+    .vdo3{
+        animation:opa 10s 30s linear ;
+    }
+    .vdo4{
+        animation:opa 10s 40s linear ;
+    }
+    .vdo5{
+        animation:opa 10s 50s linear ;
+    }
+    .vdo6{
+        animation:opa 10s 60s linear ;
+    }
+    .vdo7{
+        animation:opa 10s 70s linear ;
+    }
+    .vdo8{
+        animation:opa 10s 80s linear ;
+    }
+    .vdo9{
+        animation:opa 10s 90s linear ;
+    }
+    .vdo10{
+        animation:opa 10s 100s linear ;
+    }
+    .vdo11{
+        animation:opa 10s 110s linear,inputani 10s 115s infinite ;
+    }
+
+ 
     #mute{
     opacity: 80%;
     font-size: 1.2rem;
@@ -206,7 +343,7 @@
 
     .feeling{
         opacity:0%;
-        animation:opa 5s 10s linear,inputani 10s 12.5s infinite ;
+        animation:opa 5s 10s linear,inputani 10s 11.5s infinite ;
     }
     .feeling1{
         opacity:0%;
@@ -221,7 +358,7 @@
         box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
         position: absolute;
         top:65vh;
-        z-index: 1;
+        z-index: 5;
     }
     .btn1{
         font-size: 1.3rem;
@@ -231,6 +368,11 @@
         position: absolute;
         top:65vh;
         pointer-events: none;
+        z-index: 5;
+    }
+
+    #button_share{
+        left:30vw;
     }
 
     @-moz-keyframes hue {
@@ -426,19 +568,6 @@
             opacity: 100%;
         }
     }
-
-    .skip-animation #q1{ 
-        animation-duration: 1ms;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-    .skip-animation #q2{ 
-        animation-duration: 1ms;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-    .skip-animation #q3{ 
-        animation-play-state: paused;
-    }
+   
 
 </style>
