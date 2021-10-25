@@ -25,6 +25,11 @@
 </head>
 
 <body>
+    <div>
+        <a href="map2.html">
+            <img id="bmap" src="Assets/image/bmap.png">
+        </a>
+    </div>
     <div id="bar" class="bar">
         <div class="row pl text-center">
             <div class="col-8 p-1">
@@ -62,6 +67,7 @@
         <button id="xAlert" onclick="hidebear()">Close</button>
         <div class="container">
             <center><img  class="p-2" src="Assets/img-icebear.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
             <p id="textAlertbear"></p>
         </div>
     </div>
@@ -74,8 +80,9 @@
     </div>
     <div class="card" id="alertBoxfox">
         <button id="xAlert" onclick="hidefox()">Close</button>
-        <div class="container">
+        <div class="container p-2">
             <center><img  class="p-2" src="Assets/img-icefox.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">จิ้งจอกอาร์กติก</h5>
             <p id="textAlertfox"></p>
         </div>
     </div>
@@ -88,8 +95,9 @@
     </div>
     <div class="card" id="alertBoxrabit">
         <button id="xAlert" onclick="hiderabit()">Close</button>
-        <div class="container">
+        <div class="container"></div>
             <center><img  class="p-2" src="Assets/img-rabbit.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">กระต่ายอาร์กติก</h5>
             <p id="textAlertrabit"></p>
         </div>
     </div>
@@ -104,6 +112,7 @@
         <button id="xAlert" onclick="hidepenguin()">Close</button>
         <div class="container">
             <center><img  class="p-2" src="Assets/img-pen.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">เพนกวินจักรพรรดิ</h5>
             <p id="textAlertpenguin"></p>
         </div>
     </div>
@@ -116,6 +125,7 @@
         <button id="xAlert" onclick="hidebird()">Close</button>
         <div class="container">
             <center><img  class="p-2" src="Assets/img-bird.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">นกเค้่าแมวหิมะ</h5>
             <p id="textAlertbird"></p>
         </div>
     </div>
@@ -131,6 +141,7 @@
         background-repeat: no-repeat;
         font-family: 'Mitr', sans-serif;
     }
+    /*Bar*/
     .bar>i{
         font-size: 1.3vw;
         position: absolute;
@@ -163,6 +174,19 @@
     }
     .vec >img{
         width:8vw;
+    }
+
+    /**/
+    #bmap{
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position:fixed;
+        padding: 1vw;
+    }
+    img {
+        transition: all .4s;
     }
     /**/
     #icebear {
@@ -318,7 +342,6 @@
     }
 
     #rabit {
-        filter:saturate(0);
         z-index: 0;
         height: 9vw;
         width: 9vw;
@@ -389,7 +412,6 @@
     }
 
     #penguin {
-        filter:saturate(0);
         z-index: 0;
         height: 9vw;
         width: 9vw;
@@ -441,7 +463,6 @@
     }
 
     #bird {
-    filter:saturate(0);
     z-index: -1;
     height: 9vw;
     width: 9vw;
@@ -569,7 +590,7 @@
 
     function showpenguin() {
         var x = document.getElementById("alertBoxpenguin");
-        document.getElementById("textAlertpenguin").innerHTML = "เพนกวินจักรพรรดิ เป็นเพนกวินที่มีขนาดใหญ่ที่สุดในบรรดาสปีชีส์ต่างๆ ที่มีถิ่นฐานอยู่ในทวีปแอนตาร์กติกา ตัวผู้และตัวเมียมีสีขนและขนาดใกล้เคียงกัน สูงราว 122 ซม. ขนด้านหลังสีดำตัดกันกับขนด้านหน้าตรงบริเวณท้องที่มีสีขาว อกตอนบนสีเหลืองอ่อนและค่อยๆ ไล่ลงมาจนเป็นสีขาว และบริเวณหูเป็นสีเหลืองจัด ดือนมกราคม ค.ศ. 2009 ประเมินว่าเพนกวินจักรพรรดิอาจจะถึงจุดที่เสี่ยงต่อการสูญพันธ์ภายในระหว่าง ค.ศ. 2100 ถึง ค.ศ. 2109 เนื่องมาจากสภาวะการเปลี่ยนแปลงของสภาวะอากาศ การใช้แบบจำลองทางคณิตศาสตร์ในการทำนายการสูญเสียของน้ำแข็งจากภาวะโลกร้อนที่มีผลต่อกลุ่มสืบพันธุ์ใหญ่ๆ ของเพนกวินจักรพรรดิดินแดนอเดลีในทวีปแอนตาร์กติกา ทำนายว่าประชากรของเพนกวินจะลดลงราว 87% ภายในปลายศตวรรษจากจำนวน 3,000 คู่ที่ทำการสืบพันธุ์อยู่ในปัจจุบันลงไปเหลือเพียง 400 คู่ แบบจำลองของการลดจำนวนลงนี้อาจจะนำไปใช้ในการทำนายการลดจำนวนของสปีชีส์ทั้งหมดจากจำนวนทั้งหมดราว 200,000 คู่ในปัจจุบัน"
+        document.getElementById("textAlertpenguin").innerHTML = "เพนกวินจักรพรรดิ เป็นเพนกวินที่มีขนาดใหญ่ที่สุดในบรรดาสปีชีส์ต่างๆ ที่มีถิ่นฐานอยู่ในทวีปแอนตาร์กติกา ตัวผู้และตัวเมียมีสีขนและขนาดใกล้เคียงกัน สูงราว 122 ซม. ขนด้านหลังสีดำตัดกันกับขนด้านหน้าตรงบริเวณท้องที่มีสีขาว อกตอนบนสีเหลืองอ่อนและค่อยๆ ไล่ลงมาจนเป็นสีขาว และบริเวณหูเป็นสีเหลืองจัด มีการประเมินว่าเพนกวินจักรพรรดิอาจจะถึงจุดที่เสี่ยงต่อการสูญพันธ์ภายในระหว่าง ค.ศ. 2100 ถึง ค.ศ. 2109 เนื่องมาจากสภาวะการเปลี่ยนแปลงของสภาวะอากาศ การใช้แบบจำลองทางคณิตศาสตร์ในการทำนายการสูญเสียของน้ำแข็งจากภาวะโลกร้อนที่มีผลต่อกลุ่มสืบพันธุ์ใหญ่ๆ ของเพนกวินจักรพรรดิดินแดนอเดลีในทวีปแอนตาร์กติกา ทำนายว่าประชากรของเพนกวินจะลดลงราว 87% ภายในปลายศตวรรษจากจำนวน 3,000 คู่ที่ทำการสืบพันธุ์อยู่ในปัจจุบันลงไปเหลือเพียง 400 คู่ แบบจำลองของการลดจำนวนลงนี้อาจจะนำไปใช้ในการทำนายการลดจำนวนของสปีชีส์ทั้งหมดจากจำนวนทั้งหมดราว 200,000 คู่ในปัจจุบัน"
         x.style.display = "block";
     }
 
