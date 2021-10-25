@@ -22,7 +22,7 @@
             <textarea class="form-control feeling" id="q3" rows="5" type="text" maxlength="255" placeholder="บอกความรู้สึกของคุณ..."></textarea>
             <button type="button" id="button" class="btn btn-light pl-5 pr-5 pt-2 pb-2" onclick="submit()">ส่งข้อความ</button>
             
-            <div class="q4"><iframe width="1280" height="545" src="https://www.youtube.com/embed/videoseries?controls=0&autoplay=1&loop=1&mute=1&amp;list=PLd0ZPrO-AKCwxYYYnq_75XMpXBub9wn6W" 
+            <div class="q4"><iframe width="1280" height="545" src="https://www.youtube.com/embed/videoseries?controls=0&autoplay=1&loop=1&mute=1&amp;list=PLHq-Ay0TJDpMY614FVOWtso8Y2uUJ9TnX" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="q4" style="width: 1280px; height: 545px;" id="invisible"></div>
             <h1 class="q5">ภูมิอากาศแต่ละที่ก็มีความสวยงามที่แตกต่างกันไป</h1>
@@ -30,10 +30,10 @@
             <h1 class="q7">แต่.... </h1>
             <h1 class="q8">ปัจจุบันภูมิอากาศเหล่านี้กำลังแปรปรวนอย่างหนัก<br>เป็นผลมาจากภาวะโลกรวน </h1>
             <h1 class="q9">ซึ่งมีต้นเหตุที่สำคัญคือ</h1>
-            <h1 class="q10">“มนุษย์”</h1>
-            <h1 class="q11">การใช้ชีวิตของมนุษย์<br>ส่งผลกระทบต่างๆต่อโลกของเรามาก</h1>
-            <h1 class="q12">สิ่งเหล่านี้ส่งผลให้ภูมิอากาศเสียสมดุลและแปรปรวน<br>จนเกิดภาวะโลกรวน</h1>
-            <h1 class="q13">ในเมื่อปัญญาพาไปพบสิ่งมีชีวิต<br>ฉะนั้นปัญญาต้องพาไปสู่การรักษา</h1>
+            <h1 class="q10" style="font-size: 8vw;">“มนุษย์”</h1>
+            <h1 class="q11">การใช้ชีวิตของมนุษย์ในปัจจุบัน<br>ทำให้เกิดภาวะโลกรวน</h1>
+            <h1 class="q12">ส่งผลต่อสิ่งชีวิตอื่น ๆ บนโลกใบนี้เป็นวงจรที่ไม่สิ้นสุด</h1>
+            <h1 class="q13" style="font-size: 4vw;">ในเมื่อปัญญาพาเราไปพบสิ่งมีชีวิต<br>ฉะนั้นปัญญาต้องพาไปสู่การรักษา</h1>
             <h1 class="q14">เรามาช่วยหยุดภาวะโลกรวนกันเถอะ<h1 id="name"></h1></h1>
             <div class="q15">
             <h1>เพียงแค่คุณช่วยแชร์เว็บนี้ไปให้ผู้อื่น<br>เพื่อให้พวกเค้าตระหนักถึงปัญหาที่กำลังเกิดขึ้นอยู่ตอนนี้</h1>
@@ -114,6 +114,7 @@
      align-items: center;
    }
    h1{
+    font-size: 3vw;
     text-shadow: 2px 2px 4px #252525;
     font-weight: bold;
     position: absolute;
@@ -134,10 +135,12 @@
     top: 58vh;
     }
     #q2{
-        opacity:0%;
+    opacity:0%;
     animation:opa 5s 5s linear ;
     }
-
+    iframe{
+        scale: 2;
+    }
     #q3{
         position: absolute;
         width: 500px;
@@ -243,37 +246,37 @@
         animation:opa 5s 2s linear,inputani 10s 4.5s infinite ;
     }
     .vdo1{
-        animation:opa 10s 10s linear ;
+        animation:opa 5s 2s linear ;
     }
     .vdo2{
-        animation:opa 10s 20s linear ;
+        animation:opa 5s 7s linear ;
     }
     .vdo3{
-        animation:opa 10s 30s linear ;
+        animation:opa 5s 12s linear ;
     }
     .vdo4{
-        animation:opa 10s 40s linear ;
+        animation:opa 5s 17s linear ;
     }
     .vdo5{
-        animation:opa 10s 50s linear ;
+        animation:opa 5s 22s linear ;
     }
     .vdo6{
-        animation:opa 10s 60s linear ;
+        animation:opa 5s 27s linear ;
     }
     .vdo7{
-        animation:opa 10s 70s linear ;
+        animation:opa 5s 32s linear ;
     }
     .vdo8{
-        animation:opa 10s 80s linear ;
+        animation:opa 5s 37s linear ;
     }
     .vdo9{
-        animation:opa 10s 90s linear ;
+        animation:opa 5s 42s linear ;
     }
     .vdo10{
-        animation:opa 10s 100s linear ;
+        animation:opa 5s 47s linear ;
     }
     .vdo11{
-        animation:opa 10s 110s linear,inputani 10s 115s infinite ;
+        animation:opa 5s 52s linear,inputani 10s 52s infinite ;
     }
 
  
