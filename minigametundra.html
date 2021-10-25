@@ -29,6 +29,7 @@
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
+        <div id="countshow" >njuyhtyhtyh</div>
     </div>
     <div id="bar" class="bar">
         <div class="row pl text-center">
@@ -57,7 +58,7 @@
         </div>
         <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
-    <div class="bearbox">
+    <div id="animal" class="bearbox" onclick="clickcount()">
         <img id="bear" src="Assets\ani1.png">
         <img id="icebear" src="Assets/p1.png">
         <img id="icebear2" src="Assets/p2.png">
@@ -72,7 +73,7 @@
         </div>
     </div>
 
-    <div class="foxbox">
+    <div id="animal" class="foxbox" onclick="clickcount()">
         <img id="fox" src="Assets\ani5.png">
         <img id="tree" src="Assets/22251.png">
         <img id="tree2" src="Assets/22251.png">
@@ -87,7 +88,7 @@
         </div>
     </div>
 
-    <div class="rabitbox">
+    <div id="animal" class="rabitbox" onclick="clickcount()">
         <img id="rabit" src="Assets\ani4.png">
         <img id="treerab" src="Assets/22251.png">
         <img id="treerab2" src="Assets/22251.png">
@@ -102,7 +103,7 @@
         </div>
     </div>
 
-    <div class="penguinbox">
+    <div id="animal" class="penguinbox" onclick="clickcount()">
         <img id="penguin" src="Assets\ani6.png">
         <img id="Rockpenguin" src="Assets/Asset 3.png">
         <img id="Rockpenguin2" src="Assets/p.png">
@@ -117,7 +118,7 @@
         </div>
     </div>
 
-    <div class="birdbox">
+    <div id="animal" class="birdbox" onclick="clickcount()">
         <img id="bird" src="Assets\ani3.png">
         <div id="butbird" onclick="bird()"></div>
     </div>
@@ -129,6 +130,14 @@
             <p class="p-3" id="textAlertbird"></p>
         </div>
     </div>
+    
+        <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+            <h1>Complete</h1>
+            <div>
+                <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html">ไปที่บทสรุป</a></button>
+            </div>
+            
+        </div>
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
@@ -245,6 +254,7 @@
     }
 
     #xAlert {
+        color: white;
         width: 100%;
         border: 0;
         background-color: #3c2d80;
@@ -314,6 +324,7 @@
     }
 
     #xAlert {
+        color: white;
         width: 100%;
         border: 0;
         background-color: #3c2d80;
@@ -381,6 +392,7 @@
     }
 
     #xAlert {
+        color: white;
         width: 100%;
         border: 0;
         background-color: #3c2d80;
@@ -451,6 +463,7 @@
     }
 
     #xAlert {
+        color: white;
         width: 100%;
         border: 0;
         background-color: #3c2d80;
@@ -502,6 +515,7 @@
     }
 
     #xAlert {
+        color: white;
         width: 100%;
         border: 0;
         background-color: #3c2d80;
@@ -516,6 +530,33 @@
         margin-top:0%;
         position: absolute;
     }
+    #countshow{
+        position: absolute;
+        left: 50vw;
+    }
+    #complete{
+      
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #9f34b4;
+        opacity: 0%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+    }
+    #complete > h1 {
+        font-size: 4rem;
+    }
+    .btn-pur{
+        margin: 2vw;
+  color:white;
+background: #691f94;
+box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+border-radius: 45px;
+}
+button > a{
+    color: white;
+    text-decoration: none;
+}
 </style>
 <script>
     function bear() {
@@ -639,6 +680,17 @@
         x.style.transition = "left 1s";
     }
     }
+    //-//
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks;
+    if (clicks === 5){
+        i.style.opacity = "100%";
+    }
+  }
 </script>
 
 
