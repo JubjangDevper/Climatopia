@@ -29,7 +29,7 @@
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
-        <div id="countshow" >njuyhtyhtyh</div>
+        <div id="countshow" >0/5</div>
     </div>
     <div id="bar" class="bar">
         <div class="row pl text-center">
@@ -531,8 +531,13 @@
         position: absolute;
     }
     #countshow{
-        position: absolute;
-        left: 50vw;
+        height: 8vw;
+        width: 8vw;
+        top: 3vw;
+        left: 85vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 1.8rem;
     }
     #complete{
       
@@ -686,7 +691,7 @@ button > a{
     function clickcount(){
       clicks += 1;
         var x = document.getElementById("animal");
-        document.getElementById("countshow").innerHTML = clicks;
+        document.getElementById("countshow").innerHTML = clicks + "/5";
     if (clicks === 5){
         i.style.opacity = "100%";
     }
