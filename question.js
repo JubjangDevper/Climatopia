@@ -69,6 +69,40 @@ const choice2 = document.querySelector('#button2');
 const choice3 = document.querySelector('#button3');
 const choice4 = document.querySelector('#button4');
 
+// Biome Score
+let tund = 0;
+let des = 0;
+let sav = 0;
+let trf = 0;
+let cf = 0;
+let tdf = 0;
+let gl = 0;
+
+// Go to the biome depending on the score
+function goToBiome() {
+    if (tund >= des) {
+        document.location = 'minigametundra.html';
+    }
+    else if (des >= sav) {
+        document.location = 'desertgame.html';
+    }
+    else if (sav >= trf) {
+        document.location = 'minigamesavanna.html';
+    }
+    else if (trf >= cf) {
+        document.location = 'minigametrf.html';
+    }
+    else if (cf >= tdf) {
+        document.location = 'minigamecf.html';
+    }
+    else if (tdf >= gl) {
+        document.location = 'tdfgame.html';
+    }
+    else if (gl >= tund) {
+        document.location = 'minigamegrassland.html';
+    }
+}
+
 // Generate Question and Answers
 function generateQuestions(index) {
     const question = questions[index];
@@ -79,22 +113,66 @@ function generateQuestions(index) {
     choice4.innerHTML = `${question.answer4}`
 }
 
-// Go to the next question
-function loadNextQuestion() {
-    // Go to map if it's the last question
-    if(currentQuestion == totalQuestions - 1) {
-        document.location='map2.html';
+// Scoring for button1 (A.) answers
+function ans1() {
+    // Question 1 
+    if (currentQuestion == 0) {
+        tund += 1;
+    }
+    // Question 2
+    else if (currentQuestion == 1) {
+        tdf += 1;
+    }
+    // Question 3
+    else if (currentQuestion == 2) {
+        sav += 1;
+    }
+    // Question 4
+    else if (currentQuestion == 3) {
+        des += 2;
+    }
+    // Question 5
+    else if (currentQuestion == 4) {
+        sav += 2;
+    }
+    // Question 6
+    else if (currentQuestion == 5) {
+        gl += 2;
+    }
+    // Question 7
+    else if (currentQuestion == 6) {
+        gl += 3;
+    }
+    // Question 8
+    else if (currentQuestion == 7) {
+        cf += 1;
+    }
+
+    // Go to the biome if it's the last question
+    if (currentQuestion == totalQuestions - 1) {
+        goToBiome();
         return;
     }
+    // Go to the next question
     currentQuestion++;
     generateQuestions(currentQuestion);
+
+    // Print variables to console
+    console.log("totalQuestions: " + totalQuestions);
+    console.log("currentQuestions: " + currentQuestion);
+    console.log("tund: " + tund);
+    console.log("des: " + des);
+    console.log("sav:" + sav);
+    console.log("trf: " + trf);
+    console.log("cf: " + cf);
+    console.log("tdf: " + tdf);
+    console.log("gl: " + gl);
 }
 
 // Execute the main function
 generateQuestions(currentQuestion);
 
-// Load the next question when a button is clicked
-button1.addEventListener('click', loadNextQuestion);
-button2.addEventListener('click', loadNextQuestion);
-button3.addEventListener('click', loadNextQuestion);
-button4.addEventListener('click', loadNextQuestion);
+// Update score and go to the next question when a button is clicked
+button1.addEventListener('click', ans1);
+
+
