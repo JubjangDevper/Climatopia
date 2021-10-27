@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Tropical Rain Forest</title>
+</head>
+<body>
+    <a href="map2.html"><img id="bmap" src="Assets/image/bmap.png"></a>
+
+    <!--BAR-->
+    <div id="bar" class="bar">
+        <div class="row pl text-center">
+            <div class="col-8 p-1">
+                <h1 style="font-size:1.5vw;">
+                    Tropical Rain Forest Climate
+                </h1>
+                <div class="row">
+                    <div class="col-6 tem text-center">
+                        Temperate<br>
+                        <div class="row">
+                            <div class="col-4" style="left:-2vw;">25C<br>High</div>
+                            <div class="col-4">20C<br>Low</div>
+                        </div>
+                    </div>
+                    <div class="col-6 rain text-center">
+                        Rainfall<br>
+                        2,000-10,000<br>
+                        mm/year
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 p-1 vec">
+                <img class="p-1" src="assets/icon-grass.png" alt="">
+            </div>
+        </div>
+        <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
+    </div>
+
+    <!--ANIMAL1_SLOTH-->
+    <div id="animal" class="slothbox" onclick="clickcount()">
+        <img id="sloth" src="Assets/image/slotte.png">
+        <div id="butsloth" onclick="sloth()"></div>
+    </div>
+    <div class="card" id="alertBoxsloth">
+        <button id="xAlert" onclick="hidesloth()">Close</button>
+        <div class="container">
+            <center><img  class="p-2" src="Assets/img-icebear.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
+            <p class="p-3" id="textAlertsloth"></p>
+        </div>
+    </div>
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+    body {
+        width: 80%;
+        height: 100%;
+        background-image: url("Assets/image/trf.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        font-family: 'Mitr', sans-serif;
+    }
+    #bmap{
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position:fixed;
+        padding: 1vw;
+    }
+    #bmap:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    /*Bar*/
+    .bar>i{
+        font-size: 1.3vw;
+        position: absolute;
+        left: 100%;
+        top:45%;
+    }
+    i{
+        cursor: pointer;
+    }
+    .row{
+        padding-left: 3vw;
+    }
+    
+    .bar{
+        font-size: 1.2vw;
+        color: white;
+        font-family: ZCOOL KuaiLe;
+        border: rgb(255, 255, 255) 0.5vw solid;
+        border-radius: 10vw;
+        width: 40vw;
+        height: 10vw;
+        background-color: #41835f;
+        position:absolute;
+        top: 2%;
+        left: -5%;
+    }
+    .col-8 > h1{
+        text-shadow: rgb(53, 53, 53) 0.2vw 0.2vw ;
+        color: #6dd47e;
+        padding-left: 2.5vw;
+    }
+    .rain{
+        border-left: rgb(255, 255, 255) 0.25vw solid;
+        border-right: rgb(255, 255, 255) 0.25vw solid;
+    }
+    .vec >img{
+        width:8vw;
+    }
+
+    /*ANIMAL1_SLOTH*/
+    #sloth {
+        z-index: 0;
+        height: 9vw;
+        width: 12vw;
+        margin-top: -46.5vw;
+        margin-left: 30vw;
+        transform: rotate(205deg);
+        position: absolute;
+    }
+
+    #butsloth {
+        z-index: 1;
+        height: 9vw;
+        width: 12vw;
+        margin-top: -46.5vw;
+        margin-left: 30vw;
+        transform: rotate(205deg);
+        position: absolute; 
+    }
+
+    #butsloth:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxsloth {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#08573d;
+        margin-top: 2vw;
+        margin-left: 38vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        color: white;
+        width: 100%;
+        border: 0;
+        background-color: #08573d;
+    }
+
+    #xAlert:hover {
+        background-color: #1c8f0d;
+    }
+
+    .slothbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+
+
+</style>
+<script>
+    function hideBar() {
+        var x = document.getElementById("bar");
+    if (x.style.left === "-5vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    if (x.style.left === "-31vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    else {
+        x.style.left = "-31vw";
+        x.style.transition = "left 1s";
+    }
+    }
+
+    /*ANIMAL1_SLOTH*/
+    function sloth() {
+        let traget = document.getElementById("sloth");
+        traget.style.zIndex = 1;
+        traget.style.marginTop = "-40vw";
+        traget.style.transform = "rotate(0deg)";
+
+        showsloth()
+    }
+
+    function showsloth() {
+        var x = document.getElementById("alertBoxsloth");
+        document.getElementById("textAlertsloth").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidesloth() {
+        var x = document.getElementById("alertBoxsloth");
+        x.style.display = "none";
+    }
+</script>
+</html>
