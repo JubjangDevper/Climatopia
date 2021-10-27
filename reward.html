@@ -18,7 +18,7 @@
         overflow: hidden;
         margin:0;
         font-family: 'Mitr', sans-serif;
-        font-size: 1.2vw;
+        
     }
     .bgYellow{
         background-color:#FFE7B4;
@@ -68,8 +68,8 @@
     }
     .reward1{
         position:absolute;
-        -webkit-animation: twinkle 2.0s infinite ease-in-out;
-        animation: twinkle 2.0s infinite ease-in-out;
+        -webkit-animation: twinkle 1.5s infinite ease-in-out;
+        animation: twinkle 1.5s infinite ease-in-out;
     }
     @keyframes twinkle {
             0%, 100% {
@@ -83,8 +83,8 @@
         }
         .reward2 {
         position:absolute;
-        -webkit-animation: twinkle2 2.0s infinite ease-in-out;
-        animation: twinkle2 2.0s infinite ease-in-out;
+        -webkit-animation: twinkle2 1.5s infinite ease-in-out;
+        animation: twinkle2 1.5s infinite ease-in-out;
     }
     @keyframes twinkle2 {
             0%, 100% {
@@ -220,6 +220,8 @@
     #screen{
         width: 47vw;
         height: 28vw;
+        margin-bottom: 1vw;
+        border-radius: 15px;
     }
     #alertBoxcf {
         z-Index : 1;
@@ -234,6 +236,7 @@
         overflow-y: scroll;
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
     }
     #alertBoxtd {
         z-Index : 1;
@@ -248,9 +251,86 @@
         overflow-y: scroll;
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
+    }
+    #alertBoxds {
+        z-Index : 1;
+        width: 50vw;
+        height: 40vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -52vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
+    }
+    #alertBoxtrf {
+        z-Index : 1;
+        width: 50vw;
+        height: 40vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -52vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
+    }
+    #alertBoxsvn {
+        z-Index : 1;
+        width: 50vw;
+        height: 40vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -52vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
+    }
+    #alertBoxgl {
+        z-Index : 1;
+        width: 50vw;
+        height: 40vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -52vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
+    }
+    #alertBoxtdf {
+        z-Index : 1;
+        width: 50vw;
+        height: 40vw;
+        border: solid 5px#F39C12;
+        border-radius: 10px;
+        margin-top: -52vw;
+        margin-left: 25vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1.2vw;
     }
     #xAlert{
         width: 100%;
+        height: 2vw;
         border: 0;
         background-color: #F39C12;
     }
@@ -287,6 +367,81 @@
 
     function hidetd() {
         var x = document.getElementById("alertBoxtd");
+        x.style.display = "none";
+    }
+    function Ds() {
+        let traget = document.getElementById("ds");
+        traget.style.zIndex = 1;
+        showds()
+    }
+
+    function showds() {
+        var x = document.getElementById("alertBoxds");
+        x.style.display = "block";
+    }
+
+    function hideds() {
+        var x = document.getElementById("alertBoxds");
+        x.style.display = "none";
+    }
+    function Trf() {
+        let traget = document.getElementById("trf");
+        traget.style.zIndex = 1;
+        showtrf()
+    }
+
+    function showtrf() {
+        var x = document.getElementById("alertBoxtrf");
+        x.style.display = "block";
+    }
+
+    function hidetrf() {
+        var x = document.getElementById("alertBoxtrf");
+        x.style.display = "none";
+    }
+    function Svn() {
+        let traget = document.getElementById("svn");
+        traget.style.zIndex = 1;
+        showsvn()
+    }
+
+    function showsvn() {
+        var x = document.getElementById("alertBoxsvn");
+        x.style.display = "block";
+    }
+
+    function hidesvn() {
+        var x = document.getElementById("alertBoxsvn");
+        x.style.display = "none";
+    }
+    function Gl() {
+        let traget = document.getElementById("gl");
+        traget.style.zIndex = 1;
+        showgl()
+    }
+
+    function showgl() {
+        var x = document.getElementById("alertBoxgl");
+        x.style.display = "block";
+    }
+
+    function hidegl() {
+        var x = document.getElementById("alertBoxgl");
+        x.style.display = "none";
+    }
+    function Tdf() {
+        let traget = document.getElementById("tdf");
+        traget.style.zIndex = 1;
+        showtdf()
+    }
+
+    function showtdf() {
+        var x = document.getElementById("alertBoxtdf");
+        x.style.display = "block";
+    }
+
+    function hidetdf() {
+        var x = document.getElementById("alertBoxtdf");
         x.style.display = "none";
     }
 </script>
@@ -373,36 +528,35 @@
         <div class="col"></div>
         <div class="col-1.5"><img class="medel" id="cf" onclick="Cf()" src="Assets/reward/md1.png"></div>
         <div class="col-1.5"><img class="medel" id="td" onclick="Td()" src="Assets/reward/md2.png"></div>
-        <div class="col-1.5"><img class="medel" src="Assets/reward/md3.png"></div>
-        <div class="col-1.5"><img class="medel2" src="Assets/reward/md4.png"></div>
-        <div class="col-1.5"><img class="medel3" src="Assets/reward/md5.png"></div>
-        <div class="col-1.5"><img class="medel3" src="Assets/reward/md6.png"></div>
-        <div class="col-1.5"><img class="medel2" src="Assets/reward/md7.png"></div>
+        <div class="col-1.5"><img class="medel" id="ds" onclick="Ds()" src="Assets/reward/md3.png"></div>
+        <div class="col-1.5"><img class="medel2" id="trf" onclick="Trf()" src="Assets/reward/md4.png"></div>
+        <div class="col-1.5"><img class="medel3" id="svn" onclick="Svn()" src="Assets/reward/md5.png"></div>
+        <div class="col-1.5"><img class="medel3" id="gl" onclick="Gl()" src="Assets/reward/md6.png"></div>
+        <div class="col-1.5"><img class="medel2" id="tdf" onclick="Tdf()" src="Assets/reward/md7.png"></div>
         <div class="col"></div>
     </div>
     <div class="card" id="alertBoxcf">
         <button id="xAlert" onclick="hidecf()">ปิด</button>
         <div class="container">
             <br>
-            <p>&nbsp;&nbsp;&nbsp;ป่าสน หรือป่าไทกา ป่าสน (coniferous forest) ป่าไทกา (taiga) และ ป่าบอเรียล (boreal) เป็นป่าประเภทเดียวกัน</p><br>
-            <iframe id="screen"
-                src="https://www.youtube.com/embed/R4SJeGFAI_0">
-            </iframe>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ป่าสน หรือป่าไทกา ป่าสน (coniferous forest) ป่าไทกา (taiga) และ ป่าบอเรียล (boreal) เป็นป่าประเภทเดียวกัน</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomcf.jpg"></center>
             <p><br>&nbsp;&nbsp;&nbsp;มีต้นไม้เขียวชอุ่มตลอดปีพบได้ทางตอนใต้ของแคนาดา ทางตอนเหนือของทวีปอเมริกาเหนือ ทวีปเอเชีย และยุโรป ในเขตละติจูตตั้งแต่ 45-67 องศาเหนือ</p><br>
             <p>&nbsp;&nbsp;&nbsp;เป็นป่าโปร่งไม่ผลัดใบ อากาศหนาวเย็นและแห้งแล้ง ดินเป็นกรดสูง โดยปกติอุณหภูมิเฉลี่ยต่ำกว่าจุดเยือกแข็งนาน 6 เดือน ปริมาณน้ำฝนเฉลี่ย 25-75 เซนติเมตรต่อปี ส่วนใหญ่ตกช่วงฤดูร้อน</p><br>
             <p>&nbsp;&nbsp;&nbsp;พืชเด่นที่พบ ได้แก่ พืชจำพวกสน เช่น ไพน์ (pine) เฟอ (fir) สพรูซ (spruce) และเฮมลอค (hemlok) เป็นต้น ซึ่งโตในสภาพที่ดินเป็นกรดได้ดี พืชในไบโอมนี้ส่วนใหญ่เป็นไม้เนื้ออ่อนและมี
                 ใบเล็กเพื่อลดการคายน้ำแทนการผลัดใบ และมีสารคล้ายขี้ผึ้งเคลือบใบ ทำให้เมื่อใบร่วงลงดินแล้วย่อยสลายยาก ส่งผลให้ดินขาดความอุดมสมบูรณ์ สัตว์ที่พบเช่น กวางมูส นกฮูกเทาใหญ่ กวางเอลก์ 
                 หมีสีน้ำตาล และบีเวอร์ เป็นต้น</p><br>
+        <iframe id="screen"
+            src="https://www.youtube.com/embed/R4SJeGFAI_0">
+        </iframe>
         </div>
     </div>
     <div class="card" id="alertBoxtd">
         <button id="xAlert" onclick="hidetd()">ปิด</button>
         <div class="container">
             <br>
-            <p>&nbsp;&nbsp;&nbsp;ทุนดรา (Tundra) หรือแบบอาร์กติก</p><br>
-            <iframe id="screen"
-                src="https://www.youtube.com/embed/IFOP14Oxa0E">
-            </iframe>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ทุนดรา (Tundra) หรือแบบอาร์กติก</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomtd.jpg"></center>
             <p><br>&nbsp;&nbsp;&nbsp;อยู่แถบขั้วโลกโดยมีแค่มหาสมุทรอาร์กติกเป็นที่กั้น พบทางตอนเหนือของทวีปอเมริกาเหนือ และยูเรเซีย</p><br>
             <p>&nbsp;&nbsp;&nbsp;อากาศหนาวเย็น มีลมพัดเเรงตลอดเวลา และมีหิมะคลุมตลอดทั้งปี แม้แต่ฤดูร้อน 2-3 เดือน อุณหภูมิเฉลี่ยต่ำกว่า 10 องศาเซลเซียส ฤดูหนาวอุณหภูมิต่ำกว่าจุดเยือกแข็งนาน 6 เดือน ฝนตกน้อยกว่า 250 
                 มิลลิเมตรต่อปีและส่วนใหญ่ตกฝนรูปหิมะ มีหนองน้ำเป็นแหล่ง ๆ และมักพบที่ราบ ส่วนใหญ่ก็เป็นหนองน้ำที่เกิดจากน้ำแข็งที่ละลายโดยที่พื้นล่างยังคงเป็นน้ำแข็งอยู่ ไม่มีฮิวมัสในดิน เนื่องจากการระเหยต่ำทำ
@@ -411,6 +565,91 @@
                 พืชเด่นได้แก่ ไลเคนส์ กก มอส หญ้าเซดจ์ และไม้พุ่มเตี้ย</p><br>
             <p>&nbsp;&nbsp;&nbsp;สัตว์เด่นเช่น หมีขาว จิ้งจอกอาร์กติก เพนกวิน นกฮูกหิมะ กวางเรนเดียน คาริบู สัตว์ส่วนใหญ่กินเนื้อ(ปลา)และตะไคร่น้ำเป็นอาหาร</p><br>
             <p>&nbsp;&nbsp;&nbsp;ในฤดูหนาวพืชจะหยุดการเจริญเติบโต หรือบางต้นก็อาจจะตาย สัตว์จะจำศีล นอกจากนี้ยังมีพายุเฮอร์ริเคนในฤดูหนาวที่จะมาพัดพาพวกพืชไป นี่คงเป็นสาเหตุหนึ่งที่พืชในไบโอมนี้เป็นพืชพุ่มเตี้ย</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/79mK2wzkurQ">
+            </iframe>
+        </div>
+    </div>
+    <div class="card" id="alertBoxds">
+        <button id="xAlert" onclick="hideds()">ปิด</button>
+        <div class="container">
+            <br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ทะเลทราย ( desert )</p></b><br>
+            <center><img id="screen" src="Assets/reward/bds.jpg"></center>
+            <p><br>&nbsp;&nbsp;&nbsp;พบได้ทั่วไปในโลก เป็นบริเวณแห้งแล้ง ฝนน้อยกว่า 250 มิลลิเมตรต่อปี อัตราการระเหยของน้ำสูงกว่าที่ได้รับ 5-7 เท่า บางแห่งอุณหภูมิสูงถึง 60 องศาเซลเซียส แต่บางวันของบางแห่งมีอากาศหนาวเย็น
+                 และในฤดูหนาวอุณหภูมิอาจต่ำกว่าจุดเยือกแข็ง</p><br>
+            <p>&nbsp;&nbsp;&nbsp;พืชเป็นไม้ทนแล้ง อวบน้ำ ลดการเสียน้ำโดยเปลี่ยนจากใบเป็นหนาม เช่นกระบองเพชร หรือพืชบางชนิดมีการหยั่งรากลึกลงไปในดินเพื่อดูดน้ำ</p><br>
+            <p>&nbsp;&nbsp;&nbsp;สัตว์จะได้รับน้ำจากพืช(น้ำหวานและยาง)หรือโอเอซิส* โดยเฉพาะพวกแมลง ซึ่งเป็นตัวล่อพวกสัตว์เลื้อยคลานเข้ามา สัตว์ในทะเลทราบมักมีสีอ่อนกว่าสัตว์ทั่วไปเพื่อไม่ให้ดูดรังสีแสงอาทิตย์และเป็นการอำพรางตัว
+                 ซึ่งสัตว์ส่วนใหญ่จะออกหากินในเวลากลางคืนเพราะอากาศไม่ร้อน</p><br>
+            <p>&nbsp;&nbsp;&nbsp;ทะเลทรายที่รู้จักกันโดยทั่วไปได้แก่ ทะเลทรายซาฮารา (Sahara) ในทวีปแอฟริกา ทะเลทรายโกบี (Gobi) ในประเทศสาธารณรัฐประชาชนจีนและทะเลทรายโมฮาวี (Mojave) ในรัฐแคลิฟอร์เนีย
+                 ประเทศสหรัฐอเมริกา</p><br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;โอเอซิส</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomds.jpg"></center>
+            <p>&nbsp;&nbsp;&nbsp;คือบริเวณชุ่มชื้นกลางทะเลทราย เกิดจากน้ำฝนที่ตกลงมาแล้วซึมผ่านทรายลงไปสะสมบนชั้นหินใต้ดิน โดยน้ำจะดันตัวเองขึ้นมาได้อาศัยแรงลมมาพัดหน้าทรายให้บางพอที่น้ำจะผุดขึ้นมาคือบริเวณชุ่มชื้นกลางทะเล
+                ทราย เกิดจากน้ำฝนที่ตกลงมาแล้วซึมผ่านทรายลงไปสะสมบนชั้นหินใต้ดิน โดยน้ำจะดันตัวเองขึ้นมาได้อาศัยแรงลมมาพัดหน้าทรายให้บางพอที่น้ำจะผุดขึ้นมา</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/mjaVm0vs2HY">
+            </iframe>
+        </div>
+    </div>
+    <div class="card" id="alertBoxtrf">
+        <button id="xAlert" onclick="hidetrf()">ปิด</button>
+        <div class="container">
+            <br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ป่าดิบชื้น หรือป่าฝนเขตร้อน (Tropical rain forest )</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomtrf.jpg"></center>
+            <p><br>&nbsp;&nbsp;&nbsp;เป็นป่าไม้สูง อากาศร้อนและชื้น มีฝนตกชุกตลอดปี น้ำฝนเฉลี่ย 200-400 เซนติเมตรต่อปี เป็นป่าไม่ผลัดใบเนื่องจากปริมาณน้ำฝนค่อนข้างมากทำให้ไม่มีความจำเป็นต้องผลัดใบเพื่อลดการคายน้ำ พื้นดินมืด
+                และชื้น มีอินทรียสารสมบูรณ์มาก ป่าตั้งอยู่ในเขตร้อน จึงได้รับแสงเยอะทำให้ต้นไม้โต และเป็นแหล่งอาหารของสัตว์ </p><br>
+            <p>&nbsp;&nbsp;&nbsp;มีไม้สูงพวกยาง-ตะเคียน ไม้กลางพวกปาล์ม และไม้พุ่ม ไม้ล้มลุก ส่วนสัตว์ก็มีสัตว์เลี้ยงลูกด้วยนม(ส่วนใหญ่ตัวเล็ก) มีนกและสัตว์เลื้อยคลานหลายชนิด แมลงที่พบจะเป็นพวกที่มีการเป็นตัวด้วง แหล่งน้ำส่วนใหญ่
+                มีปลาน้ำจืด มีมากจนไม่สามารถระบุชนิดได้</p><br>
+            <p>&nbsp;&nbsp;&nbsp;พบได้ในบริเวณใกล้เขตเส้นศูนย์สูตรของโลกในทวีปอเมริกากลาง ทวีปอเมริกาใต้ ทวีปแอฟริกา ทวีปเอเชียตอนใต้ และบริเวณบางส่วนของหมู่เกาะแปซิฟิก ในป่าชนิดนี้พบพืชและสัตว์หลากหลายนับพันสปีชีส์ 
+                เป็นป่าที่มีความอุดมสมบูรณ์</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/s0YyTNe-hag">
+            </iframe>
+        </div>
+    </div>
+    <div class="card" id="alertBoxsvn">
+        <button id="xAlert" onclick="hidesvn()">ปิด</button>
+        <div class="container">
+            <br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;สะวันนา (Savanna)</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomsvn.jpg"></center>
+            <p><br>&nbsp;&nbsp;&nbsp;เป็นทุ่งหญ้าที่พบได้ในทวีปแอฟริกา ทวีปอเมริกาใต้ ทวีปออสเตรเลีย และพบบ้างทางตะวันออกเฉียงใต้ของทวีปเอเชีย</p><br>
+            <p>&nbsp;&nbsp;&nbsp;เป็นทุ่งหญ้าเขตร้อน เป็นป่ากึ่งผลัดใบ มีต้นไม้ขึ้นห่างกันเป็ยระยะ ๆ ปริมาณน้ำฝน 100-150 เซนติเมตรต่อปี ดินแห้งผาก แข็ง และฝุ่นเยอะ มีไฟป่าเกิดขึ้นในฤดูร้อน หรือไม่ใช่ฤดูร้อนก็มีเกิดขึ้นบ่อย</p><br>
+            <p>&nbsp;&nbsp;&nbsp;พืชต้องปรับตัวได้ดีและสามารถเก็บน้ำได้ เช่น หญ้าจะเติบโตในฤดูฝนแล้วกลับไปเป็นหญ้าแห้งในฤดูร้อน และยังมีพุ่มไม้หนามแหลม สัตว์ส่วนใหญ่เป็นสัตว์เลี้ยงลูกด้วยนมขนาดใหญ่หลายสายพันธุ์ 
+                มีทั้งพวกกินพืชและกินเนื้อ</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/k17R7Se28hU">
+            </iframe>
+        </div>
+    </div>
+    <div class="card" id="alertBoxgl">
+        <button id="xAlert" onclick="hidegl()">ปิด</button>
+        <div class="container">
+            <br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ทุ่งหญ้าเขตอบอุ่น (Temperate grassland)</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomgl.jpg"></center>
+            <p><br>&nbsp;&nbsp;&nbsp;รู้จักกันในชื่อของ ทุ่งหญ้าแพรี่ (prairie) ในตอนกลางของทวีปอเมริกาเหนือและทุ่งหญ้าสเตปส์(steppes) ของประเทศรัสเซีย เป็นต้น</p><br>
+            <p>&nbsp;&nbsp;&nbsp;เป็นเขตที่มีทุ่งหญ้าปกคลุม มีฝนตกในฤดูร้อนและเเห้งแล้งในฤดูหนาว น้ำฝนเฉลี่ย 25-70 เซนติเมตรต่อปี ดินมีความสมบูรณ์สูง พืชเป็นพวกพุ่มไม้หนาม ไม้ล้มลุก ไม้ทนแล้ง ทนไฟป่า และหญ้า(ความสูงขึ้น
+                อยู่กับปริมาณน้ำฝน) มีสัตว์กินพืชเป็นอาหารเยอะ และตามด้วยสัตว์กินเนื้อ เป็นแหล่งเกษตรกรรม</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/I0zeAMkCFpY">
+            </iframe>
+        </div>
+    </div>
+    <div class="card" id="alertBoxtdf">
+        <button id="xAlert" onclick="hidetdf()">ปิด</button>
+        <div class="container">
+            <br>
+            <b><p style="font-size:1.5vw;">&nbsp;&nbsp;&nbsp;ป่าผลัดใบเขตอบอุ่น (temperate deciduous forest)</p></b><br>
+            <center><img id="screen" src="Assets/reward/biomtdf.jpg"></center>
+            <p><br>&nbsp;&nbsp;&nbsp;พบทั่วไปบริเวณละติจูดกลาง มีอากาศค่อนข้างเย็น ฤดูร้อนอากาศอบอุ่น ฤดูหนาวไม่หนาวมาก มีฝน 60-250 เซนติเมตรต่อปี ซึ่งมีความชื้นเพียงพอจะทำให้ต้นไม้เจริญเติบโตได้ดี</p><br>
+            <p>&nbsp;&nbsp;&nbsp;พืชมีทั้งไม้ยืนต้น ไม้พุ่ม และไม้ล้มลุก พืชส่วนใหญ่เป็นไม้ใบกว้าง ทิ้งใบเมื่อฤดูแล้งและฤดูหนาว ผลิใบอีกครั้งเมื่อฝนตก พืชจะโตช้าและหยุดเป็นช่วง ๆ (เพราะฤดูกาล) สัตว์บกที่พบมีกวาง(กินพืช)และสุนัข
+                จิ้งจอก(กินเนื้อ)</p><br>
+            <iframe id="screen"
+                src="https://www.youtube.com/embed/7FUWFMSlGfM">
+            </iframe>
         </div>
     </div>
 </body>
