@@ -5,56 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Coniferous forest</title>
 </head>
 
 <body>
+    <div>
+        <a href="map2.html">
+            <img id="bmap" src="Assets/image/bmap.png">
+        </a>
+    </div>
+</div>
+<div id="bar" class="bar">
+    <div class="row pl text-center">
+        <div class="col-8 p-1">
+            <h1 style="font-size:1.5vw;">
+                coniferous forest
+            </h1>
+            <div class="row">
+                <div class="col-6 tem text-center">
+                    Temperate<br>
+                    <div class="row">
+                        <div class="col-4" style="left:-2vw;">20C<br>High</div>
+                        <div class="col-4">-40C<br>Low</div>
+                    </div>
+                </div>
+                <div class="col-6 rain text-center">
+                    Rainfall<br>
+                    300-900<br>
+                    mm/year
+                </div>
+            </div>
+        </div>
+        <div class="col-4 p-1 vec">
+            <img class="p-1" src="assets/icon-grass.png" alt="">
+        </div>
+    </div>
+    <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
+</div>
     <div class="redfoxbox">
-        <img id="redfox" src="Assets\image\redfox.png">
+        <img id="redfox" onclick="redfox()" src="Assets\image\redfox.png">
         <img id="rockredfox" src="Assets\image\r1.png">
         <div id="butredfox" onclick="redfox()"></div>
     </div>
     <div class="card" id="alertBoxredfox">
         <button id="xAlert" onclick="hideredfox()">Close</button>
         <div class="container">
+            <center><img id="sc1" src="Assets/image/realredfox.jpg"></center>
             <p id="textAlertredfox"></p>
         </div>
     </div>
 
     <div class="moosebox">
-        <img id="moose" src="Assets\image\moose.png">
+        <img id="moose" onclick="moose" src="Assets\image\moose.png">
         <img id="rockmoose" src="Assets\reward\r10.png">
         <div id="butmoose" onclick="moose()"></div>
     </div>
     <div class="card" id="alertBoxmoose">
         <button id="xAlert" onclick="hidemoose()">Close</button>
         <div class="container">
+            <center><img id="sc1" src="Assets/image/realmoose.jpg"></center>
             <p id="textAlertmoose"></p>
         </div>
     </div>
 
     <div class="bobcatbox">
-        <img id="bobcat" src="Assets\image\bobcat.png">
+        <img id="bobcat" onclick="bobcat()" src="Assets\image\bobcat.png">
         <img id="rockbobcat" src="Assets\reward\r11.png">
         <div id="butbobcat" onclick="bobcat()"></div>
     </div>
     <div class="card" id="alertBoxbobcat">
         <button id="xAlert" onclick="hidebobcat()">Close</button>
         <div class="container">
+            <center><img id="sc1" src="Assets/image/realbobcat.jpg"></center>
             <p id="textAlertbobcat"></p>
         </div>
     </div>
@@ -62,6 +92,7 @@
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
     body {
         width: 100%;
@@ -72,7 +103,21 @@
         font-family: 'Mitr', sans-serif;
         overflow: hidden;
     }
-
+    img{
+        transition: all .4s;
+    }
+    #bmap{
+        height: 8vw;
+        width: 8vw;
+        top: 0;
+        right: 0;
+        position:fixed;
+        padding: 1vw;
+    }
+    #bmap:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
     #rockredfox {
         width: 20vw;
         height: 10vw;
@@ -86,17 +131,17 @@
         height: 8vw;
         width: 8.5vw;
         margin-top: 2vw;
-        margin-left: 11.5vw;
+        margin-left: 5vw;
         position: absolute;
     }
 
     #butredfox {
         z-index: 1;
-        height: 4vw;
-        width: 8vw;
+        height: 2vw;
+        width: 2vw;
         position: absolute;
-        margin-top: 2vw;
-        margin-left: 11vw;
+        margin-top: 1.5vw;
+        margin-left: 9.5vw;
         
 
     }
@@ -106,27 +151,28 @@
     }
 
     #alertBoxredfox {
-        z-Index: 1;
+        z-index: 1;
         width: 30vw;
         height: 20vw;
-        border: solid 0.5vw#00A300;
-        margin-top: 30vw;
-        margin-left: 50vw;
+        border: solid 0.5vw#F39C12;
+        border-radius: 10px;
+        margin-top: 18vw;
+        margin-left: 5vw;
         display: none;
         position: absolute;
-        
-        font-size: 1vw;
-        overflow:scroll;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
     }
 
     #xAlert {
         width: 100%;
         border: 0;
-        background-color: #18A558;
+        background-color: #F39C12;
     }
 
     #xAlert:hover {
-        background-color: #18A558;
+        background-color: #f0ac3e;
     }
 
     .redfoxbox {
@@ -172,17 +218,18 @@
     }
 
     #alertBoxmoose {
-        z-Index: 1;
+        z-index: 1;
         width: 30vw;
         height: 20vw;
-        border: solid 0.5vw#00A300;
+        border: solid 0.5vw#F39C12;
+        border-radius: 10px;
         margin-top: 26vw;
         margin-left: 55vw;
         display: none;
         position: absolute;
-        font-size: 1vw;
-        overflow:scroll;
-        
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
     }
 
     #rockbobcat {
@@ -222,27 +269,73 @@
     }
 
     #alertBoxbobcat {
-        z-Index: 1;
+        z-index: 1;
         width: 30vw;
         height: 20vw;
-        border: solid 0.5vw#00A300;
+        border: solid 0.5vw#F39C12;
+        border-radius: 10px;
         margin-top: 19vw;
         margin-left: 55vw;
         display: none;
         position: absolute;
-        font-size: 1vw;
-        overflow:scroll;
-        
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
     }
-
-   
+    #sc1{
+        width: 20vw;
+        height: 15vw;
+        border: solid 5px #000000;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        border-radius: 1vw;
+    }
+    /*Bar*/
+    .bar>i{
+        font-size: 1.3vw;
+        position: absolute;
+        left: 100%;
+        top:45%;
+    }
+    i{
+        cursor: pointer;
+    }
+    .row{
+        padding-left: 3vw;
+    }
+    
+    .bar{
+        font-size: 1.2vw;
+        color: white;
+        font-family: ZCOOL KuaiLe;
+        border: white 0.5vw solid;
+        border-radius: 10vw;
+        width: 40vw;
+        height: 10vw;
+        background-color: #a098e7;
+        position:absolute;
+        top: 2%;
+        left: -5%;
+    }
+    .col-8 > h1{
+        text-shadow: white 0.2vw 0.2vw ;
+        color: #160596;
+        padding-left: 2.5vw;
+    }
+    .rain{
+        border-left: white 0.25vw solid;
+        border-right: white 0.25vw solid;
+    }
+    .vec >img{
+        width:8vw;
+    }
 </style>
 <script>
     function redfox() {
         let traget = document.getElementById("redfox");
         traget.style.zIndex = 1;
-        traget.style.height = "10.5vw";
-        traget.style.width = "11vw";
+        traget.style.height = "9vw";
+        traget.style.width = "9.5vw";
         
 
         showredfox()
@@ -303,8 +396,22 @@
         x.style.display = "none";
     }
 
-
-   
+    //--//
+    function hideBar() {
+        var x = document.getElementById("bar");
+    if (x.style.left === "-5vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    if (x.style.left === "-31vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    else {
+        x.style.left = "-31vw";
+        x.style.transition = "left 1s";
+    }
+}
 </script>
 
 
