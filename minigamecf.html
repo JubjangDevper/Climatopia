@@ -26,7 +26,7 @@
 <div id="bar" class="bar">
     <div class="row pl text-center">
         <div class="col-8 p-1">
-            <h1 style="font-size:1.5vw;">
+            <h1 style="font-size:1.7vw;">
                 coniferous forest
             </h1>
             <div class="row">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="col-4 p-1 vec">
-            <img class="p-1" src="assets/icon-grass.png" alt="">
+            <img class="p-1" src="assets/cfcon.png" alt="">
         </div>
     </div>
     <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
@@ -88,7 +88,16 @@
             <p id="textAlertbobcat"></p>
         </div>
     </div>
-
+    <div class="eaglebox">
+        <img id="eagle" onclick="eagle()" src="Assets/image/eagle.png">
+    </div>
+    <div class="card" id="alertBoxeagle">
+        <button id="xAlert" onclick="hideeagle()">Close</button>
+        <div class="container">
+            <center><img id="sc1" src="Assets/image/realbaldeagle.jpg"></center>
+            <p id="textAlerteagle"></p>
+        </div>
+    </div>
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
@@ -163,6 +172,7 @@
         overflow-y: scroll;
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
+        font-size: 1vw;
     }
 
     #xAlert {
@@ -230,6 +240,7 @@
         overflow-y: scroll;
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
+        font-size: 1vw;
     }
 
     #rockbobcat {
@@ -281,6 +292,52 @@
         overflow-y: scroll;
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
+        font-size: 1vw;
+    }
+    #alertBoxeagle {
+        z-index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#F39C12;
+        border-radius: 10px;
+        margin-top: 19vw;
+        margin-left: 55vw;
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        box-shadow: 5px 10px #4c96a8;
+        background: hsl(44, 78%, 78%);
+        font-size: 1vw;
+    }
+    .eaglebox{
+        margin-left: 15vw;
+        margin-top: 10vw;
+        position: absolute;
+    }
+    #eagle{
+        z-index: 0;
+        height: 7vw;
+        width: 9vw;
+        margin-top: 5vw;
+        margin-left: 1.75vw;
+        position: relative;
+        cursor: pointer;
+        animation:fly 3s ease-in-out alternate infinite;
+    }
+    @keyframes fly  {
+        0% {
+            top:-5vw;
+            right:10vw;
+            transform: scaleX(-1);
+        }
+        50% {
+            top:10vw;
+        }
+        100% {
+            top:-5vw;
+            right: -60vw;
+            transform: scaleX(-1);
+        }
     }
     #sc1{
         width: 20vw;
@@ -319,7 +376,7 @@
     }
     .col-8 > h1{
         text-shadow: white 0.2vw 0.2vw ;
-        color: #160596;
+        color: #e4a7f0;
         padding-left: 2.5vw;
     }
     .rain{
@@ -396,6 +453,24 @@
         x.style.display = "none";
     }
 
+    function eagle() {
+        let traget = document.getElementById("eagle");
+        traget.style.zIndex = 0;
+        traget.style.height = "9vw";
+        traget.style.width = "11vw";
+        showeagle()
+    }
+
+    function showeagle() {
+        var x = document.getElementById("alertBoxeagle");
+        document.getElementById("textAlerteagle").innerHTML = "นกอินทรีหัวล้านเป็นนกประจำชาติและสัตว์ประจำชาติของสหรัฐอเมริกา เป็นนกอินทรีในอเมริกาเหนือที่มีเอกลักษณ์เฉพาะตั้งแต่เม็กซิโกตอนเหนือไปจนถึงสหรัฐอเมริกาที่อยู่ติดกันไปจนถึงแคนาดาและอะแลสกา รัฐเดียวที่นกไม่เรียกว่าบ้านคือฮาวาย นกอินทรีอาศัยอยู่ใกล้แหล่งน้ำที่เปิดโล่งเลือกที่อยู่อาศัยที่มีต้นไม้ขนาดใหญ่ซึ่งสร้างเป็นรัง นกอินทรีหัวล้านชอบกินปลา อย่างไรก็ตามมันจะกินนกขนาดเล็กไข่นกและสัตว์ขนาดเล็กอื่น ๆ (เช่นกระต่ายปูกิ้งก่ากบ) นกอินทรีหัวล้านเลือกเหยื่อที่ไม่น่าจะสู้ได้มากนัก พวกเขาพร้อมที่จะขับไล่นักล่าอื่น ๆเพื่อฆ่าและจะกินซากศพ รังนกอินทรีหัวล้านเป็นรังนกที่ใหญ่และใหญ่ที่สุดในโลก รังอาจมีขนาดได้ถึง 8 ฟุตและมีน้ำหนักมากถึงตัน นกอินทรีตัวผู้และตัวเมียทำงานร่วมกันเพื่อสร้างรังซึ่งทำด้วยไม้และมักจะตั้งอยู่บนต้นไม้ใหญ่ ในปีพ. ศ. 2510 นกอินทรีหัวโล้นถูกระบุว่าเป็นสัตว์ใกล้สูญพันธุ์ภายใต้พระราชบัญญัติสงวนพันธุ์สัตว์ใกล้สูญพันธุ์ ในปีพ. ศ. 2516 ได้รับการจดทะเบียนภายใต้พระราชบัญญัติสัตว์ใกล้สูญพันธุ์ฉบับใหม่ จำนวนประชากรที่ลดลงอย่างมากซึ่งนำไปสู่การใกล้สูญพันธุ์ ได้แก่ พิษโดยไม่ได้ตั้งใจ (ส่วนใหญ่มาจาก DDT และตะกั่ว)"
+        x.style.display = "block";
+    }
+
+    function hideeagle() {
+        var x = document.getElementById("alertBoxeagle");
+        x.style.display = "none";
+    }
     //--//
     function hideBar() {
         var x = document.getElementById("bar");
