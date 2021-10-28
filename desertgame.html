@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Desert Minigame</title>
 </head>
 
@@ -26,6 +27,35 @@
     <a href="map2.html">
         <img id="map" src="Assets/image/bmap.png">
     </a>
+
+    <!--BAR-->
+    <div id="bar" class="bar">
+        <div class="row pl text-center">
+            <div class="col-8 p-1">
+                <h1 style="font-size:1.5vw;">
+                    Desert
+                </h1>
+                <div class="row">
+                    <div class="col-6 tem text-center">
+                        Temperate<br>
+                        <div class="row">
+                            <div class="col-4" style="left:-2vw;">38C<br>High</div>
+                            <div class="col-4">-3.9C<br>Low</div>
+                        </div>
+                    </div>
+                    <div class="col-6 rain text-center">
+                        Rainfall<br>
+                        250<br>
+                        mm/year
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 p-1 vec">
+                <img class="p-1" src="assets/desertIcon.png" alt="">
+            </div>
+        </div>
+        <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()" style="filter: invert(1)"></i>
+    </div>
 
     <!--Skunk-->
     <div class="skunkBox">
@@ -84,6 +114,7 @@
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
     body {
         width: 100%;
@@ -354,6 +385,45 @@
         box-shadow: 5px 10px #4c96a8;
         background: hsl(44, 78%, 78%);
     }
+
+   /* Bar */
+   .bar>i{
+        font-size: 1.3vw;
+        position: absolute;
+        left: 100%;
+        top:45%;
+    }
+    i{
+        cursor: pointer;
+    }
+    .row{
+        padding-left: 3vw;
+    }
+    .bar{
+        font-size: 1.2vw;
+        color: white;
+        font-family: ZCOOL KuaiLe;
+        border: white 0.5vw solid;
+        border-radius: 10vw;
+        width: 40vw;
+        height: 10vw;
+        background-color: #b19a5b;
+        position:absolute;
+        top: 2%;
+        left: -5%;
+    }
+    .col-8 > h1{
+        text-shadow: white 0.2vw 0.2vw ;
+        color: #737573;
+        padding-left: 2.5vw;
+    }
+    .rain{
+        border-left: white 0.25vw solid;
+        border-right: white 0.25vw solid;
+    }
+    .vec >img{
+        width:8vw;
+    }
 </style>
 <script>
     // Skunk
@@ -450,6 +520,23 @@
         var x = document.getElementById("camelPopup");
         x.style.display = "none";
     }
+
+    // bar
+    function hideBar() {
+        var x = document.getElementById("bar");
+    if (x.style.left === "-5vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    if (x.style.left === "-31vw" ) {
+        x.style.left = "-5vw" ;
+        x.style.transition = "left 1s";
+    }
+    else {
+        x.style.left = "-31vw";
+        x.style.transition = "left 1s";
+    }
+}
 </script>
 
 </html>
