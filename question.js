@@ -70,36 +70,49 @@ const choice3 = document.querySelector('#button3');
 const choice4 = document.querySelector('#button4');
 
 // Biome Score
-let tund = 0;
-let des = 0;
-let sav = 0;
-let trf = 0;
-let cf = 0;
-let tdf = 0;
-let gl = 0;
+let tund = 0; // Tundra
+let des = 0; // Desert
+let sav = 0; // Savanna
+let trf = 0; // Tropical
+let cf = 0; // Coniferous
+let tdf = 0; // Temperate
+let gl = 0; // Grassland
+
+// Print variables to console
+function prntLog() {
+    console.log("totalQuestions: " + totalQuestions);
+    console.log("currentQuestions: " + currentQuestion);
+    console.log("tund: " + tund);
+    console.log("des: " + des);
+    console.log("sav:" + sav);
+    console.log("trf: " + trf);
+    console.log("cf: " + cf);
+    console.log("tdf: " + tdf);
+    console.log("gl: " + gl);
+}
 
 // Go to the biome depending on the score
 function goToBiome() {
-    if (tund >= des) {
+    if (tund >= des && tund >= sav && tund >= trf && tund >= cf && tund >= tdf && tund >= gl) {
         document.location = 'minigametundra.html';
     }
-    else if (des >= sav) {
+    else if (des >= tund && des >= sav && des >= trf && des >= cf && des >= tdf && des >= gl) {
         document.location = 'desertgame.html';
     }
-    else if (sav >= trf) {
+    else if (sav >= tund && sav >= des && sav >= trf && sav >= cf && sav >= tdf && sav >= gl) {
         document.location = 'minigamesavanna.html';
     }
-    else if (trf >= cf) {
-        document.location = 'minigametrf.html';
+    else if (trf >= tund && trf >= des && trf >= sav && trf >= cf && trf >= tdf && trf >= gl) {
+        document.location = 'minigameTropical.html';
     }
-    else if (cf >= tdf) {
+    else if (cf >= tund && cf >= des && cf >= sav && cf >= trf && cf >= tdf && cf >= gl) {
         document.location = 'minigamecf.html';
     }
-    else if (tdf >= gl) {
+    else if (tdf >= tund && tdf >= des && tdf >= sav && tdf >= trf && tdf >= cf && tdf >= gl) {
         document.location = 'tdfgame.html';
     }
-    else if (gl >= tund) {
-        document.location = 'minigamegrassland.html';
+    else if (gl >= tund && gl >= des && gl >= sav && gl >= trf && gl >= cf && gl >= tdf) {
+        document.location = 'minigrassland.html';
     }
 }
 
@@ -148,6 +161,8 @@ function ans1() {
         cf += 1;
     }
 
+    prntLog();
+
     // Go to the biome if it's the last question
     if (currentQuestion == totalQuestions - 1) {
         goToBiome();
@@ -157,16 +172,150 @@ function ans1() {
     currentQuestion++;
     generateQuestions(currentQuestion);
 
-    // Print variables to console
-    console.log("totalQuestions: " + totalQuestions);
-    console.log("currentQuestions: " + currentQuestion);
-    console.log("tund: " + tund);
-    console.log("des: " + des);
-    console.log("sav:" + sav);
-    console.log("trf: " + trf);
-    console.log("cf: " + cf);
-    console.log("tdf: " + tdf);
-    console.log("gl: " + gl);
+}
+
+// Scoring for button2 (B.) answers
+function ans2() {
+    // Question 1 
+    if (currentQuestion == 0) {
+        sav += 1;
+    }
+    // Question 2
+    else if (currentQuestion == 1) {
+        des += 1;
+    }
+    // Question 3
+    else if (currentQuestion == 2) {
+        cf += 1;
+    }
+    // Question 4
+    else if (currentQuestion == 3) {
+        trf += 2;
+    }
+    // Question 5
+    else if (currentQuestion == 4) {
+        tdf += 3;
+    }
+    // Question 6
+    else if (currentQuestion == 5) {
+        des += 3;
+    }
+    // Question 7
+    else if (currentQuestion == 6) {
+        tund += 4;
+    }
+    // Question 8
+    else if (currentQuestion == 7) {
+        gl += 1;
+    }
+
+    prntLog();
+
+    // Go to the biome if it's the last question
+    if (currentQuestion == totalQuestions - 1) {
+        goToBiome();
+        return;
+    }
+    // Go to the next question
+    currentQuestion++;
+    generateQuestions(currentQuestion);
+
+}
+
+// Scoring for button3 (C.) answers
+function ans3() {
+    // Question 1 
+    if (currentQuestion == 0) {
+        cf += 1;
+    }
+    // Question 2
+    else if (currentQuestion == 1) {
+        trf += 1;
+    }
+    // Question 3
+    else if (currentQuestion == 2) {
+        gl += 1;
+    }
+    // Question 4
+    else if (currentQuestion == 3) {
+        tund += 2;
+    }
+    // Question 5
+    else if (currentQuestion == 4) {
+        trf += 3;
+    }
+    // Question 6
+    else if (currentQuestion == 5) {
+        sav += 3;
+    }
+    // Question 7
+    else if (currentQuestion == 6) {
+        sav += 4;
+    }
+    // Question 8
+    else if (currentQuestion == 7) {
+        trf += 1;
+    }
+
+    prntLog();
+
+    // Go to the biome if it's the last question
+    if (currentQuestion == totalQuestions - 1) {
+        goToBiome();
+        return;
+    }
+    // Go to the next question
+    currentQuestion++;
+    generateQuestions(currentQuestion);
+
+}
+
+// Scoring for button4 (D.) answers
+function ans4() {
+    // Question 1 
+    if (currentQuestion == 0) {
+        gl += 1;
+    }
+    // Question 2
+    else if (currentQuestion == 1) {
+        tund += 1;
+    }
+    // Question 3
+    else if (currentQuestion == 2) {
+        tdf += 2;
+    }
+    // Question 4
+    else if (currentQuestion == 3) {
+        cf += 2;
+    }
+    // Question 5
+    else if (currentQuestion == 4) {
+        tund += 3;
+    }
+    // Question 6
+    else if (currentQuestion == 5) {
+        cf += 3;
+    }
+    // Question 7
+    else if (currentQuestion == 6) {
+        tdf += 4;
+    }
+    // Question 8
+    else if (currentQuestion == 7) {
+        des += 1;
+    }
+
+    prntLog();
+
+    // Go to the biome if it's the last question
+    if (currentQuestion == totalQuestions - 1) {
+        goToBiome();
+        return;
+    }
+    // Go to the next question
+    currentQuestion++;
+    generateQuestions(currentQuestion);
+
 }
 
 // Execute the main function
@@ -174,5 +323,6 @@ generateQuestions(currentQuestion);
 
 // Update score and go to the next question when a button is clicked
 button1.addEventListener('click', ans1);
-
-
+button2.addEventListener('click', ans2);
+button3.addEventListener('click', ans3);
+button4.addEventListener('click', ans4);
