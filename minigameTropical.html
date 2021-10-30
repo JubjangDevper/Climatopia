@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <meta name="viewport" content="width='devrock-width', initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -62,9 +62,72 @@
     <div class="card" id="alertBoxsloth">
         <button id="xAlert" onclick="hidesloth()">Close</button>
         <div class="container">
-            <center><img  class="p-2" src="Assets/img-icebear.jpg" style="width: 80%;"></center>
+            <center><img  class="p-2" src="Assets/img-rockjaguar.jpg" style="width: 80%;"></center>
             <h5 class="text-center">หมีขาว</h5>
             <p class="p-3" id="textAlertsloth"></p>
+        </div>
+    </div>
+
+    <!--ANIMAL2_GORILLA-->
+    <div id="animal" class="butterbox" onclick="clickcount()">
+        <img id="butter" src="Assets/image/butterfly.png">
+        <img id="rockbutter" src="Assets/image/r7.png">
+        <div id="butbutter" onclick="butter()"></div>
+    </div>
+    <div class="card" id="alertBoxbutter">
+        <button id="xAlert" onclick="hidebutter()">Close</button>
+        <div class="container">
+            <center><img  class="p-2" src="Assets/img-rockjaguar.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
+            <p class="p-3" id="textAlertbutter"></p>
+        </div>
+    </div>
+
+    <!--ANIMAL3_JAGUAR-->
+    <div id="animal" class="jaguarbox" onclick="clickcount()">
+        <img id="jaguar" src="Assets/image/jaguar.png">
+        <img id="rockjaguar" src="Assets/image/trf3.png">
+        <img id="rockjaguar2" src="Assets/image/trf2.png">
+        <div id="butjaguar" onclick="jaguar()"></div>
+    </div>
+    <div class="card" id="alertBoxjaguar">
+        <button id="xAlert" onclick="hidejaguar()">Close</button>
+        <div class="container">
+            <center><img  class="p-2" src="Assets/img-rockjaguar.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
+            <p class="p-3" id="textAlertjaguar"></p>
+        </div>
+    </div>
+
+    <!--ANIMAL4_MACAW-->
+    <div id="animal" class="macawbox" onclick="clickcount()">
+        <img id="macaw" src="Assets/image/macow.png">
+        <img id="treemacaw" src="Assets/image/trf5.png">
+        <img id="treemacaw2" src="Assets/image/trf6.png">
+        <div id="butmacaw" onclick="macaw()"></div>
+    </div>
+    <div class="card" id="alertBoxmacaw">
+        <button id="xAlert" onclick="hidemacaw()">Close</button>
+        <div class="container">
+            <center><img  class="p-2" src="Assets/img-treemacaw.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
+            <p class="p-3" id="textAlertmacaw"></p>
+        </div>
+    </div>
+
+    <!--ANIMAL5_FROG-->
+    <div id="animal" class="frogbox" onclick="clickcount()">
+        <img id="frog" src="Assets/image/poisonfrog.png">
+        <img id="leaffrog" src="Assets/image/trf4.png">
+        <img id="leaffrog2" src="Assets/image/trf4.png">
+        <div id="butfrog" onclick="frog()"></div>
+    </div>
+    <div class="card" id="alertBoxfrog">
+        <button id="xAlert" onclick="hidefrog()">Close</button>
+        <div class="container">
+            <center><img  class="p-2" src="Assets/img-leaffrog.jpg" style="width: 80%;"></center>
+            <h5 class="text-center">หมีขาว</h5>
+            <p class="p-3" id="textAlertfrog"></p>
         </div>
     </div>
 
@@ -189,6 +252,279 @@
         position: absolute;
     }
 
+    /*ANIMAL2_BUTTERFLY*/
+    #rockbutter {
+        width: 12vw;
+        height: 12vw;
+        margin-top: -7vw;
+        margin-left: 40vw;
+        position: absolute;
+    }
+
+    #butter {
+        z-index: 0;
+        height: 5vw;
+        width: 5vw;
+        margin-top: -1vw;
+        margin-left: 43vw;
+        position: absolute;
+    }
+
+    #butbutter {
+        z-index: 1;
+        height: 5vw;
+        width: 5vw;
+        margin-top: -1vw;
+        margin-left: 43vw;
+        position: absolute; 
+    }
+
+    #butbutter:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxbutter {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        color: white;
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .butterbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    /*ANIMAL3_JAGUAR*/
+    #rockjaguar {
+        width: 15vw;
+        height: 12vw;
+        margin-top: -5vw;
+        margin-left: -23vw;
+        position: absolute;
+    }
+    #rockjaguar2 {
+        width: 9vw;
+        height: 12vw;
+        margin-top: -5vw;
+        margin-left: -14vw;
+        z-index: 0;
+        position: absolute;
+    }
+
+    #jaguar {
+        z-index: 0;
+        height: 7vw;
+        width: 12vw;
+        margin-top: -2vw;
+        margin-left: -20vw;
+        position: absolute;
+    }
+
+    #butjaguar {
+        z-index: 1;
+        height: 7vw;
+        width: 12vw;
+        margin-top: -2vw;
+        margin-left: -20vw;
+        position: absolute; 
+    }
+
+    #butjaguar:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxjaguar {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        color: white;
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .jaguarbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    /*ANIMAL4_macaw*/
+    #treemacaw {
+        width: 32vw;
+        height: 18vw;
+        margin-top: -20vw;
+        margin-left: -40vw;
+        z-index: -1;
+        position: absolute;
+    }
+
+    #treemacaw2 {
+        width: 9vw;
+        height: 6vw;
+        margin-top: -14vw;
+        margin-left: -35vw;
+        z-index: -1;
+        position: absolute;
+    }
+
+    #macaw {
+        z-index: -1;
+        height: 9vw;
+        width: 7vw;
+        margin-top: -15vw;
+        margin-left: -35vw;
+        position: absolute;
+    }
+
+    #butmacaw {
+        z-index: 1;
+        height: 9vw;
+        width: 7vw;
+        margin-top: -15vw;
+        margin-left: -35vw;
+        position: absolute; 
+    }
+
+    #butmacaw:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxmacaw {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        color: white;
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .macawbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
+    /*ANIMAL5_FROG*/
+    #leaffrog {
+        width: 18vw;
+        height: 7vw;
+        margin-top: -20vw;
+        margin-left: 53vw;
+        transform: rotate(30deg);
+        position: absolute;
+    }
+    #leaffrog2 {
+        width: 18vw;
+        height: 7vw;
+        margin-top: -15vw;
+        margin-left: 50vw;
+        z-index: -1;
+        position: absolute;
+    }
+
+    #frog {
+        z-index: -1;
+        height: 4vw;
+        width: 4vw;
+        margin-top: -15vw;
+        margin-left: 54vw;
+        transform: rotate(30deg);
+        position: absolute;
+    }
+
+    #butfrog {
+        z-index: 1;
+        height: 4vw;
+        width: 4vw;
+        margin-top: -15vw;
+        margin-left: 54vw;
+        transform: rotate(30deg);
+        position: absolute; 
+    }
+
+    #butfrog:hover {
+        cursor: pointer;
+    }
+
+    #alertBoxfrog {
+        z-Index: 1;
+        width: 30vw;
+        height: 20vw;
+        border: solid 0.5vw#3c2d80;
+        margin-top: 18vw;
+        margin-left: 50vw;
+        display: none;
+        position: absolute;
+        font-size: 1vw;
+        overflow:scroll;
+    }
+
+    #xAlert {
+        color: white;
+        width: 100%;
+        border: 0;
+        background-color: #3c2d80;
+    }
+
+    #xAlert:hover {
+        background-color: #9170df;
+    }
+
+    .frogbox {
+        margin-left: 35%;
+        margin-top: 40%;
+        position: absolute;
+    }
+
 
 
 </style>
@@ -229,5 +565,91 @@
         var x = document.getElementById("alertBoxsloth");
         x.style.display = "none";
     }
+
+    /*ANIMAL2_BUTTERFLY*/
+    function butter() {
+        let traget = document.getElementById("butter");
+        traget.style.zIndex = 1;
+        traget.style.height = "5vw";
+        traget.style.width = "5vw";
+
+        showbutter()
+    }
+
+    function showbutter() {
+        var x = document.getElementById("alertBoxbutter");
+        document.getElementById("textAlertbutter").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidebutter() {
+        var x = document.getElementById("alertBoxbutter");
+        x.style.display = "none";
+    }
+
+    /*ANIMAL3_JAGUAR*/
+    function jaguar() {
+        let traget = document.getElementById("jaguar");
+        traget.style.zIndex = 1;
+        traget.style.marginTop = "-1vw";
+        traget.style.marginLeft = "-12vw";
+
+        showjaguar()
+    }
+
+    function showjaguar() {
+        var x = document.getElementById("alertBoxjaguar");
+        document.getElementById("textAlertjaguar").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidejaguar() {
+        var x = document.getElementById("alertBoxjaguar");
+        x.style.display = "none";
+    }
+
+    /*ANIMAL4_macaw*/
+    function macaw() {
+        let traget = document.getElementById("macaw");
+        traget.style.zIndex = 1;
+        traget.style.marginLeft = "-30vw";
+
+        showmacaw()
+    }
+
+    function showmacaw() {
+        var x = document.getElementById("alertBoxmacaw");
+        document.getElementById("textAlertmacaw").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidemacaw() {
+        var x = document.getElementById("alertBoxmacaw");
+        x.style.display = "none";
+    }
+
+    /*ANIMAL5_FROG*/
+    function frog() {
+        let traget = document.getElementById("frog");
+        traget.style.zIndex = 1;
+        traget.style.height = "5vw";
+        traget.style.width = "5vw";
+        traget.style.marginTop = "-28vw";
+        traget.style.marginLeft = "57vw";
+
+        showfrog()
+    }
+
+    function showfrog() {
+        var x = document.getElementById("alertBoxfrog");
+        document.getElementById("textAlertfrog").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
+        x.style.display = "block";
+    }
+
+    function hidefrog() {
+        var x = document.getElementById("alertBoxfrog");
+        x.style.display = "none";
+    }
+
 </script>
 </html>
