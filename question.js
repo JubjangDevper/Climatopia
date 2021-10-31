@@ -120,10 +120,10 @@ function goToBiome() {
 function generateQuestions(index) {
     const question = questions[index];
     questionText.innerHTML = `${question.question}`
-    choice1.innerHTML = `${question.answer1}`
-    choice2.innerHTML = `${question.answer2}`
-    choice3.innerHTML = `${question.answer3}`
-    choice4.innerHTML = `${question.answer4}`
+    choice1.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + `${question.answer1}`
+    choice2.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + `${question.answer2}`
+    choice3.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + `${question.answer3}`
+    choice4.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + `${question.answer4}`
 }
 
 // Scoring for button1 (A.) answers

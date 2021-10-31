@@ -60,7 +60,7 @@
 </div>
 
 <div class="row">
-  <img src="Assets/Asset 4.png" style="width: 100%;height:745px;" alt="">
+  <img src="Assets/Asset 4.png" id="leaves" alt="">
 
   <script src="question.js"></script>
 </div>
@@ -76,11 +76,20 @@
     visibility: hidden;
   }
 
+  #leaves {
+    width: 100%;
+    height: 745px
+  }
+
   body {
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
     width: 100%;
     background: linear-gradient(90deg, rgba(234, 255, 173, 1) 0%, rgba(251, 241, 188, 1) 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
     font-size: 1em;
     font-family: 'Prompt', sans-serif;
   }
@@ -205,5 +214,135 @@
     height: 90px;
     border-radius: 20px;
     font-size: 3em;
+  }
+
+  /* Responsive Landscape iPad Layout */
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    #leaves {
+      width: 100%;
+      height: 782px;
+    }
+
+    h1 {
+      position: absolute;
+      top: 10vh;
+      font-style: normal;
+      font-weight: normal;
+      color: #000000;
+      font-size: 3em;
+      text-shadow: 1px 1px 5px white;
+    }
+
+    #question {
+      position: absolute;
+      width: 960px;
+      height: 150px;
+      top: 25vh;
+      font-size: 2.75em;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.25);
+
+    }
+
+    #button1 {
+      position: absolute;
+      top: 51vh;
+      left: 5vh;
+      font-size: 1.5em;
+    }
+
+    #button1:hover {
+      background-color: pink;
+    }
+
+    #QA {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      top: 52vh;
+      left: 7vh;
+      font-size: 2em;
+      border-radius: 100%;
+      background-color: pink;
+      color: white;
+    }
+
+    #button2 {
+      position: absolute;
+      top: 51vh;
+      right: 5vh;
+      font-size: 1.5em;
+    }
+
+    #button2:hover {
+      background-color: skyblue;
+    }
+
+    #QB {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      top: 52vh;
+      left: 7vh;
+      font-size: 2em;
+      border-radius: 100%;
+      background-color: skyblue;
+      color: white;
+    }
+
+    #button3 {
+      position: absolute;
+      top: 70vh;
+      left: 5vh;
+      font-size: 1.5em;
+    }
+
+    #button3:hover {
+      background-color: lightgreen;
+    }
+
+    #QC {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      top: 71vh;
+      left: 7vh;
+      font-size: 2em;
+      border-radius: 100%;
+      background-color: lightgreen;
+      color: white;
+    }
+
+    #button4 {
+      position: absolute;
+      top: 70vh;
+      right: 5vh;
+      font-size: 1.5em;
+    }
+
+    #button4:hover {
+      background-color: gold;
+    }
+
+    #QD {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      top: 71vh;
+      left: 7vh;
+      font-size: 2em;
+      border-radius: 100%;
+      background-color: gold;
+      color: white;
+    }
+
+    .btn-light {
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+      width: 450px;
+      height: 90px;
+      border-radius: 20px;
+      font-size: 3em;
+    }
   }
 </style>
