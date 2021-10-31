@@ -23,7 +23,12 @@
     <title>Tropical Rain Forest</title>
 </head>
 <body>
-    <a href="map2.html"><img id="bmap" src="Assets/image/bmap.png"></a>
+    <div>
+        <a href="map2.html">
+            <img id="bmap" src="Assets/image/bmap.png">
+        </a>
+        <div id="countshow" >0/5</div>
+    </div>
 
     <!--BAR-->
     <div id="bar" class="bar">
@@ -59,12 +64,30 @@
         <img id="sloth" src="Assets/image/slotte.png">
         <div id="butsloth" onclick="sloth()"></div>
     </div>
-    <div class="card" id="alertBoxsloth">
-        <button id="xAlert" onclick="hidesloth()">Close</button>
+    <!--NEW-->
+    <div class="card overflow-auto" id="alertBoxsloth" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidesloth()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img  class="p-2" src="Assets/img-rockjaguar.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">หมีขาว</h5>
-            <p class="p-3" id="textAlertsloth"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-icebear.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">หมีขั้วโลก</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 26,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตอาร์กติก บริเวณแคนาดา
+                    <br>อลาสก้า รัสเซีย กรีนแลนด์ และไอซ์แลนด์</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertsloth" id="textAlertsloth" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
+                </p>
+            </div>
         </div>
     </div>
 
@@ -74,12 +97,29 @@
         <img id="rockbutter" src="Assets/image/r7.png">
         <div id="butbutter" onclick="butter()"></div>
     </div>
-    <div class="card" id="alertBoxbutter">
-        <button id="xAlert" onclick="hidebutter()">Close</button>
+    <div class="card overflow-auto" id="alertBoxsloth" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidesloth()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img  class="p-2" src="Assets/img-rockjaguar.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">หมีขาว</h5>
-            <p class="p-3" id="textAlertbutter"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-icebear.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">หมีขั้วโลก</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 26,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตอาร์กติก บริเวณแคนาดา
+                    <br>อลาสก้า รัสเซีย กรีนแลนด์ และไอซ์แลนด์</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertsloth" id="textAlertsloth" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
+                </p>
+            </div>
         </div>
     </div>
 
@@ -131,19 +171,47 @@
         </div>
     </div>
 
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html">ไปที่บทสรุป</a></button>
+        </div>
+        
+    </div>
+
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    /*NEW*/
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-
     body {
-        width: 80%;
+        width: 100%;
         height: 100%;
         background-image: url("Assets/image/trf.jpg");
         background-size:cover;
         background-repeat: no-repeat;
-        font-family: 'Mitr', sans-serif;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
         overflow-x: hidden;
+    }
+    /*NEW*/
+    @media only screen 
+    and (min-width: 481px) 
+    and (max-height: 1024px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{background-color:black;
+        background-position-y:12vh;
+        transform: translateY(12vh);}
+    }   
+    /*NEW*/
+    @media only screen 
+    and (min-width: 481px) 
+    and (max-height: 800px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:white;
+            background-position-y:0;
+            transform: translateY(0);}
     }
     #bmap{
         height: 8vw;
@@ -226,28 +294,39 @@
         cursor: pointer;
     }
 
-    #alertBoxsloth {
+    /*NEW*/
+    #alertBoxsloth{
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#08573d;
-        margin-top: 2vw;
-        margin-left: 38vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
         overflow:scroll;
     }
-
-    #xAlert {
-        color: white;
-        width: 100%;
-        border: 0;
-        background-color: #08573d;
+    /*NEW*/
+    .textAlertsloth{
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
     }
-
-    #xAlert:hover {
-        background-color: #1c8f0d;
+    /*NEW*/
+    #xAlert {
+        position: absolute;
+        z-index: 3;
+        top: 1vw;
+        font-size: 2vw;
+        color: rgb(204, 79, 79);
+        float: right;
+        margin-top: -1%;
+        margin-left: 93%;
+        border: 0;
+        background-color: transparent;
     }
 
     .slothbox {
@@ -298,17 +377,6 @@
         position: absolute;
         font-size: 1vw;
         overflow:scroll;
-    }
-
-    #xAlert {
-        color: white;
-        width: 100%;
-        border: 0;
-        background-color: #3c2d80;
-    }
-
-    #xAlert:hover {
-        background-color: #9170df;
     }
 
     .butterbox {
@@ -369,17 +437,6 @@
         overflow:scroll;
     }
 
-    #xAlert {
-        color: white;
-        width: 100%;
-        border: 0;
-        background-color: #3c2d80;
-    }
-
-    #xAlert:hover {
-        background-color: #9170df;
-    }
-
     .jaguarbox {
         margin-left: 35%;
         margin-top: 40%;
@@ -438,17 +495,6 @@
         position: absolute;
         font-size: 1vw;
         overflow:scroll;
-    }
-
-    #xAlert {
-        color: white;
-        width: 100%;
-        border: 0;
-        background-color: #3c2d80;
-    }
-
-    #xAlert:hover {
-        background-color: #9170df;
     }
 
     .macawbox {
@@ -512,23 +558,59 @@
         overflow:scroll;
     }
 
-    #xAlert {
-        color: white;
-        width: 100%;
-        border: 0;
-        background-color: #3c2d80;
-    }
-
-    #xAlert:hover {
-        background-color: #9170df;
-    }
-
     .frogbox {
         margin-left: 35%;
         margin-top: 40%;
         position: absolute;
     }
 
+    /*NEW*/
+    #countshow{
+        background-color: white;
+        border: rgb(193, 138, 204) 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 1.8rem;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+    }
+    /*NEW*/
+    #complete{
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid rgb(193, 138, 204);
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #9f34b4;
+        opacity: 0%;
+        left: 35%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+        width: 30%;
+        
+    }
+    /*NEW*/
+    #complete > h1 {
+        font-size: 3vw;
+    }
+    /*NEW*/
+    .btn-pur{
+        margin: 2vw;
+        color:white;
+        background: #691f94;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+    }
+    /*NEW*/
+    button > a{
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+    }
 
 
 </style>
@@ -559,9 +641,9 @@
         showsloth()
     }
 
+    //-NEW-//
     function showsloth() {
         var x = document.getElementById("alertBoxsloth");
-        document.getElementById("textAlertsloth").innerHTML = "หมีขาว ถือได้ว่าเป็นสัตว์กินเนื้อบนพื้นดินที่มีขนาดใหญ่เป็นอันดับที่ 2 รองจากหมีกริซลี ตัวผู้เต็มวัยอาจสูงได้ถึง 3 เมตร น้ำหนักตัวอาจมากได้ถึง 350–680 กิโลกรัม (770–1,500 ปอนด์) อายุขัยโดยเฉลี่ย 30 ปี มีส่วนคอที่ยาวกว่า ใบหูมีขนาดเล็ก อุ้งเท้ามีขนาดใหญ่ และที่เป็นจุดเด่นเห็นได้ชัด คือ สีขนที่เป็นสีขาวครีมอมเหลืองอ่อน ๆ ปัจจุบันประชากรหมีขั้วโลกที่อาศัยอยู่ในธรรมชาติมีประมาณ 25,000 ตัว ขณะที่น้ำแข็งในทะเลแถบขั้วโลกเหนือ ซึ่งเป็นที่อยู่อาศัยของหมีขั้วโลกกลับละลายลงอย่างรวดเร็ว รายงานชี้ว่านับตั้งแต่ทศวรรษ 1970 เป็นต้นมา น้ำแข็งขั้วโลกละลายหายไปถึง 13 เปอร์เซ็นต์"
         x.style.display = "block";
     }
 
@@ -655,5 +737,16 @@
         x.style.display = "none";
     }
 
+    //NEW//
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/5";
+    if (clicks === 5){
+        i.style.opacity = "100%";
+    }
+  }
 </script>
 </html>
