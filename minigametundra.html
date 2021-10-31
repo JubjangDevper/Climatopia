@@ -64,6 +64,7 @@
         <img id="icebear2" src="Assets/p2.png">
         <div id="butbear" onclick="bear()"></div>
     </div>
+    <!--NEW-->
     <div class="card overflow-auto" id="alertBoxbear" style="max-height: 40vw;">
         <button id="xAlert" onclick="hidebear()"><i class="fa fa-times-circle" aria-hidden="true"></i>
         </button>
@@ -82,13 +83,14 @@
                 </div>
             </div>
             <div class="row" >
-                <p class="p-3 ml-4 mr-4" id="textAlertbear" >
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
+                <p class="p-3 ml-4 mr-4 textAlertbear" id="textAlertbear" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
                 </p>
             </div>
         </div>
     </div>
-
+    <!---->
     <div id="animal" class="foxbox" onclick="clickcount()">
         <img id="fox" src="Assets\ani5.png">
         <img id="tree" src="Assets/22251.png">
@@ -156,6 +158,7 @@
         </div>
 </body>
 <style>
+/*NEW*/
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
     body {
@@ -166,6 +169,7 @@
         background-repeat: no-repeat;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     }
+/*NEW*/
     @media only screen 
   and (min-width: 481px) 
   and (max-height: 1024px) 
@@ -175,15 +179,17 @@
         background-position-y:12vh;
         transform: translateY(12vh);}
 }   
-@media only screen 
-  and (min-width: 481px) 
-  and (max-height: 800px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
-    body{background-color:white;
-        background-position-y:0;
-        transform: translateY(0);}
-}   
+/*NEW*/
+    @media only screen 
+    and (min-width: 481px) 
+    and (max-height: 800px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:white;
+            background-position-y:0;
+            transform: translateY(0);}
+    }
+
     /*Bar*/
     .bar>i{
         font-size: 1.3vw;
@@ -274,6 +280,7 @@
         cursor: pointer;
     }
 
+    /*NEW*/
     #alertBoxbear {
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
@@ -288,11 +295,13 @@
         line-height: 1.6vw;
         overflow:scroll;
     }
-    #textAlertbear{
+    /*NEW*/
+    .textAlertbear{
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
     }
+    /*NEW*/
     #xAlert {
         position: absolute;
         z-index: 3;
@@ -529,38 +538,53 @@
         margin-top:0%;
         position: absolute;
     }
+    /*NEW*/
     #countshow{
-        height: 8vw;
-        width: 8vw;
-        top: 3vw;
-        left: 85vw;
+        background-color: white;
+        border: rgb(193, 138, 204) 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
         position:fixed;
         padding: 1vw;
         font-size: 1.8rem;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
     }
+    /*NEW*/
     #complete{
-      
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid rgb(193, 138, 204);
         text-shadow: white 0.25vw 0.25vw ;
         color: #9f34b4;
         opacity: 0%;
+        left: 35%;
         top: 20vw;
         text-align: center;
         flex-direction: column;
+        width: 30%;
+        
     }
+    /*NEW*/
     #complete > h1 {
-        font-size: 4rem;
+        font-size: 3vw;
     }
+    /*NEW*/
     .btn-pur{
         margin: 2vw;
-  color:white;
-background: #691f94;
-box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
-border-radius: 45px;
-}
-button > a{
-    color: white;
-    text-decoration: none;
-}
+        color:white;
+        background: #691f94;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+    }
+    /*NEW*/
+    button > a{
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+    }
 </style>
 <script>
     function bear() {
@@ -571,7 +595,7 @@ button > a{
 
         showbear()
     }
-
+    //-NEW-//
     function showbear() {
         var x = document.getElementById("alertBoxbear");
         x.style.display = "block";
@@ -683,7 +707,7 @@ button > a{
         x.style.transition = "left 1s";
     }
     }
-    //-//
+    //NEW//
     var clicks = 0;
     var i = document.getElementById("complete");
     function clickcount(){
