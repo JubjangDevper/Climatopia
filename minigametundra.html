@@ -30,6 +30,14 @@
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
         <div id="countshow" >0/5</div>
+        <!--HOW TO BUTTON-->
+        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+        <div class="text-center" id="play" onclick="hidehowto()">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            <h5>วิธีการเล่น</h5>
+            <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+        <!--END HOW TO BUTTON-->
     </div>
     <div id="bar" class="bar">
         <div class="row pl text-center">
@@ -80,6 +88,7 @@
                     <p><b>ประชากร: </b>ประมาณ 26,000 ตัว</p>
                     <p><b>แถบที่อยู่อาศัย: </b>เขตอาร์กติก บริเวณแคนาดา
                     <br>อลาสก้า รัสเซีย กรีนแลนด์ และไอซ์แลนด์</p>
+                    <p><b>การค้นพบสปีชีส์:</b> ค้นพบโดย Constantine John Phipps ในปี ค.ศ.1774</p>
                 </div>
             </div>
             <div class="row" >
@@ -90,72 +99,140 @@
             </div>
         </div>
     </div>
-    <!---->
+
+    <!--FOX-->
     <div id="animal" class="foxbox" onclick="clickcount()">
         <img id="fox" src="Assets\ani5.png">
         <img id="tree" src="Assets/22251.png">
         <img id="tree2" src="Assets/22251.png">
         <div id="butfox" onclick="fox()"></div>
     </div>
-    <div class="card" id="alertBoxfox">
-        <button id="xAlert" onclick="hidefox()">Close</button>
-        <div class="container p-2">
-            <center><img  class="p-2" src="Assets/img-icefox.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">จิ้งจอกอาร์กติก</h5>
-            <p class="p-3" id="textAlertfox"></p>
+    <div class="card overflow-auto" id="alertBoxfox" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidefox()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-icefox.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">จิ้งจอก</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 26,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตอาร์กติก บริเวณแคนาดา
+                    <br>อลาสก้า รัสเซีย กรีนแลนด์ และไอซ์แลนด์</p>
+                    <p><b>การจำแนกสปีชีส์:</b> โดย Constantine John Phipps ในปี ค.ศ.1774</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertfox" id="textAlertfox" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
+                </p>
+            </div>
         </div>
     </div>
 
+    <!--RABIT-->
     <div id="animal" class="rabitbox" onclick="clickcount()">
         <img id="rabit" src="Assets\ani4.png">
         <img id="treerab" src="Assets/22251.png">
         <img id="treerab2" src="Assets/22251.png">
         <div id="butrabit" onclick="rabit()"></div>
     </div>
-    <div class="card" id="alertBoxrabit">
-        <button id="xAlert" onclick="hiderabit()">Close</button>
-        <div class="container"></div>
-            <center><img  class="p-2" src="Assets/img-rabbit.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">กระต่ายอาร์กติก</h5>
-            <p class="p-3" id="textAlertrabit"></p>
+    <div class="card overflow-auto" id="alertBoxrabit" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hiderabit()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-rabbit.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">กระต่ายอาร์กติก</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Lepus arcticus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> เป็นกังวลน้อย </p>    
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตอาร์กติก กรีนแลนด์ บริเวณแคนาดา ตอนใต้ของลาบราดอร์</p>
+                    <p><b>การจำแนกสปีชีส์:</b> โดย John Ross ในปี ค.ศ.1819</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertrabit" id="textAlertrabit" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเมื่อถึงฤดูร้อน กระต่ายอาร์กติกจะผลัดขนเป็นสีน้ำตาลหรือเทา พอเข้าฤดูหนาวกระต่ายอาร์กติกก็จะผลัดขนเป็นสีขาวเพื่อใช้ในการพรางตัวให้กลืนไปกับหิมะ จะได้ปลอดภัยจากนักล่า
+                </p>
+            </div>
         </div>
     </div>
 
+    <!--PENGUIN-->
     <div id="animal" class="penguinbox" onclick="clickcount()">
         <img id="penguin" src="Assets\ani6.png">
         <img id="Rockpenguin" src="Assets/Asset 3.png">
         <img id="Rockpenguin2" src="Assets/p.png">
         <div id="butpenguin" onclick="penguin()"></div>
     </div>
-    <div class="card" id="alertBoxpenguin">
-        <button id="xAlert" onclick="hidepenguin()">Close</button>
+    <div class="card overflow-auto" id="alertBoxpenguin" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidepenguin()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img  class="p-2" src="Assets/img-pen.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">เพนกวินจักรพรรดิ</h5>
-            <p class="p-3" id="textAlertpenguin"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-pen.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">เพนกวินจักรพรรดิ</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Aptenodytes forsteri</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>625,000 ถึง 650,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>รอบทวีปแอนตาร์กติกา</p>
+                    <p><b>การค้นพบสปีชีส์:</b> ค้นพบโดย George Robert Gray ในปี ค.ศ.1844</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertpenguin" id="textAlertpenguin" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspในปี 2016 ฝูงนกเพนกวินจักรพรรดิที่ใหญ่ที่สุดเป็นอันดับสองของโลก ซึ่งอยู่ที่บริเวณอ่าว Halley Bay ได้รับผลกระทบจากพายุลูกใหญ่ ส่งผลให้แผ่นน้ำแข็งที่ฝูงเพนกวินใช้เป็นที่อาศัยแตกลง ส่งผลให้ลูกนกเพนกวินหลายพันตัวที่ยังไม่เติบโตเต็มที่และยังไม่พร้อมจะลงทะเล ต้องจมน้ำตาย
+                    <br>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspจากเหตุการณ์ดังกล่าวส่งผลให้ต่อมาในปี 2017 ไม่มีลูกนกเพนกวินเกิดที่บริเวณนี้อีก ส่วนในปี 2018 นักวิทยาศาสตร์รายงานว่ามีลูกเพนกวินเกิดจำนวนไม่มากเท่านั้น
+                    
+                    นี่ถือเป็นผลกระทบหนึ่งของภาวะโลกร้อน ที่ทำให้แผ่นน้ำแข็งละลายก่อนเวลาอันควร ทำให้ลูกนกเพนกวินไม่มีเวลาพอที่จะเติบโตให้พร้อมกับการเดินทางในทะเล<b>
+                </p>
+            </div>
         </div>
     </div>
 
+    <!--BIRD-->
     <div id="animal" class="birdbox" onclick="clickcount()">
         <img id="bird" src="Assets\ani3.png">
         <div id="butbird" onclick="bird()"></div>
     </div>
-    <div class="card" id="alertBoxbird">
-        <button id="xAlert" onclick="hidebird()">Close</button>
+    <div class="card overflow-auto" id="alertBoxbird" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidebird()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img  class="p-2" src="Assets/img-bird.jpg" style="width: 80%;"></center>
-            <h5 class="text-center">นกเค้่าแมวหิมะ</h5>
-            <p class="p-3" id="textAlertbird"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/img-bird.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">นกเค้าแมวหิมะ</h5>
+                    <p style="font-weight: 100;"><b style="font-weight: 600;">ชื่อวิทยาศาสตร์:</b> Bubo scandiacus</p>
+                    <p style="font-weight: 100;"><b style="font-weight: 600;">สถานะการอนุรักษ์:</b> ความเสี่ยงต่ำ  </p>    
+                    <p style="font-weight: 100;"><b style="font-weight: 600;">ประชากร:</b> ประมาณ 200,000 ตัว</p>
+                    <p style="font-weight: 100;"><b style="font-weight: 600;">แถบที่อยู่อาศัย:</b> ตอนเหนือของทวีปอเมริกาเหนือและยุโรป บริเวณใกล้กับขั้วโลกเหนือ</p>
+                    <p style="font-weight: 100;"><b style="font-weight: 600;">การค้นพบสปีชีส์:</b> ค้นพบโดย George Robert Gray ในปี ค.ศ.1844</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p style="font-weight: 100;" class="p-3 ml-4 mr-4 textAlertbird" id="textAlertbird" >
+                    <b style="font-size: 1.2vw;font-weight: 600;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สภาวะภูมิอากาศเปลี่ยนแปลง (Climate Change)</b> เป็นสาเหตุหลักที่ส่งผลกับการอยู่รอดของหมีขั้วโลก สิ่งที่เกิดขึ้นคือน้ำแข็งละลายเร็วขึ้น ละลายนานขึ้น <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>1.ส่งผลให้หาอาหารยากขึ้น:</b> เพราะปกติแมวน้ำของโปรดมักจะหาได้บนบกหรือบริเวณแผ่นน้ำแข็ง พวกหมีต้องเดินทางไกลมากขึ้น ใช้พลังงานมากขึ้น แต่มีอาหารน้อย <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>2.ทำให้ตัวซูบผอมมีลูกหมียากขึ้น:</b> เพราะในการตั้งท้อง แม่หมีจะต้องมีไขมันสะสมมากพอที่จะเลี้ยงลูกได้ เมื่อขาดสารอาหารที่จำเป็น การมีลูกก็ยากขึ้น ทำให้เสี่ยงต่อการสูญพันธุ์ หรือต่อให้คลอดออกมาแล้ว การที่ลูกหมีได้รับสารอาหารไม่เพียงพอ ก็ทำให้ไม่แข็งแรง อยู่รอดได้ยาก
+                </p>
+            </div>
         </div>
     </div>
-    
-        <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
-            <h1>Complete</h1>
-            <div>
-                <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html">ไปที่บทสรุป</a></button>
-            </div>
-            
-        </div>
 </body>
 <style>
 /*NEW*/
@@ -168,6 +245,22 @@
         background-size:cover;
         background-repeat: no-repeat;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        
+    }
+    ::-webkit-scrollbar {
+  width: 1vw;
+    }
+        /* Track */
+    ::-webkit-scrollbar-track {
+    margin-right: 2vw;
+
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: rgb(231, 231, 231); 
+    border-radius: 20px;
     }
 /*NEW*/
     @media only screen 
@@ -181,8 +274,8 @@
 }   
 /*NEW*/
     @media only screen 
-    and (min-width: 481px) 
-    and (max-height: 800px) 
+    and (min-width: 1024px) 
+    and (max-height: 800px)
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
         body{background-color:white;
@@ -190,6 +283,15 @@
             transform: translateY(0);}
     }
 
+    @media only screen 
+  and (max-width: 1024px) 
+  and (max-height: 770px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{background-color:black;
+        background-position-y:12vh;
+        transform: translateY(12vh);}
+}   
     /*Bar*/
     .bar>i{
         font-size: 1.3vw;
@@ -201,6 +303,7 @@
         cursor: pointer;
     }
     .bar{
+        margin-top: 0.5vw;
         font-size: 1.2vw;
         color: white;
         font-family: ZCOOL KuaiLe;
@@ -282,6 +385,7 @@
 
     /*NEW*/
     #alertBoxbear {
+        z-index: 1;
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
         width: 50vw;
@@ -297,6 +401,7 @@
     }
     /*NEW*/
     .textAlertbear{
+        z-index: 1;
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
@@ -347,7 +452,11 @@
         margin-left: 52.5vw;
         position: absolute;
     }
-
+    .textAlertfox{
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
+    }
     #butfox {
         z-index: 1;
         height: 9vw;
@@ -362,15 +471,18 @@
     }
 
     #alertBoxfox {
+        z-index: 1;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#3c2d80;
-        margin-top: 18vw;
-        margin-left: 65vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
         overflow:scroll;
     }
 
@@ -420,17 +532,26 @@
     }
 
     #alertBoxrabit {
+        z-index: 1;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        margin-top: 16vw;
-        margin-left: 3vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
         overflow:scroll;
     }
-
+    .textAlertrabit{
+        z-index: 1;
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
+    }
 
     .rabitbox {
         margin-left: 0%;
@@ -480,18 +601,24 @@
     }
 
     #alertBoxpenguin {
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#3c2d80;
-        margin-top: 16vw;
-        margin-left: 20vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
         overflow:scroll;
     }
-
+    .textAlertpenguin{
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
+    }
     .penguinbox {
         margin-left: 20%;
         margin-top:12%;
@@ -521,18 +648,25 @@
     }
 
     #alertBoxbird {
+        z-index: 1;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#3c2d80;
-        margin-top: 3vw;
-        margin-left: 67vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
         overflow:scroll;
     }
-
+    .textAlertbird{
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
+    }
     .birdbox {
         margin-left: 79%;
         margin-top:0%;
@@ -540,14 +674,15 @@
     }
     /*NEW*/
     #countshow{
+
         background-color: white;
-        border: rgb(193, 138, 204) 3px solid;
+        border: rgb(168, 66, 66) 3px solid;
         border-radius: 50px;
         top: 8vw;
         left: 93vw;
         position:fixed;
         padding: 1vw;
-        font-size: 1.8rem;
+        font-size: 1.8vw;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 
     }
@@ -585,6 +720,58 @@
         color: white;
         text-decoration: none;
     }
+    /*START HOW TO*/
+    #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+    #play > p{
+        color: black;
+    }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+    }
+    /*END HOW TO*/
 </style>
 <script>
     function bear() {
@@ -618,7 +805,6 @@
 
     function showfox() {
         var x = document.getElementById("alertBoxfox");
-        document.getElementById("textAlertfox").innerHTML = "สุนัขจิ้งจอกอาร์คติก น้ำหนักเฉลี่ย 3-4 กิโลกรัมพบได้ในเขตทุนดราแถบขั้วโลกเหนือเท่านั้น ร่างกายของมันสามารถรับมือกับอุณหภูมิระดับ -40 องศาเซลเซียส ของอาร์กติกในช่วงฤดูหนาวได้เป็นอย่างดี ไม่เพียงอัตราเมตาบอลิซึมจะปรับลดต่ำกว่าปกติ ชั้นไขมันใต้ผิวหนังยังหนาขึ้น เพื่อกักเก็บความร้อนและทำหน้าที่เป็นแหล่งพลังงานสำคัญยามอาหารขาดแคลน อีกทั้งขนฟูสีขาวโพลนที่ปกคลุมทั่วร่าง (ไม่เว้นแม้อุ้งเท้าที่ต้องสัมผัสกับหิมะและน้ำแข็ง) ก็ขึ้นหนาแน่นเป็นพิเศษ ก่อนจะผลัดขนชุดใหม่ที่บางกว่าและมีสีเทาอมน้ำตาลเมื่อฤดูร้อนช่วงสั้นๆ มาเยือน ความแตกต่างของสีขนทั้งสองชุดช่วยให้สุนัขจิ้งจอกอาร์กติก พรางตัวได้กลมกลืนกับสภาพแวดล้อมที่เปลี่ยนไปตามฤดูกาล ซึ่งเอื้อประโยชน์ในการล่าเหยื่อ เช่น หนู กระต่ายและเพิ่มความปลอดภัยจากการถูกไล่ล่าด้วยเช่นกัน อุณหภูมิช่วงหน้าร้อนของขั้วโลกเหนือที่อุ่นขึ้นอย่างช้าๆ เนื่องจากสภาวะโลกร้อน เปิดโอกาสให้สุนัขจิ้งจอกแดงขยับขยายพื้นที่หากินไปยังละติจูดที่สูงขึ้น และซ้อนทับกับอาณาเขตของสุนัขจิ้งจอกอาร์กติก ด้วยขนาดตัวที่ใหญ่กว่าและมีนิสัยก้าวร้าว สุนัขจิ้งจอกแดงจึงได้เปรียบในการออกล่าเหยื่อและนั่นก็ทำให้จำนวนประชากรสุนัขจิ้งจอกอาร์กติกเริ่มลดลงค่อนข้างชัดเจนในหลายพื้นที่"
         x.style.display = "block";
     }
 
@@ -640,7 +826,6 @@
 
     function showrabit() {
         var x = document.getElementById("alertBoxrabit");
-        document.getElementById("textAlertrabit").innerHTML = "กระต่ายขั้วโลกเหนือมีลักษณะภายนอกคล้ายกับกระต่ายป่า แต่หูจะสั้นกว่า และเมื่อยืนจะสูงกว่า สามารถทนต่ออากาศเย็นได้มากกว่ากระต่ายทั่วไปมาก โดยปกติมักจะพบมันอยู่ตัวเดียวโดด ๆ กระต่ายสายพันธุ์นี้สามารถวิ่งได้รวดเร็วมากถึง 60 กิโลเมตรต่อชั่วโมง กระต่ายขั้วโลกเหนืออาศัยอยู่อย่างแพร่หลาย สามารถพบได้ตามบริเวณทุ่งหิมะในแถบเหนือสุดของกรีนแลนด์ กลุ่มเกาะอาร์กติกแคนาดา และทางตอนเหนือของแคนาดา กระต่ายขั้วโลกจะมีการผลัดสีขนไปตามสภาพอากาศ ในฤดูร้อนจะมีขนเป็นสีน้ำตาลหรือเทา และเมื่อเข้าสู่ฤดูหนาวจะเปลี่ยนเป็นสีขาวนุ่มราวกับหิมะ อย่างไรก็ดีในเขตที่กระต่ายขั้วโลกอาศัยอยู่นี้ มีช่วงฤดูร้อนเพียงสั้น ๆ เท่านั้น ดังนั้นเรามักจะเห็นเจ้ากระต่ายชนิดนี้มีขนสีขาวตลอดทั้งปี"
         x.style.display = "block";
     }
 
@@ -662,7 +847,6 @@
 
     function showpenguin() {
         var x = document.getElementById("alertBoxpenguin");
-        document.getElementById("textAlertpenguin").innerHTML = "เพนกวินจักรพรรดิ เป็นเพนกวินที่มีขนาดใหญ่ที่สุดในบรรดาสปีชีส์ต่างๆ ที่มีถิ่นฐานอยู่ในทวีปแอนตาร์กติกา ตัวผู้และตัวเมียมีสีขนและขนาดใกล้เคียงกัน สูงราว 122 ซม. ขนด้านหลังสีดำตัดกันกับขนด้านหน้าตรงบริเวณท้องที่มีสีขาว อกตอนบนสีเหลืองอ่อนและค่อยๆ ไล่ลงมาจนเป็นสีขาว และบริเวณหูเป็นสีเหลืองจัด มีการประเมินว่าเพนกวินจักรพรรดิอาจจะถึงจุดที่เสี่ยงต่อการสูญพันธ์ภายในระหว่าง ค.ศ. 2100 ถึง ค.ศ. 2109 เนื่องมาจากสภาวะการเปลี่ยนแปลงของสภาวะอากาศ การใช้แบบจำลองทางคณิตศาสตร์ในการทำนายการสูญเสียของน้ำแข็งจากภาวะโลกร้อนที่มีผลต่อกลุ่มสืบพันธุ์ใหญ่ๆ ของเพนกวินจักรพรรดิดินแดนอเดลีในทวีปแอนตาร์กติกา ทำนายว่าประชากรของเพนกวินจะลดลงราว 87% ภายในปลายศตวรรษจากจำนวน 3,000 คู่ที่ทำการสืบพันธุ์อยู่ในปัจจุบันลงไปเหลือเพียง 400 คู่ แบบจำลองของการลดจำนวนลงนี้อาจจะนำไปใช้ในการทำนายการลดจำนวนของสปีชีส์ทั้งหมดจากจำนวนทั้งหมดราว 200,000 คู่ในปัจจุบัน"
         x.style.display = "block";
     }
 
@@ -683,7 +867,6 @@
 
     function showbird() {
         var x = document.getElementById("alertBoxbird");
-        document.getElementById("textAlertbird").innerHTML = "นกเค้าแมวหิมะจัดเป็นนกเค้าแมวที่มีขนาดใหญ่ มีลักษณะเด่น คือ ขนตามลำตัวเป็นสีขาวล้วนสะอาด มีหัวกลมสีเหลือง ดวงตากลมโตสีดำ, สีฟ้า หรือสีเหลือง เท้ามีขนมาก ขนตามลำตัวโดดเด่นด้วยสีขาวแต้มด้วยบางส่วนสีดำเป็นแถบแนวนอนหรือลายจุด นกตัวเมียและนกวัยที่ยังไม่โตเต็มที่จะมีจุดดำขึ้นตามลำตัวมากกว่า ในขณะที่ตัวผู้เป็นสีขาวเกือบทั้งหมด และสีขนอาจเปลี่ยนไปตามฤดูกาลเพียงเล็กน้อย พบกระจายพันธุ์ในแถบซีกโลกทางตอนเหนือ เช่น เขตทุนดราทางตอนเหนือของทวีปอเมริกาเหนือและยุโรปตอนเหนือบริเวณใกล้กับขั้วโลกเหนือ, วงกลมอาร์กติก หรือสแกนดิเนเวีย หากินช่วงกลางวันตั้งแต่เช้าถึงค่ำ มีความแข็งแรงและมั่นคงบินมีประสิทธิภาพและรวดเร็ว บินสั้น ๆ ใกล้พื้นดิน มีนกเค้าแมวหิมะประมาณ 200,000 ตัวในอเมริกาเหนือ แม้จะมีความพยายามในการอนุรักษ์  แต่การเปลี่ยนแปลงสภาพภูมิอากาศส่งผลกระทบต่อถิ่นที่อยู่อาศัยของนกฮูกหิมะในแถบอาร์กติก มีจำนวนลดลง"
         x.style.display = "block";
     }
 
@@ -718,6 +901,18 @@
         i.style.opacity = "100%";
     }
   }
+
+  //HOW TO FUNCTION//
+  function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+
 </script>
 
 
