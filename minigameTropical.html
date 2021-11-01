@@ -21,13 +21,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Tropical Rain Forest</title>
+     <!--PRELOAD-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div>
+        <div id="introLoader" class="introloader">
+            <div class="spinner">
+              <div class="spinner-inner"></div>
+            </div>
+          </div>
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
         <div id="countshow" >0/5</div>
+         <!--HOW TO BUTTON-->
+         <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+         <div class="text-center" id="play" onclick="hidehowto()">
+             <i class="fa fa-times-circle" aria-hidden="true"></i>
+             <h5>วิธีการเล่น</h5>
+             <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+         <!--END HOW TO BUTTON-->
     </div>
 
     <!--BAR-->
@@ -704,6 +719,112 @@
         color:rgb(105, 211, 123);
     }
 
+    /*START HOW TO*/
+    #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+    #play > p{
+        color: black;
+    }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+    }
+    /*END HOW TO*/
+
+    /*<!--PRELOAD-->*/
+    .introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
 </style>
 <script>
     function hideBar() {
@@ -837,5 +958,40 @@
         localStorage.setItem("trf", "true");
     }
   }
+
+  //HOW TO FUNCTION//
+  function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+//<!--PRELOAD-->//
+    function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+        
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+       
+    });
+    });
 </script>
 </html>
