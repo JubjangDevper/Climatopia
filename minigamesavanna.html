@@ -20,14 +20,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Savanna</title>
 </head>
 
 <body>
     <div>
+        <div id="introLoader" class="introloader">
+            <div class="spinner">
+              <div class="spinner-inner"></div>
+            </div>
+          </div>
+    <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+    <div class="text-center" id="play" onclick="hidehowto()">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <h5>วิธีการเล่น</h5>
+        <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+    <div>
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
+        <div id="countshow" >0/4</div>
     </div>
      <!--BAR-->
      <div id="bar" class="bar">
@@ -57,61 +71,135 @@
         </div>
         <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
-    <div class="zebrabox">
-        <img id="zebra" src="Assets\image\zebra.png">
-        <img id="rockzebra" src="Assets\image\r9.png">
-        <div id="butZebra" onclick="Zebra()"></div>
+    <div id="animal" class="zebrabox" onclick="clickcount()">
+        <img id="zebra" src="Assets/image/zebra.png">
+        <img id="rockzebra" src="Assets/image/r9.png">
+        <div id="butzebra" onclick="zebra()"></div>
     </div>
-    <div class="card" id="alertBoxzebra">
-        <button id="xAlert" onclick="hidezebra()">Close</button>
+    <div class="card overflow-auto" id="alertBoxzebra" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidezebra()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realzebra.jpeg"></center>
-            <p id="textAlertzebra"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realzebra.jpeg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">ม้าลาย</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Equus quagga</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ใกล้ถูกคุกคาม </p> 
+                    <p><b>ประชากร: </b>ประมาณ 250,000 ตัว</p>   
+                    <p><b>แถบที่อยู่อาศัย: </b>ทางตอนใต้ของประเทศซูดาน ทางตอนใต้ของเอธิโอเปีย แอฟริกาตะวันออก โมซัมบิกและมาลาวี และแอฟริการตอนใต้ ทุ่งหญ้าสะวันนา
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertzebra" id="textAlertzebra" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ม้าลายเบอร์เชลล์มักจะอาศัยอยู่รวมเป็นฝูงกับวิลเดอบีสต์</b> เพื่อคอยระวังภัยให้แก่กัน เนื่องจากม้าลายเบอร์เชลล์เป็นสัตว์ที่ประสาทตาไม่ดี แต่ประสาทหูดีเยี่ยม ขณะที่วิลเดอบีสต์เป็นสัตว์ที่ประสาทตาดี แต่ประสาทหูไม่ดี และเป็นม้าลายที่อพยพครั้งใหญ่ตามฝูงวิลเดอบีสต์ข้ามแม่น้ำที่มีอันตรายไปเป็นประจำทุกปีจากอุทยานแห่งชาติเซเรงเกติไปยังอุทยานแห่งชาติมาไซมารา มีปริมาณม้าลายในการอพยพแต่ละครั้งประมาณ 500,000 ตัว และในเดือนตุลาคมจะอพยพกลับ จัดเป็นม้าลายที่มีฝูงขนาดใหญ่ที่สุดในบรรดาม้าลายทั้งหมด โดยมีตัวผู้ที่แข็งแรงที่สุดเป็นจ่าฝูง และอาศัยอยู่ร่วมหากินกับสัตว์กีบหรือสัตว์กินพืชชนิดอื่นได้อย่างดี
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="lionbox">
+    <div class="lionbox" onclick="clickcount()">
         <img id="lion" src="Assets\image\lion.png">
         <img id="rocklion" src="Assets\image\r7.png">
         <div id="butlion" onclick="lion()"></div>
     </div>
-    <div class="card" id="alertBoxlion">
-        <button id="xAlert" onclick="hidelion()">Close</button>
+    <div class="card overflow-auto" id="alertBoxlion" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidelion()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/reallion.jpg"></center>
-            <p id="textAlertlion"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/reallion.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">สิงโต</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Panthera leo</p>
+                    <p><b>สถานะการอนุรักษ์:</b>ถูกคุมคาม</p>    
+                    <p><b>ประชากร: </b>ประมาณ 39,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พบได้ทั่วไปในแอฟริกายกเว้นป่าฝนเขตร้อนและภายในทะเลทรายซาฮารา อาศัยอยู่ในแหล่งที่อยู่อาศัยตั้งแต่ระดับน้ำทะเลจนถึงเนินเขาสูงถึง 13,700 ฟุตรวมถึงภูเขา คิลิมันจาโร.
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertlion" id="textAlertlion" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ขนแผงคอ</b> แผงคอของสิงโตเพศผู้ที่โตเต็มวัยเป็นลักษณะเฉพาะที่โดดเด่นของสบีชีส์นี้ ซึ่งไม่พบในสัตว์ในวงศ์เดียวกันชนิดอื่น ส่งผลให้มันแลดูมีขนาดใหญ่ขึ้น ช่วยในแสดงออกของการข่มขู่ได้ดีเยี่ยมเมื่อเผชิญหน้ากับสิงโตตัวอื่นและคู่แข่งที่สำคัญในแอฟริกา ไฮยีนาลายจุด การที่มีหรือไม่มีแผงคอ รวมถึงสีและขนาดนั้นเกี่ยวข้องกับเงื่อนไขทางพันธุกรรม การเจริญเติบโต สภาพอากาศ และการสร้างเทสโทสเตอโรน มีหลักทั่วไปว่าขนแผงคอสีเข้มกว่าและใหญ่กว่าคือสิงโตที่มีสุขภาพดีกว่า การเลือกคู่ของนางสิงห์นั้นมักจะเลือกสิงโตเพศผู้ที่มีแผงคอหนาแน่นและมีสีเข้มที่สุด
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="elephantbox">
+    <div class="elephantbox" onclick="clickcount()">
         <img id="elephant" src="Assets\image\elephant.png">
         <img id="rockelephant" src="Assets\image\r3.png">
         <div id="butelephant" onclick="elephant()"></div>
     </div>
-    <div class="card" id="alertBoxelephant">
-        <button id="xAlert" onclick="hideelephant()">Close</button>
+    <div class="card overflow-auto" id="alertBoxelephant" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideelephant()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realelephant.jpg"></center>
-            <p id="textAlertelephant"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realelephant.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">ช้างแอฟริกา</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Loxodonta</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ถูกคุมคาม </p>    
+                    <p><b>ประชากร: </b>ประมาณ 415,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พบได้ในป่าทึบทุ่งหญ้าสะวันนาแบบเปิดและปิดทุ่งหญ้าและในทะเลทรายนามิเบียและมาลี 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertelephant" id="textAlertelephant" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>งวงช้างเป็นเครื่องมืออเนกประสงค์</b> นอกจากขนาดที่ใหญ่โตแล้วสิ่งที่น่าสังเกตที่สุดของช้างก็คืองวงของมัน โดยพื้นฐานแล้วจมูกและริมฝีปากบนยาวมาก ช้างใช้งวงของมันไม่เพียงแต่ในการหายใจดมกลิ่นและกิน แต่จับกิ่งไม้หยิบสิ่งของที่มีน้ำหนักมากถึง 700 ปอนด์ ลูบไล้ช้างตัวอื่นอย่างรักใคร่ขุดหาน้ำที่ซ่อนอยู่และอาบน้ำให้ตัวเอง ภายในประกอบด้วยเส้นใยกล้ามเนื้อมากกว่า 100,000 มัดซึ่งสามารถทำให้เป็นเครื่องมือที่ละเอียดอ่อนและแม่นยำอย่างน่าประหลาดใจ
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="erafbox">
+    <div class="erafbox" onclick="clickcount()">
         <img id="eraf" src="Assets\image\eraf.png">
         <img id="rockeraf" src="Assets\image\r2.png">
         <div id="buteraf" onclick="eraf()"></div>
     </div>
-    <div class="card" id="alertBoxeraf">
-        <button id="xAlert" onclick="hideeraf()">Close</button>
+    <div class="card overflow-auto" id="alertBoxeraf" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideeraf()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realeraf.jpg"></center>
-            <p id="textAlerteraf"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realeraf.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">เสือจากัวร์</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Giraffa camelopardalis</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ถูกคุมคาม </p>    
+                    <p><b>แถบที่อยู่อาศัย: </b>มีอยู่ในป่าทั่วทั้งแอฟริกา แต่ส่วนใหญ่มักพบในทุ่งหญ้าสะวันนาและป่าไม้รวมกัน
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlerteraf" id="textAlerteraf" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ยีราฟมีระบบไหลเวียนโลหิตแบบพิเศษ เรียกว่า “Rete mirabile”</b> เพื่อช่วยป้องกันอันตรายที่อาจเกิดจากการที่เลือดไปเลี้ยงสมองมากเกินไปเวลาก้มตัวดื่มน้ำ
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>เขาของยีราฟบ่งบอกเพศ</b> ตัวผู้ด้านบนมีลักษณะตัดราบเรียบและมีความใหญ่อวบกว่า ขณะที่ของตัวเมียจะมีขนสีดำปกคลุมเห็นเป็นพุ่มชัดเจน 
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ยีราฟมีหัวใจขนาดใหญ่ และหนักประมาณ 10 ก.ก.</b> เขาสามารถสูบฉีดเลือดไปเลี้ยงสมองได้มากกว่ามนุษย์ถึง 3 เท่า เพื่อไปเลี้ยงสมองที่อยู่สูงขึ้นไปประมาณ 8 ฟุต
+                </p>
+            </div>
         </div>
     </div>
-
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html" id="comhover">ไปที่บทสรุป</a></button>
+        </div>
+    </div>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
      #bmap{
         height: 8vw;
@@ -128,23 +216,14 @@
         cursor: pointer;
         transform: scale(1.2);
     }
-    #sc1{
-        width: 20vw;
-        height: 15vw;
-        border: solid 5px #000000;
-        margin-top: 1vw;
-        margin-bottom: 1vw;
-        border-radius: 1vw;
-    }
     body {
         width: 100%;
         height: 100%;
         background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/svn.jpg?raw=true");
-        background-size: cover;
+        background-size:cover;
         background-repeat: no-repeat;
-        font-family: 'Mitr', sans-serif;
-        margin: 0;
-        overflow: hidden;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        overflow-x: hidden;
     }
 
     #rockzebra {
@@ -164,45 +243,53 @@
         position: absolute;
     }
 
-    #butZebra {
+    #butzebra {
         z-index: 1;
         height: 4vw;
         width: 4vw;
         position: absolute;
         margin-top: 1vw;
         margin-left: 5.5vw;
-
-
+        
     }
 
-    #butZebra:hover {
+    #butzebra:hover {
         cursor: pointer;
     }
 
     #alertBoxzebra {
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        margin-top: 25vw;
-        margin-left: 50vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-        border-radius: 10px;
+        line-height: 1.6vw;
+        overflow:scroll;
     }
-
+    /*NEW*/
+    .textAlertzebra{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
+    }
+    
+    /*NEW*/
     #xAlert {
-        width: 100%;
+        position: absolute;
+        z-index: 3;
+        top: 1vw;
+        font-size: 2vw;
+        color: rgb(204, 79, 79);
+        float: right;
+        margin-top: -1%;
+        margin-left: 93%;
         border: 0;
-        background-color: #F39C12;
-    }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
+        background-color: transparent;
     }
 
     .zebrabox {
@@ -247,21 +334,26 @@
         position: absolute;
     }
 
+    
     #alertBoxlion {
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        margin-top: 25vw;
-        margin-left: 55vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-        border-radius: 10px;
-
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    /*NEW*/
+    .textAlertlion{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
 
     #rockelephant {
@@ -301,20 +393,24 @@
     }
 
     #alertBoxelephant {
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        margin-top: 19vw;
-        margin-left: 55vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-        border-radius: 10px;
-
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    /*NEW*/
+    .textAlertelephant{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
 
     #rockeraf {
@@ -354,20 +450,26 @@
     }
 
     #alertBoxeraf {
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         z-Index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        margin-top: 25vw;
-        margin-left: 56vw;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-        border-radius: 10px;
+        line-height: 1.6vw;
+        overflow:scroll;
     }
+    /*NEW*/
+    .textAlerteraf{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
+    }
+
    /*Bar*/
    .bar>i{
         font-size: 1.3vw;
@@ -380,6 +482,7 @@
     }
     .row{
         padding-left: 3vw;
+        padding-right: 3vw;
     }
     .bar{
         font-size: 1.2vw;
@@ -406,9 +509,183 @@
     .vec >img{
         width:8vw;
     }
+    #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+    #play > p{
+        color: black;
+    }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+    }
+    /*NEW*/
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 800px)
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:white;
+            background-position-y:0;
+            transform: translateY(0);}
+    }
+
+    @media only screen 
+  and (max-width: 1024px) 
+  and (max-height: 770px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{background-color:black;
+        background-position-y:12vh;
+        transform: translateY(12vh);}
+} 
+.introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
+#countshow{
+        background-color: white;
+        border: #104e1a 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 1.8rem;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+    }
+    /*NEW*/
+    #complete{
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid #209c20;
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #156615;
+        opacity: 0%;
+        left: 35%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+        width: 30%;
+        
+    }
+    /*NEW*/
+    #complete > h1 {
+        font-size: 3vw;
+    }
+    /*NEW*/
+    .btn-pur{
+        margin: 2vw;
+        color:white;
+        background: #156615;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+    }
+    /*NEW*/
+    button > a{
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+    }
+
+    #comhover:hover {
+        text-decoration: none;
+        color:rgb(105, 211, 123);
+    }
+
 </style>
 <script>
-    function Zebra() {
+    function zebra() {
         let traget = document.getElementById("zebra");
         traget.style.zIndex = 1;
         traget.style.height = "11vw";
@@ -416,10 +693,8 @@
 
         showzebra()
     }
-
     function showzebra() {
         var x = document.getElementById("alertBoxzebra");
-        document.getElementById("textAlertzebra").innerHTML = "ม้าลาย มีถิ่นกำเนิดในดินแดนต่างๆ รวมทั้งประเทศโซมาเลียเอธิโอเปียเอริเทรีจิบูตีและเคนย่าในแอฟริกาตะวันออก สปีชีส์นี้มีประชาการลดลงอย่างรวดเร็วและตั้งแต่นั้นมาก็ถูกคุมขังในเอธิโอเปียตอนใต้และเคนย่าตอนเหนือ การสูญเสียที่อยู่อาศัยเป็นหนึ่งในสาเหตุหลักที่ทำให้ม้าลาย มีประชากรลดลงอย่างมากเมื่อเปรียบเทียบกับสัตว์เลี้ยงลูกด้วยนมในแอฟริกาอื่นๆ การกินหญ้ามากเกินและความแห้งแล้งที่เกิดจากการเปลี่ยนแปลงสภาพภูมิอากาศเป็นสาเหตุของอัตราการรอดตายของม้าลายที่ต่ำ เนื่องจากพวกมันต้องแข่งขันกับสัตว์พื้นเมืองอื่นๆ เพื่อหาอาหารและน้ำ"
         x.style.display = "block";
     }
 
@@ -427,6 +702,7 @@
         var x = document.getElementById("alertBoxzebra");
         x.style.display = "none";
     }
+
     function lion() {
         let traget = document.getElementById("lion");
         traget.src = "https://github.com/fordntp/Climatopia/blob/main/Assets/image/lion2.png?raw=true";
@@ -439,8 +715,6 @@
     
     function showlion() {
         var x = document.getElementById("alertBoxlion");
-        document.getElementById("textAlertlion").innerHTML = "สิงโตเป็นเสือขนาดใหญ่ ขนสั้นเกรียนสีน้ำตาลอ่อน บางตัวอาจมีสีออกเทาเงิน  หรือบางตัวก็มีสีอมแดง หรือถึงน้ำตาลแดง ใบหน้ากว้าง ปากค่อนข้างยาว จมูกมักมีสีดำสนิท ม่านตาสีเหลืองหรืออำพัน รูม่านตากลม หูสั้นกลม หลังหูดำ ขาหน้าใหญ่และแข็งแรงกว่าขาหลัง อุ้งตีนกว้าง หางค่อนข้างยาว ปลายหางเป็นพู่สีดำ และมักมีสิ่งคล้ายเดือยแข็งอยู่อันหนึ่งซ่อนอยู่ภายในพู่หางด้วย สิงโตอาศัยได้ในพื้นที่หลายประเภท พื้นที่ที่ชอบที่สุดคือทุ่งหญ้า ซาวันนา ป่าเปิดและป่าละเมาะ แต่ก็ยังพบได้ในพื้นที่ประเภทอื่นตั้งแต่กึ่งทะเลทรายและป่าทึบ ไม่พบในป่าทึบและกลางทะเลทรายซาฮารา และพบได้ในระดับความสูงตั้งแต่ระดับน้ำทะเลจนถึง 5,000 เมตรบนภูเขาในประเทศเคนยา\
-สิงโตเคยพบได้ทั่วทั้งทวีปแอฟริกา ในยุโรปทางตะวันออกเฉียงใต้ ตะวันออกกลาง จนถึงทางตอนเหนือของอินเดีย ในปัจจุบันพื้นที่กระจายพันธุ์หดเล็กลงไปมาก เหลือเพียงในพื้นที่กึ่งซาฮาราในทวีปแอฟริกา ฐานที่มั่นสำคัญอยู่ในพื้นที่อนุรักษ์หลายแห่งในแอฟริกาตะวันออก และส่วนในเอเชียเหลือเพียงแห่งเดียวคือป่าเกียร์ในประเทศอินเดีย คาดว่ามีอยู่ประมาณ 290-350 ตัว"
         x.style.display = "block";
     }
 
@@ -461,7 +735,6 @@
 
     function showelephant() {
         var x = document.getElementById("alertBoxelephant");
-        document.getElementById("textAlertelephant").innerHTML = "ช้างพุ่มไม้แอฟริกา เดิมเคยถูกจัดเป็นชนิดเดียวกับช้างป่าแอฟริกา โดยเป็นชนิดย่อยของกันและโดยช้างพุ่มไม้แอฟริกานั้นมีขนาดลำตัวที่ใหญ่กว่า ล่ำสันกว่า แพร่กระจายพันธุ์ได้กว้างกว่า โดยกระจายพันธุ์ตั้งแต่ตอนใต้ของทะเลทรายสะฮาราลงไป รวมถึงมีพฤติกรรมการอยู่อาศัยที่แตกต่างออกไปด้วย กล่าวคือ จะอาศัยอยู่ตามทุ่งโล่งหรือตามพุ่มไม้ต่าง ๆ มากกว่าป่าทึบ เป็นสัตว์ที่ไม่กลัวแดดและความร้อน หากินและอพยพได้ทั้งกลางวันและกลางคืน ช้างพุ่มไม้แอฟริกา จะอยู่รวมกันเป็นฝูง มีตัวเมียที่อาวุโสสูงสุดเป็นจ่าฝูง เป็นตัวนำพาสมาชิกในฝูงตัวอื่น ๆ ขณะที่ตัวผู้ที่โตเต็มที่มักจะออกไปอยู่เองเป็นอิสระ ช้างพุ่มไม้แอฟริกามีอุปนิสัยดุร้าย ก้าวร้าวมากกว่าช้างเอเชีย จึงฝึกให้เชื่องได้ยากกว่า มีเพียงไม่กี่ตัวเท่านั้นที่สามารถฝึกให้เชื่อฟังมนุษย์ได้ โดยปกติ ตัวเมียจะเป็นอันตรายมากกว่าตัวผู้ อาจเป็นเพราะต้องดูแลปกป้องลูกช้าง และสมาชิกในฝูงกว่า แต่ช้างตัวผู้ที่โตเต็มที่สามารถฆ่าสัตว์ใหญ่แม้กระทั่งแรดได้ ทั้ง ๆ ที่แรดมิได้เป็นสัตว์ที่คุกคามเลย แต่เป็นเพราะมาจากความก้าวร้าว"
         x.style.display = "block";
     }
 
@@ -483,9 +756,9 @@
 
     function showeraf() {
         var x = document.getElementById("alertBoxeraf");
-        document.getElementById("textAlerteraf").innerHTML = "ยีราฟ เป็นสัตว์เลี้ยงลูกด้วยนม เป็นสัตว์เคี้ยวเอื้อง มีลักษณะเด่น คือ เป็นสัตว์ที่ตัวสูง ขายาว ลำคอยาว มีเขา 1 คู่ ตัวมีสีเหลืองและสีน้ำตาลเข้มเป็นลาย มีถิ่นกำเนิดในทวีปแอฟริกา ตัวผู้มีความสูง 4.8 ถึง 5.5 เมตร และมีน้ำหนักถึง 900 กิโลกรัม  ตัวเมียมีขนาดและความสูงน้อยกว่าเล็กน้อย จัดเป็นสัตว์บกที่มีความสูงที่สุดในโลก ยีราฟ มีเขาทั้งตัวผู้และตัวเมีย ไม่ผลัดเขา ที่เขามีขนปกคลุมอยู่ มีพฤติกรรมอาศัยอยู่รวมเป็นฝูงราว 15-20 ตัว หรือมากกว่านั้น ในทุ่งโล่งร่วมกับสัตว์กินพืชชนิดอื่น ๆ เช่น แอนทิโลป, ม้าลายหรือนกกระจอกเทศ ด้วยความที่เป็นสัตว์ตัวสูง ยีราฟจำเป็นต้องมีหัวใจขนาดใหญ่เพื่อหมุนสูบฉีดเลือดไปเลี้ยงสมอง ยีราฟสามารถสูบฉีดเลือดไปเลี้ยงสมองได้มากกว่ามนุษย์ถึง 3 เท่า เพื่อไปเลี้ยงสมองที่อยู่สูงขึ้นไปประมาณ 8 ฟุต เสมือนกับปั๊มน้ำที่สูบน้ำขึ้นไปยังตึกสูง หัวใจของยีราฟหนักประมาณ 10 กิโลกรัม ระบบไหลเวียนโลหิตจึงเป็นแบบพิเศษ ช่วยป้องกันอันตรายที่อาจเกิดจากการที่เลือดไปเลี้ยงสมองมากเกินไปเวลายีราฟก้มตัวดื่มน้ำ ระบบไหลเวียนเลือดพิเศษนี้จึงเปรียบเสมือนวาล์วปิดเปิดน้ำ"
         x.style.display = "block";
     }
+
 
     function hideeraf() {
         var x = document.getElementById("alertBoxeraf");
@@ -506,6 +779,49 @@
         x.style.transition = "left 1s";
     }
 }
+function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/4";
+    if (clicks === 4){
+        i.style.opacity = "100%";
+        localStorage.setItem("trf", "true");
+    }
+  }
+  function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+        
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+       
+    });
+    });
 </script>
 
 

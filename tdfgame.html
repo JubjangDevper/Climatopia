@@ -20,14 +20,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <title>tdf</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
+    <title>Temperate deciduous forest</title>
 </head>
 
 <body>
     <div>
+        <div id="introLoader" class="introloader">
+            <div class="spinner">
+              <div class="spinner-inner"></div>
+            </div>
+          </div>
+    <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+    <div class="text-center" id="play" onclick="hidehowto()">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <h5>วิธีการเล่น</h5>
+        <p>หาสัตว์ให้ครบทั้ง 3 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+    <div>
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
+        <div id="countshow" >0/3</div>
     </div>
     <div id="bar" class="bar">
         <div class="row pl text-center">
@@ -56,48 +70,106 @@
         </div>
         <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
-    <div class="bearbox">
+    <div class="bearbox" onclick="clickcount()">
         <img id="bear" src="Assets\image\blackbear.png">
         <img id="rockbear" src="Assets\image\r10.png">
         <div id="butbear" onclick="bear()"></div>
     </div>
-    <div class="card" id="alertBoxbear">
-        <button id="xAlert" onclick="hidebear()">Close</button>
+    <div class="card overflow-auto" id="alertBoxbear" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidebear()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realbear.jpg"></center>
-            <p id="textAlertbear"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realbear.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">หมีดำ</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus americanus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ไม่เสี่ยงต่อการสูญพันธ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 600,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>อยู่ในพื้นที่ป่าทั่วอเมริกาเหนือตั้งแต่แคนาดาถึงเม็กซิโก
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertbear" id="textAlertbear" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ขนสีดำของหมี</b> มีไว้เพื่อดูดซับความร้อนหรือความอบอุ่นไว้กับตัวเพื่อใช้ในยามฤดูหนาว แต่เมื่อเข้าสู่ฤดูร้อน ความร้อนนี้เป็นปัญหาต่อหมีอย่างมาก เคยมีการศึกษาหมีดำโดยการซ่อนเทอร์โมมิเตอร์ไว้ใต้ขนหมี พบว่ามีอุณหภูมิสูงถึง 80-90 องศาเซลเซียส เลยทีเดียว นับว่าใกล้กับจุดเดือดเป็นอย่างมาก จึงเป็นสาเหตุที่ทำให้บางครั้งจะพบหมีดำเข้ามาแช่น้ำในสระน้ำหรือบ่อน้ำภายในบ้านเรือนมนุษย์เพื่อดับร้อน ทั้งที่เป็นสัตว์ขี้อาย
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="ferretbox">
+
+    <div class="ferretbox" onclick="clickcount()">
         <img id="ferret" src="Assets\image\ferret.png">
         <img id="rockferret" src="Assets\image\r11.png">
         <div id="butferret" onclick="ferret()"></div>
     </div>
-    <div class="card" id="alertBoxferret">
-        <button id="xAlert" onclick="hideferret()">Close</button>
+    <div class="card overflow-auto" id="alertBoxferret" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideferret()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realferret1.jpg"></center>
-            <p id="textAlertferret"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realferret1.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">เฟอร์เร็ต</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Mustela putorius furo</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ไม่เสี่ยงต่อการสูญพันธ์ </p>    
+                    <p><b>แถบที่อยู่อาศัย: </b>พบได้ทั่วไปในทวีปยุโรป
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertferret" id="textAlertferret" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>เฟอร์เร็ตนับเป็นสัตว์เลี้ยงลูกด้วยนมที่มีจำนวนชิ้นกระดูกสันหลังมากที่สุดในโลก</b> โดยมีกระดูกที่ต้นคอถึง 7 ชิ้น และสะโพก 6 ชิ้น นั่นจึงทำให้เฟอร์เร็ตสามารถที่จะมุดหรือลอดไปตามโพรงหรือรูเรี้ยวต่าง ๆ ได้อย่างยืดหยุ่น คล่องแคล่ว
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>เฟร์ริตเป็นสัตว์ที่สามารถเลี้ยงไว้ในบ้านได้เป็นอย่างดี แต่มีข้อเสียคือ กลิ่นตัวที่เหม็น</b> โดยเฉพาะเมื่อตกใจจะปล่อยกลิ่นออกมาตามสัญชาตญาณธรรมชาติ
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="deerbox">
+    <div class="deerbox" onclick="clickcount()">
         <img id="deer" src="Assets\image\deer.png">
         <img id="rockdeer" src="Assets\image\r12.png">
         <div id="butdeer" onclick="deer()"></div>
     </div>
-    <div class="card" id="alertBoxdeer">
-        <button id="xAlert" onclick="hidedeer()">Close</button>
+    <div class="card overflow-auto" id="alertBoxdeer" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidedeer()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realdeer.jpg"></center>
-            <p id="textAlertdeer"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realdeer.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">กวาง</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Rusa unicolor</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>แถบที่อยู่อาศัย: </b>พบการกระจายพันธุ์ในกลุ่มประเทศเอเชียใต้ กลุ่มประเทศเอเชียตะวันออกเฉียงใต้และบริเวณจีนตอนใต้ 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertdeer" id="textAlertdeer" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>การปรับตัวของสีขน</b> จะมีการเปลี่ยนแปลงสีขนให้กลมกลืนไปกับธรรมชาติรอบ ๆ ตัว ในลูกกวางป่าจะพบว่ามีลายจุดบนตัว หย่อมขนสีบริเวณสองข้างของตะโพก เมื่อเวลาตกใจหรือพบเห็นภัยอันตราย หย่อมขนสีนี้จะเข้มขึ้นและเป็นประกายอย่างเห็นได้ชัดเจน สามารถมองเห็นได้ในระยะไกล เป็นสัญญาณเตือนภัยให้แก่กวางตัวอื่น ๆ ภายในฝูง
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>ต่อมกลิ่น</b> ต่อมกลิ่นโดยเฉพาะในกวางป่าเพศผู้ จะมีแอ่งน้ำตาขนาดใหญ่ เรียกว่าต่อมใต้กระบอกตา ทำหน้าที่คัดหลั่งสารที่มีกลิ่นฉุนมากให้ไหลออกตามร่องน้ำตาที่มุมตาด้านใน โดยจะเอาหน้าไปเช็ดถูตามต้นไม้เพื่อเป็นการสื่อสารและบ่งบอกถึงอาณาเขตที่อยู่ของตน จะขยายใหญ่ช่วงฤดูผสมพันธุ์
+                </p>
+            </div>
         </div>
     </div>
-
+    
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html" id="comhover">ไปที่บทสรุป</a></button>
+        </div>
+    </div>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
     #bmap{
         height: 8vw;
@@ -114,25 +186,15 @@
         cursor: pointer;
         transform: scale(1.2);
     }
-    #sc1{
-        width: 20vw;
-        height: 15vw;
-        border: solid 5px #000000;
-        margin-top: 1vw;
-        margin-bottom: 1vw;
-        border-radius: 1vw;
-    }
     body {
         width: 100%;
         height: 100%;
         background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/tdf.jpg?raw=true");
-        background-size: 100vw 54vw;
+        background-size:cover;
         background-repeat: no-repeat;
-        font-family: 'Mitr', sans-serif;
-        overflow: hidden;
-        margin: 0;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        overflow-x: hidden;
     }
-
     #rockbear {
         width: 25vw;
         height: 20vw;
@@ -165,29 +227,38 @@
     }
 
     #alertBoxbear {
-        z-Index : 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: 25vw;
-        margin-left: 35vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 1;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        line-height: 1.6vw;
+        overflow:scroll;
     }
-
+    /*NEW*/
+    .textAlertbear{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
+    }
+    
+    /*NEW*/
     #xAlert {
-        width: 100%;
+        position: absolute;
+        z-index: 3;
+        top: 1vw;
+        font-size: 2vw;
+        color: rgb(204, 79, 79);
+        float: right;
+        margin-top: -1%;
+        margin-left: 93%;
         border: 0;
-        background-color: #F39C12;
-    }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
+        background-color: transparent;
     }
 
     .bearbox {
@@ -229,31 +300,25 @@
     }
 
     #alertBoxferret {
-        z-Index : 5;
-        width: 30vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        margin-top: 25vw;
-        margin-left: 50vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 1;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-        border-radius: 10px;
+        line-height: 1.6vw;
+        overflow:scroll;
     }
-
-    #xAlert {
-        width: 100%;
-        border: 0;
-        background-color: #F39C12;
+    /*NEW*/
+    .textAlertferret{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
-    }
-
     .ferretbox {
         margin-left: 15vw;
         margin-top: 33vw;
@@ -294,30 +359,26 @@
     }
 
     #alertBoxdeer {
-        z-Index : 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: 20vw;
-        margin-left: 43vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 1;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        line-height: 1.6vw;
+        overflow:scroll;
     }
-
-    #xAlert {
-        width: 100%;
-        border: 0;
-        background-color: #F39C12;
+    /*NEW*/
+    .textAlertdeer{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
-    }
+   
 
     .deerbox {
         margin-left: 7vw;
@@ -335,6 +396,7 @@
     }
     .row{
         padding-left: 3vw;
+        padding-right: 2vw;
     }
     
     .bar{
@@ -362,6 +424,179 @@
     .vec >img{
         width:8vw;
     }
+    #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+    #play > p{
+        color: black;
+    }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+    }
+    /*NEW*/
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 800px)
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:white;
+            background-position-y:0;
+            transform: translateY(0);}
+    }
+
+    @media only screen 
+  and (max-width: 1024px) 
+  and (max-height: 770px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{background-color:black;
+        background-position-y:12vh;
+        transform: translateY(12vh);}
+} 
+.introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
+#countshow{
+        background-color: white;
+        border: #104e1a 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 1.8rem;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+    }
+    /*NEW*/
+    #complete{
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid #209c20;
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #156615;
+        opacity: 0%;
+        left: 35%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+        width: 30%;
+        
+    }
+    /*NEW*/
+    #complete > h1 {
+        font-size: 3vw;
+    }
+    /*NEW*/
+    .btn-pur{
+        margin: 2vw;
+        color:white;
+        background: #156615;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+    }
+    /*NEW*/
+    button > a{
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+    }
+
+    #comhover:hover {
+        text-decoration: none;
+        color:rgb(105, 211, 123);
+    }
+
 </style>
 <script>
     function bear() {
@@ -375,16 +610,8 @@
 
     function showbear() {
         var x = document.getElementById("alertBoxbear");
-        document.getElementById("textAlertbear").innerHTML = "หมีดำ ใหญ่มีสีดำทั้งตัว และมีสีน้ำตาลบริเวณรอบจมูก แต่บางครั้งทั้งตัวอาจมีสีน้ำตาล ขนสั้น และมีขนสีขาวบริเวณหน้าอกเป็นพื้นที่ขนาดเล็กๆ มีกรงเล็บแข็งแรง\
-ขนาด ลำตัวยาวประมาณ 130-190 ซม. ตัวผู้มีน้ำหนัก 60-300 กิโลกรัม ตัวเมียมีน้ำหนัก 40-80 กิโลกรัม การที่น้ำหนักของตัวผู้แตกต่างกันไปเนื่องมาจาก\
-ความอุดมสมบูรณ์ของอาหาร ปกติอาศัยในป่า ความสูงตั้งแต่ระดับน้ำทะเลถึง 2,000 เมตรจากระดับน้ำทะเล เราพบ American Black Bear แถวแคนาดา เม็กซิโก \
-และ สหรัฐอเมริกา อาหารส่วนใหญ่กินพืชเป็นอาหาร เช่น หญ้า พืชพวกสมุนไพร ผลไม้ ลูกเบอร์รี่ ผลไม้เปลือกแข็ง เมล็ดพืช น้ำผึ้ง แต่บางครั้งก็กินสัตว์เช่น แมลง ปลา สัตว์ตัวเล็กๆ หรือซากสัตว์ เป็นอาหาร\
-พฤติกรรม โดยส่วนใหญ่อยู่โดยลำพัง ยกเว้นหมีตัวเมียในระยะเลี้ยงลูกอ่อน หรือคู่หมีตัวผู้-ตัวเมียในช่วงฤดูกาลผสมพันธุ์ หรือการรวมกลุ่มกัน\
-ณ บริเวณแหล่งอาหาร ตัวเมียมีพื้นที่หรืออาณาเขตของตนเองประมาณ 10 ถึง 40 ตารางกิโลเมตร ส่วนตัวผู้จะมีอาณาเขตที่กว้างใหญ่กว่าและ\
-อาจมีบางส่วนอยู่ในอาณาเขตเดียวกับตัวเมียAmerican Black Bear ปีนต้นไม้ได้เก่งมาก ปีนเร็วถึง 25 ไมล์ต่อชั่วโมง มีจมูกดมกลิ่นที่ดีเยี่ยม แต่สายตาและการได้ยินไม่ค่อยดีนัก"
         x.style.display = "block";
     }
-
     function hidebear() {
         var x = document.getElementById("alertBoxbear");
         x.style.display = "none";
@@ -401,7 +628,6 @@
 
     function showferret() {
         var x = document.getElementById("alertBoxferret");
-        document.getElementById("textAlertferret").innerHTML = "เฟร์ริตเป็นชนิดย่อยของโพลแคตยุโรปที่เป็นวีเซลหรือเพียงพอนที่พบได้ในทวีปยุโรป เฟร์ริตมีความยาวประมาณ 20 นิ้ว และความยาวหาง 5 นิ้ว  น้ำหนักประมาณ 1.5–4 ปอนด์ อายุขัยโดยเฉลี่ย 7-10 ปี ตัวผู้นั้นจะมีความยาวมากกว่าตัวเมีย อาหารที่เฟร์ริตกินนั้นคือเนื้อสัตว์เท่านั้น ไม่ใช่ผลไม้ หากเฟร์ริตกินผลไม้อาจจะทำให้เฟร์ริตเสียชีวิตจากการที่อาหารไม่ย่อย หรือกระทั่งเป็นเบาหวานได้ ในสหรัฐอเมริกา เฟร์ริตถูกนำเข้ามาในฐานะของสัตว์ที่ฝึกไว้สำหรับล่ากระต่าย ซึ่งเป็นพฤติกรรมตามธรรมชาติของเฟร์ริตหรือวีเซลอยู่แล้ว ที่ล่าสัตว์ขนาดเล็กตามโพรงดิน เช่น หนู, กระต่าย เป็นอาหาร โดยการมุดเข้าไปลากออกมาถึงในโพรง เฟอร์เร็ตนับเป็นสัตว์เลี้ยงลูกด้วยนมที่มีจำนวนชิ้นกระดูกสันหลังมากที่สุดในโลก โดยมีกระดูกที่ต้นคอถึง 7 ชิ้น และสะโพก 6 ชิ้น นั่นจึงทำให้เฟอร์เร็ตสามารถที่จะมุดหรือลอดไปตามโพรงหรือรูเรี้ยวต่าง ๆ ได้อย่างยืดหยุ่น คล่องแคล่ว "
         x.style.display = "block";
     }
 
@@ -421,7 +647,6 @@
 
     function showdeer() {
         var x = document.getElementById("alertBoxdeer");
-        document.getElementById("textAlertdeer").innerHTML = "กวางเป็นสัตว์เลี้ยงลูกด้วยนม มีลักษณะทั่วไป ขนยาวหยาบสีน้ำตาล ตัวผู้มีเขาเป็นแขนง ผลัดเขาปีละครั้ง ตัวเมียมีขนาดเล็กกว่าและไม่มีเขา ลักษณะเขาตัน ไม่กลวง เป็นเกลียว บางชนิดอาจแตกแขนงได้มากเหมือนกิ่งไม้ กวางเป็นสัตว์เคี้ยวเอื้อง มีสี่กระเพาะไม่มีถุงน้ำดี ชอบอยู่ตามลำพังตัวเดียวยกเว้นฤดูผสมพันธุ์ เป็นสัตว์ทีมีกระจายอย่างกว้างขวางในทุกทวีปยกเว้นแอนตาร์กติกาและออสเตรเลีย และแอฟริกา กวางสามารถอาศัยอยู่ในที่ที่มีความหลากหลายของสภาพทางชีววิทยา ตั้งแต่ทุ่งหญ้าทุนดร้า พื้นที่ป่าฝนเขตร้อน ป่าโปร่ง ป่าไม้พุ่มและทุ่งหญ้าสะวันนา บางสายพันธุ์ที่มีขนาดใหญ่อาศัยอยู่ในแถบป่าสนผสมป่าฤดูกาลเขตร้อน ซึ่งเป็นที่มีหญ้า วัชพืชและสมุนไพรที่จะเติบโตเป็นอาหารที่กวางชอบกิน และขณะเดียวกันก็มีกวางสายพันธุ์ขนาดเล็กมักอาศัยอยู่ในอเมริกากลางและอเมริกาใต้และเอเชียที่เป็นป่าทึบ นอกจากนี้ยังมีอีกหลายสายพันธุ์ของกวางที่อาศัยอยู่ในที่สูง และบางชนิดอาศัยอยู่เฉพาะในภูเขาทุ่งหญ้าหนองน้ำ หรือพื้นที่ชายฝั่งล้อมรอบด้วยทะเลทราย"
         x.style.display = "block";
     }
 
@@ -444,4 +669,48 @@
         x.style.transition = "left 1s";
     }
     }
+    function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/3";
+    if (clicks === 3){
+        i.style.opacity = "100%";
+        localStorage.setItem("trf", "true");
+    }
+  }
+  function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+        
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+       
+    });
+    });
 </script>
