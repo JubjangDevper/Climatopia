@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <title>Reward</title>
     </head>
     <style>
@@ -337,6 +338,59 @@
     #xAlert:hover{
         background-color: #f0ac3e;
     }
+    /*<!--PRELOAD-->*/
+    .introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(29, 60, 161) transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
     </style>
 <script>
     showreward();
@@ -476,8 +530,37 @@
             document.getElementById("reward2-4").style.visibility = "visible";
         }
     }
+     //<!--PRELOAD-->//
+     function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+        
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+       
+    });
+    });
 </script>
 <body onLoad="showreward()">
+    <div id="introLoader" class="introloader">
+        <div class="spinner">
+          <div class="spinner-inner"></div>
+        </div>
+      </div>
     <div class="bgYellow">
         <a href="map2.html">
             <img src="Assets/reward/back to map.png" class="bmap">
