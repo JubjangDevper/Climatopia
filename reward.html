@@ -392,169 +392,6 @@
     }
     }
     </style>
-<script>
-    showreward();
-    function Cf() {
-        let traget = document.getElementById("cf");
-        traget.style.zIndex = 1;
-        showcf()
-    }
-
-    function showcf() {
-        var x = document.getElementById("alertBoxcf");
-        x.style.display = "block";
-    }
-
-    function hidecf() {
-        var x = document.getElementById("alertBoxcf");
-        x.style.display = "none";
-    }
-    function Td() {
-        let traget = document.getElementById("td");
-        traget.style.zIndex = 1;
-        showtd()
-    }
-
-    function showtd() {
-        var x = document.getElementById("alertBoxtd");
-        x.style.display = "block";
-    }
-
-    function hidetd() {
-        var x = document.getElementById("alertBoxtd");
-        x.style.display = "none";
-    }
-    function Ds() {
-        let traget = document.getElementById("ds");
-        traget.style.zIndex = 1;
-        showds()
-    }
-
-    function showds() {
-        var x = document.getElementById("alertBoxds");
-        x.style.display = "block";
-    }
-
-    function hideds() {
-        var x = document.getElementById("alertBoxds");
-        x.style.display = "none";
-    }
-    function Trf() {
-        let traget = document.getElementById("trf");
-        traget.style.zIndex = 1;
-        showtrf()
-    }
-
-    function showtrf() {
-        var x = document.getElementById("alertBoxtrf");
-        x.style.display = "block";
-    }
-
-    function hidetrf() {
-        var x = document.getElementById("alertBoxtrf");
-        x.style.display = "none";
-    }
-    function Svn() {
-        let traget = document.getElementById("svn");
-        traget.style.zIndex = 1;
-        showsvn()
-    }
-
-    function showsvn() {
-        var x = document.getElementById("alertBoxsvn");
-        x.style.display = "block";
-    }
-
-    function hidesvn() {
-        var x = document.getElementById("alertBoxsvn");
-        x.style.display = "none";
-    }
-    function Gl() {
-        let traget = document.getElementById("gl");
-        traget.style.zIndex = 1;
-        showgl()
-    }
-
-    function showgl() {
-        var x = document.getElementById("alertBoxgl");
-        x.style.display = "block";
-    }
-
-    function hidegl() {
-        var x = document.getElementById("alertBoxgl");
-        x.style.display = "none";
-    }
-    function Tdf() {
-        let traget = document.getElementById("tdf");
-        traget.style.zIndex = 1;
-        showtdf()
-    }
-
-    function showtdf() {
-        var x = document.getElementById("alertBoxtdf");
-        x.style.display = "block";
-    }
-
-    function hidetdf() {
-        var x = document.getElementById("alertBoxtdf");
-        x.style.display = "none";
-    }
-    //new2//
-    function showreward() {
-        var a = localStorage.getItem("td");
-        var b = localStorage.getItem("trf");
-        var c = localStorage.getItem("tdf");
-        var d = localStorage.getItem("cf");
-        var e = localStorage.getItem("tgl");
-        var f = localStorage.getItem("svn");
-        var g = localStorage.getItem("ds");
-        if (a == "true") {
-            document.getElementById("reward1-1").style.visibility = "visible";
-        }
-        if (b == "true") {
-            document.getElementById("reward1-2").style.visibility = "visible";
-        }
-        if (c == "true") {
-            document.getElementById("reward1-3").style.visibility = "visible";
-        }
-        if (d == "true") {
-            document.getElementById("reward2-1").style.visibility = "visible";
-        }
-        if (e == "true") {
-            document.getElementById("reward2-2").style.visibility = "visible";
-        }
-        if (f == "true") {
-            document.getElementById("reward2-3").style.visibility = "visible";
-        }
-        if (g == "true") {
-            document.getElementById("reward2-4").style.visibility = "visible";
-        }
-    }
-     //<!--PRELOAD-->//
-     function introLoader(element,delay) {
-    this.open = function(callback) {
-        setTimeout(function() {
-        $(element).fadeIn(1000, function() {
-            if(callback !== undefined) callback();
-        });
-        }, delay);
-        
-    };
-    this.close = function(callback) {
-        setTimeout(function() {
-        $(element).fadeOut(1000, function() {
-            if(callback !== undefined) callback();
-        });
-        }, delay);
-    };
-    }
-    var LOADER = new introLoader('#introLoader',500);
-    $(window).on('load', function() {
-    LOADER.close(function() {
-       
-    });
-    });
-</script>
 <body onLoad="showreward()">
     <div id="introLoader" class="introloader">
         <div class="spinner">
@@ -768,4 +605,167 @@
         </div>
     </div>
 </body>
+<script>
+    showreward();
+    function Cf() {
+        let traget = document.getElementById("cf");
+        traget.style.zIndex = 1;
+        showcf()
+    }
+
+    function showcf() {
+        var x = document.getElementById("alertBoxcf");
+        x.style.display = "block";
+    }
+
+    function hidecf() {
+        var x = document.getElementById("alertBoxcf");
+        x.style.display = "none";
+    }
+    function Td() {
+        let traget = document.getElementById("td");
+        traget.style.zIndex = 1;
+        showtd()
+    }
+
+    function showtd() {
+        var x = document.getElementById("alertBoxtd");
+        x.style.display = "block";
+    }
+
+    function hidetd() {
+        var x = document.getElementById("alertBoxtd");
+        x.style.display = "none";
+    }
+    function Ds() {
+        let traget = document.getElementById("ds");
+        traget.style.zIndex = 1;
+        showds()
+    }
+
+    function showds() {
+        var x = document.getElementById("alertBoxds");
+        x.style.display = "block";
+    }
+
+    function hideds() {
+        var x = document.getElementById("alertBoxds");
+        x.style.display = "none";
+    }
+    function Trf() {
+        let traget = document.getElementById("trf");
+        traget.style.zIndex = 1;
+        showtrf()
+    }
+
+    function showtrf() {
+        var x = document.getElementById("alertBoxtrf");
+        x.style.display = "block";
+    }
+
+    function hidetrf() {
+        var x = document.getElementById("alertBoxtrf");
+        x.style.display = "none";
+    }
+    function Svn() {
+        let traget = document.getElementById("svn");
+        traget.style.zIndex = 1;
+        showsvn()
+    }
+
+    function showsvn() {
+        var x = document.getElementById("alertBoxsvn");
+        x.style.display = "block";
+    }
+
+    function hidesvn() {
+        var x = document.getElementById("alertBoxsvn");
+        x.style.display = "none";
+    }
+    function Gl() {
+        let traget = document.getElementById("gl");
+        traget.style.zIndex = 1;
+        showgl()
+    }
+
+    function showgl() {
+        var x = document.getElementById("alertBoxgl");
+        x.style.display = "block";
+    }
+
+    function hidegl() {
+        var x = document.getElementById("alertBoxgl");
+        x.style.display = "none";
+    }
+    function Tdf() {
+        let traget = document.getElementById("tdf");
+        traget.style.zIndex = 1;
+        showtdf()
+    }
+
+    function showtdf() {
+        var x = document.getElementById("alertBoxtdf");
+        x.style.display = "block";
+    }
+
+    function hidetdf() {
+        var x = document.getElementById("alertBoxtdf");
+        x.style.display = "none";
+    }
+    //new2//
+    function showreward() {
+        var a = localStorage.getItem("td");
+        var b = localStorage.getItem("trf");
+        var c = localStorage.getItem("tdf");
+        var d = localStorage.getItem("cf");
+        var e = localStorage.getItem("tgl");
+        var f = localStorage.getItem("svn");
+        var g = localStorage.getItem("ds");
+        if (a == "true") {
+            document.getElementById("reward1-1").style.visibility = "visible";
+        }
+        if (b == "true") {
+            document.getElementById("reward1-2").style.visibility = "visible";
+        }
+        if (c == "true") {
+            document.getElementById("reward1-3").style.visibility = "visible";
+        }
+        if (d == "true") {
+            document.getElementById("reward2-1").style.visibility = "visible";
+        }
+        if (e == "true") {
+            document.getElementById("reward2-2").style.visibility = "visible";
+        }
+        if (f == "true") {
+            document.getElementById("reward2-3").style.visibility = "visible";
+        }
+        if (g == "true") {
+            document.getElementById("reward2-4").style.visibility = "visible";
+        }
+    }
+     //<!--PRELOAD-->//
+     function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+        
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(1000, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+       
+    });
+    });
+</script>
 </html>

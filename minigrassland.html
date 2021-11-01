@@ -109,6 +109,9 @@
         .gg{
             transform: translateY(13vh);
         }
+        .card{
+            transform: translateY(-75vh);
+        }
     }
 
     @media only screen 
@@ -531,7 +534,6 @@
     }
     /*END HOW TO*/
     #countshow{
-
         background-color: white;
         border: rgb(168, 66, 66) 3px solid;
         border-radius: 50px;
@@ -541,8 +543,29 @@
         padding: 1vw;   
         font-size: 1.8vw;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
-
+        
 }
+    /*NEW*/
+    #complete{
+        display: block;
+        z-index: 0;
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid rgb(193, 138, 204);
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #9f34b4;
+        opacity: 0%;
+        left: 35%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+        width: 30%;
+    }
+    /*NEW*/
+    #complete > h1 {
+        font-size: 3vw;
+    }
 
 </style>
 <script>
@@ -678,16 +701,19 @@
         x.style.left = "-31vw";
         x.style.transition = "left 1s";
     }
+    //NEW2//
     var clicks = 0;
     var i = document.getElementById("complete");
     function clickcount(){
       clicks += 1;
         var x = document.getElementById("animal");
         document.getElementById("countshow").innerHTML = clicks + "/5";
+        
     if (clicks === 5){
+        i.style.opacity = "100%";
         localStorage.setItem("gl", "true");
-        }
     }
+  }
     //HOW TO FUNCTION//
     function howTo() {
         var x = document.getElementById("play");
@@ -745,7 +771,7 @@
         </div>
         <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
-    <div class="move" onclick="clickcount()">
+    <div id="animal" class="move" onclick="clickcount()">
         <img id="ferret" onclick="Ferret()" src="Assets/image/ferret.png">
         <img id="rockferret" src="Assets/image/r8.png">
         <div id="butferret" onclick="Ferret()"></div>
@@ -776,7 +802,7 @@
             </div>
         </div>
     </div>
-    <div class="move2" onclick="clickcount()">
+    <div id="animal" class="move2" onclick="clickcount()">
         <img id="gazelle" onclick="Gazelle()" src="Assets/image/Gazelle.png">
         <img id="rockgazelle" src="Assets/image/r9.png">
         <div id="butgazelle" onclick="Gazelle()"></div>
@@ -807,7 +833,7 @@
             </div>
         </div>
     </div>
-    <div class="move3" onclick="clickcount()">
+    <div id="animal" class="move3" onclick="clickcount()">
         <img id="cotote" onclick="Cotote()" src="Assets//image/cotote.png">
         <img id="rockcoyote" src="Assets/image/r1.png">
         <div id="butcotote" onclick="Cotote()"></div>
@@ -837,7 +863,7 @@
             </div>
         </div>
     </div>
-    <div class="move4" onclick="clickcount()">
+    <div id="animal" class="move4" onclick="clickcount()">
         <img id="bison" onclick="Bison()" src="Assets//image/bison.png">
         <img id="wood" src="Assets/image/wood.png">
         <div id="butbison" onclick="Bison()"></div>
@@ -881,6 +907,12 @@
         <img id="green9" onclick="hidegreen9()" src="Assets/g3.png">
         <img id="green10" onclick="hidegreen10()" src="Assets/g3.png">
         <img id="green11" onclick="hidegreen11()" src="Assets/g3.png">
+    </div>
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html" id="comhover">ไปที่บทสรุป</a></button>
+        </div>
     </div>
 </body>
 </html>
