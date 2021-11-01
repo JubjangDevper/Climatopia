@@ -112,7 +112,15 @@
             height: 5vw;
             width: 5vw;
         }
-}
+    }
+    #resetgame{
+        height: 8vw;
+        width: 8vw;
+        top: 8vw;
+        right: 0;
+        position: absolute;
+        padding: 1vw;
+    }
 </style>
 </head>
 <body>
@@ -169,8 +177,16 @@
                     <img class="land" src="Assets/map/Temperate grassland.png">
                     </a>
                 </div>
+                <div>
+                    <img id="resetgame" onclick="ResetStorage()" src="Assets/map/resetgame.png">
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function ResetStorage() {
+        localStorage.clear();
+    }
+</script>
 </html>

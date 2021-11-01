@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
@@ -25,7 +32,7 @@
         background-repeat: no-repeat;
         margin: 0;
         overflow: hidden;
-        font-family: 'Mitr', sans-serif;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
         font-size: 1vw;
     }
     img{
@@ -53,10 +60,42 @@
     i{
         cursor: pointer;
     }
-    .row{
-        padding-left: 3vw;
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+        ::-webkit-scrollbar {
+    width: 1vw;
     }
-    
+    /* Track */
+        ::-webkit-scrollbar-track {
+    margin-right: 2vw;
+    border-radius: 10px;
+    }
+
+    /* Handle */
+        ::-webkit-scrollbar-thumb {
+    background: rgb(231, 231, 231); 
+    border-radius: 20px;
+    }
+    /*NEW*/
+    @media only screen 
+        and (min-width: 1024px) 
+        and (max-height: 800px)
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:white;
+            background-position-y:0;
+            transform: translateY(0);}
+    }
+
+    @media only screen 
+        and (max-width: 1024px) 
+        and (max-height: 770px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:black;
+            background-position-y:12vh;
+            transform: translateY(12vh);}
+    }   
     .bar{
         font-size: 1.2vw;
         color: white;
@@ -187,67 +226,96 @@
         cursor: pointer;
     }
     #alertBoxferret{
-        width: 25vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: -30vw;
-        margin-left: 2vw;
+        z-index: 5;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
+        font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertferret{
+        z-index: 6;
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
     }
     #alertBoxgazelle {
-        z-Index : 1;
-        width: 25vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: -30vw;
-        margin-left: 2vw;
+        z-index: 5;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
+        font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertgazelle{
+        z-index: 6;
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
     }
     #alertBoxcotote {
-        z-Index : 1;
-        width: 25vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: -30vw;
-        margin-left: 50vw;
+        z-index: 5;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
+        font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertcotote{
+        z-index: 6;
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
     }
     #alertBoxbison {
-        z-Index : 1;
-        width: 25vw;
-        height: 20vw;
-        border: solid 5px#F39C12;
-        border-radius: 10px;
-        margin-top: -30vw;
-        margin-left: 50vw;
+        z-index: 5;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
+        position:absolute;
+        left: 25vw;
+        top:5vw;
+        font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertbison{
+        z-index: 6;
+        background-color: #ece3f6;
+        border-radius: 20px;
+        border: #ece3f6 2px solid;
+    }
+    #xAlert {
         position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
-    }
-    #xAlert{
-        width: 100%;
+        z-index: 3;
+        top: 1vw;
+        font-size: 2vw;
+        color: rgb(204, 79, 79);
+        float: right;
+        margin-top: -1%;
+        margin-left: 93%;
         border: 0;
-        background-color: #F39C12;
-    }
-    #xAlert:hover{
-        background-color: #f0ac3e;
+        background-color: transparent;
     }
     .move{
         margin-left: 5%;
@@ -380,6 +448,72 @@
     #green11:hover{
         cursor: pointer;
     }
+     /*START HOW TO*/
+     #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+    #play > p{
+        color: black;
+    }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+    }
+    /*END HOW TO*/
+    #countshow{
+
+        background-color: white;
+        border: rgb(168, 66, 66) 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;   
+        font-size: 1.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+}
+
 </style>
 <script>
      function Ferret() {
@@ -392,11 +526,6 @@
 
     function showferret() {
         var x = document.getElementById("alertBoxferret");
-        document.getElementById("textAlertferret").innerHTML = "พังพอนเท้าดำคล้ายพังพอนประเทศเช่นเดียวกับโพลแคทป่าและวีเซิลสัตว์ที่มีรูปร่างเรียวยาว\
-        มีขนสีน้ำตาลหรือสีน้ำตาลมีเท้าสีดำปลายหางจมูกและหน้ากาก มีหูรูปสามเหลี่ยมหนวดน้อยปากกระบอกปืนสั้นและกรงเล็บที่แหลมคม ปัจจุบันเป็นสัตว์ที่ใกล้สูญพันธุ์ \
-        ทำให้นักวิทยาศาสตร์พยายามที่จะเพาะขยายไม่ให้สัตว์พื้นเมืองถิ่นอเมริกาเหนือตัวน้อยหน้าตาน่ารักชนิดนี้สูญพันธุ์ไป ล่าสุด ศูนย์บริการอนุรักษ์ปลาและสัตว์ป่าแห่งสหรัฐ\
-        อเมริกา เผยผลความสำเร็จในการโคลนเฟอร์เรทเท้าดำ ซึ่งเป็นการใช้วิธีโคลนนิ่งสิ่งมีชีวิตพื้นเมืองที่ใกล้สูญพันธุ์เป็นครั้งแรกในอเมริกาเหนือ และนี่จะเป็นเครื่องมือที่เป็น\
-        ไปได้สำหรับอนุรักษ์เฟอร์เรทเท้าดำต่อไป"
         x.style.display = "block";
     }
 
@@ -416,10 +545,6 @@
 
     function showgazelle() {
         var x = document.getElementById("alertBoxgazelle");
-        document.getElementById("textAlertgazelle").innerHTML = "กาเซลล์ดามา อาศัยในแอฟริกา และทะเลทรายซาฮาร่า เพื่อมาหาอาหารในฤดูแล้ง\
-         และถูกจัดเป็นชนิดสัตว์ป่าประเภทแอนทีโลป ที่ห้ามนำเข้าหรือส่งออกสัตว์ป่าที่ใกล้สูญพันธุ์ ตามหลักไซเตส (CITES) เนื่องจากการลอบทำลายและ ทำลายแหล่ง\
-         ที่อยู่อาศัยพวกมัน ถูกล่าจากมนุษย์ จึงทำให้จำนวนลดลงอย่างมากถึง 80 เปอร์เซนต์ในช่วง 10 ปีที่ผ่านมา การสำรวจล่าสุดพบว่ากาเซลล์ดามามีอยู่ไม่เกิน 100 \
-         ตัวทั่วแอฟริกาเหนือ"
         x.style.display = "block";
     }
 
@@ -438,12 +563,6 @@
 
     function showcotote() {
         var x = document.getElementById("alertBoxcotote");
-        document.getElementById("textAlertcotote").innerHTML = " สุนัขป่าโคโยตี้เป็นสมาชิกในวงศ์คานิเด มีนิสัยหลายอย่างเหมือนญาติๆ ทั้งสุนัขบ้าน สุนัขป่า\
-         สุนัขจิ้งจอก และหมาไน พวกมันมีจมูกแคบยาว ลำตัวเพรียว ตาสีเหลือง หางพุ่ม ขนหนา มีกิตติศัพท์เรื่องการเห่าหอนเมื่อเห็นดวงจันทร์เพราะพวกมันล่าเหยื่อยามค่ำคืน \
-         และหอนเพื่อบอกที่ตั้ง มีคนหาว่าพวกมันเจ้าเล่ห์ แท้จริงแล้วโคโยตี้เป็นสัตว์ที่ฉลาดมาก และมีประสาทรับเสียง กลิ่น และการมองเห็นดีเยี่ยม สุนัขป่าโคโยตี้อาศัยอยู่ในอเมริกา\
-         เหนือตระเวนไปตามที่ราบ ป่า เขา และทะเลทรายในแคนาดา สหรัฐ เม็กซิโก ไปจนถึงอเมริกากลาง แม้แต่แถบบรรยากาศเขตร้อน เมื่อมนุษย์เข้าไปยึดพื้นที่ชนบทมากขึ้น \
-         โคโยตี้ก็ต้องปรับตัวมาอยู่ในเมืองเพื่อหาอาหาร ทำให้มีคนพบเห็นพวกมันในเมืองใหญ่อย่างนิวยอร์กและลอสแองเจลิสมากขึ้นทุกทีด้วย โคโยตี้เป็นสัตว์สันโดษ ใช้ปัสสาวะบ่ง\
-         บอกเขตแดน แต่เมื่อล่ากวางพวกมันกลับทำงานเป็นทีม ช่วยกันไล่ต้อนจนกวางอ่อนแรง หรือไล่เหยื่อไปหาสมาชิกฝูงที่ซ่อนตัวอยู่"
         x.style.display = "block";
     }
 
@@ -462,11 +581,6 @@
 
     function showbison() {
         var x = document.getElementById("alertBoxbison");
-        document.getElementById("textAlertbison").innerHTML = "ควายไบซัน เป็นสัตว์เลี้ยงลูกด้วยนมที่มีขนาดใหญ่ที่สุดในภูมิภาคอเมริกาเหนือ\
-         มีถิ่นอาศัยตั้งแต่พื้นที่ป่าในรัฐอะแลสกาทางตอนเหนือของสหรัฐ ไล่ลงมาจนถึงเขตทุ่งหญ้าในเม็กซิโก ตัวเต็มวัยอาจมีน้ำหนักมากถึง 1 ตัน แม้จะตัวใหญ่และมีน้ำหนัก\
-          แต่ก็สามารถวิ่งด้วยความเร็วถึงราว 56 กิโลเมตรต่อชั่วโมง ในอดีตจำนวนของไบซันที่ร่อนเร่ไปทั่วอเมริกาเหนืออยู่ที่หลักล้านตัว แต่ปัจจุบันมีรายงานตัวเลขในสหรัฐอยู่ที่ราว\
-           500,000 ตัว ส่วนใหญ่ถูกเลี้ยงดูในฟาร์มและมีการผสมข้ามสายพันธุ์กับปศุสัตว์ ขณะที่ไบซันในธรรมชาติหลงเหลือเพียง 20,000-30,000 ตัว ส่วนมากอยู่ในพื้นที่อนุรักษ์\
-           ซึ่งทำให้ปลอดภัยจากการล่า โดยประชากรไบซันกลุ่มใหญ่ที่สุดพบในอุทยานแห่งชาติเยลโลว์สโตน"
         x.style.display = "block";
     }
 
@@ -534,6 +648,26 @@
         x.style.left = "-31vw";
         x.style.transition = "left 1s";
     }
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/5";
+    if (clicks === 5){
+        localStorage.setItem("td", "true");
+        }
+    }
+    //HOW TO FUNCTION//
+    function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
 }
 </script>
 <body>
@@ -542,8 +676,18 @@
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
     </div>
+    <div id="countshow" >0/5</div>
+        <!--HOW TO BUTTON-->
+        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+        <div class="text-center" id="play" onclick="hidehowto()">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            <h5>วิธีการเล่น</h5>
+            <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+        <!--END HOW TO BUTTON-->
+    </div>
     <div id="bar" class="bar">
-        <div class="row pl text-center">
+        <div class="row pl text-center" style="padding-left: 3.5vw;">
             <div class="col-8 p-1">
                 <h1 style="font-size:1.5vw;">
                     Temperate grassland Climate
@@ -569,52 +713,126 @@
         </div>
         <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
     </div>
-    <div class="move">
+    <div class="move" onclick="clickcount()">
         <img id="ferret" onclick="Ferret()" src="Assets/image/ferret.png">
         <img id="rockferret" src="Assets/image/r8.png">
         <div id="butferret" onclick="Ferret()"></div>
     </div>
-    <div class="card" id="alertBoxferret">
-        <button id="xAlert" onclick="hideferret()">Close</button>
+    <div class="card overflow-auto" id="alertBoxferret" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideferret()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realferret.jpg"></center>
-            <p id="textAlertferret"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realferret.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">เฟอเรตเท้าดำ</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 600 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตทุ่งหญ้า
+                    <br>แคนาดาและแม็กซิโก</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertferret" id="textAlertferret" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเฟอเรทเท้าดำเป็นสัตว์เลี้ยงลูกด้วยนมที่มีถิ่นอาศัยอยู่ในทวีปอเมริกาเหนือ ซึ่งเคยมีการเข้าใจกันว่ามันได้สูญพันธ์ไปแล้วตั้งแต่เมื่อปี 1979 แต่ปรากฏว่าในปี 1981 มีการพบเฟอรเรทเท้าดำหลายสิบตัว หลังจากนั้นจึงมีความพยายามในการเพาะเลี้ยงมัน จนในปัจจุบันมีจำนวนเพิ่มขึ้นเป็นประมาณ 1,000 ตัว แต่เฟอรเรทเท้าดำก็ยังคงเป็นสัตว์ที่อยู่ในสถานะใกล้สูญพันธุ์ไปจากธรรมชาติอยู่ดี
+                    เฟอเรทเท้าดำที่มีชีวิตอยู่ในปัจจุบันมีสายพันธุ์ใกล้ชิดกันมาก จนทำให้ขาดความหลากหลายทางพันธุกรรม และอาจจะส่งผลให้มันไม่สามารถต้านทานโรคภัย รวมทั้งสภาพแวดล้อมที่เปลี่ยนแปลงไปได้
+                </p>
+            </div>
         </div>
     </div>
-    <div class="move2">
+    <div class="move2" onclick="clickcount()">
         <img id="gazelle" onclick="Gazelle()" src="Assets/image/Gazelle.png">
         <img id="rockgazelle" src="Assets/image/r9.png">
         <div id="butgazelle" onclick="Gazelle()"></div>
     </div>
-    <div class="card" id="alertBoxgazelle">
-        <button id="xAlert" onclick="hidegazelle()">Close</button>
+    <div class="card overflow-auto" id="alertBoxgazelle" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidegazelle()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realgazelle.jpg"></center>
-            <p id="textAlertgazelle"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realgazelle.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">ทอมสันกาเซล</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Eudorcas thomsonii</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ใกล้ถูกคุกคราม </p>    
+                    <p><b>ประชากร: </b>ประมาณ 145,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พื้นที่ป่าแล้ง เขตสะวันนา และ เขตทุ่งหญ้า 
+                    ภาคตะวันออกของทวีปแอฟริกา เช่น เคนยาแทนซาเนีย</p>
+                    <p><b>การจำแนกสปีชีส์:</b> Josept Tomson นักสำรวจชาวสกอต</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertgazelle" id="textAlertgazelle" >
+                    <b style="font-size: 1.2vw;">สิ่งที่น่าสนใจ</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspลำตัวมีแถบขนสีดำพาดขวางด้านข้างลำตัวทั้งสองข้าง คั่นกลางระหว่างขนสีน้ำตาลด้านบนและขนสีขาวใต้ท้อง ก้นมีสีขาว หางสั้นสีดำ ทั้งเพศผู้และเพศเมียมีความยาวเท่ากัน มีเขาทั้งเพศผู้และเพศเมีย เขาเพศผู้มีลักษณะคล้ายวงแหวนล้อมรอบเขา เพศเมียมีลักษณะเขาผิดรูปต่างจากเพศผู้ บริเวณใบหน้ามีสีขาว สีเทาแกมเหลือง สีน้ำตาลเข้มและสีดำ แต่ละตัวมีขนาดของเส้นที่แตกต่างกัน และสีขนต่างกัน
+                </p>
+            </div>
         </div>
     </div>
-    <div class="move3">
+    <div class="move3" onclick="clickcount()">
         <img id="cotote" onclick="Cotote()" src="Assets//image/cotote.png">
         <img id="rockcoyote" src="Assets/image/r1.png">
         <div id="butcotote" onclick="Cotote()"></div>
     </div>
-    <div class="card" id="alertBoxcotote">
-        <button id="xAlert" onclick="hidecotote()">Close</button>
+    <div class="card overflow-auto" id="alertBoxcotote" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidecotote()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realcoyote.jpg"></center>
-            <p id="textAlertcotote"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realcoyote.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">หมาป่าโคโยตี้</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> ความกังวลน้อยที่สุด </p>    
+                    <p><b>ประชากร: </b>ประมาณ ุ 180,958 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตป่า เขตทุ่งหญ้าและเขตทะเลทราย
+                    <br>อเมริกาเหนือและกลาง</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertcotote" id="textAlertcotote" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเมื่อยามที่ไม่ได้ออกล่าเหยื่อ โคโยตีมักจะอาศัยอยู่ในโพรงไม้เพื่อหลบซ่อนตัวเองจากศัตรู อาณาเขตในการล่าเหยื่อของโคโยตีขึ้นอยู่กับความอุดมสมบูรณ์ของพื้นที่ ตั้งแต่ 0.4-62 ตารางกิโลเมตร โดยจะใช้ปัสสาวะบอกอาณาเขตเช่นเดียวกับสุนัขชนิดอื่น ๆ อาหารของพวกมันมักเป็นสัตว์ขนาดเล็ก เช่น กระต่าย หนู ปลา แต่บางครั้งก็อาจจะล่าสัตว์ที่มีขนาดใหญ่กว่าตัวเองอย่างกวาง นอกจากนั้นมันพวกมันยังสามารถกินผลไม้ขนาดเล็ก ๆ ได้อีกด้วย ส่วนศัตรูของพวกมันก็คือหมีและหมาป่าชนิดอื่น ๆ และที่แน่นอนก็ต้องมี “มนุษย์” ที่จะล่ามันทั้งเพื่อป้องกันการรบกวนสัตว์เลี้ยง และล่าเพื่อเอาหนังหรือขน
+                </p>
+            </div>
         </div>
     </div>
-    <div class="move4">
+    <div class="move4" onclick="clickcount()">
         <img id="bison" onclick="Bison()" src="Assets//image/bison.png">
         <img id="wood" src="Assets/image/wood.png">
         <div id="butbison" onclick="Bison()"></div>
     </div>
-    <div class="card" id="alertBoxbison">
-        <button id="xAlert" onclick="hidebison()">Close</button>
+    <div class="card overflow-auto" id="alertBoxbison" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidebison()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realbison.jpg"></center>
-            <p id="textAlertbison"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realbison.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #56486c;font-weight: 1000;">ควายอเมริกันไบซัน</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Bison</p>
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>ประชากร: </b>ประมาณ 13,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>เขตทุ่งหญ้า เขตสะวันนาและ<br>เขตทะเลทราย
+                    อเมริกาเหนือ</p>
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertbison" id="textAlertbison" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspควายไบซัน เป็นสัตว์เลี้ยงลูกด้วยนมที่มีขนาดใหญ่ที่สุดในภูมิภาคอเมริกาเหนือ มีถิ่นอาศัยตั้งแต่พื้นที่ป่าในรัฐอะแลสกาทางตอนเหนือของสหรัฐ ไล่ลงมาจนถึงเขตทุ่งหญ้าในเม็กซิโก ตัวเต็มวัยอาจมีน้ำหนักมากถึง 1 ตัน แม้จะตัวใหญ่และมีน้ำหนัก แต่ก็สามารถวิ่งด้วยความเร็วถึงราว 56 กิโลเมตรต่อชั่วโมง ในอดีตจำนวนของไบซันที่ร่อนเร่ไปทั่วอเมริกาเหนืออยู่ที่หลักล้านตัว ปัจจุบันส่วนใหญ่ถูกเลี้ยงดูในฟาร์มและมีการผสมข้ามสายพันธุ์กับปศุสัตว์ส่วนมากอยู่ในพื้นที่อนุรักษ์ซึ่งทำให้ปลอดภัยจากการล่า โดยประชากรไบซันกลุ่มใหญ่ที่สุดพบในอุทยานแห่งชาติเยลโลว์สโตน
+                </p>
+            </div>
         </div>
     </div>
     <div>
