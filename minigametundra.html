@@ -234,6 +234,12 @@
             </div>
         </div>
     </div>
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html" id="comhover">ไปที่บทสรุป</a></button>
+        </div>
+    </div>
 </body>
 <style>
 /*NEW*/
@@ -688,6 +694,8 @@
     }
     /*NEW*/
     #complete{
+        display: block;
+        z-index: 99;
         padding: 1vw;
         border-radius: 20px;
         background-color: rgba(255, 255, 255, 0.8);
@@ -700,7 +708,6 @@
         text-align: center;
         flex-direction: column;
         width: 30%;
-        
     }
     /*NEW*/
     #complete > h1 {
@@ -897,7 +904,9 @@
       clicks += 1;
         var x = document.getElementById("animal");
         document.getElementById("countshow").innerHTML = clicks + "/5";
+        
     if (clicks === 5){
+        i.style.opacity = "100%";
         localStorage.setItem("td", "true");
     }
   }
