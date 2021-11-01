@@ -261,6 +261,15 @@
             background-position-y:0;
             transform: translateY(0);}
     }
+    @media only screen 
+    and (max-width: 1024px) 
+    and (max-height: 770px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:black;
+            background-position-y:12vh;
+            transform: translateY(12vh);}
+    }   
     #bmap{
         height: 8vw;
         width: 8vw;
@@ -322,19 +331,18 @@
         z-index: 0;
         height: 9vw;
         width: 12vw;
-        margin-top: -46.5vw;
-        margin-left: 30vw;
-        transform: rotate(205deg);
+        margin-top: -40vw;
+        margin-left: 36vw;
         position: absolute;
+        filter: brightness(15%);
     }
 
     #butsloth {
         z-index: 1;
         height: 9vw;
         width: 12vw;
-        margin-top: -46.5vw;
-        margin-left: 30vw;
-        transform: rotate(205deg);
+        margin-top: -40vw;
+        margin-left: 36vw;
         position: absolute;
     }
 
@@ -576,19 +584,20 @@
 
     /*ANIMAL5_FROG*/
     #leaffrog {
-        width: 18vw;
-        height: 7vw;
-        margin-top: -20vw;
-        margin-left: 53vw;
-        transform: rotate(30deg);
+        width: 15vw;
+        height: 6vw;
+        margin-top: -10vw;
+        margin-left: 54vw;
+        transform: rotate(90deg);
         position: absolute;
     }
     #leaffrog2 {
         width: 18vw;
         height: 7vw;
-        margin-top: -15vw;
-        margin-left: 50vw;
+        margin-top: -12vw;
+        margin-left: 48vw;
         z-index: -1;
+        transform: rotate(50deg);
         position: absolute;
     }
 
@@ -717,8 +726,9 @@
     function sloth() {
         let traget = document.getElementById("sloth");
         traget.style.zIndex = 1;
-        traget.style.marginTop = "-40vw";
-        traget.style.transform = "rotate(0deg)";
+        traget.style.marginTop = "-39vw";
+        traget.style.marginLeft = "30vw";
+        traget.style.filter= "brightness(100%)";
         
         showsloth()
     }
@@ -799,8 +809,8 @@
         traget.style.zIndex = 1;
         traget.style.height = "5vw";
         traget.style.width = "5vw";
-        traget.style.marginTop = "-26vw";
-        traget.style.marginLeft = "57vw";
+        traget.style.marginTop = "-22vw";
+        traget.style.marginLeft = "56vw";
 
         showfrog()
     }
