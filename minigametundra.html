@@ -890,7 +890,7 @@
         x.style.transition = "left 1s";
     }
     }
-    //NEW//
+    //NEW2//
     var clicks = 0;
     var i = document.getElementById("complete");
     function clickcount(){
@@ -898,7 +898,7 @@
         var x = document.getElementById("animal");
         document.getElementById("countshow").innerHTML = clicks + "/5";
     if (clicks === 5){
-        i.style.opacity = "100%";
+        localStorage.setItem("td", "true");
     }
   }
 

@@ -335,7 +335,7 @@
         margin-top: -46.5vw;
         margin-left: 30vw;
         transform: rotate(205deg);
-        position: absolute; 
+        position: absolute;
     }
 
     #butsloth:hover {
@@ -719,7 +719,7 @@
         traget.style.zIndex = 1;
         traget.style.marginTop = "-40vw";
         traget.style.transform = "rotate(0deg)";
-
+        
         showsloth()
     }
 
@@ -815,7 +815,7 @@
         x.style.display = "none";
     }
 
-    //NEW//
+    //NEW2//
     var clicks = 0;
     var i = document.getElementById("complete");
     function clickcount(){
@@ -824,6 +824,7 @@
         document.getElementById("countshow").innerHTML = clicks + "/5";
     if (clicks === 5){
         i.style.opacity = "100%";
+        localStorage.setItem("trf", "true");
     }
   }
 </script>
