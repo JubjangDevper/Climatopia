@@ -29,7 +29,17 @@
         <img id="map" src="Assets/image/bmap.png">
     </a>
 
-    <div id="countshow">0/5</div>
+    <div id="countshow">0/4</div>
+
+    <!--HOW TO BUTTON-->
+    <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO
+        PLAY</div>
+
+    <div class="text-center" id="play" onclick="hidehowto()">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <h5>วิธีการเล่น</h5>
+        <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
+    </div>
 
     <!--BAR-->
     <div id="bar" class="bar">
@@ -242,6 +252,64 @@
 
     .popupImg {
         border-radius: 20px;
+    }
+
+    /* How to play button */
+    #how {
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: black 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 13.5vw;
+        left: 93vw;
+        position: fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    }
+
+    #how :hover {
+        transition: 0.1s;
+        font-size: 2.4vw;
+    }
+
+    .how>i {
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+    }
+
+    #play {
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 13vw;
+        left: 79vw;
+        position: fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+    }
+
+    #play>p {
+        color: black;
+    }
+
+    #play>h5 {
+        font-size: 1vw;
+        font-weight: 1000;
+    }
+
+    #play>i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
     }
 
     /* Click Counter */
@@ -619,6 +687,64 @@
             font-size: 3vw;
             margin-top: -1%;
             margin-left: 93%;
+        }
+
+        /* How to play button */
+        #how {
+            z-index: 4;
+            cursor: pointer;
+            text-shadow: black 1px 1px;
+            color: rgb(211, 74, 74);
+            border-radius: 50px;
+            top: 21vw;
+            left: 88vw;
+            position: fixed;
+            padding: 1vw;
+            font-size: 1.7vw;
+            font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        }
+
+        #how :hover {
+            transition: 0.1s;
+            font-size: 5.2vw;
+        }
+
+        .how>i {
+            text-shadow: rgb(168, 66, 66) 2px 2px;
+            -webkit-text-stroke: 0.2vw white;
+            font-size: 4vw;
+        }
+
+        #play {
+            background-color: rgba(255, 255, 255, 0.8);
+            display: none;
+            cursor: pointer;
+            text-shadow: white 1px 1px;
+            color: rgb(211, 74, 74);
+            border-radius: 20px;
+            top: 13vw;
+            left: 54vw;
+            position: fixed;
+            padding: 1vw;
+            font-size: 2vw;
+            font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+            z-index: 5;
+            border: rgb(168, 66, 66) solid 3px;
+            box-shadow: white 4px 4px;
+        }
+
+        #play>p {
+            color: black;
+        }
+
+        #play>h5 {
+            font-size: 3vw;
+            font-weight: 1000;
+        }
+
+        #play>i {
+            font-size: 3.2vw;
+            margin-left: 25vw;
         }
 
         /* Map Button */
@@ -1032,11 +1158,23 @@
     var i = document.getElementById("complete");
     function clickcount() {
         clicks += 1;
-        document.getElementById("countshow").innerHTML = clicks + "/5";
-        if (clicks === 5) {
+        document.getElementById("countshow").innerHTML = clicks + "/4";
+        if (clicks === 4) {
             i.style.opacity = "100%";
         }
     }
+
+    // How to play button
+    function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+
 </script>
 
 </html>
