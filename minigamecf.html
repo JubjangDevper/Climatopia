@@ -13,14 +13,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Coniferous forest</title>
 </head>
 
 <body>
     <div>
+        <div id="introLoader" class="introloader">
+            <div class="spinner">
+              <div class="spinner-inner"></div>
+            </div>
+          </div>
+    <div>
         <a href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
+        <div id="countshow" >0/4</div>
+        <!--HOW TO BUTTON-->
+        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
+        
+        <div class="text-center" id="play" onclick="hidehowto()">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            <h5>วิธีการเล่น</h5>
+            <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+        <!--END HOW TO BUTTON-->
     </div>
 </div>
 <div id="bar" class="bar">
@@ -50,68 +66,149 @@
     </div>
     <i class="fas fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()"></i>
 </div>
-    <div class="redfoxbox">
+    <div class="redfoxbox" onclick="clickcount()">
         <img id="redfox" onclick="redfox()" src="Assets\image\redfox.png">
         <img id="rockredfox" src="Assets\image\r1.png">
         <div id="butredfox" onclick="redfox()"></div>
     </div>
-    <div class="card" id="alertBoxredfox">
-        <button id="xAlert" onclick="hideredfox()">Close</button>
+    <div class="card overflow-auto" id="alertBoxredfox" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideredfox()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realredfox.jpg"></center>
-            <p id="textAlertredfox"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realredfox.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">จิ้งจอกแดง</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Vulpes vulpes</p>
+                    <p><b>สถานะการอนุรักษ์:</b> เป็นกังวลน้อย (คงที่) </p>
+                    <p><b>ประชากร: </b>&nbsp&nbsp 1 ล้านตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b> พบได้ในซีกโลกเหนือไปยังอเมริกากลางแอฟริกาเหนือและเอเชีย อาศัยอยู่ในภูมิประเทศที่หลากหลายได้ ป่าสนหรือ<br>ป่าเบญจพรรณ พื้นที่แห้งแล้งแบบทะเลทราย 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertredfox" id="textAlertredfox" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>สุขนัขจิ้งจอกแดงในวัฒนธรรม</b> นับเป็นหมาจิ้งจอกชนิดที่มีการกระจายพันธุ์อย่างกว้างขวางที่สุด และนับเป็นต้นแบบของหมาจิ้งจอกทั้งหมด ดังนั้น จึงปรากฏในวัฒนธรรมและความเชื่อของชนชาติต่าง ๆ มาแต่โบราณ โดยชาวตะวันตก หมาจิ้งจอกจะเป็นสัญลักษณ์ของความเจ้าเล่ห์ และปรากฏในนิทานพื้นบ้าน และนิทานอีสปหลายเรื่อง อาทิ องุ่นเปรี้ยว หมาหางด้วน  เป็นต้น สำหรับชาวเอเชียตะวันออก เช่น ชาวจีน หรือชาวญี่ปุ่น เชื่อว่า หมาจิ้งจอกแดงสามารถแปลงร่างเป็นปีศาจเพื่อหลอกลวงมนุษย์ได้ เช่น ปีศาจจิ้งจอก, ปีศาจจิ้งจอกเก้าหาง เป็นต้น ขณะเดียวกันในศาสนาชินโตก็เชื่อว่า หมาจิ้งจอกแดงเป็นตัวแทนของเทพเจ้าอินะริ ที่ถูกมอบหมายให้ลงมาบนโลกมนุษย์ เพื่อดลบันดาลให้เกิดความอุมสมบูรณ์ขึ้น ที่หน้าศาลเจ้าฟุชิมิ อินะริ ที่จังหวัดเกียวโต จึงมีรูปปั้นหมาจิ้งจอกแดงประดับอยู่ เสมือนเป็นยามหรือทวารบาลรักษาทางเข้า โดยบางตัวจะคาบสิ่งที่มีลักษณะคล้ายสาสน์ อันหมายถึง เป็นตัวแทนหรือสื่อกลางระหว่างมนุษย์กับเทพเจ้า หรือบางตัวคาบรวงข้าว หมายถึง การเป็นตัวแทนของความอุดมสมบูรณ์
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="moosebox">
+    <div class="moosebox" onclick="clickcount()">
         <img id="moose" onclick="moose" src="Assets\image\moose.png">
         <img id="rockmoose" src="Assets\reward\r10.png">
         <div id="butmoose" onclick="moose()"></div>
     </div>
-    <div class="card" id="alertBoxmoose">
-        <button id="xAlert" onclick="hidemoose()">Close</button>
+    <div class="card overflow-auto" id="alertBoxmoose" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidemoose()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realmoose.jpg"></center>
-            <p id="textAlertmoose"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realmoose.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">กวางมูส</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Alces alces</p>
+                    <p><b>ชื่อสปีชีส์:&nbsp </b>A. alces</p>
+                    <p><b>สถานะการอนุรักษ์:</b> เป็นกังวลน้อย (คงที่)</p>
+                    <p><b>ประชากร: </b>ประมาณ 1,500,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พบได้ในป่าเขตหนาวและอบอุ่นซีกโลกเหนือ พบมากในบริเวณประเทศแคนาดา ประเทศลัตเวีย และประเทศเอสโตเนีย 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertmoose" id="textAlertmoose" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>กวางมูสเป็นสมาชิกที่ใหญ่ที่สุดของตระกูลกวาง</b> พวกมันยังเป็นสัตว์เลี้ยงลูกด้วยนมที่สูงที่สุดในอเมริกาเหนือ ความสูงจากกีบถึงบ่ามีช่วงตั้งแต่ 5 ถึง 6.5 ฟุต (1.5 ถึง 2 เมตร) เพศชายนั้นหนักกว่าเพศเมีย เพศชายมีน้ำหนัก 794-1,323 ปอนด์ (360 ถึง 600 กิโลกรัม) ในขณะที่<br>เพศหญิงมีน้ำหนัก 595 ถึง 882 ปอนด์ (270 ถึง 400 กิโลกรัม) ตามพิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติแห่งชาติกวางมูสมีหางสั้นโคกบนไหล่และหูขนาดใหญ่ที่สามารถหมุนเพื่อให้พวกเขาได้ยิน ขนของพวกเขามักจะมีสีน้ำตาลหรือสีดำและให้ฉนวนที่ดีเยี่ยมจากความเย็น กวางมูสเพศผู้เรียกว่าบูลส์มีกวางขนาดใหญ่ สิ่งเหล่านี้สามารถเติบโตได้กว้าง 6 ฟุต (1.8 ม.) จากปลาย<br>จรดปลาย เขากวางใช้สำหรับต่อสู้เพื่อผสมพันธุ์เท่านั้นและพวกมันจะถูกกำจัดทุกฤดูหนาวหลังจากฤดูผสมพันธุ์ซึ่งเริ่มตั้งแต่เดือนกันยายนถึงตุลาคม
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="bobcatbox">
+    <div class="bobcatbox" onclick="clickcount()">
         <img id="bobcat" onclick="bobcat()" src="Assets\image\bobcat.png">
         <img id="rockbobcat" src="Assets\reward\r11.png">
         <div id="butbobcat" onclick="bobcat()"></div>
     </div>
-    <div class="card" id="alertBoxbobcat">
-        <button id="xAlert" onclick="hidebobcat()">Close</button>
+    <div class="card overflow-auto" id="alertBoxbobcat" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hidebobcat()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realbobcat.jpg"></center>
-            <p id="textAlertbobcat"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realbobcat.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">บ็อบแคต</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Lynx rufus</p>
+                    <p><b>ชื่อสปีชีส์:&nbsp </b>L. rufus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> เป็นกังวลน้อย (คงที่) </p>
+                    <p><b>ประชากร: </b>ประมาณ 1,030,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>บ็อบแคตอาศัยในทวีปอเมริกาเหนือ พบได้ในภูมิประเทศทุกชนิด <br>ไม่ว่าจะเป็นป่าเซจบรัช ทะเลทราย เทือกเขาสูง ป่าสน ป่าชุ่มชื้น ป่าบึง จนถึงป่าฝน 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlertbobcat" id="textAlertbobcat" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>บ็อบแคทสามารถอยู่ได้เป็นเวลานานโดยไม่มีอาหาร</b>  แต่จะกินหนักเมื่อมีเหยื่อมากมาย ในช่วงที่ผอมมักกินสัตว์ขนาดใหญ่ที่สามารถฆ่าได้และกลับมากินได้ในภายหลัง บ็อบแคทล่าด้วยการสะกดรอยตามเหยื่อแล้วซุ่มโจมตีด้วยการไล่ล่าหรือกระโจนเข้าใส่ ชอบกินสัตว์เลี้ยงลูกด้วยนมที่มีน้ำหนักประมาณ 1.5 ถึง 12.5 ปอนด์ (0.7 ถึง 6 กก.) เหยื่อหลักของมันแตกต่างกันไปตามภูมิภาค ในภาคเหนือจะเป็นกระต่าย Snowshoe เมื่อเหยื่อชนิดนี้อยู่ร่วมกัน พวกมันเป็นแหล่งอาหารหลักของบ็อบแคท ในทางใต้บางครั้งกระต่ายจะถูกแทนที่ด้วยหนูฝ้ายเป็นแหล่งอาหารหลักของมัน บ็อบแคทในอเมริกาเป็นนักล่าฉวยโอกาสซึ่งแตกต่างจากแมวป่าชนิดหนึ่งของแคนาดาที่เชี่ยวชาญกว่าการเลือกเหยื่อที่แตกต่างกันไปอย่างรวดเร็ว ความอุดมสมบูรณ์ของสายพันธุ์เหยื่อเป็นหลัก ซึ่งเป็นปัจจัยกำหนดหลักของการหาอาหารโดยรวม 
+                </p>
+            </div>
         </div>
     </div>
-    <div class="eaglebox">
+    
+    <div class="eaglebox" onclick="clickcount()">
         <img id="eagle" onclick="eagle()" src="Assets/image/eagle.png">
     </div>
-    <div class="card" id="alertBoxeagle">
-        <button id="xAlert" onclick="hideeagle()">Close</button>
+    <div class="card overflow-auto" id="alertBoxeagle" style="max-height: 40vw;">
+        <button id="xAlert" onclick="hideeagle()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
         <div class="container">
-            <center><img id="sc1" src="Assets/image/realbaldeagle.jpg"></center>
-            <p id="textAlerteagle"></p>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 p-3">
+                    <img  class="p-2" src="Assets/image/realbaldeagle.jpg" style="width: 100%; height: 100%;"> 
+                </div>
+                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                    <h5 style="color: #15531f;font-weight: 1000;">อินทรีหัวขาว</h5>
+                    <p><b>ชื่อวิทยาศาสตร์: </b>Haliaeetus leucocephalus</p>
+                    <p><b>ชื่อสปีชีส์:&nbsp </b>H. leucocephalus</p>
+                    <p><b>สถานะการอนุรักษ์:</b> เป็นกังวลน้อย (เพิ่มขึ้น)</p>
+                    <p><b>ประชากร: </b>ประมาณ 300,000 ตัว</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พบได้ในทวีปอเมริกาเหนือตลอดไปจนถึงเม็กซิโกตอนเหนือและทะเลแคริบเบียน มักอาศัยอยู่ใกล้แหล่งน้ำหรือชายทะเล 
+                </div>
+            </div>
+            <div class="row" >
+                <p class="p-3 ml-4 mr-4 textAlerteagle" id="textAlerteagle" >
+                    <b style="font-size: 1.2vw;">รู้หรือไม่</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>นกอินทรีหัวขาวถือเป็นสัญลักษณ์ของสหรัฐอเมริกา </b>  ปรากฏอยู่บนตราประทับของประธานาธิบดีแห่งสหรัฐอเมริกา และหน่วยงานราชการอื่น ๆ ในประเทศอีกมากมายนกอินทรีหัวขาวเป็นนกที่ได้รับการคุ้มครองในสหรัฐอเมริกาตั้งแต่ปีพ. ศ. 2483 หลังจากที่นกอินทรีหัวขาวใน 48 รัฐมีรังเพียง 417 รัง สถานการณ์เริ่มดีขึ้นในปี พ.ศ.2506 เมื่อจำนวนรังเพิ่มขึ้นเป็น 7,066 รังสาเหตุที่จำนวนนกอินทรีหัวขาวลดลงเนื่องจากการใช้ดีดีทีและการทำลายแหล่ง<br>เพาะพันธุ์ยังไม่ถึงต้นปี 2549 ที่ชื่อ ถูกลบออกจากรายชื่อสัตว์สงวนแห่งชาติและต่อมาในปี 2555 อนุญาตให้ล่าสัตว์สำหรับชาวอินเดียนแดงได้ เพราะถึงแม้จะถอนชื่อในปี 2550 แต่กฎหมายอื่น ๆ ก็ยังคงมีไว้คุ้มครอง 
+                </p>
+            </div>
         </div>
     </div>
+
+    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+        <h1>Complete</h1>
+        <div>
+            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html" id="comhover">ไปที่บทสรุป</a></button>
+        </div>
+    </div>
+
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
     body {
         width: 100%;
         height: 100%;
         background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/cf.jpg?raw=true");
-        background-size: cover;
+        background-size:cover;
         background-repeat: no-repeat;
-        font-family: 'Mitr', sans-serif;
-        overflow: hidden;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        overflow-x: hidden;
     }
+   
     img{
         transition: all .4s;
     }
@@ -160,31 +257,25 @@
     }
 
     #alertBoxredfox {
-        z-index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        border-radius: 10px;
-        margin-top: 18vw;
-        margin-left: 5vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 5;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
     }
-
-    #xAlert {
-        width: 100%;
-        border: 0;
-        background-color: #F39C12;
+    
+    .textAlertredfox{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
-
-    #xAlert:hover {
-        background-color: #f0ac3e;
-    }
-
     .redfoxbox {
         margin-left: 5%;
         margin-top: 40%;
@@ -228,19 +319,23 @@
     }
 
     #alertBoxmoose {
-        z-index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        border-radius: 10px;
-        margin-top: 26vw;
-        margin-left: 55vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 5;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertmoose{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
 
     #rockbobcat {
@@ -280,34 +375,43 @@
     }
 
     #alertBoxbobcat {
-        z-index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        border-radius: 10px;
-        margin-top: 19vw;
-        margin-left: 55vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 1;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    .textAlertbobcat{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
     #alertBoxeagle {
-        z-index: 1;
-        width: 30vw;
-        height: 20vw;
-        border: solid 0.5vw#F39C12;
-        border-radius: 10px;
-        margin-top: 19vw;
-        margin-left: 55vw;
+        box-shadow: rgb(70, 70, 70) 2px 2px 10px;
+        z-Index: 1;
+        width: 50vw;
+        height: fit-content(100%);
+        border-radius: 20px;
         display: none;
-        position: absolute;
-        overflow-y: scroll;
-        box-shadow: 5px 10px #4c96a8;
-        background: hsl(44, 78%, 78%);
+        position:absolute;
+        left: 25vw;
+        top:5vw;
         font-size: 1vw;
+        line-height: 1.6vw;
+        overflow:scroll;
+    }
+    
+    .textAlerteagle{
+        background-color: #b2e4a6;
+        border-radius: 20px;
+        border: #b2e4a6 2px solid;
     }
     .eaglebox{
         margin-left: 15vw;
@@ -359,6 +463,7 @@
     }
     .row{
         padding-left: 3vw;
+        padding-right: 2vw;
     }
     
     .bar{
@@ -386,8 +491,173 @@
     .vec >img{
         width:8vw;
     }
-</style>
-<script>
+    #xAlert {
+        position: absolute;
+        z-index: 3;
+        top: 1vw;
+        font-size: 2vw;
+        color: rgb(204, 79, 79);
+        float: right;
+        margin-top: -1%;
+        margin-left: 93%;
+        border: 0;
+        background-color: transparent;
+        }
+        /*NEW*/
+    #countshow{
+
+        background-color: white;
+        border: rgb(168, 66, 66) 3px solid;
+        border-radius: 50px;
+        top: 8vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 1.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+        }
+        /*NEW*/
+    #complete{
+        padding: 1vw;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 3px solid rgb(193, 138, 204);
+        text-shadow: white 0.25vw 0.25vw ;
+        color: #9f34b4;
+        opacity: 0%;
+        left: 35%;
+        top: 20vw;
+        text-align: center;
+        flex-direction: column;
+        width: 30%;
+
+        }
+        /*NEW*/
+    #complete > h1 {
+        font-size: 3vw;
+        }
+        /*NEW*/
+    .btn-pur{
+        margin: 2vw;
+        color:white;
+        background: #691f94;
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+        }
+        /*NEW*/
+    button > a{
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+        }
+        /*START HOW TO*/
+    #how{
+        z-index: 4;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 50px;
+        top: 15vw;
+        left: 93vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.7vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        }
+    #how :hover{
+        transition: 0.1s;
+        font-size: 2.4vw;
+        }
+    .how > i{
+        text-shadow: rgb(168, 66, 66) 2px 2px;
+        -webkit-text-stroke: 0.2vw white;
+        font-size: 2vw;
+        }
+    #play{
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        cursor: pointer;
+        text-shadow: white 1px 1px;
+        color: rgb(211, 74, 74);
+        border-radius: 20px;
+        top: 14vw;
+        left: 77vw;
+        position:fixed;
+        padding: 1vw;
+        font-size: 0.8vw;
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        z-index: 5;
+        border: rgb(168, 66, 66) solid 3px;
+        box-shadow: white 4px 4px;
+        }
+    #play > p{
+        color: black;
+        }
+    #play > h5{
+        font-size: 1vw;
+        font-weight: 1000;
+        }
+    #play > i {
+        font-size: 1.1vw;
+        margin-left: 11vw;
+        }
+    /*END HOW TO*/
+
+    .introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
+    </style>
+    <script>
     function redfox() {
         let traget = document.getElementById("redfox");
         traget.style.zIndex = 1;
@@ -400,7 +670,6 @@
 
     function showredfox() {
         var x = document.getElementById("alertBoxredfox");
-        document.getElementById("textAlertredfox").innerHTML = "จิ้งจอกแดง ดูเหมือนสุนัขทั่วๆไปแต่มีขนาดเล็กกว่าขนตามลำตัวมีสีเทาแดงหรือน้ำตาลแดงบางตัวอาจเป็นสีน้ำตาลอมส้ม <br>สีขนที่ปลายหูและขาเป็นสีดำ สีขนอาจเปลี่ยนไปตามสภาพอากาศเช่นสีขนจะเปลี่ยนเป็นสีน้ำตาลแดงในช่วงที่มีความชื้นสูง และอาจมีขนหลายสีเช่นสีเงินสีขาวล้วนลำตัวและหัวยาว เป็นผลให้มีพันธุ์ย่อย 45 ชนิด จิ้งจอกแดงสามารถปรับตัวเข้ากับสภาพแวดล้อมต่างๆได้เป็นอย่างดี ทำให้สามารถอยู่ได้ในภูมิประเทศที่หลากหลายป่าสนหรือป่าเบญจพรรณพื้นที่แห้งแล้งในทะเลทรายและพื้นที่เกษตรกรรม"
         x.style.display = "block";
     }
 
@@ -422,7 +691,6 @@
 
     function showmoose() {
         var x = document.getElementById("alertBoxmoose");
-        document.getElementById("textAlertmoose").innerHTML = "กวางมูส คือ กวางขนาดใหญ่ที่พบในป่าเขตหนาวและอบอุ่นซีกโลกเหนือ สายพันธุ์ที่ใหญ่ที่สุดคือสายพันธุ์อะแลสกา สามารถพบได้ในบริเวณป่าไทกา ในทวีปอเมริกาเหนือจะเรียกว่า มูส ในยูเรเชีย<br>จะเรียกว่า เอลก์ พบมากในบริเวณประเทศแคนาดา พวกมันเป็นสัตว์ที่ไม่รวมกันเป็นฝูงและมีขนาดใหญ่แถมยังมีเขาที่ค่อนข้างใหญ่ทำให้มันเคลื่อนที่ได้ค่อยข้างช้าทำให้พวกมันตกเป็นเหยื่อของนักล่าอย่างหมาป่าและมนุษย์ โดยปกติพวกมันจะเคลือนไหวช้าแต่ถ้าพวกมันโกรธหรือตกใจพวกมันก็สามารถวิ่งได้เร็วเช่นกันพวกมันจะผสมพันธุ์กันในช่วงฤดูใบไม้ร่วงซึ่งช่วงนั้นมันจะมีการต่อสู้อย่างดุเดือดของตัวผู้เพื่อแย่งตัวเมีย"
         x.style.display = "block";
     }
 
@@ -444,7 +712,6 @@
 
     function showbobcat() {
         var x = document.getElementById("alertBoxbobcat");
-        document.getElementById("textAlertbobcat").innerHTML = "บอบแคต เป็นแมวที่มีรูปร่างโดดเด่นจดจำง่าย รูปร่างกำยำล่ำสัน ขนหนานุ่ม สีสันหลากหลาย ตั้งแต่เทาอ่อนจนถึงน้ำตาลแดง<br> มีลายบั้งและลายจุดสีเข้มกระจายอยู่ทั่วตัว ขนบริเวณสันหลังเข้มกว่าส่วนใต้ท้อง บางตัวอาจมีลายเฉพาะที่หน้าท้อง นอกจากนี้ก็ยังมีรายงานพบบอบแคตดำและบอบแคตเผือกด้วย บอบแคตดำพบได้เฉพาะในรัฐฟลอริดาเท่านั้น บอบแคตหากินโดยลำพัง รักสันโดษ ปรับตัวเข้ากับแหล่งที่อยู่อาศัยได้แทบทุกชนิดแม้แต่พื้นที่ ๆ มีการรบกวนจากมนุษย์ หากินได้ทั้งกลางวันและกลางคืน ส่วนใหญ่ออกหากินเวลารุ่งสางและพลบค่ำ เป็นสัตว์หากินบนพื้นดินเป็นส่วนใหญ่ แต่ก็ปีนต้นไม้ได้ดีและว่ายน้ำเก่งมาก"
         x.style.display = "block";
     }
 
@@ -463,7 +730,6 @@
 
     function showeagle() {
         var x = document.getElementById("alertBoxeagle");
-        document.getElementById("textAlerteagle").innerHTML = "นกอินทรีหัวล้านเป็นนกประจำชาติและสัตว์ประจำชาติของสหรัฐอเมริกา เป็นนกอินทรีในอเมริกาเหนือที่มีเอกลักษณ์เฉพาะตั้งแต่เม็กซิโกตอนเหนือไปจนถึงสหรัฐอเมริกาที่อยู่ติดกันไปจนถึงแคนาดาและอะแลสกา รัฐเดียวที่นกไม่เรียกว่าบ้านคือฮาวาย นกอินทรีอาศัยอยู่ใกล้แหล่งน้ำที่เปิดโล่งเลือกที่อยู่อาศัยที่มีต้นไม้ขนาดใหญ่ซึ่งสร้างเป็นรัง นกอินทรีหัวล้านชอบกินปลา อย่างไรก็ตามมันจะกินนกขนาดเล็กไข่นกและสัตว์ขนาดเล็กอื่น ๆ (เช่นกระต่ายปูกิ้งก่ากบ) นกอินทรีหัวล้านเลือกเหยื่อที่ไม่น่าจะสู้ได้มากนัก พวกเขาพร้อมที่จะขับไล่นักล่าอื่น ๆเพื่อฆ่าและจะกินซากศพ รังนกอินทรีหัวล้านเป็นรังนกที่ใหญ่และใหญ่ที่สุดในโลก รังอาจมีขนาดได้ถึง 8 ฟุตและมีน้ำหนักมากถึงตัน นกอินทรีตัวผู้และตัวเมียทำงานร่วมกันเพื่อสร้างรังซึ่งทำด้วยไม้และมักจะตั้งอยู่บนต้นไม้ใหญ่ ในปีพ. ศ. 2510 นกอินทรีหัวโล้นถูกระบุว่าเป็นสัตว์ใกล้สูญพันธุ์ภายใต้พระราชบัญญัติสงวนพันธุ์สัตว์ใกล้สูญพันธุ์ ในปีพ. ศ. 2516 ได้รับการจดทะเบียนภายใต้พระราชบัญญัติสัตว์ใกล้สูญพันธุ์ฉบับใหม่ จำนวนประชากรที่ลดลงอย่างมากซึ่งนำไปสู่การใกล้สูญพันธุ์ ได้แก่ พิษโดยไม่ได้ตั้งใจ (ส่วนใหญ่มาจาก DDT และตะกั่ว)"
         x.style.display = "block";
     }
 
@@ -486,7 +752,53 @@
         x.style.left = "-31vw";
         x.style.transition = "left 1s";
     }
-}
+    }
+    //NEW//
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount(){
+      clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/4";
+    if (clicks === 4){
+        i.style.opacity = "100%";
+    }
+  }
+
+  //HOW TO FUNCTION//
+  function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "4"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+
+    function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+
+    });
+    });
 </script>
 
 
