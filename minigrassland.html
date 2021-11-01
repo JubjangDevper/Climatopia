@@ -78,6 +78,21 @@
     }
     /*NEW*/
     @media only screen 
+  and (min-width: 481px) 
+  and (max-height: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{background-color:black;
+            background-position-y:12vh;
+            transform: translateY(25vh);}
+        .bar{
+            transform: translateY(-70vh);
+        }
+        .respon{
+            transform: translateY(-70vh);
+        }
+    }    
+    @media only screen 
         and (min-width: 1024px) 
         and (max-height: 800px)
         and (orientation: landscape) 
@@ -94,7 +109,13 @@
         and (-webkit-min-device-pixel-ratio: 1.5) {
         body{background-color:black;
             background-position-y:12vh;
-            transform: translateY(12vh);}
+            transform: translateY(25vh);}
+        .bar{
+            transform: translateY(-70vh);
+        }
+        .respon{
+            transform: translateY(-70vh);
+        }
     }   
     .bar{
         font-size: 1.2vw;
@@ -671,8 +692,9 @@
 }
 </script>
 <body>
-    <div>
-        <a href="map2.html">
+    <div class="respon">
+    <div id="map">
+        <a  href="map2.html">
             <img id="bmap" src="Assets/image/bmap.png">
         </a>
     </div>
@@ -686,6 +708,7 @@
             <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
         <!--END HOW TO BUTTON-->
     </div>
+</div>
     <div id="bar" class="bar">
         <div class="row pl text-center" style="padding-left: 3.5vw;">
             <div class="col-8 p-1">
