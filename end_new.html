@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width='device-width', initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    </head>
+    <audio id="myVideo" controls autoplay hidden>
+        <source src="Assets/Borderless - Aakash-Gandhi.ogg" type="audio/ogg">
+        <source src="Assets/Borderless - Aakash Gandhi.mp3" type="audio/mpeg">
+      </audio>
+    <body>
+        <div class="video-container">
+            <iframe width="1280" height="545" src="https://www.youtube.com/embed/videoseries?controls=0&autoplay=1&loop=1&mute=1&amp;list=PLHq-Ay0TJDpPesbLPUwaDjXEDxyOo2584" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="center">
+            <div class="divs">
+                <div id="1" style="display: block;">
+                    <p>คนและสัตว์มีความสัมพันธ์กันมา<br>ตั้งแต่ยุคหินเก่าตั้งแต่ 2.5 ล้านปีที่แล้ว</p>
+                </div>
+                
+                <div id="2" style="display: none;">
+                    <p>มนุษย์ได้ค้นพบสัตว์มากมายหลายชนิด<br>ซึ่งอยู่ในภูมิอากาศที่แตกต่างกันไป</p>
+                </div>
+                
+                <div id="3" style="display: none;">
+                    <p>มีการจำแนกสปีชีส์ของสัตว์ครั้งแรก<br>ในปีค.ศ. 1758</p>
+                </div>
+
+                <div id="4" style="display: none;">
+                    <p>ปัจจุบัน<br>ยังมีผู้ค้นพบสปีชีส์ใหม่ขึ้นมาเรื่อยๆ</p>
+                </div>
+
+                <div id="5" style="display: none;">
+                    <p>แต่ก็มีหลายสปีชีส์ที่หายไปแล้ว<br>และกำลังจะหายไป...</p>
+                </div>
+
+                <div id="6" style="display: none;">
+                    <p>เป็นเพราะภูมิอากาศที่มีความแปรปรวน<br>อันเนื่องมาจากภาวะโลกรวน</p>
+                </div>
+
+                <div id="7" style="display: none;">
+                    <p>ซึ่งมีสาเหตุมาจาก...</p>
+                </div>
+
+                <div id="8" style="display: none; font-size: 5rem">
+                    <p>"มนุษย์"</p>
+                </div>
+
+                <div id="9" style="display: none;">
+                    <p>ดังนั้น<br>เราแต่ละคนควรจะมีส่วนร่วม<br>ในการรักษาสภาพอากาศในทางที่มันควรจะเป็น</p>
+                </div>
+
+                <div id="10" style="display: none;">
+                    <p>สภาพอากาศกำลังทวีความรุนแรงขึ้น<br>สัตว์ต่างๆ และโลกใบนี้กำลังจะตาย</p>
+                </div>
+
+                <div id="11" style="display: none;">
+                    <p>การปกป้องโลกนี้ไว้มันขึ้นอยู่กับพวกเราแล้วล่ะ</p>
+                </div>
+
+                <div id="12" style="display: none;">
+                    <p>ในเมื่อปัญญาพาเราไปพบสิ่งมีชีวิต<br>ฉะนั้นปัญญาต้องพาไปสู่การรักษา</p>
+                </div>
+            </div>
+            
+            <div id="btn">
+                <button id="prev">back</button>
+                <button id="next">next</button>
+            </div>
+            <div id="btn2">
+                <button id="skip"  type="button" class="skip"><a href="reward.html">Exit >></a></button>
+            <button id="mute" onclick="clickcount()" type="button"><i class="fa fa-volume-up"></i></button>
+            </div>
+        </div>
+        
+    </body>
+    <style>
+        @media only screen 
+        and (min-width: 481px) 
+        and (max-height: 1024px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+        body{background-color:black;
+            background-position-y:12vh;
+            transform: translateY(12vh);}
+        }   
+        /*NEW*/
+        @media only screen 
+        and (min-width: 481px) 
+        and (max-height: 800px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+            body{background-color:white;
+                background-position-y:0;
+                transform: translateY(0);}
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+        body{
+            overflow: hidden;
+            background-color:black;
+            color:white;
+            font-size:1em;
+            font-family: 'Kanit', sans-serif;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .divs{
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .divs > div{
+            width: 100%;
+            font-size: 3rem;
+            text-align:center
+        }
+        .divs > div > p{
+            width: 1200px;
+        }
+        #btn{
+            position: fixed;
+            top: 60%;
+        }
+        #btn2{
+            position: fixed;
+            top: 0%;
+            right:0%;
+        }
+        #prev{
+            border: none;
+            padding: 1vw;
+            margin: 3vw;
+            color:rgb(22, 22, 22);
+            background: #ffffff;
+            box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            opacity: 40%;
+        }
+        #next{
+            border: none;
+            padding: 1vw;
+            margin: 2vw;
+            color:rgb(22, 22, 22);
+            background: #ffffff;
+            box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            margin-left: 15vw;
+            opacity: 40%;
+        }
+        #prev:hover{
+            color:rgb(39, 39, 39);
+            opacity: 90%;
+        }
+        #next:hover{
+            color:rgb(39, 39, 39);
+            opacity: 90%;
+        }
+
+        #skip{
+            opacity: 80%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            padding: 2rem;
+            border: none;
+            text-decoration: none;
+            color:white;
+            float: right;
+        }
+        #skip > a{
+            text-decoration: none;
+            color:white;
+        }
+        #mute{
+            opacity: 80%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            padding: 2rem;
+            border: none;
+            text-decoration: none;
+            color:white;
+            float: right;
+        }
+    
+        .video-container{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            z-index: -100;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .video-container iframe {
+                height: 56.25vw;
+            }
+        }
+        @media (max-aspect-ratio: 16/9) {
+            .video-container iframe {
+                width: 177.78vh;
+            }
+        }
+    </style>
+    <script>
+        //mute
+        var clicks = 0;
+        function clickcount(){
+        clicks += 1;
+    
+        var vid = document.getElementById("myVideo");
+        if (clicks%2!=0){
+        vid.muted = true;
+        $("i").toggleClass("fa fa-volume-up fa fa-volume-off");
+        }
+        else{
+        vid.muted = false;
+        $("i").toggleClass("fa fa-volume-off fa fa-volume-up");
+        }
+    }
+
+
+        //show next
+        // hold where we are right now. For previous and next to make sense,
+        // you have to know where you are.
+        var current = 1;
+
+        // function to go to previous
+        var prev = function() {
+            current -= 1;
+            if (current < 1) current = 1; // can't go too far previous
+            showContent();
+        };
+
+        // function to go next
+        var next = function() {
+            current += 1;
+            if (current > 12) current = 12; // can't go too far next
+            showContent();
+        };
+
+        // Update what content we are showing based on the "current" index
+        var showContent = function() {
+            var display;
+            for (var i = 1; i <= 12; i++) {
+                if (i == current) {
+                    display = 'block';
+                } else {
+                    display = 'none';
+                }
+                document.getElementById(i).style.display = display;
+            }
+        };
+
+        // bind the prev and next function to the links 
+        document.getElementById('prev').onclick = prev;
+        document.getElementById('next').onclick = next;
+
+        // Setup the initial state of the content
+        showContent();
+
+    </script>
