@@ -125,7 +125,7 @@
                 <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
                     <h5 style="color: #56486c;font-weight: 1000;">งูพิษมีเขาทะเลทราย</h5>
                     <p><b>ชื่อวิทยาศาสตร์: </b>Saharan horned viper</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>    
+                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
                     <p><b>แถบที่อยู่อาศัย: </b>ทางตอนเหนือของแอฟริกาและแอฟริกาตะวันตก</p>
                     <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
                 </div>
@@ -133,7 +133,10 @@
             <div class="row p-0 m-0">
                 <p class="p-3 ml-4 mr-4" id="snakeText">
                     <b>รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp งูพิษมีเขาทะเลทรายชอบฝังซ่อนตัวอยู่ในพื้นทรายเพื่อเป็นการพรางตัวและมักโผล่เฉพาะจมูกและดวงตาเหนือพื้นทะเลทราย ในวัยเด็กมีการใช้ส่วนหางเป็นเหยื่อล่อกิ้งก่าหรือจิ้งเหลน โดยการสั่นหางไปมาคล้ายหนอน เป็นสิ่งมีชีวิตที่ไม่ต้องดื่มน้ำแม้อยู่ในทะเลทรายนั่นเพราะน้ำที่ได้มานั้นจะมาจากการกินเหยื่อเข้าไปนั่นเอง
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    งูพิษมีเขาทะเลทรายชอบฝังซ่อนตัวอยู่ในพื้นทรายเพื่อเป็นการพรางตัวและมักโผล่เฉพาะจมูกและดวงตาเหนือพื้นทะเลทราย
+                    ในวัยเด็กมีการใช้ส่วนหางเป็นเหยื่อล่อกิ้งก่าหรือจิ้งเหลน โดยการสั่นหางไปมาคล้ายหนอน
+                    เป็นสิ่งมีชีวิตที่ไม่ต้องดื่มน้ำแม้อยู่ในทะเลทรายนั่นเพราะน้ำที่ได้มานั้นจะมาจากการกินเหยื่อเข้าไปนั่นเอง
                 </p>
             </div>
         </div>
@@ -959,14 +962,14 @@
         /* Click Counter */
         #countshow {
             background-color: white;
-        border: rgb(168, 66, 66) 3px solid;
-        border-radius: 50px;
-        top: 8vw;
-        left: 93vw;
-        position:fixed;
-        padding: 1vw;
-        font-size: 1.8vw;
-        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+            border: rgb(193, 138, 204) 3px solid;
+            border-radius: 50px;
+            top: 13vw;
+            left: 90.5vw;
+            position: fixed;
+            padding: 1vw;
+            font-size: 2.8vw;
+            font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 
         }
 
@@ -988,6 +991,9 @@
     }
 </style>
 <script>
+    // Media Query for Landscape iPad Layout
+    var iPad = window.matchMedia("(min-device-width: 481px) and (max-device-width: 1024px)")
+
     // Skunk
     function skunk() {
         let traget = document.getElementById("skunk");
@@ -1138,9 +1144,6 @@
             x.style.transition = "left 1s";
         }
     }
-
-    // Media Query for Landscape iPad Layout
-    var iPad = window.matchMedia("(min-device-width: 481px) and (max-device-width: 1024px)")
 
     // Click Counter
     var clicks = 0;
