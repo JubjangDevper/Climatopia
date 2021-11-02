@@ -636,7 +636,7 @@
         color: #9f34b4;
         opacity: 0%;
         left: 35%;
-        top: 20vw;
+        top: -30vw;
         text-align: center;
         flex-direction: column;
         width: 30%;
@@ -646,165 +646,21 @@
     #complete>h1 {
         font-size: 3vw;
     }
+
+    .btn-pur {
+        margin: 2vw;
+        color: white;
+        background: rgb(193, 138, 204);
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+    }
+
+    button>a {
+        font-size: 1.5vw;
+        color: white;
+        text-decoration: none;
+    }
 </style>
-<script>
-    //HOW TO FUNCTION//
-    function howTo() {
-        var x = document.getElementById("play");
-        x.style.display = "block";
-        x.style.zIndex = "5"
-    }
-    function hidehowto() {
-        var x = document.getElementById("play");
-        x.style.display = "none";
-    }
-    function Ferret() {
-        let traget = document.getElementById("ferret");
-        traget.style.zIndex = 1;
-        traget.style.height = "9vw";
-        traget.style.width = "10vw";
-        showferret()
-    }
-
-    //NEW2//
-    var clicks = 0;
-    var i = document.getElementById("complete");
-    function clickcount() {
-        clicks += 1;
-        var x = document.getElementById("animal");
-        document.getElementById("countshow").innerHTML = clicks + "/5";
-        console.log(i);
-        if (clicks === 5) {
-            i.style.opacity = "100%";
-            localStorage.setItem("gl", "true");
-        }
-    }
-
-    function showferret() {
-        var x = document.getElementById("alertBoxferret");
-        x.style.display = "block";
-    }
-
-    function hideferret() {
-        var x = document.getElementById("alertBoxferret");
-        x.style.display = "none";
-    }
-
-    function Gazelle() {
-        let traget = document.getElementById("gazelle");
-        traget.style.zIndex = 1;
-        traget.style.height = "11vw";
-        traget.style.width = "11vw";
-        showgazelle()
-    }
-
-    function showgazelle() {
-        var x = document.getElementById("alertBoxgazelle");
-        x.style.display = "block";
-    }
-
-    function hidegazelle() {
-        var x = document.getElementById("alertBoxgazelle");
-        x.style.display = "none";
-    }
-
-    function Cotote() {
-        let traget = document.getElementById("cotote");
-        traget.style.zIndex = 1;
-        traget.style.height = "11vw";
-        traget.style.width = "10vw";
-        showcotote()
-    }
-
-    function showcotote() {
-        var x = document.getElementById("alertBoxcotote");
-        x.style.display = "block";
-    }
-
-    function hidecotote() {
-        var x = document.getElementById("alertBoxcotote");
-        x.style.display = "none";
-    }
-
-    function Bison() {
-        let traget = document.getElementById("bison");
-        traget.style.zIndex = 1;
-        traget.style.height = "11vw";
-        traget.style.width = "12vw";
-        showbison()
-    }
-
-    function showbison() {
-        var x = document.getElementById("alertBoxbison");
-        x.style.display = "block";
-    }
-
-    function hidebison() {
-        var x = document.getElementById("alertBoxbison");
-        x.style.display = "none";
-    }
-
-    function hidegreen() {
-        var x = document.getElementById("green");
-        x.style.display = "none";
-    }
-    function hidegreen2() {
-        var x = document.getElementById("green2");
-        x.style.display = "none";
-    }
-    function hidegreen3() {
-        var x = document.getElementById("green3");
-        x.style.display = "none";
-    }
-    function hidegreen4() {
-        var x = document.getElementById("green4");
-        x.style.display = "none";
-    }
-    function hidegreen5() {
-        var x = document.getElementById("green5");
-        x.style.display = "none";
-    }
-    function hidegreen6() {
-        var x = document.getElementById("green6");
-        x.style.display = "none";
-    }
-    function hidegreen7() {
-        var x = document.getElementById("green7");
-        x.style.display = "none";
-    }
-    function hidegreen8() {
-        var x = document.getElementById("green8");
-        x.style.display = "none";
-    }
-    function hidegreen9() {
-        var x = document.getElementById("green9");
-        x.style.display = "none";
-    }
-    function hidegreen10() {
-        var x = document.getElementById("green10");
-        x.style.display = "none";
-    }
-    function hidegreen11() {
-        var x = document.getElementById("green11");
-        x.style.display = "none";
-    }
-    //--//
-    function hideBar() {
-        var x = document.getElementById("bar");
-        if (x.style.left === "-5vw") {
-            x.style.left = "-5vw";
-            x.style.transition = "left 1s";
-        }
-        if (x.style.left === "-31vw") {
-            x.style.left = "-5vw";
-            x.style.transition = "left 1s";
-        }
-        else {
-            x.style.left = "-31vw";
-            x.style.transition = "left 1s";
-        }
-    }
-</script>
 
 <body>
     <div class="respon">
@@ -813,7 +669,7 @@
                 <img id="bmap" src="Assets/image/bmap.png">
             </a>
         </div>
-        <div id="countshow">0/5</div>
+        <div id="countshow">0/4</div>
         <!--HOW TO BUTTON-->
         <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW
             TO PLAY</div>
@@ -1021,5 +877,162 @@
         </div>
     </div>
 </body>
+<script>
+    //HOW TO FUNCTION//
+    function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
+    function Ferret() {
+        let traget = document.getElementById("ferret");
+        traget.style.zIndex = 1;
+        traget.style.height = "9vw";
+        traget.style.width = "10vw";
+        showferret()
+    }
+
+    //NEW2//
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount() {
+        clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/4";
+        if (clicks === 4) {
+            i.style.opacity = "100%";
+            localStorage.setItem("gl", "true");
+        }
+    }
+
+    function showferret() {
+        var x = document.getElementById("alertBoxferret");
+        x.style.display = "block";
+    }
+
+    function hideferret() {
+        var x = document.getElementById("alertBoxferret");
+        x.style.display = "none";
+    }
+
+    function Gazelle() {
+        let traget = document.getElementById("gazelle");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "11vw";
+        showgazelle()
+    }
+
+    function showgazelle() {
+        var x = document.getElementById("alertBoxgazelle");
+        x.style.display = "block";
+    }
+
+    function hidegazelle() {
+        var x = document.getElementById("alertBoxgazelle");
+        x.style.display = "none";
+    }
+
+    function Cotote() {
+        let traget = document.getElementById("cotote");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "10vw";
+        showcotote()
+    }
+
+    function showcotote() {
+        var x = document.getElementById("alertBoxcotote");
+        x.style.display = "block";
+    }
+
+    function hidecotote() {
+        var x = document.getElementById("alertBoxcotote");
+        x.style.display = "none";
+    }
+
+    function Bison() {
+        let traget = document.getElementById("bison");
+        traget.style.zIndex = 1;
+        traget.style.height = "11vw";
+        traget.style.width = "12vw";
+        showbison()
+    }
+
+    function showbison() {
+        var x = document.getElementById("alertBoxbison");
+        x.style.display = "block";
+    }
+
+    function hidebison() {
+        var x = document.getElementById("alertBoxbison");
+        x.style.display = "none";
+    }
+
+    function hidegreen() {
+        var x = document.getElementById("green");
+        x.style.display = "none";
+    }
+    function hidegreen2() {
+        var x = document.getElementById("green2");
+        x.style.display = "none";
+    }
+    function hidegreen3() {
+        var x = document.getElementById("green3");
+        x.style.display = "none";
+    }
+    function hidegreen4() {
+        var x = document.getElementById("green4");
+        x.style.display = "none";
+    }
+    function hidegreen5() {
+        var x = document.getElementById("green5");
+        x.style.display = "none";
+    }
+    function hidegreen6() {
+        var x = document.getElementById("green6");
+        x.style.display = "none";
+    }
+    function hidegreen7() {
+        var x = document.getElementById("green7");
+        x.style.display = "none";
+    }
+    function hidegreen8() {
+        var x = document.getElementById("green8");
+        x.style.display = "none";
+    }
+    function hidegreen9() {
+        var x = document.getElementById("green9");
+        x.style.display = "none";
+    }
+    function hidegreen10() {
+        var x = document.getElementById("green10");
+        x.style.display = "none";
+    }
+    function hidegreen11() {
+        var x = document.getElementById("green11");
+        x.style.display = "none";
+    }
+    //--//
+    function hideBar() {
+        var x = document.getElementById("bar");
+        if (x.style.left === "-5vw") {
+            x.style.left = "-5vw";
+            x.style.transition = "left 1s";
+        }
+        if (x.style.left === "-31vw") {
+            x.style.left = "-5vw";
+            x.style.transition = "left 1s";
+        }
+        else {
+            x.style.left = "-31vw";
+            x.style.transition = "left 1s";
+        }
+    }
+</script>
 
 </html>
