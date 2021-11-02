@@ -569,6 +569,16 @@
 
 </style>
 <script>
+    //HOW TO FUNCTION//
+    function howTo() {
+        var x = document.getElementById("play");
+        x.style.display = "block";
+        x.style.zIndex = "5"
+    }
+    function hidehowto() {
+        var x = document.getElementById("play");
+        x.style.display = "none";
+    }
      function Ferret() {
         let traget = document.getElementById("ferret");
         traget.style.zIndex = 1;
@@ -714,16 +724,7 @@
         localStorage.setItem("gl", "true");
     }
   }
-    //HOW TO FUNCTION//
-    function howTo() {
-        var x = document.getElementById("play");
-        x.style.display = "block";
-        x.style.zIndex = "5"
-    }
-    function hidehowto() {
-        var x = document.getElementById("play");
-        x.style.display = "none";
-    }
+
 }
 </script>
 <body>
