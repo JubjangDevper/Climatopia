@@ -21,10 +21,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Desert Minigame</title>
 </head>
 
 <body>
+    <div>
+        <div id="introLoader" class="introloader">
+            <div class="spinner">
+              <div class="spinner-inner"></div>
+            </div>
+          </div>
     <a href="map2.html">
         <img id="map" src="Assets/image/bmap.png">
     </a>
@@ -989,6 +996,58 @@
             width: 30%;
         }
     }
+    .introloader {
+    z-index: 100;
+    position: fixed;
+    height: 58vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(193, 255, 255);
+    }
+
+    .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    }
+    .spinner-inner {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    border-radius: 50%;
+    animation: infinite-spinning 1s linear infinite;
+    }
+
+    @keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    @-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    }
 </style>
 <script>
     // Media Query for Landscape iPad Layout
@@ -1167,7 +1226,29 @@
         var x = document.getElementById("play");
         x.style.display = "none";
     }
+    function introLoader(element,delay) {
+    this.open = function(callback) {
+        setTimeout(function() {
+        $(element).fadeIn(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
 
+    };
+    this.close = function(callback) {
+        setTimeout(function() {
+        $(element).fadeOut(500, function() {
+            if(callback !== undefined) callback();
+        });
+        }, delay);
+    };
+    }
+    var LOADER = new introLoader('#introLoader',500);
+    $(window).on('load', function() {
+    LOADER.close(function() {
+
+    });
+    });
 </script>
 
 </html>
