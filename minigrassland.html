@@ -672,11 +672,10 @@
     function clickcount() {
         clicks += 1;
         var x = document.getElementById("animal");
-        document.getElementById("countshow").innerHTML = clicks + "/5";
+        document.getElementById("countshow").innerHTML = clicks + "/4";
         console.log(i);
-        if (clicks === 5) {
-            i.style.opacity = "100%";
-            localStorage.setItem("gl", "true");
+        if (clicks === 4) {
+            localStorage.setItem("tgl", "true");
         }
     }
 
@@ -813,7 +812,7 @@
                 <img id="bmap" src="Assets/image/bmap.png">
             </a>
         </div>
-        <div id="countshow">0/5</div>
+        <div id="countshow">0/4</div>
         <!--HOW TO BUTTON-->
         <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW
             TO PLAY</div>
@@ -821,7 +820,7 @@
         <div class="text-center" id="play" onclick="hidehowto()">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
             <h5>วิธีการเล่น</h5>
-            <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
+            <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
         </div>
         <!--END HOW TO BUTTON-->
     </div>
