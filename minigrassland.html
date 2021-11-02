@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +19,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>grassland</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-    body{
+
+    body {
         width: 100%;
         height: 100%;
         background-image: url("https://github.com/fordntp/Climatopia/blob/main/Assets/image/tgl2.jpg?raw=true");
@@ -35,101 +38,114 @@
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
         font-size: 1vw;
     }
-    img{
+
+    img {
         transition: all .4s;
     }
-    #bmap{
+
+    #bmap {
         height: 8vw;
         width: 8vw;
         top: 0;
         right: 0;
-        position:fixed;
+        position: fixed;
         padding: 1vw;
     }
-    #bmap:hover{
+
+    #bmap:hover {
         cursor: pointer;
         transform: scale(1.2);
     }
+
     /*Bar*/
-    .bar>i{
+    .bar>i {
         font-size: 1.3vw;
         position: absolute;
         left: 100%;
-        top:45%;
+        top: 45%;
     }
-    i{
+
+    i {
         cursor: pointer;
     }
+
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-        ::-webkit-scrollbar {
-    width: 1vw;
+
+    ::-webkit-scrollbar {
+        width: 1vw;
     }
+
     /* Track */
-        ::-webkit-scrollbar-track {
-    margin-right: 2vw;
-    border-radius: 10px;
+    ::-webkit-scrollbar-track {
+        margin-right: 2vw;
+        border-radius: 10px;
     }
 
     /* Handle */
-        ::-webkit-scrollbar-thumb {
-    background: rgb(231, 231, 231); 
-    border-radius: 20px;
+    ::-webkit-scrollbar-thumb {
+        background: rgb(231, 231, 231);
+        border-radius: 20px;
     }
+
     /*NEW*/
-    @media only screen 
-  and (min-width: 481px) 
-  and (max-height: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
-    body{background-color:black;
-            background-position-y:12vh;
-            transform: translateY(25vh);}
-        .bar{
+    @media only screen and (min-width: 481px) and (max-height: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+        body {
+            background-color: black;
+            background-position-y: 12vh;
+            transform: translateY(25vh);
+        }
+
+        .bar {
             transform: translateY(-70vh);
         }
-        .respon{
+
+        .respon {
             transform: translateY(-70vh);
         }
-    }    
-    @media only screen 
-        and (min-width: 1024px) 
-        and (max-height: 800px)
-        and (orientation: landscape) 
-        and (-webkit-min-device-pixel-ratio: 1.5) {
-        body{background-color:white;
-            background-position-y:0;
-            transform: translateY(0);}
-            .bar{
+    }
+
+    @media only screen and (min-width: 1024px) and (max-height: 800px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+        body {
+            background-color: white;
+            background-position-y: 0;
+            transform: translateY(0);
+        }
+
+        .bar {
             transform: translateY(-85vh);
         }
-        .respon{
+
+        .respon {
             transform: translateY(-85vh);
         }
-        .gg{
+
+        .gg {
             transform: translateY(13vh);
         }
-        .card{
+
+        .card {
             transform: translateY(-75vh);
         }
     }
 
-    @media only screen 
-        and (max-width: 1024px) 
-        and (max-height: 770px) 
-        and (orientation: landscape) 
-        and (-webkit-min-device-pixel-ratio: 1.5) {
-        body{background-color:black;
-            background-position-y:12vh;
-            transform: translateY(25vh);}
-        .bar{
+    @media only screen and (max-width: 1024px) and (max-height: 770px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+        body {
+            background-color: black;
+            background-position-y: 12vh;
+            transform: translateY(25vh);
+        }
+
+        .bar {
             transform: translateY(-70vh);
         }
-        .respon{
+
+        .respon {
             transform: translateY(-70vh);
         }
-    }   
-    .bar{
+    }
+
+    .bar {
         font-size: 1.2vw;
         color: white;
         font-family: ZCOOL KuaiLe;
@@ -138,146 +154,169 @@
         width: 40vw;
         height: 10vw;
         background-color: #6dd47e;
-        position:absolute;
+        position: absolute;
         top: 2%;
         left: -5%;
     }
-    .col-8 > h1{
-        text-shadow: white 0.2vw 0.2vw ;
+
+    .col-8>h1 {
+        text-shadow: white 0.2vw 0.2vw;
         color: #41835f;
         padding-left: 2.5vw;
     }
-    .rain{
+
+    .rain {
         border-left: white 0.25vw solid;
         border-right: white 0.25vw solid;
     }
-    .vec >img{
-        width:8vw;
+
+    .vec>img {
+        width: 8vw;
     }
-    #rockferret{
-        width:13vw;
-        height:13vw;
-        position:absolute;
+
+    #rockferret {
+        width: 13vw;
+        height: 13vw;
+        position: absolute;
         margin-top: -8vw;
-        }
-    #rockgazelle{
-        width:13vw;
-        height:13vw;
-        position:absolute;
+    }
+
+    #rockgazelle {
+        width: 13vw;
+        height: 13vw;
+        position: absolute;
         margin-top: -22vw;
     }
-    #rockcoyote{
-        width:13vw;
-        height:13vw;
-        position:absolute;
+
+    #rockcoyote {
+        width: 13vw;
+        height: 13vw;
+        position: absolute;
         margin-top: -20vw;
-        }
-    #fakerock{
-        width:12vw;
-        height:8vw;
-        position:absolute;
+    }
+
+    #fakerock {
+        width: 12vw;
+        height: 8vw;
+        position: absolute;
         margin-top: -8vw;
         margin-left: 28vw;
     }
-    #wood{
-        width:8vw;
-        height:4vw;
-        position:absolute;
+
+    #wood {
+        width: 8vw;
+        height: 4vw;
+        position: absolute;
         margin-top: -6vw;
         margin-left: 30vw;
     }
-    #ferret{
+
+    #ferret {
         z-index: 0;
         height: 7vw;
         width: 8vw;
         margin-top: -6vw;
         margin-left: 5vw;
-        position:absolute;
+        position: absolute;
     }
-    #butferret{ 
+
+    #butferret {
         height: 8vw;
         width: 3vw;
         position: absolute;
         margin-top: -8vw;
         margin-left: 10vw;
     }
-    #butferret:hover{
+
+    #butferret:hover {
         cursor: pointer;
     }
-    #gazelle{
+
+    #gazelle {
         z-index: 0;
         height: 9vw;
         width: 9vw;
         margin-top: -22vw;
         margin-left: 2vw;
-        position:absolute;
+        position: absolute;
     }
-    #butgazelle{ 
+
+    #butgazelle {
         height: 3vw;
         width: 3vw;
         position: absolute;
         margin-top: -22vw;
         margin-left: 2vw;
     }
-    #butgazelle:hover{
+
+    #butgazelle:hover {
         cursor: pointer;
     }
-    #cotote{
+
+    #cotote {
         z-index: 0;
         height: 9vw;
         width: 8vw;
         margin-top: -20vw;
         margin-left: -2vw;
-        position:absolute;
+        position: absolute;
     }
-    #butcotote{ 
+
+    #butcotote {
         height: 4vw;
         width: 4vw;
         position: absolute;
         margin-top: -20vw;
         margin-left: -2vw;
     }
-    #butcotote:hover{
+
+    #butcotote:hover {
         cursor: pointer;
     }
-    #bison{
+
+    #bison {
         z-index: 0;
         height: 9vw;
         width: 10vw;
         margin-top: -7vw;
         margin-left: 2vw;
-        position:absolute;
+        position: absolute;
     }
-    #butbison{ 
+
+    #butbison {
         height: 9vw;
         width: 10vw;
         position: absolute;
         margin-top: -7vw;
         margin-left: 2vw;
     }
-    #butbison:hover{
+
+    #butbison:hover {
         cursor: pointer;
     }
-    #alertBoxferret{
+
+    #alertBoxferret {
         z-index: 5;
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
         width: 50vw;
         height: fit-content(100%);
         border-radius: 20px;
         display: none;
-        position:absolute;
+        position: absolute;
         left: 25vw;
-        top:5vw;
+        top: 5vw;
         font-size: 1vw;
         line-height: 1.6vw;
-        overflow:scroll;
+        overflow: scroll;
     }
-    .textAlertferret{
+
+    .textAlertferret {
         z-index: 6;
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
     }
+
     #alertBoxgazelle {
         z-index: 5;
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
@@ -285,19 +324,21 @@
         height: fit-content(100%);
         border-radius: 20px;
         display: none;
-        position:absolute;
+        position: absolute;
         left: 25vw;
-        top:5vw;
+        top: 5vw;
         font-size: 1vw;
         line-height: 1.6vw;
-        overflow:scroll;
+        overflow: scroll;
     }
-    .textAlertgazelle{
+
+    .textAlertgazelle {
         z-index: 6;
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
     }
+
     #alertBoxcotote {
         z-index: 5;
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
@@ -305,19 +346,21 @@
         height: fit-content(100%);
         border-radius: 20px;
         display: none;
-        position:absolute;
+        position: absolute;
         left: 25vw;
-        top:5vw;
+        top: 5vw;
         font-size: 1vw;
         line-height: 1.6vw;
-        overflow:scroll;
+        overflow: scroll;
     }
-    .textAlertcotote{
+
+    .textAlertcotote {
         z-index: 6;
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
     }
+
     #alertBoxbison {
         z-index: 5;
         box-shadow: rgb(70, 70, 70) 2px 2px 10px;
@@ -325,19 +368,21 @@
         height: fit-content(100%);
         border-radius: 20px;
         display: none;
-        position:absolute;
+        position: absolute;
         left: 25vw;
-        top:5vw;
+        top: 5vw;
         font-size: 1vw;
         line-height: 1.6vw;
-        overflow:scroll;
+        overflow: scroll;
     }
-    .textAlertbison{
+
+    .textAlertbison {
         z-index: 6;
         background-color: #ece3f6;
         border-radius: 20px;
         border: #ece3f6 2px solid;
     }
+
     #xAlert {
         position: absolute;
         z-index: 3;
@@ -350,20 +395,25 @@
         border: 0;
         background-color: transparent;
     }
-    .move{
+
+    .move {
         margin-left: 5%;
         margin-top: 45%;
     }
-    .move2{
+
+    .move2 {
         margin-left: 35%;
     }
-    .move3{
+
+    .move3 {
         margin-left: 80%;
     }
-    .move4{
+
+    .move4 {
         margin-left: 60%;
     }
-    #sc1{
+
+    #sc1 {
         width: 20vw;
         height: 15vw;
         border: solid 5px #000000;
@@ -371,7 +421,8 @@
         margin-bottom: 1vw;
         border-radius: 1vw;
     }
-    #green2{
+
+    #green2 {
         width: 15vw;
         height: 18vw;
         bottom: 0vw;
@@ -379,7 +430,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green3{
+
+    #green3 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -387,7 +439,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green4{
+
+    #green4 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -395,7 +448,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green5{
+
+    #green5 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -403,7 +457,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green6{
+
+    #green6 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -411,7 +466,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green7{
+
+    #green7 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -419,7 +475,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green8{
+
+    #green8 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -427,15 +484,17 @@
         position: absolute;
         overflow: hidden;
     }
-    #green9{
+
+    #green9 {
         width: 15vw;
         height: 20vw;
-        bottom: 0vw ;
+        bottom: 0vw;
         margin-left: 65vw;
         position: absolute;
         overflow: hidden;
     }
-    #green10{
+
+    #green10 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -443,7 +502,8 @@
         position: absolute;
         overflow: hidden;
     }
-    #green11{
+
+    #green11 {
         width: 15vw;
         height: 20vw;
         bottom: 0vw;
@@ -451,38 +511,49 @@
         position: absolute;
         overflow: hidden;
     }
-    #green2:hover{
+
+    #green2:hover {
         cursor: pointer;
     }
-    #green3:hover{
+
+    #green3:hover {
         cursor: pointer;
     }
-    #green4:hover{
+
+    #green4:hover {
         cursor: pointer;
     }
-    #green5:hover{
+
+    #green5:hover {
         cursor: pointer;
     }
-    #green6:hover{
+
+    #green6:hover {
         cursor: pointer;
     }
-    #green7:hover{
+
+    #green7:hover {
         cursor: pointer;
     }
-    #green8:hover{
+
+    #green8:hover {
         cursor: pointer;
     }
-    #green9:hover{
+
+    #green9:hover {
         cursor: pointer;
     }
-    #green10:hover{
+
+    #green10:hover {
         cursor: pointer;
     }
-    #green11:hover{
+
+    #green11:hover {
         cursor: pointer;
     }
-     /*START HOW TO*/
-     #how{
+
+    /*START HOW TO*/
+    #how {
         z-index: 4;
         cursor: pointer;
         text-shadow: white 1px 1px;
@@ -490,21 +561,24 @@
         border-radius: 50px;
         top: 15vw;
         left: 93vw;
-        position:fixed;
+        position: fixed;
         padding: 1vw;
         font-size: 0.7vw;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     }
-    #how :hover{
+
+    #how :hover {
         transition: 0.1s;
         font-size: 2.4vw;
     }
-    .how > i{
+
+    .how>i {
         text-shadow: rgb(168, 66, 66) 2px 2px;
         -webkit-text-stroke: 0.2vw white;
         font-size: 2vw;
     }
-    #play{
+
+    #play {
         background-color: rgba(255, 255, 255, 0.8);
         display: none;
         cursor: pointer;
@@ -513,7 +587,7 @@
         border-radius: 20px;
         top: 14vw;
         left: 77vw;
-        position:fixed;
+        position: fixed;
         padding: 1vw;
         font-size: 0.8vw;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
@@ -521,39 +595,44 @@
         border: rgb(168, 66, 66) solid 3px;
         box-shadow: white 4px 4px;
     }
-    #play > p{
+
+    #play>p {
         color: black;
     }
-    #play > h5{
+
+    #play>h5 {
         font-size: 1vw;
         font-weight: 1000;
     }
-    #play > i {
+
+    #play>i {
         font-size: 1.1vw;
         margin-left: 11vw;
     }
+
     /*END HOW TO*/
-    #countshow{
+    #countshow {
         background-color: white;
         border: rgb(168, 66, 66) 3px solid;
         border-radius: 50px;
         top: 8vw;
         left: 93vw;
-        position:fixed;
-        padding: 1vw;   
+        position: fixed;
+        padding: 1vw;
         font-size: 1.8vw;
         font-family: 'IBM Plex Sans Thai Looped', sans-serif;
-        
-}
+
+    }
+
     /*NEW*/
-    #complete{
+    #complete {
         display: block;
         z-index: 0;
         padding: 1vw;
         border-radius: 20px;
         background-color: rgba(255, 255, 255, 0.8);
         border: 3px solid rgb(193, 138, 204);
-        text-shadow: white 0.25vw 0.25vw ;
+        text-shadow: white 0.25vw 0.25vw;
         color: #9f34b4;
         opacity: 0%;
         left: 35%;
@@ -562,11 +641,11 @@
         flex-direction: column;
         width: 30%;
     }
+
     /*NEW*/
-    #complete > h1 {
+    #complete>h1 {
         font-size: 3vw;
     }
-
 </style>
 <script>
     //HOW TO FUNCTION//
@@ -579,12 +658,26 @@
         var x = document.getElementById("play");
         x.style.display = "none";
     }
-     function Ferret() {
+    function Ferret() {
         let traget = document.getElementById("ferret");
         traget.style.zIndex = 1;
         traget.style.height = "9vw";
         traget.style.width = "10vw";
         showferret()
+    }
+
+    //NEW2//
+    var clicks = 0;
+    var i = document.getElementById("complete");
+    function clickcount() {
+        clicks += 1;
+        var x = document.getElementById("animal");
+        document.getElementById("countshow").innerHTML = clicks + "/5";
+        console.log(i);
+        if (clicks === 5) {
+            i.style.opacity = "100%";
+            localStorage.setItem("gl", "true");
+        }
     }
 
     function showferret() {
@@ -597,12 +690,11 @@
         x.style.display = "none";
     }
 
-
     function Gazelle() {
         let traget = document.getElementById("gazelle");
         traget.style.zIndex = 1;
         traget.style.height = "11vw";
-        traget.style.width = "11vw";   
+        traget.style.width = "11vw";
         showgazelle()
     }
 
@@ -620,7 +712,7 @@
         let traget = document.getElementById("cotote");
         traget.style.zIndex = 1;
         traget.style.height = "11vw";
-        traget.style.width = "10vw";   
+        traget.style.width = "10vw";
         showcotote()
     }
 
@@ -638,7 +730,7 @@
         let traget = document.getElementById("bison");
         traget.style.zIndex = 1;
         traget.style.height = "11vw";
-        traget.style.width = "12vw";   
+        traget.style.width = "12vw";
         showbison()
     }
 
@@ -699,52 +791,41 @@
     //--//
     function hideBar() {
         var x = document.getElementById("bar");
-    if (x.style.left === "-5vw" ) {
-        x.style.left = "-5vw" ;
-        x.style.transition = "left 1s";
+        if (x.style.left === "-5vw") {
+            x.style.left = "-5vw";
+            x.style.transition = "left 1s";
+        }
+        if (x.style.left === "-31vw") {
+            x.style.left = "-5vw";
+            x.style.transition = "left 1s";
+        }
+        else {
+            x.style.left = "-31vw";
+            x.style.transition = "left 1s";
+        }
     }
-    if (x.style.left === "-31vw" ) {
-        x.style.left = "-5vw" ;
-        x.style.transition = "left 1s";
-    }
-    else {
-        x.style.left = "-31vw";
-        x.style.transition = "left 1s";
-    }
-    //NEW2//
-    var clicks = 0;
-    var i = document.getElementById("complete");
-    function clickcount(){
-      clicks += 1;
-        var x = document.getElementById("animal");
-        document.getElementById("countshow").innerHTML = clicks + "/5";
-        
-    if (clicks === 5){
-        i.style.opacity = "100%";
-        localStorage.setItem("gl", "true");
-    }
-  }
-
-}
 </script>
+
 <body>
     <div class="respon">
-    <div id="map">
-        <a  href="map2.html">
-            <img id="bmap" src="Assets/image/bmap.png">
-        </a>
-    </div>
-    <div id="countshow" >0/5</div>
+        <div id="map">
+            <a href="map2.html">
+                <img id="bmap" src="Assets/image/bmap.png">
+            </a>
+        </div>
+        <div id="countshow">0/5</div>
         <!--HOW TO BUTTON-->
-        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO PLAY</div>
-        
+        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW
+            TO PLAY</div>
+
         <div class="text-center" id="play" onclick="hidehowto()">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
             <h5>วิธีการเล่น</h5>
-            <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p></div>
+            <p>หาสัตว์ให้ครบทั้ง 5 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
+        </div>
         <!--END HOW TO BUTTON-->
     </div>
-</div>
+    </div>
     <div id="bar" class="bar">
         <div class="row pl text-center" style="padding-left: 3.5vw;">
             <div class="col-8 p-1">
@@ -783,22 +864,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6  col-sm-12 p-3">
-                    <img  class="p-2" src="Assets/image/realferret.jpg" style="width: 100%; height: 100%;"> 
+                    <img class="p-2" src="Assets/image/realferret.jpg" style="width: 100%; height: 100%;">
                 </div>
                 <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
                     <h5 style="color: #56486c;font-weight: 1000;">เฟอเรตเท้าดำ</h5>
                     <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>
                     <p><b>ประชากร: </b>ประมาณ 600 ตัว</p>
                     <p><b>แถบที่อยู่อาศัย: </b>เขตทุ่งหญ้า
-                    <br>แคนาดาและแม็กซิโก</p>
+                        <br>แคนาดาและแม็กซิโก
+                    </p>
                 </div>
             </div>
-            <div class="row" >
-                <p class="p-3 ml-4 mr-4 textAlertferret" id="textAlertferret" >
+            <div class="row">
+                <p class="p-3 ml-4 mr-4 textAlertferret" id="textAlertferret">
                     <b style="font-size: 1.2vw;">รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเฟอเรทเท้าดำเป็นสัตว์เลี้ยงลูกด้วยนมที่มีถิ่นอาศัยอยู่ในทวีปอเมริกาเหนือ ซึ่งเคยมีการเข้าใจกันว่ามันได้สูญพันธ์ไปแล้วตั้งแต่เมื่อปี 1979 แต่ปรากฏว่าในปี 1981 มีการพบเฟอรเรทเท้าดำหลายสิบตัว หลังจากนั้นจึงมีความพยายามในการเพาะเลี้ยงมัน จนในปัจจุบันมีจำนวนเพิ่มขึ้นเป็นประมาณ 1,000 ตัว แต่เฟอรเรทเท้าดำก็ยังคงเป็นสัตว์ที่อยู่ในสถานะใกล้สูญพันธุ์ไปจากธรรมชาติอยู่ดี
-                    เฟอเรทเท้าดำที่มีชีวิตอยู่ในปัจจุบันมีสายพันธุ์ใกล้ชิดกันมาก จนทำให้ขาดความหลากหลายทางพันธุกรรม และอาจจะส่งผลให้มันไม่สามารถต้านทานโรคภัย รวมทั้งสภาพแวดล้อมที่เปลี่ยนแปลงไปได้
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเฟอเรทเท้าดำเป็นสัตว์เลี้ยงลูกด้วยนมที่มีถิ่นอาศัยอยู่ในทวีปอเมริกาเหนือ
+                    ซึ่งเคยมีการเข้าใจกันว่ามันได้สูญพันธ์ไปแล้วตั้งแต่เมื่อปี 1979 แต่ปรากฏว่าในปี 1981
+                    มีการพบเฟอรเรทเท้าดำหลายสิบตัว หลังจากนั้นจึงมีความพยายามในการเพาะเลี้ยงมัน
+                    จนในปัจจุบันมีจำนวนเพิ่มขึ้นเป็นประมาณ 1,000 ตัว
+                    แต่เฟอรเรทเท้าดำก็ยังคงเป็นสัตว์ที่อยู่ในสถานะใกล้สูญพันธุ์ไปจากธรรมชาติอยู่ดี
+                    เฟอเรทเท้าดำที่มีชีวิตอยู่ในปัจจุบันมีสายพันธุ์ใกล้ชิดกันมาก จนทำให้ขาดความหลากหลายทางพันธุกรรม
+                    และอาจจะส่งผลให้มันไม่สามารถต้านทานโรคภัย รวมทั้งสภาพแวดล้อมที่เปลี่ยนแปลงไปได้
                 </p>
             </div>
         </div>
@@ -814,22 +901,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6  col-sm-12 p-3">
-                    <img  class="p-2" src="Assets/image/realgazelle.jpg" style="width: 100%; height: 100%;"> 
+                    <img class="p-2" src="Assets/image/realgazelle.jpg" style="width: 100%; height: 100%;">
                 </div>
                 <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
                     <h5 style="color: #56486c;font-weight: 1000;">ทอมสันกาเซล</h5>
                     <p><b>ชื่อวิทยาศาสตร์: </b>Eudorcas thomsonii</p>
-                    <p><b>สถานะการอนุรักษ์:</b> ใกล้ถูกคุกคราม </p>    
+                    <p><b>สถานะการอนุรักษ์:</b> ใกล้ถูกคุกคราม </p>
                     <p><b>ประชากร: </b>ประมาณ 145,000 ตัว</p>
-                    <p><b>แถบที่อยู่อาศัย: </b>พื้นที่ป่าแล้ง เขตสะวันนา และ เขตทุ่งหญ้า 
-                    ภาคตะวันออกของทวีปแอฟริกา เช่น เคนยาแทนซาเนีย</p>
+                    <p><b>แถบที่อยู่อาศัย: </b>พื้นที่ป่าแล้ง เขตสะวันนา และ เขตทุ่งหญ้า
+                        ภาคตะวันออกของทวีปแอฟริกา เช่น เคนยาแทนซาเนีย</p>
                     <p><b>การจำแนกสปีชีส์:</b> Josept Tomson นักสำรวจชาวสกอต</p>
                 </div>
             </div>
-            <div class="row" >
-                <p class="p-3 ml-4 mr-4 textAlertgazelle" id="textAlertgazelle" >
+            <div class="row">
+                <p class="p-3 ml-4 mr-4 textAlertgazelle" id="textAlertgazelle">
                     <b style="font-size: 1.2vw;">สิ่งที่น่าสนใจ</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspลำตัวมีแถบขนสีดำพาดขวางด้านข้างลำตัวทั้งสองข้าง คั่นกลางระหว่างขนสีน้ำตาลด้านบนและขนสีขาวใต้ท้อง ก้นมีสีขาว หางสั้นสีดำ ทั้งเพศผู้และเพศเมียมีความยาวเท่ากัน มีเขาทั้งเพศผู้และเพศเมีย เขาเพศผู้มีลักษณะคล้ายวงแหวนล้อมรอบเขา เพศเมียมีลักษณะเขาผิดรูปต่างจากเพศผู้ บริเวณใบหน้ามีสีขาว สีเทาแกมเหลือง สีน้ำตาลเข้มและสีดำ แต่ละตัวมีขนาดของเส้นที่แตกต่างกัน และสีขนต่างกัน
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspลำตัวมีแถบขนสีดำพาดขวางด้านข้างลำตัวทั้งสองข้าง
+                    คั่นกลางระหว่างขนสีน้ำตาลด้านบนและขนสีขาวใต้ท้อง ก้นมีสีขาว หางสั้นสีดำ
+                    ทั้งเพศผู้และเพศเมียมีความยาวเท่ากัน มีเขาทั้งเพศผู้และเพศเมีย
+                    เขาเพศผู้มีลักษณะคล้ายวงแหวนล้อมรอบเขา เพศเมียมีลักษณะเขาผิดรูปต่างจากเพศผู้ บริเวณใบหน้ามีสีขาว
+                    สีเทาแกมเหลือง สีน้ำตาลเข้มและสีดำ แต่ละตัวมีขนาดของเส้นที่แตกต่างกัน และสีขนต่างกัน
                 </p>
             </div>
         </div>
@@ -845,21 +936,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6  col-sm-12 p-3">
-                    <img  class="p-2" src="Assets/image/realcoyote.jpg" style="width: 100%; height: 100%;"> 
+                    <img class="p-2" src="Assets/image/realcoyote.jpg" style="width: 100%; height: 100%;">
                 </div>
                 <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
                     <h5 style="color: #56486c;font-weight: 1000;">หมาป่าโคโยตี้</h5>
                     <p><b>ชื่อวิทยาศาสตร์: </b>Ursus maritimus</p>
-                    <p><b>สถานะการอนุรักษ์:</b> ความกังวลน้อยที่สุด </p>    
+                    <p><b>สถานะการอนุรักษ์:</b> ความกังวลน้อยที่สุด </p>
                     <p><b>ประชากร: </b>ประมาณ ุ 180,958 ตัว</p>
                     <p><b>แถบที่อยู่อาศัย: </b>เขตป่า เขตทุ่งหญ้าและเขตทะเลทราย
-                    <br>อเมริกาเหนือและกลาง</p>
+                        <br>อเมริกาเหนือและกลาง
+                    </p>
                 </div>
             </div>
-            <div class="row" >
-                <p class="p-3 ml-4 mr-4 textAlertcotote" id="textAlertcotote" >
+            <div class="row">
+                <p class="p-3 ml-4 mr-4 textAlertcotote" id="textAlertcotote">
                     <b style="font-size: 1.2vw;">รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเมื่อยามที่ไม่ได้ออกล่าเหยื่อ โคโยตีมักจะอาศัยอยู่ในโพรงไม้เพื่อหลบซ่อนตัวเองจากศัตรู อาณาเขตในการล่าเหยื่อของโคโยตีขึ้นอยู่กับความอุดมสมบูรณ์ของพื้นที่ ตั้งแต่ 0.4-62 ตารางกิโลเมตร โดยจะใช้ปัสสาวะบอกอาณาเขตเช่นเดียวกับสุนัขชนิดอื่น ๆ อาหารของพวกมันมักเป็นสัตว์ขนาดเล็ก เช่น กระต่าย หนู ปลา แต่บางครั้งก็อาจจะล่าสัตว์ที่มีขนาดใหญ่กว่าตัวเองอย่างกวาง นอกจากนั้นมันพวกมันยังสามารถกินผลไม้ขนาดเล็ก ๆ ได้อีกด้วย ส่วนศัตรูของพวกมันก็คือหมีและหมาป่าชนิดอื่น ๆ และที่แน่นอนก็ต้องมี “มนุษย์” ที่จะล่ามันทั้งเพื่อป้องกันการรบกวนสัตว์เลี้ยง และล่าเพื่อเอาหนังหรือขน
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspเมื่อยามที่ไม่ได้ออกล่าเหยื่อ
+                    โคโยตีมักจะอาศัยอยู่ในโพรงไม้เพื่อหลบซ่อนตัวเองจากศัตรู
+                    อาณาเขตในการล่าเหยื่อของโคโยตีขึ้นอยู่กับความอุดมสมบูรณ์ของพื้นที่ ตั้งแต่ 0.4-62 ตารางกิโลเมตร
+                    โดยจะใช้ปัสสาวะบอกอาณาเขตเช่นเดียวกับสุนัขชนิดอื่น ๆ อาหารของพวกมันมักเป็นสัตว์ขนาดเล็ก เช่น กระต่าย
+                    หนู ปลา แต่บางครั้งก็อาจจะล่าสัตว์ที่มีขนาดใหญ่กว่าตัวเองอย่างกวาง
+                    นอกจากนั้นมันพวกมันยังสามารถกินผลไม้ขนาดเล็ก ๆ ได้อีกด้วย
+                    ส่วนศัตรูของพวกมันก็คือหมีและหมาป่าชนิดอื่น ๆ และที่แน่นอนก็ต้องมี “มนุษย์”
+                    ที่จะล่ามันทั้งเพื่อป้องกันการรบกวนสัตว์เลี้ยง และล่าเพื่อเอาหนังหรือขน
                 </p>
             </div>
         </div>
@@ -875,21 +974,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6  col-sm-12 p-3">
-                    <img  class="p-2" src="Assets/image/realbison.jpg" style="width: 100%; height: 100%;"> 
+                    <img class="p-2" src="Assets/image/realbison.jpg" style="width: 100%; height: 100%;">
                 </div>
                 <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
                     <h5 style="color: #56486c;font-weight: 1000;">ควายอเมริกันไบซัน</h5>
                     <p><b>ชื่อวิทยาศาสตร์: </b>Bison</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>    
+                    <p><b>สถานะการอนุรักษ์:</b> มีแนวโน้มใกล้สูญพันธุ์ </p>
                     <p><b>ประชากร: </b>ประมาณ 13,000 ตัว</p>
                     <p><b>แถบที่อยู่อาศัย: </b>เขตทุ่งหญ้า เขตสะวันนาและ<br>เขตทะเลทราย
-                    อเมริกาเหนือ</p>
+                        อเมริกาเหนือ</p>
                 </div>
             </div>
-            <div class="row" >
-                <p class="p-3 ml-4 mr-4 textAlertbison" id="textAlertbison" >
+            <div class="row">
+                <p class="p-3 ml-4 mr-4 textAlertbison" id="textAlertbison">
                     <b style="font-size: 1.2vw;">รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspควายไบซัน เป็นสัตว์เลี้ยงลูกด้วยนมที่มีขนาดใหญ่ที่สุดในภูมิภาคอเมริกาเหนือ มีถิ่นอาศัยตั้งแต่พื้นที่ป่าในรัฐอะแลสกาทางตอนเหนือของสหรัฐ ไล่ลงมาจนถึงเขตทุ่งหญ้าในเม็กซิโก ตัวเต็มวัยอาจมีน้ำหนักมากถึง 1 ตัน แม้จะตัวใหญ่และมีน้ำหนัก แต่ก็สามารถวิ่งด้วยความเร็วถึงราว 56 กิโลเมตรต่อชั่วโมง ในอดีตจำนวนของไบซันที่ร่อนเร่ไปทั่วอเมริกาเหนืออยู่ที่หลักล้านตัว ปัจจุบันส่วนใหญ่ถูกเลี้ยงดูในฟาร์มและมีการผสมข้ามสายพันธุ์กับปศุสัตว์ส่วนมากอยู่ในพื้นที่อนุรักษ์ซึ่งทำให้ปลอดภัยจากการล่า โดยประชากรไบซันกลุ่มใหญ่ที่สุดพบในอุทยานแห่งชาติเยลโลว์สโตน
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspควายไบซัน
+                    เป็นสัตว์เลี้ยงลูกด้วยนมที่มีขนาดใหญ่ที่สุดในภูมิภาคอเมริกาเหนือ
+                    มีถิ่นอาศัยตั้งแต่พื้นที่ป่าในรัฐอะแลสกาทางตอนเหนือของสหรัฐ ไล่ลงมาจนถึงเขตทุ่งหญ้าในเม็กซิโก
+                    ตัวเต็มวัยอาจมีน้ำหนักมากถึง 1 ตัน แม้จะตัวใหญ่และมีน้ำหนัก แต่ก็สามารถวิ่งด้วยความเร็วถึงราว 56
+                    กิโลเมตรต่อชั่วโมง ในอดีตจำนวนของไบซันที่ร่อนเร่ไปทั่วอเมริกาเหนืออยู่ที่หลักล้านตัว
+                    ปัจจุบันส่วนใหญ่ถูกเลี้ยงดูในฟาร์มและมีการผสมข้ามสายพันธุ์กับปศุสัตว์ส่วนมากอยู่ในพื้นที่อนุรักษ์ซึ่งทำให้ปลอดภัยจากการล่า
+                    โดยประชากรไบซันกลุ่มใหญ่ที่สุดพบในอุทยานแห่งชาติเยลโลว์สโตน
                 </p>
             </div>
         </div>
@@ -916,4 +1021,5 @@
         </div>
     </div>
 </body>
+
 </html>

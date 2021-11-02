@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Desert Minigame</title>
 </head>
 
@@ -29,205 +29,208 @@
     <div>
         <div id="introLoader" class="introloader">
             <div class="spinner">
-              <div class="spinner-inner"></div>
+                <div class="spinner-inner"></div>
             </div>
-          </div>
-    <a href="map2.html">
-        <img id="map" src="Assets/image/bmap.png">
-    </a>
+        </div>
+        <a href="map2.html">
+            <img id="map" src="Assets/image/bmap.png">
+        </a>
 
-    <div id="countshow">0/4</div>
+        <div id="countshow">0/4</div>
 
-    <!--HOW TO BUTTON-->
-    <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW TO
-        PLAY</div>
+        <!--HOW TO BUTTON-->
+        <div class="text-center how" id="how" onclick="howTo()"><i class="fa fa-question" aria-hidden="true"></i><br>HOW
+            TO
+            PLAY</div>
 
-    <div class="text-center" id="play" onclick="hidehowto()">
-        <i class="fa fa-times-circle" aria-hidden="true"></i>
-        <h5>วิธีการเล่น</h5>
-        <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
-    </div>
+        <div class="text-center" id="play" onclick="hidehowto()">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            <h5>วิธีการเล่น</h5>
+            <p>หาสัตว์ให้ครบทั้ง 4 ตัว<br>โดยการคลิกที่สัตว์แต่ละตัว<br>หากหาครบเราจะพาคุณไปหน้าถัดไป</p>
+        </div>
 
-    <!--BAR-->
-    <div id="bar" class="bar">
-        <div class="row pl text-center">
-            <div class="col-8 p-1">
-                <h1>
-                    Desert
-                </h1>
-                <div class="row">
-                    <div class="col-6 tem text-center">
-                        Temperate<br>
-                        <div class="row">
-                            <div class="col-4" style="left:-2vw;">38C<br>High</div>
-                            <div class="col-4">-3.9C<br>Low</div>
+        <!--BAR-->
+        <div id="bar" class="bar">
+            <div class="row pl text-center">
+                <div class="col-8 p-1">
+                    <h1>
+                        Desert
+                    </h1>
+                    <div class="row">
+                        <div class="col-6 tem text-center">
+                            Temperate<br>
+                            <div class="row">
+                                <div class="col-4" style="left:-2vw;">38C<br>High</div>
+                                <div class="col-4">-3.9C<br>Low</div>
+                            </div>
+                        </div>
+                        <div class="col-6 rain text-center">
+                            Rainfall<br>
+                            250<br>
+                            mm/year
                         </div>
                     </div>
-                    <div class="col-6 rain text-center">
-                        Rainfall<br>
-                        250<br>
-                        mm/year
+                </div>
+                <div class="col-4 p-1 vec">
+                    <img class="p-1" src="assets/desertIcon.png" alt="">
+                </div>
+            </div>
+            <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()" style="filter: invert(1)"></i>
+        </div>
+
+        <!--Skunk-->
+        <div class="skunkBox">
+            <img id="skunk" src="Assets\image\skunk.png">
+            <img id="skunkRock" src="Assets\image\r6.png">
+            <div id="skunkClick" onclick="skunk()"></div>
+        </div>
+        <div class="card overflow-auto" id="skunkPopup" style="max-height: 40vw;">
+            <button id="xAlert" onclick="hideSkunk()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6  col-sm-12 p-3">
+                        <img class="p-0 popupImg" src="/Assets/image/realSkunk.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                    <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                        <h5 style="color: #56486c;font-weight: 1000;">สกังก์</h5>
+                        <p><b>ชื่อวิทยาศาสตร์: </b>Mephitis mephitis</p>
+                        <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
+                        <p><b>แถบที่อยู่อาศัย: </b>ทวีปอเมริกาเหนือ </p>
+                        <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 p-1 vec">
-                <img class="p-1" src="assets/desertIcon.png" alt="">
-            </div>
-        </div>
-        <i class="fa fa-chevron-circle-right" aria-hidden="true" onclick="hideBar()" style="filter: invert(1)"></i>
-    </div>
-
-    <!--Skunk-->
-    <div class="skunkBox">
-        <img id="skunk" src="Assets\image\skunk.png">
-        <img id="skunkRock" src="Assets\image\r6.png">
-        <div id="skunkClick" onclick="skunk()"></div>
-    </div>
-    <div class="card overflow-auto" id="skunkPopup" style="max-height: 40vw;">
-        <button id="xAlert" onclick="hideSkunk()"><i class="fa fa-times-circle" aria-hidden="true"></i>
-        </button>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6  col-sm-12 p-3">
-                    <img class="p-0 popupImg" src="/Assets/image/realSkunk.jpg" style="width: 100%; height: 100%;">
-                </div>
-                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
-                    <h5 style="color: #56486c;font-weight: 1000;">สกังก์</h5>
-                    <p><b>ชื่อวิทยาศาสตร์: </b>Mephitis mephitis</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
-                    <p><b>แถบที่อยู่อาศัย: </b>ทวีปอเมริกาเหนือ </p>
-                    <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
-                </div>
-            </div>
-            <div class="row">
-                <p class="p-3 ml-4 mr-4" id="skunkText">
-                    <b>รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp สกังก์ เป็นสัตว์ที่มีกลิ่นเหม็นสุดๆ
-                    สกังก์เป็นสัตว์เลี้ยงลูกด้วยนม ตัวเล็ก มีขนฟูน่ารัก ส่วนหัวและลำตัวยาวประมาณ 20-48 เซนติเมตร หางยาว
-                    13-38 เซนติเมตร น้ำหนักอยู่ประมาณ 198 กรัมถึง 6 กิโลกรัม มันสามารถพ่นสารสีเหลือง
-                    ที่มีกลิ่นเหม็นฉุนไปได้ไกลสุดถึง 3 เมตร ซึ่งกลิ่นอันไม่พึงประสงค์นี้ สามารถลอยฟุ้งไปไกลถึง 2.41
-                    กิโลเมตร
-                    และแม้ว่าสารที่่พ่นออกมานี้ จะไม่มีพิษ แต่ก็ทำให้เหยื่อที่โดนเข้าไป รู้สึกเหม็นจนทนไม่ไหว
-                    และกลิ่นนี้ ยังอาจติดตัวเหยื่อไปได้หลายวัน แถมยังล้างออกยาก
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!--Snake-->
-    <div class="snakeBox">
-        <img id="snake" src="Assets\image\snake.png">
-        <img id="snakeRock1" src="Assets\image\r9.png">
-        <img id="snakeRock2" src="Assets\image\r12.png">
-        <div id="snakeClick" onclick="snake()"></div>
-    </div>
-    <div class="card overflow-auto" id="snakePopup" style="max-height: 40vw;">
-        <button id="xAlert" onclick="hideSnake()"><i class="fa fa-times-circle" aria-hidden="true"></i>
-        </button>
-        <div class="container">
-            <div class="row p-0 m-0">
-                <div class="col-xl-6  col-sm-12 p-3">
-                    <img class="p-0 popupImg" src="/Assets/viper.jpg" style="width: 100%; height: 100%;">
-                </div>
-                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
-                    <h5 style="color: #56486c;font-weight: 1000;">งูพิษมีเขาทะเลทราย</h5>
-                    <p><b>ชื่อวิทยาศาสตร์: </b>Saharan horned viper</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
-                    <p><b>แถบที่อยู่อาศัย: </b>ทางตอนเหนือของแอฟริกาและแอฟริกาตะวันตก</p>
-                    <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
-                </div>
-            </div>
-            <div class="row p-0 m-0">
-                <p class="p-3 ml-4 mr-4" id="snakeText">
-                    <b>รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    งูพิษมีเขาทะเลทรายชอบฝังซ่อนตัวอยู่ในพื้นทรายเพื่อเป็นการพรางตัวและมักโผล่เฉพาะจมูกและดวงตาเหนือพื้นทะเลทราย
-                    ในวัยเด็กมีการใช้ส่วนหางเป็นเหยื่อล่อกิ้งก่าหรือจิ้งเหลน โดยการสั่นหางไปมาคล้ายหนอน
-                    เป็นสิ่งมีชีวิตที่ไม่ต้องดื่มน้ำแม้อยู่ในทะเลทรายนั่นเพราะน้ำที่ได้มานั้นจะมาจากการกินเหยื่อเข้าไปนั่นเอง
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!--Hyena and Camel-->
-    <div class="hcBox">
-        <img id="hyena" src="Assets\image\hyyena.png">
-        <img id="camel" src="Assets\image\camel.png">
-        <img id="tree1" src="Assets\image\tree.png">
-        <img id="tree2" src="Assets\image\tree.png">
-        <img id="tree3" src="Assets\image\tree.png">
-        <div id="hyenaClick" onclick="hyena()"></div>
-        <div id="camelClick" onclick="camel()"></div>
-    </div>
-    <div class="card overflow-auto" id="hyenaPopup" style="max-height: 40vw;">
-        <button id="xAlert" onclick="hideHyena()"><i class="fa fa-times-circle" aria-hidden="true"></i>
-        </button>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6  col-sm-12 p-3">
-                    <img class="p-0 popupImg" src="/Assets/image/realHyena.jpg" style="width: 100%; height: 100%;">
-                </div>
-                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
-                    <h5 style="color: #56486c;font-weight: 1000;">ไฮยีนา</h5>
-                    <p><b>ชื่อวิทยาศาสตร์: </b>Hyaenidae</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
-                    <p><b>แถบที่อยู่อาศัย: </b>ตอนใต้ของทะเลทรายซาฮาร่าจนถึงภาคตะวันออกและภาคใต้ของทวีปแอฟริกา
+                <div class="row">
+                    <p class="p-3 ml-4 mr-4" id="skunkText">
+                        <b>รู้หรือไม่</b>
+                        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp สกังก์ เป็นสัตว์ที่มีกลิ่นเหม็นสุดๆ
+                        สกังก์เป็นสัตว์เลี้ยงลูกด้วยนม ตัวเล็ก มีขนฟูน่ารัก ส่วนหัวและลำตัวยาวประมาณ 20-48 เซนติเมตร
+                        หางยาว
+                        13-38 เซนติเมตร น้ำหนักอยู่ประมาณ 198 กรัมถึง 6 กิโลกรัม มันสามารถพ่นสารสีเหลือง
+                        ที่มีกลิ่นเหม็นฉุนไปได้ไกลสุดถึง 3 เมตร ซึ่งกลิ่นอันไม่พึงประสงค์นี้ สามารถลอยฟุ้งไปไกลถึง 2.41
+                        กิโลเมตร
+                        และแม้ว่าสารที่่พ่นออกมานี้ จะไม่มีพิษ แต่ก็ทำให้เหยื่อที่โดนเข้าไป รู้สึกเหม็นจนทนไม่ไหว
+                        และกลิ่นนี้ ยังอาจติดตัวเหยื่อไปได้หลายวัน แถมยังล้างออกยาก
                     </p>
-                    <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
                 </div>
-            </div>
-            <div class="row">
-                <p class="p-3 ml-4 mr-4" id="hyenaText">
-                    <b>รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ถึงแม้ว่ารูปร่างของไฮยีนาจะเหมือนหมาป่า
-                    แต่ความจริงมันไม่ใช่หมา ไฮยีนาเป็นสัตว์ที่อยู่ในตระกูลแมว
-                    ไฮยีนามีวงศ์เป็นของตัวเองไม่ยุ่งไม่เกี่ยวกับใครคือ Hyaenidae ซึ่งแยกออกมาจากตระกูล Feliformia อีกที
-                    (ใกล้เคียงกับแมวในตระกูล Felidae)
-                </p>
             </div>
         </div>
-    </div>
-    <div class="card overflow-auto" id="camelPopup" style="max-height: 40vw;">
-        <button id="xAlert" onclick="hideCamel()"><i class="fa fa-times-circle" aria-hidden="true"></i>
-        </button>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6  col-sm-12 p-3">
-                    <img class="p-0 popupImg" src="/Assets/image/realCamel.jpg" style="width: 100%; height: 100%;">
+
+        <!--Snake-->
+        <div class="snakeBox">
+            <img id="snake" src="Assets\image\snake.png">
+            <img id="snakeRock1" src="Assets\image\r9.png">
+            <img id="snakeRock2" src="Assets\image\r12.png">
+            <div id="snakeClick" onclick="snake()"></div>
+        </div>
+        <div class="card overflow-auto" id="snakePopup" style="max-height: 40vw;">
+            <button id="xAlert" onclick="hideSnake()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+            <div class="container">
+                <div class="row p-0 m-0">
+                    <div class="col-xl-6  col-sm-12 p-3">
+                        <img class="p-0 popupImg" src="/Assets/viper.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                    <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                        <h5 style="color: #56486c;font-weight: 1000;">งูพิษมีเขาทะเลทราย</h5>
+                        <p><b>ชื่อวิทยาศาสตร์: </b>Saharan horned viper</p>
+                        <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
+                        <p><b>แถบที่อยู่อาศัย: </b>ทางตอนเหนือของแอฟริกาและแอฟริกาตะวันตก</p>
+                        <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
+                    </div>
                 </div>
-                <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
-                    <h5 style="color: #56486c;font-weight: 1000;">อูฐ</h5>
-                    <p><b>ชื่อวิทยาศาสตร์: </b>Camelus ferus</p>
-                    <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงขั้นวิกฤติต่อการสูญพันธุ์ </p>
-                    <p><b>แถบที่อยู่อาศัย: </b>ทะเลทราย
+                <div class="row p-0 m-0">
+                    <p class="p-3 ml-4 mr-4" id="snakeText">
+                        <b>รู้หรือไม่</b>
+                        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        งูพิษมีเขาทะเลทรายชอบฝังซ่อนตัวอยู่ในพื้นทรายเพื่อเป็นการพรางตัวและมักโผล่เฉพาะจมูกและดวงตาเหนือพื้นทะเลทราย
+                        ในวัยเด็กมีการใช้ส่วนหางเป็นเหยื่อล่อกิ้งก่าหรือจิ้งเหลน โดยการสั่นหางไปมาคล้ายหนอน
+                        เป็นสิ่งมีชีวิตที่ไม่ต้องดื่มน้ำแม้อยู่ในทะเลทรายนั่นเพราะน้ำที่ได้มานั้นจะมาจากการกินเหยื่อเข้าไปนั่นเอง
                     </p>
-                    <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
                 </div>
             </div>
-            <div class="row">
-                <p class="p-3 ml-4 mr-4" id="camelText">
-                    <b>รู้หรือไม่</b>
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    โหนกของอูฐไม่ได้เก็บน้ำเอาไว้ แต่เป็นไขมันซึ่งใช้เป็นพลังงานสำรอง
-                    ส่วนน้ำจะถูกเก็บไว้ทั่วร่างกายโดยเฉพาะในเส้นเลือด ซึ่งช่วยให้
-                    พวกมันรอดจากการขาดน้ำได้ดีมาก อูฐสามารถสูญเสียน้ำหนักไปได้ถึง 40
-                    เปอร์เซ็นต์ก่อนที่มันจะได้รับผลกระทบ และสามารถเดินทางติดต่อกัน
-                    ได้นานถึง 7 วันโดยไม่ต้องกินน้ำเลย แต่เมื่อได้กิน มันก็จะกินมาก โดยกินได้มากถึงครั้งละ 190
-                    ลิตรเลยทีเดียว
+        </div>
 
-                    อูฐเป็นสัตว์ที่มีความอดทนสูง อูฐจึงเหมาะเป็นพาหนะในทะเลทราย
-                </p>
+        <!--Hyena and Camel-->
+        <div class="hcBox">
+            <img id="hyena" src="Assets\image\hyyena.png">
+            <img id="camel" src="Assets\image\camel.png">
+            <img id="tree1" src="Assets\image\tree.png">
+            <img id="tree2" src="Assets\image\tree.png">
+            <img id="tree3" src="Assets\image\tree.png">
+            <div id="hyenaClick" onclick="hyena()"></div>
+            <div id="camelClick" onclick="camel()"></div>
+        </div>
+        <div class="card overflow-auto" id="hyenaPopup" style="max-height: 40vw;">
+            <button id="xAlert" onclick="hideHyena()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6  col-sm-12 p-3">
+                        <img class="p-0 popupImg" src="/Assets/image/realHyena.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                    <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                        <h5 style="color: #56486c;font-weight: 1000;">ไฮยีนา</h5>
+                        <p><b>ชื่อวิทยาศาสตร์: </b>Hyaenidae</p>
+                        <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงต่ำต่อการสูญพันธุ์ </p>
+                        <p><b>แถบที่อยู่อาศัย: </b>ตอนใต้ของทะเลทรายซาฮาร่าจนถึงภาคตะวันออกและภาคใต้ของทวีปแอฟริกา
+                        </p>
+                        <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="p-3 ml-4 mr-4" id="hyenaText">
+                        <b>รู้หรือไม่</b>
+                        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ถึงแม้ว่ารูปร่างของไฮยีนาจะเหมือนหมาป่า
+                        แต่ความจริงมันไม่ใช่หมา ไฮยีนาเป็นสัตว์ที่อยู่ในตระกูลแมว
+                        ไฮยีนามีวงศ์เป็นของตัวเองไม่ยุ่งไม่เกี่ยวกับใครคือ Hyaenidae ซึ่งแยกออกมาจากตระกูล Feliformia
+                        อีกที
+                        (ใกล้เคียงกับแมวในตระกูล Felidae)
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="card overflow-auto" id="camelPopup" style="max-height: 40vw;">
+            <button id="xAlert" onclick="hideCamel()"><i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6  col-sm-12 p-3">
+                        <img class="p-0 popupImg" src="/Assets/image/realCamel.jpg" style="width: 100%; height: 100%;">
+                    </div>
+                    <div class="col-xl-6  col-sm-12 text-sm-center pt-3 info">
+                        <h5 style="color: #56486c;font-weight: 1000;">อูฐ</h5>
+                        <p><b>ชื่อวิทยาศาสตร์: </b>Camelus ferus</p>
+                        <p><b>สถานะการอนุรักษ์:</b> มีความเสี่ยงขั้นวิกฤติต่อการสูญพันธุ์ </p>
+                        <p><b>แถบที่อยู่อาศัย: </b>ทะเลทราย
+                        </p>
+                        <p><b>การจำแนกสปีชีส์:</b>โดย Linnaeus ในปี ค.ศ.1758</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="p-3 ml-4 mr-4" id="camelText">
+                        <b>รู้หรือไม่</b>
+                        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        โหนกของอูฐไม่ได้เก็บน้ำเอาไว้ แต่เป็นไขมันซึ่งใช้เป็นพลังงานสำรอง
+                        ส่วนน้ำจะถูกเก็บไว้ทั่วร่างกายโดยเฉพาะในเส้นเลือด ซึ่งช่วยให้
+                        พวกมันรอดจากการขาดน้ำได้ดีมาก อูฐสามารถสูญเสียน้ำหนักไปได้ถึง 40
+                        เปอร์เซ็นต์ก่อนที่มันจะได้รับผลกระทบ และสามารถเดินทางติดต่อกัน
+                        ได้นานถึง 7 วันโดยไม่ต้องกินน้ำเลย แต่เมื่อได้กิน มันก็จะกินมาก โดยกินได้มากถึงครั้งละ 190
+                        ลิตรเลยทีเดียว
 
-    <!--Complete Text-->
-    <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
-        <h1>Complete</h1>
-        <div>
-            <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html">ไปที่บทสรุป</a></button>
+                        อูฐเป็นสัตว์ที่มีความอดทนสูง อูฐจึงเหมาะเป็นพาหนะในทะเลทราย
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!--Complete Text-->
+        <div id="complete" class="col-12 justify-content-center align-self-center d-flex">
+            <h1>Complete</h1>
+            <div>
+                <button class="btn btn-pur p-2 pr-4 pl-4"><a href="end.html">ไปที่บทสรุป</a></button>
+            </div>
+        </div>
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
@@ -996,57 +999,61 @@
             width: 30%;
         }
     }
+
     .introloader {
-    z-index: 100;
-    position: fixed;
-    height: 58vw;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgb(193, 255, 255);
+        z-index: 100;
+        position: fixed;
+        height: 58vw;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgb(193, 255, 255);
     }
 
     .spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -25px 0 0 -25px;
-    width: 50px;
-    height: 50px;
-    border: 5px solid #efefef;
-    border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -25px;
+        width: 50px;
+        height: 50px;
+        border: 5px solid #efefef;
+        border-radius: 50%;
     }
+
     .spinner-inner {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border-radius: 50%;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-    border-radius: 50%;
-    animation: infinite-spinning 1s linear infinite;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border-radius: 50%;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+        border-radius: 50%;
+        animation: infinite-spinning 1s linear infinite;
     }
 
     @keyframes infinite-spinning {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
 
     @-webkit-keyframes infinite-spinning {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-    }
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+
+        to {
+            -webkit-transform: rotate(360deg);
+        }
     }
 </style>
 <script>
@@ -1226,28 +1233,28 @@
         var x = document.getElementById("play");
         x.style.display = "none";
     }
-    function introLoader(element,delay) {
-    this.open = function(callback) {
-        setTimeout(function() {
-        $(element).fadeIn(500, function() {
-            if(callback !== undefined) callback();
-        });
-        }, delay);
+    function introLoader(element, delay) {
+        this.open = function (callback) {
+            setTimeout(function () {
+                $(element).fadeIn(500, function () {
+                    if (callback !== undefined) callback();
+                });
+            }, delay);
 
-    };
-    this.close = function(callback) {
-        setTimeout(function() {
-        $(element).fadeOut(500, function() {
-            if(callback !== undefined) callback();
-        });
-        }, delay);
-    };
+        };
+        this.close = function (callback) {
+            setTimeout(function () {
+                $(element).fadeOut(500, function () {
+                    if (callback !== undefined) callback();
+                });
+            }, delay);
+        };
     }
-    var LOADER = new introLoader('#introLoader',500);
-    $(window).on('load', function() {
-    LOADER.close(function() {
+    var LOADER = new introLoader('#introLoader', 500);
+    $(window).on('load', function () {
+        LOADER.close(function () {
 
-    });
+        });
     });
 </script>
 
