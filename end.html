@@ -80,6 +80,7 @@
             <div id="btn">
                 <button id="prev">back</button>
                 <button id="next">next</button>
+                <button id="exit"><a href="reward.html">Back to the Hall</a></button>
             </div>
             <div id="btn2">
                 <button id="skip"  type="button" class="skip"><a href="reward.html">Exit >></a></button>
@@ -154,23 +155,52 @@
             box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             opacity: 50%;
+            display: block;
         }
         #next{
             border: none;
             padding: 1vw;
-            margin: 2vw;
+            margin: 3vw;
             color:rgb(22, 22, 22);
             background: #ffffff;
             box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             margin-left: 15vw;
+            margin-top: -6.6vw;
             opacity: 50%;
+            display: block;
+            
+        }
+        #exit{
+            border: none;
+            padding: 1vw;
+            margin: 3vw;
+            color:rgb(22, 22, 22);
+            background: #ffffff;
+            box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            margin-left: 5vw;
+            margin-top: 3vw;
+            opacity: 50%;
+            display: none;
+            
+        }
+
+        #exit > a {
+            text-decoration: none;
+            border-radius: 20px;
+            background: #ffffff;
+            color:rgb(22, 22, 22);
         }
         #prev:hover{
             color:rgb(39, 39, 39);
             opacity: 90%;
         }
         #next:hover{
+            color:rgb(39, 39, 39);
+            opacity: 90%;
+        }
+        #exit:hover{
             color:rgb(39, 39, 39);
             opacity: 90%;
         }
@@ -312,9 +342,16 @@
         // function to go next
         var next = function() {
             current += 1;
-            if (current > 12) current = 12; // can't go too far next
+            if (current > 12){ 
+                current = 12;
+                if (current = 12) 
+                document.getElementById('prev').style.display = 'none';
+                document.getElementById('next').style.display = 'none';
+                document.getElementById('exit').style.display = 'block';
+            } // can't go too far next
             showContent();
         };
+        
 
         // Update what content we are showing based on the "current" index
         var showContent = function() {
@@ -328,6 +365,11 @@
                 document.getElementById(i).style.display = display;
             }
         };
+
+        // hide butt
+
+
+
 
         // bind the prev and next function to the links 
         document.getElementById('prev').onclick = prev;
