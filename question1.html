@@ -32,30 +32,18 @@
 </div>
 <div class="row">
   <div class="col d-flex justify-content-center">
-    <button id="button1" class="btn btn-light pr-5 pl-5"></button>
-    <div class="card" id="QA">
-      <div class="card-body">A.</div>
-    </div>
+    <button id="button1" class="btn btn-light pr-5"></button>
   </div>
   <div class="col d-flex justify-content-center">
-    <button id="button2" class="btn btn-light pr-5 pl-5"></button>
-    <div class="card" id="QB">
-      <div class="card-body">B.</div>
-    </div>
+    <button id="button2" class="btn btn-light pr-5"></button>
   </div>
 </div>
 <div class="row">
   <div class="col d-flex justify-content-center">
-    <button id="button3" class="btn btn-light pr-5 pl-5"></button>
-    <div class="card" id="QC">
-      <div class="card-body">C.</div>
-    </div>
+    <button id="button3" class="btn btn-light pr-5"></button>
   </div>
   <div class="col d-flex justify-content-center">
-    <button id="button4" class="btn btn-light pr-5 pl-5"></button>
-    <div class="card" id="QD">
-      <div class="card-body">D.</div>
-    </div>
+    <button id="button4" class="btn btn-light pr-5"></button>
   </div>
 </div>
 
@@ -66,35 +54,17 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
 
-  html {
-    height: 100%;
-  }
-
-  p {
-    visibility: hidden;
-  }
-
-  #leaves {
-    width: 100%;
-    height: 745px
-  }
-
   body {
     overflow: hidden;
-    position: relative;
     width: 100%;
     background: rgb(239, 211, 255);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
     font-size: 1em;
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
   }
 
   h1 {
     position: absolute;
-    top: 10vh;
+    margin-top: 10vh;
     font-style: normal;
     font-weight: normal;
     color: #000000;
@@ -106,7 +76,7 @@
     position: absolute;
     width: 1080px;
     height: 150px;
-    top: 25vh;
+    margin-top: 25vh;
     font-size: 2.75em;
     text-align: center;
     border-radius: 20px;
@@ -116,94 +86,50 @@
 
   #button1 {
     position: absolute;
-    top: 51vh;
-    left: 30vh;
+    margin-top: 51vh;
+    margin-left: 20vh;
     font-size: 1.5em;
+    border: solid pink 4px;
   }
 
   #button1:hover {
     background-color: pink;
   }
 
-  #QA {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 52vh;
-    left: 32vh;
-    font-size: 2em;
-    border-radius: 100%;
-    background-color: pink;
-    color: white;
-  }
-
   #button2 {
     position: absolute;
-    top: 51vh;
-    right: 30vh;
+    margin-top: 51vh;
+    margin-right: 20vh;
     font-size: 1.5em;
+    border: solid skyblue 4px;
   }
 
   #button2:hover {
     background-color: skyblue;
   }
 
-  #QB {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 52vh;
-    left: 10vh;
-    font-size: 2em;
-    border-radius: 100%;
-    background-color: skyblue;
-    color: white;
-  }
-
   #button3 {
     position: absolute;
-    top: 70vh;
-    left: 30vh;
+    margin-top: 70vh;
+    margin-left: 20vh;
     font-size: 1.5em;
+    border: solid lightgreen 4px;
   }
 
   #button3:hover {
     background-color: lightgreen;
   }
 
-  #QC {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 71vh;
-    left: 32vh;
-    font-size: 2em;
-    border-radius: 100%;
-    background-color: lightgreen;
-    color: white;
-  }
-
   #button4 {
     position: absolute;
-    top: 70vh;
-    right: 30vh;
+    margin-top: 70vh;
+    margin-right: 20vh;
     font-size: 1.5em;
+    border: solid gold 4px;
   }
 
   #button4:hover {
     background-color: gold;
-  }
-
-  #QD {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 71vh;
-    left: 10vh;
-    font-size: 2em;
-    border-radius: 100%;
-    background-color: gold;
-    color: white;
   }
 
   .btn-light {
@@ -215,15 +141,10 @@
   }
 
   /* Responsive Landscape iPad Layout */
-  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    #leaves {
-      width: 100%;
-      height: 782px;
-    }
-
+  @media only screen and (min-width: 481px) and (max-height: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
     h1 {
       position: absolute;
-      top: 10vh;
+      margin-top: 10vh;
       font-style: normal;
       font-weight: normal;
       color: #000000;
@@ -235,7 +156,7 @@
       position: absolute;
       width: 960px;
       height: 150px;
-      top: 25vh;
+      margin-top: 25vh;
       font-size: 2.75em;
       text-align: center;
       border-radius: 20px;
@@ -245,94 +166,31 @@
 
     #button1 {
       position: absolute;
-      top: 51vh;
-      left: 5vh;
+      margin-top: 51vh;
+      margin-left: 0vh;
       font-size: 1.5em;
-    }
-
-    #button1:hover {
-      background-color: pink;
-    }
-
-    #QA {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      top: 52vh;
-      left: 7vh;
-      font-size: 2em;
-      border-radius: 100%;
-      background-color: pink;
-      color: white;
     }
 
     #button2 {
       position: absolute;
-      top: 51vh;
-      right: 5vh;
+      margin-top: 51vh;
+      margin-right: 0vh;
       font-size: 1.5em;
     }
 
-    #button2:hover {
-      background-color: skyblue;
-    }
-
-    #QB {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      top: 52vh;
-      left: 7vh;
-      font-size: 2em;
-      border-radius: 100%;
-      background-color: skyblue;
-      color: white;
-    }
 
     #button3 {
       position: absolute;
-      top: 70vh;
-      left: 5vh;
+      margin-top: 70vh;
+      margin-left: 0vh;
       font-size: 1.5em;
-    }
-
-    #button3:hover {
-      background-color: lightgreen;
-    }
-
-    #QC {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      top: 71vh;
-      left: 7vh;
-      font-size: 2em;
-      border-radius: 100%;
-      background-color: lightgreen;
-      color: white;
     }
 
     #button4 {
       position: absolute;
-      top: 70vh;
-      right: 5vh;
+      margin-top: 70vh;
+      margin-right: 0vh;
       font-size: 1.5em;
-    }
-
-    #button4:hover {
-      background-color: gold;
-    }
-
-    #QD {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      top: 71vh;
-      left: 7vh;
-      font-size: 2em;
-      border-radius: 100%;
-      background-color: gold;
-      color: white;
     }
 
     .btn-light {
@@ -343,5 +201,4 @@
       font-size: 3em;
     }
   }
-
 </style>
