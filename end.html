@@ -15,7 +15,7 @@
     <audio id="myVideo" controls autoplay hidden>
         <source src="Assets/Borderless - Aakash-Gandhi.ogg" type="audio/ogg">
         <source src="Assets/Borderless - Aakash Gandhi.mp3" type="audio/mpeg">
-      </audio>
+    </audio>
     <body>
         <div id="introLoader" class="introloader">
             <div class="spinner">
@@ -78,8 +78,8 @@
             </div>
             
             <div id="btn">
-                <button id="prev">back</button>
-                <button id="next">next</button>
+                <button id="prev">Back</button>
+                <button id="next">Next</button>
                 <button id="exit"><a href="reward.html">Back to the Hall</a></button>
             </div>
             <div id="btn2">
@@ -90,6 +90,7 @@
         
     </body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
         @media only screen 
         and (min-width: 481px) 
         and (max-height: 1024px) 
@@ -97,7 +98,9 @@
         and (-webkit-min-device-pixel-ratio: 1.5) {
         body{background-color:black;
             background-position-y:12vh;
-            transform: translateY(12vh);}
+            transform: translateY(12vh);
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+}
         }   
         /*NEW*/
         @media only screen 
@@ -107,15 +110,16 @@
         and (-webkit-min-device-pixel-ratio: 1.5) {
             body{background-color:white;
                 background-position-y:0;
-                transform: translateY(0);}
+                transform: translateY(0);
+                font-family: 'IBM Plex Sans Thai', sans-serif;
+}
         }
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Kanit&display=swap');
         body{
             overflow: hidden;
             background-color:black;
             color:white;
             font-size:1em;
-            font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
         }
         .center{
             display: flex;
@@ -135,6 +139,7 @@
             text-shadow: 2px 2px 8px #242424;
         }
         .divs > div > p{
+            font-family: 'IBM Plex Sans Thai', sans-serif;
             width: 1200px;
         }
         #btn{
